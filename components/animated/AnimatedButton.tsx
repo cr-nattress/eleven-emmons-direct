@@ -53,14 +53,17 @@ export default function AnimatedButton({
     ? {
         animate: {
           scale: [1, 1.02, 1],
-          transition: {
-            duration: 2,
-            repeat: Infinity,
-            ease: 'easeInOut',
-          },
         },
       }
     : {}
+
+  const transitionConfig = enablePulse
+    ? {
+        duration: 2,
+        repeat: Infinity,
+        ease: 'easeInOut' as const,
+      }
+    : { duration: 0.2 }
 
   return (
     <motion.button
@@ -70,7 +73,7 @@ export default function AnimatedButton({
       className={className}
       {...scaleAnimation}
       {...pulseAnimation}
-      transition={{ duration: 0.2 }}
+      transition={transitionConfig}
     >
       {children}
     </motion.button>

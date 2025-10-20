@@ -8,7 +8,7 @@ export interface MarkdownContent {
   slug: string
   title?: string
   source: string
-  data: { [key: string]: any }
+  data: Record<string, unknown>
 }
 
 /**

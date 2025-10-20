@@ -4,6 +4,7 @@ import { ReactNode } from 'react'
 import { motion } from 'framer-motion'
 import { useScrollAnimation } from '@/lib/animations/hooks'
 import { slideUpVariants, staggerContainerVariants, staggerItemVariants } from '@/lib/animations/variants'
+import PropertyMap from '@/components/PropertyMap'
 
 const gettingHere = [
   {
@@ -87,15 +88,9 @@ export default function LocationContent({ children }: LocationContentProps) {
             initial="hidden"
             animate={mapControls}
             variants={slideUpVariants}
-            className="aspect-[4/3] overflow-hidden rounded-lg bg-gray-200"
+            className="overflow-hidden rounded-lg"
           >
-            <div className="flex h-full items-center justify-center text-gray-400">
-              <div className="text-center">
-                <p className="text-sm font-medium">Interactive Map</p>
-                <p className="mt-2 text-xs">11 Emmons Road, Crested Butte, CO</p>
-                <p className="mt-4 text-xs opacity-50">Map integration coming soon</p>
-              </div>
-            </div>
+            <PropertyMap />
           </motion.div>
 
           {/* Getting Here */}

@@ -180,6 +180,13 @@ Rough effort estimates:
   - User Stories: 5
   - Target: Weeks 2-6
 
+- **[EPIC-009: Interactive Map (Leaflet + OSM)](./epics/EPIC-009-interactive-map-leaflet/epic.md)**
+  - Status: To Do
+  - Priority: Medium
+  - Story Points: 5
+  - User Stories: 3
+  - Target: Week 2
+
 ## Adding New Items
 
 ### Creating a New Epic

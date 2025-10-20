@@ -95,12 +95,14 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link
-                  href="#booking"
+                <a
+                  href="https://airbnb.com/h/elevenemmons"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="transition-colors hover:text-white"
                 >
                   Book Now
-                </Link>
+                </a>
               </li>
             </ul>
           </motion.div>
@@ -113,18 +115,18 @@ export default function Footer() {
             <ul className="space-y-2 text-sm">
               <li>
                 <a
-                  href="mailto:info@11emmons.com"
+                  href="mailto:cnattress@gmail.com"
                   className="transition-colors hover:text-white"
                 >
-                  info@11emmons.com
+                  cnattress@gmail.com
                 </a>
               </li>
               <li>
                 <a
-                  href="tel:+1234567890"
+                  href="tel:+15706901180"
                   className="transition-colors hover:text-white"
                 >
-                  (123) 456-7890
+                  (570) 690-1180
                 </a>
               </li>
             </ul>

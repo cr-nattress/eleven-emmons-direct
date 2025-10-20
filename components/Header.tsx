@@ -16,7 +16,7 @@ export default function Header() {
     { name: 'Amenities', href: '#amenities' },
     { name: 'Gallery', href: '#gallery' },
     { name: 'Location', href: '#location' },
-    { name: 'Book Now', href: '#booking' },
+    { name: 'Book Now', href: 'https://airbnb.com/h/elevenemmons', external: true },
   ]
 
   return (
@@ -39,18 +39,33 @@ export default function Header() {
                 variants={staggerContainerVariants}
                 className="ml-10 flex items-baseline space-x-4"
               >
-                {navigation.map((item, index) => (
+                {navigation.map((item) => (
                   <motion.div key={item.name} variants={staggerItemVariants}>
-                    <Link
-                      href={item.href}
-                      className={`px-3 py-2 text-sm font-medium transition-colors hover:text-primary ${
-                        item.name === 'Book Now'
-                          ? 'rounded-md bg-primary text-white hover:bg-primary-dark'
-                          : 'text-gray-700'
-                      }`}
-                    >
-                      {item.name}
-                    </Link>
+                    {item.external ? (
+                      <a
+                        href={item.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={`px-3 py-2 text-sm font-medium transition-colors hover:text-primary ${
+                          item.name === 'Book Now'
+                            ? 'rounded-md bg-primary text-white hover:bg-primary-dark'
+                            : 'text-gray-700'
+                        }`}
+                      >
+                        {item.name}
+                      </a>
+                    ) : (
+                      <Link
+                        href={item.href}
+                        className={`px-3 py-2 text-sm font-medium transition-colors hover:text-primary ${
+                          item.name === 'Book Now'
+                            ? 'rounded-md bg-primary text-white hover:bg-primary-dark'
+                            : 'text-gray-700'
+                        }`}
+                      >
+                        {item.name}
+                      </Link>
+                    )}
                   </motion.div>
                 ))}
               </motion.div>
@@ -58,16 +73,31 @@ export default function Header() {
               <div className="ml-10 flex items-baseline space-x-4">
                 {navigation.map((item) => (
                   <div key={item.name}>
-                    <Link
-                      href={item.href}
-                      className={`px-3 py-2 text-sm font-medium transition-colors hover:text-primary ${
-                        item.name === 'Book Now'
-                          ? 'rounded-md bg-primary text-white hover:bg-primary-dark'
-                          : 'text-gray-700'
-                      }`}
-                    >
-                      {item.name}
-                    </Link>
+                    {item.external ? (
+                      <a
+                        href={item.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={`px-3 py-2 text-sm font-medium transition-colors hover:text-primary ${
+                          item.name === 'Book Now'
+                            ? 'rounded-md bg-primary text-white hover:bg-primary-dark'
+                            : 'text-gray-700'
+                        }`}
+                      >
+                        {item.name}
+                      </a>
+                    ) : (
+                      <Link
+                        href={item.href}
+                        className={`px-3 py-2 text-sm font-medium transition-colors hover:text-primary ${
+                          item.name === 'Book Now'
+                            ? 'rounded-md bg-primary text-white hover:bg-primary-dark'
+                            : 'text-gray-700'
+                        }`}
+                      >
+                        {item.name}
+                      </Link>
+                    )}
                   </div>
                 ))}
               </div>
@@ -180,17 +210,33 @@ export default function Header() {
               >
                 {navigation.map((item) => (
                   <motion.div key={item.name} variants={staggerItemVariants}>
-                    <Link
-                      href={item.href}
-                      className={`block rounded-md px-3 py-2 text-base font-medium transition-colors ${
-                        item.name === 'Book Now'
-                          ? 'bg-primary text-white hover:bg-primary-dark'
-                          : 'text-gray-700 hover:bg-gray-100 hover:text-primary'
-                      }`}
-                      onClick={() => setIsOpen(false)}
-                    >
-                      {item.name}
-                    </Link>
+                    {item.external ? (
+                      <a
+                        href={item.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={`block rounded-md px-3 py-2 text-base font-medium transition-colors ${
+                          item.name === 'Book Now'
+                            ? 'bg-primary text-white hover:bg-primary-dark'
+                            : 'text-gray-700 hover:bg-gray-100 hover:text-primary'
+                        }`}
+                        onClick={() => setIsOpen(false)}
+                      >
+                        {item.name}
+                      </a>
+                    ) : (
+                      <Link
+                        href={item.href}
+                        className={`block rounded-md px-3 py-2 text-base font-medium transition-colors ${
+                          item.name === 'Book Now'
+                            ? 'bg-primary text-white hover:bg-primary-dark'
+                            : 'text-gray-700 hover:bg-gray-100 hover:text-primary'
+                        }`}
+                        onClick={() => setIsOpen(false)}
+                      >
+                        {item.name}
+                      </Link>
+                    )}
                   </motion.div>
                 ))}
               </motion.div>
@@ -203,17 +249,33 @@ export default function Header() {
             <div className="space-y-1 px-2 pb-3 pt-2 sm:px-3">
               {navigation.map((item) => (
                 <div key={item.name}>
-                  <Link
-                    href={item.href}
-                    className={`block rounded-md px-3 py-2 text-base font-medium transition-colors ${
-                      item.name === 'Book Now'
-                        ? 'bg-primary text-white hover:bg-primary-dark'
-                        : 'text-gray-700 hover:bg-gray-100 hover:text-primary'
-                    }`}
-                    onClick={() => setIsOpen(false)}
-                  >
-                    {item.name}
-                  </Link>
+                  {item.external ? (
+                    <a
+                      href={item.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={`block rounded-md px-3 py-2 text-base font-medium transition-colors ${
+                        item.name === 'Book Now'
+                          ? 'bg-primary text-white hover:bg-primary-dark'
+                          : 'text-gray-700 hover:bg-gray-100 hover:text-primary'
+                      }`}
+                      onClick={() => setIsOpen(false)}
+                    >
+                      {item.name}
+                    </a>
+                  ) : (
+                    <Link
+                      href={item.href}
+                      className={`block rounded-md px-3 py-2 text-base font-medium transition-colors ${
+                        item.name === 'Book Now'
+                          ? 'bg-primary text-white hover:bg-primary-dark'
+                          : 'text-gray-700 hover:bg-gray-100 hover:text-primary'
+                      }`}
+                      onClick={() => setIsOpen(false)}
+                    >
+                      {item.name}
+                    </Link>
+                  )}
                 </div>
               ))}
             </div>

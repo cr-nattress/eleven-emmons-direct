@@ -15,12 +15,12 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     ),
 
     // Override img tags with Next.js Image
-    img: (props: any) => (
+    img: (props: React.ImgHTMLAttributes<HTMLImageElement>) => (
       <Image
-        src={props.src}
+        src={props.src ?? ''}
         alt={props.alt ?? ''}
-        width={props.width ?? 1200}
-        height={props.height ?? 600}
+        width={(props.width as number) ?? 1200}
+        height={(props.height as number) ?? 600}
         className="rounded-lg my-6 w-full h-auto"
       />
     ),

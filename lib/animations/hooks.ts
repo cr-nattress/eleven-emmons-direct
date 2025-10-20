@@ -8,7 +8,7 @@
  */
 
 import { useEffect, useRef, useState, useCallback } from 'react'
-import { useAnimation, AnimationControls } from 'framer-motion'
+import { useAnimation } from 'framer-motion'
 
 /**
  * Hook to check if component is mounted (client-side only)
@@ -77,7 +77,7 @@ export interface UseScrollAnimationReturn {
   /** Ref to attach to the element to observe */
   ref: React.RefObject<HTMLElement>
   /** Animation controls to use with motion components */
-  controls: AnimationControls
+  controls: ReturnType<typeof useAnimation>
   /** Whether element is currently in view */
   inView: boolean
 }
@@ -161,7 +161,7 @@ export interface UseStaggerAnimationReturn {
   /** Ref to attach to the container element */
   containerRef: React.RefObject<HTMLElement>
   /** Animation controls for the container */
-  controls: AnimationControls
+  controls: ReturnType<typeof useAnimation>
   /** Stagger delay value to use in variants */
   staggerDelay: number
 }
@@ -247,7 +247,7 @@ export function useStaggerAnimation(
  *   Content
  * </motion.div>
  */
-export function useEntranceAnimation(delay: number = 0): AnimationControls {
+export function useEntranceAnimation(delay: number = 0): ReturnType<typeof useAnimation> {
   const controls = useAnimation()
 
   useEffect(() => {

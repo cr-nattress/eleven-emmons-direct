@@ -116,12 +116,12 @@ export default function BookingWidget() {
                 Questions about your booking?
               </p>
               <motion.a
-                href="mailto:info@11emmons.com"
+                href="mailto:cnattress@gmail.com"
                 className="mt-2 inline-block text-sm font-medium text-primary hover:text-primary-dark"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                info@11emmons.com
+                cnattress@gmail.com
               </motion.a>
             </motion.div>
 
@@ -147,12 +147,12 @@ export default function BookingWidget() {
                 Speak with property management
               </p>
               <motion.a
-                href="tel:+1234567890"
+                href="tel:+15706901180"
                 className="mt-2 inline-block text-sm font-medium text-primary hover:text-primary-dark"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                (123) 456-7890
+                (570) 690-1180
               </motion.a>
             </motion.div>
           </motion.div>

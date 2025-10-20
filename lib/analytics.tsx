@@ -40,14 +40,21 @@ export function Analytics() {
  * @param label - Additional label for the event
  * @param value - Numeric value associated with the event
  */
+declare global {
+  interface Window {
+    gtag?: (...args: unknown[]) => void
+    dataLayer?: unknown[]
+  }
+}
+
 export function trackEvent(
   action: string,
   category: string,
   label?: string,
   value?: number
 ) {
-  if (typeof window !== 'undefined' && (window as any).gtag) {
-    ;(window as any).gtag('event', action, {
+  if (typeof window !== 'undefined' && window.gtag) {
+    window.gtag('event', action, {
       event_category: category,
       event_label: label,
       value: value,
