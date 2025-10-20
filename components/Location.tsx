@@ -1,4 +1,9 @@
 import { getMarkdownContent } from '@/lib/markdown'
+import { MDXRemote } from 'next-mdx-remote/rsc'
+import remarkGfm from 'remark-gfm'
+import rehypeSlug from 'rehype-slug'
+import rehypeAutolinkHeadings from 'rehype-autolink-headings'
+import rehypePrettyCode from 'rehype-pretty-code'
 
 export default async function Location() {
   const content = await getMarkdownContent('area')
@@ -103,7 +108,25 @@ export default async function Location() {
           {/* Content */}
           <div className="order-1 lg:order-2">
             <div className="prose prose-lg max-w-none">
-              <div dangerouslySetInnerHTML={{ __html: content.contentHtml }} />
+              <MDXRemote
+                source={content.source}
+                options={{
+                  mdxOptions: {
+                    remarkPlugins: [remarkGfm],
+                    rehypePlugins: [
+                      rehypeSlug,
+                      [rehypeAutolinkHeadings, { behavior: 'append' }],
+                      [
+                        rehypePrettyCode,
+                        {
+                          theme: 'github-dark',
+                          keepBackground: true,
+                        },
+                      ],
+                    ],
+                  },
+                }}
+              />
             </div>
 
             {/* Nearby attractions */}

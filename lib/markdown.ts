@@ -1,21 +1,20 @@
 import fs from 'fs'
 import path from 'path'
 import matter from 'gray-matter'
-import { marked } from 'marked'
 
 const contentDirectory = path.join(process.cwd(), 'content')
 
 export interface MarkdownContent {
   slug: string
   title?: string
-  contentHtml: string
+  source: string
   data: { [key: string]: any }
 }
 
 /**
  * Get and parse a markdown file from the content directory
  * @param slug - The name of the markdown file (without .md extension)
- * @returns Parsed markdown content with frontmatter data
+ * @returns Parsed markdown content with frontmatter data and raw source
  */
 export async function getMarkdownContent(
   slug: string
@@ -27,13 +26,10 @@ export async function getMarkdownContent(
     // Parse frontmatter and content
     const { data, content } = matter(fileContents)
 
-    // Convert markdown to HTML
-    const contentHtml = await marked(content)
-
     return {
       slug,
       title: data.title,
-      contentHtml,
+      source: content,
       data,
     }
   } catch (error) {
@@ -41,7 +37,7 @@ export async function getMarkdownContent(
     // Return default content if file doesn't exist
     return {
       slug,
-      contentHtml: '<p>Content coming soon...</p>',
+      source: '<p>Content coming soon...</p>',
       data: {},
     }
   }
@@ -55,8 +51,8 @@ export function getAllContentSlugs(): string[] {
   try {
     const fileNames = fs.readdirSync(contentDirectory)
     return fileNames
-      .filter((fileName) => fileName.endsWith('.md'))
-      .map((fileName) => fileName.replace(/\.md$/, ''))
+      .filter((fileName) => fileName.endsWith('.md') || fileName.endsWith('.mdx'))
+      .map((fileName) => fileName.replace(/\.mdx?$/, ''))
   } catch (error) {
     console.error('Error reading content directory', error)
     return []
