@@ -8,13 +8,18 @@ import HeroContent from './HeroContent'
 export default function Hero() {
   return (
     <section id="home" className="relative h-screen w-full">
-      {/* Hero Image - TODO: Replace with actual property image */}
+      {/* Hero Image */}
       <div className="absolute inset-0">
-        <div className="relative h-full w-full bg-gradient-to-b from-gray-900 to-gray-600">
-          {/* Placeholder for hero image */}
-          <div className="flex h-full items-center justify-center text-white">
-            <p className="text-sm opacity-50">Hero Image Placeholder</p>
-          </div>
+        <div className="relative h-full w-full">
+          <Image
+            src="/images/airbnb-2-1.png"
+            alt="11 Emmons Road Vacation Rental in Crested Butte"
+            fill
+            className="object-cover"
+            priority
+            sizes="100vw"
+            quality={90}
+          />
         </div>
         {/* Overlay */}
         <div className="absolute inset-0 bg-black/30"></div>

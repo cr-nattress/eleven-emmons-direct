@@ -9,37 +9,66 @@ import { slideUpVariants, staggerContainerVariants, staggerItemVariants } from '
 export default function Gallery() {
   const [selectedImage, setSelectedImage] = useState<number | null>(null)
 
-  // TODO: Replace with actual property images
   const images = [
     {
-      src: '/images/gallery-1.jpg',
-      alt: 'Living room with mountain views',
-      placeholder: true,
+      src: '/images/airbnb-2-1.png',
+      alt: 'Building exterior with mountain flowers in summer',
+      placeholder: false,
     },
     {
-      src: '/images/gallery-2.jpg',
-      alt: 'Master bedroom',
-      placeholder: true,
+      src: '/images/airbnb-1-1.png',
+      alt: 'Modern living room with open kitchen and mountain decor',
+      placeholder: false,
     },
     {
-      src: '/images/gallery-3.jpg',
-      alt: 'Kitchen and dining area',
-      placeholder: true,
+      src: '/images/airbnb-3-1.png',
+      alt: 'Living room with private balcony access',
+      placeholder: false,
     },
     {
-      src: '/images/gallery-4.jpg',
-      alt: 'Bathroom with modern fixtures',
-      placeholder: true,
+      src: '/images/airbnb-4-1.png',
+      alt: 'Fully equipped kitchen with bar seating',
+      placeholder: false,
     },
     {
-      src: '/images/gallery-5.jpg',
-      alt: 'Outdoor deck with seating',
-      placeholder: true,
+      src: '/images/airbnb-5-2.png',
+      alt: 'Master bedroom with custom wood accent wall',
+      placeholder: false,
     },
     {
-      src: '/images/gallery-6.jpg',
-      alt: 'Guest bedroom',
-      placeholder: true,
+      src: '/images/airbnb-6-1.png',
+      alt: 'Second bedroom with workspace and mountain art',
+      placeholder: false,
+    },
+    {
+      src: '/images/airbnb-5-1.png',
+      alt: 'Modern bathroom with ambient lighting',
+      placeholder: false,
+    },
+    {
+      src: '/images/airbnb-7-1.png',
+      alt: 'Private covered balcony with seating',
+      placeholder: false,
+    },
+    {
+      src: '/images/airbnb-6-2.png',
+      alt: 'Sunny outdoor deck with red seating',
+      placeholder: false,
+    },
+    {
+      src: '/images/airbnb-1-2.png',
+      alt: 'Cozy living room with balcony dining area',
+      placeholder: false,
+    },
+    {
+      src: '/images/airbnb-3-2.png',
+      alt: 'Kitchen with butcher block countertops',
+      placeholder: false,
+    },
+    {
+      src: '/images/airbnb-7-2.png',
+      alt: 'Games and entertainment for all ages',
+      placeholder: false,
     },
   ]
 
