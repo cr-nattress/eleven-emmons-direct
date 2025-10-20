@@ -1,0 +1,10 @@
+# User Stories Directory
+
+User story folders will be created in this directory.
+
+Each user story folder should follow the naming convention:
+- US-001-story-name/
+- US-002-story-name/
+- etc.
+
+Use the create-user-story.js script to generate user stories from the template.

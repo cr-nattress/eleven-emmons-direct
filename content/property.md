@@ -1,5 +1,22 @@
 ---
-title: About 11 Emmons Road
+title: About This Property
+guests: 4
+bedrooms: 1
+bathrooms: 1
+squareFeet: 650
+rating: 4.98
+reviewCount: 88
+opening: |
+  Wake up to panoramic views of snow-capped peaks and step directly onto the slopes from your private entrance. This thoughtfully designed condo at 11 Emmons Road offers true ski-in/ski-out access—no shuttles, no walking, just pure mountain convenience. Inside, you'll find a perfect blend of modern comfort and alpine charm, recently updated in 2024 to exceed the expectations of discerning travelers.
+closing: |
+  With smart home controls at your fingertips and high-speed WiFi throughout, this mountain retreat seamlessly blends modern technology with natural beauty. Whether you're here for epic powder days or peaceful mountain evenings, you'll appreciate the attention to detail that makes this condo feel like home.
+features:
+  - Ski-in/ski-out access (0 min walk to lift)
+  - Smart home controls (thermostat, lights, locks)
+  - Recently renovated (2024)
+  - High-speed WiFi (250+ Mbps)
+  - Mountain view balcony
+  - In-unit washer/dryer
 ---
 
 ## Your Ski-In/Ski-Out Mountain Retreat

@@ -8,7 +8,10 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "format": "prettier --write \"**/*.{ts,tsx,js,jsx,json,md}\""
+    "format": "prettier --write \"**/*.{ts,tsx,js,jsx,json,md}\"",
+    "epic:create": "node backlog/scripts/create-epic.js",
+    "story:create": "node backlog/scripts/create-user-story.js",
+    "task:create": "node backlog/scripts/create-task.js"
   },
   "dependencies": {
     "framer-motion": "^12.23.24",

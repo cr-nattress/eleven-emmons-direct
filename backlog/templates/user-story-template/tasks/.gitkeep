@@ -1,0 +1,10 @@
+# Tasks Directory
+
+Task markdown files will be created in this directory.
+
+Each task should follow the naming convention:
+- TASK-001-task-name.md
+- TASK-002-task-name.md
+- etc.
+
+Use the create-task.js script to generate tasks from the template.
