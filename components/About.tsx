@@ -46,19 +46,25 @@ export default async function About() {
                   <dt className="font-medium text-gray-700 min-w-[120px]">
                     Bedrooms:
                   </dt>
-                  <dd className="text-gray-600">2 Bedrooms</dd>
+                  <dd className="text-gray-600">1 Bedroom</dd>
                 </div>
                 <div className="flex items-start">
                   <dt className="font-medium text-gray-700 min-w-[120px]">
                     Bathrooms:
                   </dt>
-                  <dd className="text-gray-600">2 Bathrooms</dd>
+                  <dd className="text-gray-600">1 Bathroom</dd>
                 </div>
                 <div className="flex items-start">
                   <dt className="font-medium text-gray-700 min-w-[120px]">
                     Sleeps:
                   </dt>
-                  <dd className="text-gray-600">Up to 6 guests</dd>
+                  <dd className="text-gray-600">Up to 3 guests</dd>
+                </div>
+                <div className="flex items-start">
+                  <dt className="font-medium text-gray-700 min-w-[120px]">
+                    Rating:
+                  </dt>
+                  <dd className="text-gray-600">⭐ 4.98 (88 reviews)</dd>
                 </div>
               </dl>
             </div>
