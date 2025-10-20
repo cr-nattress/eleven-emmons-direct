@@ -31,7 +31,7 @@ export default function Header() {
           {/* Desktop Navigation */}
           <div className="hidden md:block">
             <motion.div
-              initial="hidden"
+              initial={false}
               animate="visible"
               variants={staggerContainerVariants}
               className="ml-10 flex items-baseline space-x-4"
