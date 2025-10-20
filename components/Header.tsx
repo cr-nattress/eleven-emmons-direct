@@ -104,7 +104,7 @@ export default function Header() {
       </nav>
 
       {/* Mobile menu */}
-      <AnimatePresence>
+      <AnimatePresence initial={false} mode="wait">
         {isOpen && (
           <motion.div
             initial="hidden"
