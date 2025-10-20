@@ -30,21 +30,27 @@ export default function Header() {
 
           {/* Desktop Navigation */}
           <div className="hidden md:block">
-            <div className="ml-10 flex items-baseline space-x-4">
-              {navigation.map((item) => (
-                <Link
-                  key={item.name}
-                  href={item.href}
-                  className={`px-3 py-2 text-sm font-medium transition-colors hover:text-primary ${
-                    item.name === 'Book Now'
-                      ? 'rounded-md bg-primary text-white hover:bg-primary-dark'
-                      : 'text-gray-700'
-                  }`}
-                >
-                  {item.name}
-                </Link>
+            <motion.div
+              initial="hidden"
+              animate="visible"
+              variants={staggerContainerVariants}
+              className="ml-10 flex items-baseline space-x-4"
+            >
+              {navigation.map((item, index) => (
+                <motion.div key={item.name} variants={staggerItemVariants}>
+                  <Link
+                    href={item.href}
+                    className={`px-3 py-2 text-sm font-medium transition-colors hover:text-primary ${
+                      item.name === 'Book Now'
+                        ? 'rounded-md bg-primary text-white hover:bg-primary-dark'
+                        : 'text-gray-700'
+                    }`}
+                  >
+                    {item.name}
+                  </Link>
+                </motion.div>
               ))}
-            </div>
+            </motion.div>
           </div>
 
           {/* Mobile menu button */}

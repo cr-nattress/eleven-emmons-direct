@@ -1,14 +1,35 @@
+'use client'
+
 import Link from 'next/link'
+import { motion } from 'framer-motion'
+import { useScrollAnimation } from '@/lib/animations/hooks'
+import { slideUpVariants, staggerContainerVariants, staggerItemVariants } from '@/lib/animations/variants'
 
 export default function Footer() {
   const currentYear = new Date().getFullYear()
 
+  const { ref: footerRef, controls: footerControls } = useScrollAnimation({
+    threshold: 0.1,
+    triggerOnce: true,
+  })
+
+  const { ref: bottomRef, controls: bottomControls } = useScrollAnimation({
+    threshold: 0.1,
+    triggerOnce: true,
+  })
+
   return (
     <footer className="bg-gray-900 text-gray-300">
       <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
-        <div className="grid gap-8 md:grid-cols-3">
+        <motion.div
+          ref={footerRef as React.RefObject<HTMLDivElement>}
+          initial="hidden"
+          animate={footerControls}
+          variants={staggerContainerVariants}
+          className="grid gap-8 md:grid-cols-3"
+        >
           {/* About */}
-          <div>
+          <motion.div variants={staggerItemVariants}>
             <h3 className="mb-4 text-lg font-semibold text-white">
               11 Emmons Road
             </h3>
@@ -25,10 +46,10 @@ export default function Footer() {
                 Crested Butte, CO 81224
               </p>
             </div>
-          </div>
+          </motion.div>
 
           {/* Quick Links */}
-          <div>
+          <motion.div variants={staggerItemVariants}>
             <h3 className="mb-4 text-lg font-semibold text-white">
               Quick Links
             </h3>
@@ -82,10 +103,10 @@ export default function Footer() {
                 </Link>
               </li>
             </ul>
-          </div>
+          </motion.div>
 
           {/* Contact & Social */}
-          <div>
+          <motion.div variants={staggerItemVariants}>
             <h3 className="mb-4 text-lg font-semibold text-white">
               Get in Touch
             </h3>
@@ -116,11 +137,17 @@ export default function Footer() {
                 Access this site anytime via the QR code at the property!
               </p>
             </div>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
 
         {/* Bottom bar */}
-        <div className="mt-8 border-t border-gray-800 pt-8 text-center text-sm">
+        <motion.div
+          ref={bottomRef as React.RefObject<HTMLDivElement>}
+          initial="hidden"
+          animate={bottomControls}
+          variants={slideUpVariants}
+          className="mt-8 border-t border-gray-800 pt-8 text-center text-sm"
+        >
           <p>
             &copy; {currentYear} 11 Emmons Road Vacation Rental. All rights
             reserved.
@@ -145,7 +172,7 @@ export default function Footer() {
               Netlify
             </a>
           </p>
-        </div>
+        </motion.div>
       </div>
     </footer>
   )
