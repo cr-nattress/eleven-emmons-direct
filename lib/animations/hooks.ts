@@ -11,6 +11,26 @@ import { useEffect, useRef, useState, useCallback } from 'react'
 import { useAnimation, AnimationControls } from 'framer-motion'
 
 /**
+ * Hook to check if component is mounted (client-side only)
+ * Prevents hydration errors by ensuring animations only run after mount
+ *
+ * @returns {boolean} True if component is mounted on client
+ *
+ * @example
+ * const mounted = useMounted()
+ * if (!mounted) return <div>Loading...</div>
+ */
+export function useMounted(): boolean {
+  const [mounted, setMounted] = useState(false)
+
+  useEffect(() => {
+    setMounted(true)
+  }, [])
+
+  return mounted
+}
+
+/**
  * Hook to detect if user prefers reduced motion
  * Returns true if user has prefers-reduced-motion enabled
  *
