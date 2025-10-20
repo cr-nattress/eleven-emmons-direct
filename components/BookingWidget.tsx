@@ -1,8 +1,26 @@
 'use client'
 
 import { useEffect } from 'react'
+import { motion } from 'framer-motion'
+import { useScrollAnimation } from '@/lib/animations/hooks'
+import { slideUpVariants, staggerContainerVariants, staggerItemVariants } from '@/lib/animations/variants'
 
 export default function BookingWidget() {
+  const { ref: headerRef, controls: headerControls } = useScrollAnimation({
+    threshold: 0.2,
+    triggerOnce: true,
+  })
+
+  const { ref: widgetRef, controls: widgetControls } = useScrollAnimation({
+    threshold: 0.1,
+    triggerOnce: true,
+  })
+
+  const { ref: cardsRef, controls: cardsControls } = useScrollAnimation({
+    threshold: 0.1,
+    triggerOnce: true,
+  })
+
   useEffect(() => {
     // TODO: Add Hospitable widget script
     // This will be replaced with actual Hospitable widget code
@@ -18,18 +36,30 @@ export default function BookingWidget() {
   return (
     <section id="booking" className="py-20 bg-white">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
+        <motion.div
+          ref={headerRef as React.RefObject<HTMLDivElement>}
+          initial="hidden"
+          animate={headerControls}
+          variants={slideUpVariants}
+          className="text-center mb-16"
+        >
           <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
             Book Your Stay
           </h2>
           <p className="mt-4 text-lg text-gray-600">
             Check availability and reserve your dates
           </p>
-        </div>
+        </motion.div>
 
         <div className="mx-auto max-w-4xl">
           {/* Placeholder for Hospitable widget */}
-          <div className="rounded-lg border-2 border-dashed border-gray-300 bg-gray-50 p-12 text-center">
+          <motion.div
+            ref={widgetRef as React.RefObject<HTMLDivElement>}
+            initial="hidden"
+            animate={widgetControls}
+            variants={slideUpVariants}
+            className="rounded-lg border-2 border-dashed border-gray-300 bg-gray-50 p-12 text-center"
+          >
             <div className="mx-auto max-w-md">
               <svg
                 className="mx-auto h-12 w-12 text-gray-400"
@@ -54,11 +84,20 @@ export default function BookingWidget() {
                 Add your NEXT_PUBLIC_HOSPITABLE_WIDGET_ID to .env.local
               </p>
             </div>
-          </div>
+          </motion.div>
 
           {/* Contact information */}
-          <div className="mt-12 grid gap-6 sm:grid-cols-2">
-            <div className="rounded-lg bg-gray-50 p-6 text-center">
+          <motion.div
+            ref={cardsRef as React.RefObject<HTMLDivElement>}
+            initial="hidden"
+            animate={cardsControls}
+            variants={staggerContainerVariants}
+            className="mt-12 grid gap-6 sm:grid-cols-2"
+          >
+            <motion.div
+              variants={staggerItemVariants}
+              className="rounded-lg bg-gray-50 p-6 text-center"
+            >
               <svg
                 className="mx-auto h-8 w-8 text-primary"
                 fill="none"
@@ -76,15 +115,20 @@ export default function BookingWidget() {
               <p className="mt-2 text-sm text-gray-600">
                 Questions about your booking?
               </p>
-              <a
+              <motion.a
                 href="mailto:info@11emmons.com"
                 className="mt-2 inline-block text-sm font-medium text-primary hover:text-primary-dark"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
               >
                 info@11emmons.com
-              </a>
-            </div>
+              </motion.a>
+            </motion.div>
 
-            <div className="rounded-lg bg-gray-50 p-6 text-center">
+            <motion.div
+              variants={staggerItemVariants}
+              className="rounded-lg bg-gray-50 p-6 text-center"
+            >
               <svg
                 className="mx-auto h-8 w-8 text-primary"
                 fill="none"
@@ -102,14 +146,16 @@ export default function BookingWidget() {
               <p className="mt-2 text-sm text-gray-600">
                 Speak with property management
               </p>
-              <a
+              <motion.a
                 href="tel:+1234567890"
                 className="mt-2 inline-block text-sm font-medium text-primary hover:text-primary-dark"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
               >
                 (123) 456-7890
-              </a>
-            </div>
-          </div>
+              </motion.a>
+            </motion.div>
+          </motion.div>
         </div>
       </div>
     </section>
