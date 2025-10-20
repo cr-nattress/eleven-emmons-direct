@@ -136,6 +136,50 @@ Rough effort estimates:
   - Story Points: 14
   - User Stories: 9
 
+### SEO Optimization Epics (Ski-In/Ski-Out Strategy)
+
+- **[EPIC-003: SEO Homepage Optimization](./epics/EPIC-003-seo-homepage-optimization/epic.md)**
+  - Status: To Do
+  - Priority: High
+  - Story Points: 5
+  - User Stories: 2
+  - Target: Week 1
+
+- **[EPIC-004: Schema Markup Implementation](./epics/EPIC-004-schema-markup-implementation/epic.md)**
+  - Status: To Do
+  - Priority: High
+  - Story Points: 3
+  - User Stories: 2
+  - Target: Week 1
+
+- **[EPIC-005: Ski-In/Ski-Out Pillar Page Creation](./epics/EPIC-005-pillar-page-creation/epic.md)**
+  - Status: To Do
+  - Priority: High
+  - Story Points: 8
+  - User Stories: 3
+  - Target: Weeks 1-2
+
+- **[EPIC-006: Image Optimization](./epics/EPIC-006-image-optimization/epic.md)**
+  - Status: To Do
+  - Priority: High
+  - Story Points: 3
+  - User Stories: 2
+  - Target: Week 1
+
+- **[EPIC-007: Google Business Profile](./epics/EPIC-007-google-business-profile/epic.md)**
+  - Status: To Do
+  - Priority: High
+  - Story Points: 2
+  - User Stories: 2
+  - Target: Week 1
+
+- **[EPIC-008: Blog Content Creation](./epics/EPIC-008-blog-content-creation/epic.md)**
+  - Status: To Do
+  - Priority: Medium
+  - Story Points: 20
+  - User Stories: 5
+  - Target: Weeks 2-6
+
 ## Adding New Items
 
 ### Creating a New Epic
