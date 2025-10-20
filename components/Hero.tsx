@@ -1,5 +1,9 @@
+'use client'
+
 import Image from 'next/image'
 import Link from 'next/link'
+import { motion } from 'framer-motion'
+import HeroContent from './HeroContent'
 
 export default function Hero() {
   return (
@@ -17,39 +21,15 @@ export default function Hero() {
       </div>
 
       {/* Hero Content */}
-      <div className="relative flex h-full items-center justify-center">
-        <div className="mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
-          <h1 className="mb-6 text-4xl font-bold tracking-tight text-white sm:text-5xl md:text-6xl">
-            Your Mountain Escape Awaits
-          </h1>
-          <p className="mb-8 text-xl text-gray-200 sm:text-2xl">
-            11 Emmons Road, Unit 324
-            <br />
-            Crested Butte, Colorado
-          </p>
-          <p className="mb-10 text-lg text-gray-300 sm:text-xl">
-            Book direct for the best rates and experience luxury in the heart of
-            the Rockies
-          </p>
-          <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
-            <Link
-              href="#booking"
-              className="rounded-lg bg-primary px-8 py-3 text-lg font-semibold text-white transition-all hover:bg-primary-dark hover:shadow-lg"
-            >
-              Book Your Stay
-            </Link>
-            <Link
-              href="#about"
-              className="rounded-lg border-2 border-white px-8 py-3 text-lg font-semibold text-white transition-all hover:bg-white hover:text-gray-900"
-            >
-              Learn More
-            </Link>
-          </div>
-        </div>
-      </div>
+      <HeroContent />
 
       {/* Scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2">
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 0.6, duration: 0.5 }}
+        className="absolute bottom-8 left-1/2 -translate-x-1/2"
+      >
         <Link
           href="#about"
           className="flex flex-col items-center text-white opacity-75 transition-opacity hover:opacity-100"
@@ -67,7 +47,7 @@ export default function Hero() {
             <path d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
           </svg>
         </Link>
-      </div>
+      </motion.div>
     </section>
   )
 }

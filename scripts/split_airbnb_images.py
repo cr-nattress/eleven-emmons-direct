@@ -1,7 +1,6 @@
 import os
 import glob
-from typing import Tuple
-import numpy as np
+from typing import Tuple, List
 from PIL import Image
 
 ROOT = os.path.dirname(os.path.dirname(__file__))
@@ -11,7 +10,7 @@ OUT_DIR = os.path.join(ROOT, "knowledge", "content", "images")
 os.makedirs(OUT_DIR, exist_ok=True)
 
 
-def find_white_band(projection: np.ndarray, min_width: int, vicinity: Tuple[int, int]) -> Tuple[int, int]:
+def find_white_band(projection: List[float], min_width: int, vicinity: Tuple[int, int]) -> Tuple[int, int]:
     """
     Find the widest high-brightness band within [vicinity_start, vicinity_end).
     Returns (start, end). If not found, returns (-1, -1).
@@ -21,12 +20,19 @@ def find_white_band(projection: np.ndarray, min_width: int, vicinity: Tuple[int,
     vend = min(len(projection), vend)
 
     # Normalize projection to [0, 1]
-    proj = projection.astype(np.float32)
-    proj = (proj - proj.min()) / (proj.ptp() + 1e-6)
+    segment = projection[vstart:vend] if vstart < vend else []
+    if not segment:
+        return (-1, -1)
+    minv = min(segment)
+    maxv = max(segment)
+    denom = (maxv - minv) if (maxv - minv) != 0 else 1.0
+    proj = [(p - minv) / denom for p in projection]
 
     # Threshold as 90th percentile inside vicinity to adapt to lighting
-    thr = np.percentile(proj[vstart:vend], 90)
-    mask = (proj >= thr).astype(np.uint8)
+    s_sorted = sorted(proj[vstart:vend])
+    idx = max(0, int(0.9 * (len(s_sorted) - 1)))
+    thr = s_sorted[idx] if s_sorted else 0.95
+    mask = [1 if p >= thr else 0 for p in proj]
 
     # Scan for longest contiguous run >= min_width inside vicinity
     best_len = 0
@@ -50,18 +56,22 @@ def find_white_band(projection: np.ndarray, min_width: int, vicinity: Tuple[int,
     return best
 
 
-essential_glob = os.path.join(SRC_DIR, "airbnb-*.png")
+essential_glob = os.path.join(SRC_DIR, "**", "airbnb-*.png")
 
 def split_image(path: str) -> None:
     img = Image.open(path).convert("RGB")
     w, h = img.size
-    arr = np.array(img)
+    # Convert to grayscale once
+    gray = img.convert("L")
+    px = gray.load()
 
-    # Compute brightness as mean across channels
-    gray = arr.mean(axis=2)
-
-    # Horizontal projection for row gutter
-    row_proj = gray.mean(axis=1)  # per-row brightness
+    # Horizontal projection for row gutter (mean brightness per row)
+    row_proj: List[float] = []
+    for y in range(h):
+        s = 0
+        for x in range(w):
+            s += px[x, y]
+        row_proj.append(s / float(w))
 
     # Expect the row gutter roughly around 60-75% of height (after big image)
     gutter_h_start, gutter_h_end = find_white_band(
@@ -83,8 +93,14 @@ def split_image(path: str) -> None:
     bottom_box = (0, bottom_y0, w, h)
 
     # Now inside the bottom region, locate vertical gutter
-    bottom_arr = gray[bottom_box[1]:bottom_box[3], :]
-    col_proj = bottom_arr.mean(axis=0)
+    y0, y1 = bottom_box[1], bottom_box[3]
+    # Column projection within bottom region
+    col_proj: List[float] = []
+    for x in range(w):
+        s = 0
+        for y in range(y0, y1):
+            s += px[x, y]
+        col_proj.append(s / float(max(1, (y1 - y0))))
     gutter_v_start, gutter_v_end = find_white_band(
         col_proj,
         min_width=max(4, w // 700),
