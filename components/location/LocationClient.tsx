@@ -1,7 +1,7 @@
 // components/location/LocationClient.tsx
 'use client'
 
-import { useState, ReactNode } from 'react'
+import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import LocationTabs from './LocationTabs'
 import WinterTab from './tabs/WinterTab'
@@ -12,10 +12,9 @@ import type { LocationFrontmatter } from '@/types/location'
 
 interface LocationClientProps {
   data: LocationFrontmatter
-  overviewContent: ReactNode
 }
 
-export default function LocationClient({ data, overviewContent }: LocationClientProps) {
+export default function LocationClient({ data }: LocationClientProps) {
   const [activeTab, setActiveTab] = useState('overview')
 
   return (
@@ -36,7 +35,7 @@ export default function LocationClient({ data, overviewContent }: LocationClient
           exit={{ opacity: 0, y: -20 }}
           transition={{ duration: 0.2 }}
         >
-          {activeTab === 'overview' && <OverviewTab>{overviewContent}</OverviewTab>}
+          {activeTab === 'overview' && <OverviewTab data={data} />}
           {activeTab === 'winter' && <WinterTab data={data} />}
           {activeTab === 'summer' && <SummerTab data={data} />}
           {activeTab === 'info' && <InfoTab data={data} />}

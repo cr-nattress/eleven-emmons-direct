@@ -15,6 +15,15 @@ export interface ActivitySection {
   features: string[]
 }
 
+export interface OverviewSection {
+  title: string
+  icon: string
+  preview: string
+  description?: string
+  stats?: StatItem[]
+  features?: string[]
+}
+
 export interface LocationFrontmatter {
   title: string
   subtitle: string
@@ -23,6 +32,10 @@ export interface LocationFrontmatter {
     label: string
     icon: string
   }>
+  townIntro?: OverviewSection
+  gettingHere?: OverviewSection
+  whatMakesSpecial?: OverviewSection
+  essentialInfo?: OverviewSection
   winterResort?: ActivitySection
   nordicSkiing?: ActivitySection
   otherWinterActivities?: string[]

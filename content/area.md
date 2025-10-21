@@ -16,6 +16,74 @@ tabs:
     label: Area Info
     icon: 🗺️
 
+# Overview Data
+townIntro:
+  title: Colorado's Last Great Ski Town
+  icon: 🏔️
+  preview: Historic Victorian town • 8,900 ft elevation • Authentic mountain character
+  description: "Crested Butte is a historic mountain town that has retained its authentic character and small-town charm. Known for its Victorian-era buildings, world-class skiing, mountain biking, and stunning wildflower displays, Crested Butte offers an unforgettable Colorado mountain experience. Situated in the heart of the Gunnison National Forest at 8,900 feet elevation, Crested Butte is surrounded by some of Colorado's most spectacular mountain peaks. The town has evolved from its mining roots into one of the West's premier outdoor recreation destinations while maintaining its laid-back, friendly atmosphere."
+
+gettingHere:
+  title: Getting Here
+  icon: ✈️
+  preview: Two airports • Shuttle service • Free parking
+  stats:
+    - value: "30 mi"
+      label: "GUC Airport"
+      icon: "✈️"
+    - value: "4 hrs"
+      label: "Denver DIA"
+      icon: "🚗"
+    - value: "Free"
+      label: "Parking"
+      icon: "🅿️"
+  features:
+    - "Gunnison-Crested Butte Airport - 30 miles (45 min drive)"
+    - "Denver International Airport - 230 miles (4 hours)"
+    - "Mountain Express shuttle service from both airports"
+    - "Scenic drives through the Rocky Mountains"
+    - "Free parking at the property"
+    - "No car needed once you arrive"
+
+whatMakesSpecial:
+  title: What Makes Crested Butte Special
+  icon: ⭐
+  preview: Authentic character • Ski-in/ski-out • Free transportation
+  features:
+    - "Authentic Character - No chain stores, genuine mountain town vibe"
+    - "Ski-In/Ski-Out Access - Property steps from the lifts"
+    - "Free Transportation - Year-round shuttle system"
+    - "Compact & Walkable - Everything within easy reach"
+    - "Four-Season Recreation - World-class skiing, biking, hiking"
+    - "Small-Town Hospitality - Friendly locals, relaxed atmosphere"
+    - "High Altitude Beauty - Stunning mountain views, crisp clean air"
+
+essentialInfo:
+  title: Essential Information
+  icon: ℹ️
+  preview: High altitude • Variable weather • Plan ahead
+  stats:
+    - value: "8,900+"
+      label: "Elevation (ft)"
+      icon: "⛰️"
+      highlight: true
+    - value: "300+"
+      label: "Snow (inches)"
+      icon: "❄️"
+    - value: "40-75°F"
+      label: "Summer"
+      icon: "☀️"
+  features:
+    - "Take it easy your first day - high altitude requires adjustment"
+    - "Stay hydrated - drink plenty of water"
+    - "Winter temps: 10-35°F with 300+ inches annual snowfall"
+    - "Summer temps: 40-75°F with afternoon thunderstorms"
+    - "Pack layers - weather changes quickly in mountains"
+    - "Book restaurants ahead - popular spots fill up"
+    - "Sunscreen essential - UV rays stronger at altitude"
+    - "Respect wildlife - bears, moose, and elk in area"
+    - "Grocery shopping in town or Gunnison (30 min)"
+
 # Winter Activities Data
 winterResort:
   title: Crested Butte Mountain Resort
@@ -181,54 +249,3 @@ nearbyAttractions:
     - "Aspen and Maroon Bells - 2 hours (scenic route)"
     - "Great Sand Dunes National Park - 3 hours"
 ---
-
-## Colorado's Last Great Ski Town
-
-Crested Butte is a historic mountain town that has retained its authentic character and small-town charm. Known for its Victorian-era buildings, world-class skiing, mountain biking, and stunning wildflower displays, Crested Butte offers an unforgettable Colorado mountain experience.
-
-Situated in the heart of the Gunnison National Forest at 8,900 feet elevation, Crested Butte is surrounded by some of Colorado's most spectacular mountain peaks. The town has evolved from its mining roots into one of the West's premier outdoor recreation destinations while maintaining its laid-back, friendly atmosphere.
-
-### Year-Round Mountain Paradise
-
-Whether you're visiting in winter for legendary powder days or summer for wildflower-filled meadows and world-class mountain biking, Crested Butte delivers an authentic Colorado experience. The historic downtown, built in the 1880s during the mining boom, now hosts award-winning restaurants, craft breweries, art galleries, and unique boutiques—all within easy walking distance.
-
-### Getting Here
-
-**By Air:**
-- **Gunnison-Crested Butte Airport** - 30 miles (45 min drive)
-- **Denver International Airport** - 230 miles (4 hours)
-- Mountain Express shuttle service available from both airports
-
-**By Car:**
-- Scenic drives through the Rocky Mountains
-- Free parking available at the property
-- No car needed once you arrive - free shuttle system connects town to resort
-
-### What Makes Crested Butte Special
-
-- **Authentic Character** - No chain stores, genuine mountain town vibe
-- **Ski-In/Ski-Out Access** - Our property is steps from the lifts
-- **Free Transportation** - Year-round shuttle system throughout town and to the resort
-- **Compact & Walkable** - Everything within easy reach
-- **Four-Season Recreation** - World-class skiing, mountain biking, hiking, and more
-- **Small-Town Hospitality** - Friendly locals, relaxed atmosphere
-- **High Altitude Beauty** - Stunning mountain views, crisp clean air
-
-### Essential Information
-
-**Elevation:** 8,900+ feet (Altitude: take it easy your first day, stay hydrated)
-
-**Weather:**
-- **Winter:** 10-35°F with 300+ inches of annual snowfall
-- **Summer:** 40-75°F with afternoon thunderstorms common
-- **Pack layers** - Weather changes quickly in the mountains
-
-**Local Tips:**
-- Book restaurants ahead - popular spots fill up quickly
-- Sunscreen essential - UV rays stronger at high altitude
-- Respect wildlife - bears, moose, and elk call this area home
-- Grocery shopping available in town or Gunnison (30 min away)
-
-### Explore More
-
-Use the tabs above to discover specific winter activities, summer adventures, dining options, and area attractions. We're happy to provide personalized recommendations based on your interests and the season of your visit!

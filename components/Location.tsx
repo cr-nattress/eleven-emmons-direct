@@ -1,24 +1,10 @@
 import { getMarkdownContent } from '@/lib/markdown'
-import { MDXRemote } from 'next-mdx-remote/rsc'
-import remarkGfm from 'remark-gfm'
 import LocationClient from './location/LocationClient'
 import type { LocationFrontmatter } from '@/types/location'
 
 export default async function Location() {
   const content = await getMarkdownContent('area')
   const frontmatter = content.data as unknown as LocationFrontmatter
-
-  // Render MDX content server-side
-  const overviewContent = (
-    <MDXRemote
-      source={content.source}
-      options={{
-        mdxOptions: {
-          remarkPlugins: [remarkGfm],
-        },
-      }}
-    />
-  )
 
   return (
     <section id="location" className="py-16 md:py-20 bg-gray-50">
@@ -34,7 +20,7 @@ export default async function Location() {
         </div>
 
         {/* Tab Navigation and Content */}
-        <LocationClient data={frontmatter} overviewContent={overviewContent} />
+        <LocationClient data={frontmatter} />
       </div>
     </section>
   )
