@@ -29,8 +29,32 @@ function prompt(question) {
   });
 }
 
+function ensureBacklogStructure() {
+  const backlogDir = path.join(__dirname, '..');
+  const epicsDir = path.join(backlogDir, 'epics');
+  
+  // Create backlog directory if it doesn't exist
+  if (!fs.existsSync(backlogDir)) {
+    fs.mkdirSync(backlogDir, { recursive: true });
+    console.log('📁 Created backlog directory');
+  }
+  
+  // Create epics directory if it doesn't exist
+  if (!fs.existsSync(epicsDir)) {
+    fs.mkdirSync(epicsDir, { recursive: true });
+    console.log('📁 Created epics directory');
+  }
+  
+  return epicsDir;
+}
+
 function getNextEpicNumber() {
-  const epicsDir = path.join(__dirname, '../epics');
+  const epicsDir = ensureBacklogStructure();
+  
+  if (!fs.existsSync(epicsDir)) {
+    return 1;
+  }
+  
   const epics = fs.readdirSync(epicsDir)
     .filter(name => name.startsWith('EPIC-'))
     .map(name => parseInt(name.split('-')[1]))
@@ -105,9 +129,12 @@ async function createEpic() {
   
   rl.close();
   
+  // Ensure backlog structure exists
+  const epicsDir = ensureBacklogStructure();
+  
   // Create epic folder
   const epicFolderName = `EPIC-${paddedNumber}-${toKebabCase(epicName)}`;
-  const epicDir = path.join(__dirname, '../epics', epicFolderName);
+  const epicDir = path.join(epicsDir, epicFolderName);
   
   if (fs.existsSync(epicDir)) {
     console.error(`\n❌ Epic folder already exists: ${epicFolderName}`);

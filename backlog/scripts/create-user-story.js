@@ -27,8 +27,31 @@ function prompt(question) {
   });
 }
 
+function ensureBacklogStructure() {
+  const backlogDir = path.join(__dirname, '..');
+  const epicsDir = path.join(backlogDir, 'epics');
+  
+  // Create backlog directory if it doesn't exist
+  if (!fs.existsSync(backlogDir)) {
+    fs.mkdirSync(backlogDir, { recursive: true });
+    console.log('📁 Created backlog directory');
+  }
+  
+  // Create epics directory if it doesn't exist
+  if (!fs.existsSync(epicsDir)) {
+    fs.mkdirSync(epicsDir, { recursive: true });
+    console.log('📁 Created epics directory');
+  }
+  
+  return epicsDir;
+}
+
 function findEpic(epicIdentifier) {
-  const epicsDir = path.join(__dirname, '../epics');
+  const epicsDir = ensureBacklogStructure();
+  
+  if (!fs.existsSync(epicsDir)) {
+    return epicIdentifier ? null : [];
+  }
   
   if (!epicIdentifier) {
     // List available epics
@@ -114,7 +137,8 @@ async function createUserStory() {
   
   console.log(`\n📁 Epic: ${epicFolder}\n`);
   
-  const epicDir = path.join(__dirname, '../epics', epicFolder);
+  const epicsDir = ensureBacklogStructure();
+  const epicDir = path.join(epicsDir, epicFolder);
   const nextNumber = getNextStoryNumber(epicDir);
   
   // Get story details

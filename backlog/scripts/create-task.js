@@ -26,8 +26,31 @@ function prompt(question) {
   });
 }
 
+function ensureBacklogStructure() {
+  const backlogDir = path.join(__dirname, '..');
+  const epicsDir = path.join(backlogDir, 'epics');
+  
+  // Create backlog directory if it doesn't exist
+  if (!fs.existsSync(backlogDir)) {
+    fs.mkdirSync(backlogDir, { recursive: true });
+    console.log('📁 Created backlog directory');
+  }
+  
+  // Create epics directory if it doesn't exist
+  if (!fs.existsSync(epicsDir)) {
+    fs.mkdirSync(epicsDir, { recursive: true });
+    console.log('📁 Created epics directory');
+  }
+  
+  return epicsDir;
+}
+
 function findEpic(epicIdentifier) {
-  const epicsDir = path.join(__dirname, '../epics');
+  const epicsDir = ensureBacklogStructure();
+  
+  if (!fs.existsSync(epicsDir)) {
+    return epicIdentifier ? null : [];
+  }
   
   if (!epicIdentifier) {
     const epics = fs.readdirSync(epicsDir)
@@ -176,6 +199,7 @@ async function createTask() {
   
   console.log(`\n📖 User Story: ${storyFolder}\n`);
   
+  const epicsDir = ensureBacklogStructure();
   const storyDir = path.join(epicDir, 'user-stories', storyFolder);
   const nextNumber = getNextTaskNumber(storyDir);
   
