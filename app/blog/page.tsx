@@ -17,6 +17,46 @@ export const metadata: Metadata = {
 // Blog post metadata
 const blogPosts = [
   {
+    slug: 'best-time-to-book-crested-butte',
+    title: 'Best Time to Book Crested Butte Ski Vacation',
+    excerpt:
+      'When should you book your Crested Butte ski vacation? Strategic guide to pricing, availability, and optimal booking windows.',
+    date: '2025-10-29',
+    readTime: '7 min read',
+    image: '/images/airbnb-2-1.png',
+    category: 'Planning',
+  },
+  {
+    slug: 'what-to-pack-ski-in-ski-out',
+    title: 'What to Pack for Ski-In/Ski-Out Rental',
+    excerpt:
+      'Complete packing guide for ski-in/ski-out rentals. Learn what you need, what to skip, and how proximity changes packing strategy.',
+    date: '2025-10-29',
+    readTime: '6 min read',
+    image: '/images/airbnb-5-2.png',
+    category: 'Planning',
+  },
+  {
+    slug: 'ski-vacation-planning-why-location-matters',
+    title: 'Ski Vacation Planning: Why Location Is Everything',
+    excerpt:
+      'Essential guide to choosing ski rental location. Learn why proximity to lifts transforms your vacation and what questions to ask.',
+    date: '2025-10-29',
+    readTime: '7 min read',
+    image: '/images/airbnb-2-1.png',
+    category: 'Planning',
+  },
+  {
+    slug: 'why-families-love-ski-in-ski-out',
+    title: 'Why Families Love Ski-In/Ski-Out Rentals',
+    excerpt:
+      'Discover why ski-in/ski-out access is a game-changer for family ski vacations. From flexible schedules to safety benefits.',
+    date: '2025-10-29',
+    readTime: '6 min read',
+    image: '/images/airbnb-1-1.png',
+    category: 'Family',
+  },
+  {
     slug: 'a-day-at-ski-in-ski-out-rental',
     title: 'A Day at a Ski-In/Ski-Out Rental: Hour-by-Hour Guide',
     excerpt:
