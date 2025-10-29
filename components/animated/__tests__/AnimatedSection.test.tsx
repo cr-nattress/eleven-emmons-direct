@@ -45,13 +45,13 @@ describe('AnimatedSection Component', () => {
     expect(screen.getByText('Threshold Section')).toBeInTheDocument()
   })
 
-  it('renders with stagger delay', () => {
+  it('renders with delay', () => {
     render(
-      <AnimatedSection staggerDelay={0.2}>
-        <div>Staggered Section</div>
+      <AnimatedSection delay={0.2}>
+        <div>Delayed Section</div>
       </AnimatedSection>
     )
-    expect(screen.getByText('Staggered Section')).toBeInTheDocument()
+    expect(screen.getByText('Delayed Section')).toBeInTheDocument()
   })
 
   it('renders complex children', () => {

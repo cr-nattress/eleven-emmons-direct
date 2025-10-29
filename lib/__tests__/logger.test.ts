@@ -8,14 +8,14 @@ describe('Logger Utility', () => {
 
   beforeEach(() => {
     originalNodeEnv = process.env.NODE_ENV
-    process.env.NODE_ENV = 'development'
+    ;(process.env as any).NODE_ENV = 'development'
     consoleInfoSpy = jest.spyOn(console, 'info').mockImplementation()
     consoleWarnSpy = jest.spyOn(console, 'warn').mockImplementation()
     consoleErrorSpy = jest.spyOn(console, 'error').mockImplementation()
   })
 
   afterEach(() => {
-    process.env.NODE_ENV = originalNodeEnv
+    ;(process.env as any).NODE_ENV = originalNodeEnv
     consoleInfoSpy.mockRestore()
     consoleWarnSpy.mockRestore()
     consoleErrorSpy.mockRestore()

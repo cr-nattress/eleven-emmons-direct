@@ -1,5 +1,6 @@
 # 11 Emmons Road - Vacation Rental Website
 
+[![CI](https://github.com/cr-nattress/eleven-emmons-direct/actions/workflows/ci.yml/badge.svg)](https://github.com/cr-nattress/eleven-emmons-direct/actions/workflows/ci.yml)
 [![Next.js](https://img.shields.io/badge/Next.js-14.2-black?style=flat-square&logo=next.js)](https://nextjs.org/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.4-blue?style=flat-square&logo=typescript)](https://www.typescriptlang.org/)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind-3.4-38B2AC?style=flat-square&logo=tailwind-css)](https://tailwindcss.com/)
@@ -12,6 +13,7 @@ A modern, high-performance direct booking website for a ski-in/ski-out vacation 
 This website showcases a premium 1-bedroom condo in Mt. Crested Butte with immediate ski lift access. The site features dynamic content management through MDX, stunning property photography, and integrated booking functionality to drive direct reservations and reduce third-party booking fees.
 
 **Property Highlights:**
+
 - Ski-in/ski-out location at Mt. Crested Butte
 - 4.98-star rating with 88+ guest reviews
 - Modern, fully-equipped 1-bedroom condo
@@ -34,12 +36,14 @@ This website showcases a premium 1-bedroom condo in Mt. Crested Butte with immed
 ## Tech Stack
 
 ### Core
+
 - **[Next.js 14](https://nextjs.org/)** - React framework with App Router
 - **[TypeScript](https://www.typescriptlang.org/)** - Type-safe development
 - **[React 18](https://react.dev/)** - UI library
 - **[Tailwind CSS](https://tailwindcss.com/)** - Utility-first CSS framework
 
 ### Content & Markdown
+
 - **[next-mdx-remote](https://github.com/hashicorp/next-mdx-remote)** v5 - Server-side MDX rendering
 - **[gray-matter](https://github.com/jonschlinkert/gray-matter)** - Frontmatter parsing
 - **[remark-gfm](https://github.com/remarkjs/remark-gfm)** - GitHub Flavored Markdown support
@@ -49,6 +53,7 @@ This website showcases a premium 1-bedroom condo in Mt. Crested Butte with immed
 - **[Shiki](https://shiki.matsu.io/)** - Code syntax highlighter
 
 ### Development Tools
+
 - **[ESLint](https://eslint.org/)** - Code linting
 - **[Prettier](https://prettier.io/)** - Code formatting
 - **[PostCSS](https://postcss.org/)** - CSS processing
@@ -64,17 +69,20 @@ This website showcases a premium 1-bedroom condo in Mt. Crested Butte with immed
 ### Installation
 
 1. Clone the repository:
+
    ```bash
    git clone https://github.com/cr-nattress/eleven-emmons-direct.git
    cd eleven-emmons-direct
    ```
 
 2. Install dependencies:
+
    ```bash
    npm install
    ```
 
 3. Set up environment variables:
+
    ```bash
    # Copy the example environment file
    cp .env.example .env.local
@@ -90,6 +98,7 @@ This website showcases a premium 1-bedroom condo in Mt. Crested Butte with immed
    See the [Environment Variables](#environment-variables) section below for detailed configuration.
 
 4. Run the development server:
+
    ```bash
    npm run dev
    ```
@@ -106,6 +115,37 @@ This website showcases a premium 1-bedroom condo in Mt. Crested Butte with immed
 - `npm run test:watch` - Run tests in watch mode
 - `npm run test:coverage` - Run tests with coverage report
 - `npm run test:e2e` - Run Playwright end-to-end tests
+- `npm run validate` - Run all quality checks (type-check, lint, format-check, test)
+
+## Continuous Integration
+
+This project uses GitHub Actions for automated quality assurance. Every push and pull request triggers:
+
+- **Type Checking** - Verify TypeScript types
+- **Linting** - Check code style with ESLint
+- **Formatting** - Verify code format with Prettier
+- **Testing** - Run Jest test suite with coverage
+- **Build Verification** - Ensure production build succeeds
+- **Security Audit** - Check for vulnerabilities with npm audit
+
+### CI Workflow
+
+The CI pipeline runs automatically on:
+
+- Pushes to `master`, `main`, or `develop` branches
+- Pull requests targeting `master` or `main`
+
+View workflow runs: [GitHub Actions](https://github.com/cr-nattress/eleven-emmons-direct/actions)
+
+### Running Checks Locally
+
+Before pushing code, run all checks locally:
+
+```bash
+npm run validate
+```
+
+This runs the same checks as CI, catching issues before they reach the remote repository.
 
 ## Testing
 
@@ -140,6 +180,7 @@ npm run test:e2e
 Current test coverage: **40%+ across all metrics**
 
 **Coverage by Category:**
+
 - **Critical Components**: 100% (Header, Footer, Hero, About, Booking Widget)
 - **Utility Functions**: 100% (markdown parsing, logger, configuration)
 - **Animated Components**: 70%+ (AnimatedButton, AnimatedCard, AnimatedSection)
@@ -147,6 +188,7 @@ Current test coverage: **40%+ across all metrics**
 
 **Testing Strategy:**
 We follow a "critical path" testing approach, prioritizing:
+
 1. User-facing components (Header, Footer, Hero, About, Booking)
 2. Core utilities (markdown processing, logging, environment config)
 3. Interactive elements (buttons, cards, animations)
@@ -198,6 +240,7 @@ describe('Header Component', () => {
 ### Continuous Integration
 
 Tests run automatically on all pull requests. Coverage thresholds are enforced to maintain code quality:
+
 - Statements: 40%
 - Branches: 25%
 - Functions: 28%
@@ -265,9 +308,7 @@ Example:
 
 This is regular markdown content.
 
-<Callout type="info">
-  Book direct and save on fees!
-</Callout>
+<Callout type="info">Book direct and save on fees!</Callout>
 
 <FeatureHighlight title="Ski-In/Ski-Out Access">
   Walk right to the lifts from your door!
@@ -338,6 +379,7 @@ This project uses environment variables for optional third-party integrations. A
 #### Setup
 
 1. Copy the example file:
+
    ```bash
    cp .env.example .env.local
    ```
@@ -375,6 +417,7 @@ This project uses environment variables for optional third-party integrations. A
 #### Development Warnings
 
 In development mode, the app will show helpful console warnings if optional environment variables are missing. These warnings include:
+
 - Which variable is missing
 - What feature will be affected
 - Where to find setup instructions
@@ -384,11 +427,13 @@ In development mode, the app will show helpful console warnings if optional envi
 For production deployments (Vercel, Netlify, etc.), add these environment variables in your hosting platform's dashboard:
 
 **Vercel:**
+
 1. Go to Project Settings → Environment Variables
 2. Add variables with the `NEXT_PUBLIC_` prefix
 3. Redeploy your application
 
 **Netlify:**
+
 1. Go to Site Settings → Environment Variables
 2. Add variables with the `NEXT_PUBLIC_` prefix
 3. Trigger a new deploy
@@ -407,6 +452,7 @@ This project uses next-mdx-remote v5 with the App Router pattern:
 - Simplified API compared to v4
 
 Key differences from v4:
+
 - Import from `next-mdx-remote/rsc` instead of `next-mdx-remote`
 - No need for `serialize()` function
 - Pass raw markdown source directly to `<MDXRemote>`

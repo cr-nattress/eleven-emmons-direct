@@ -22,13 +22,14 @@ export function mockIntersectionObserver() {
     unobserve: () => null,
     disconnect: () => null,
   })
-  window.IntersectionObserver = mockIntersectionObserver as any
+  window.IntersectionObserver = mockIntersectionObserver as unknown as typeof IntersectionObserver
 }
 
 /**
  * Helper to wait for async operations
  */
-export const waitForAsync = () => new Promise(resolve => setTimeout(resolve, 0))
+export const waitForAsync = () =>
+  new Promise((resolve) => setTimeout(resolve, 0))
 
 // Re-export everything from RTL
 export * from '@testing-library/react'
