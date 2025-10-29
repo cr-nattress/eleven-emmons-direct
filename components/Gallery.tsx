@@ -132,6 +132,8 @@ export default function Gallery() {
                   fill
                   className="object-cover"
                   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  loading={index < 3 ? 'eager' : 'lazy'}
+                  priority={index < 3}
                 />
               )}
               <div className="absolute inset-0 bg-black/0 transition-colors group-hover:bg-black/20" />
@@ -191,6 +193,8 @@ export default function Gallery() {
                     width={1200}
                     height={800}
                     className="h-auto max-h-[90vh] w-auto object-contain"
+                    quality={85}
+                    priority={false}
                   />
                 )}
               </motion.div>
