@@ -3,6 +3,7 @@
 import { MapContainer, TileLayer, Marker, Popup, Circle } from 'react-leaflet'
 import 'leaflet/dist/leaflet.css'
 import L from 'leaflet'
+import { siteConfig } from '@/config/site'
 
 // Fix for default marker icons in Next.js
 // This is required because webpack breaks the default icon paths
@@ -40,7 +41,7 @@ export default function LeafletMap() {
               Your Ski-In/Ski-Out Luxury Rental
             </p>
             <a
-              href="https://airbnb.com/h/elevenemmons"
+              href={siteConfig.booking.airbnbUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-block px-4 py-2 bg-blue-600 text-white rounded text-sm hover:bg-blue-700 transition-colors"

@@ -1,6 +1,7 @@
 import fs from 'fs'
 import path from 'path'
 import matter from 'gray-matter'
+import { logger } from './logger'
 
 const contentDirectory = path.join(process.cwd(), 'content')
 
@@ -33,7 +34,7 @@ export async function getMarkdownContent(
       data,
     }
   } catch (error) {
-    console.error(`Error reading markdown file: ${slug}.md`, error)
+    logger.error('Error reading markdown file:', slug, error)
     // Return default content if file doesn't exist
     return {
       slug,
@@ -54,7 +55,7 @@ export function getAllContentSlugs(): string[] {
       .filter((fileName) => fileName.endsWith('.md') || fileName.endsWith('.mdx'))
       .map((fileName) => fileName.replace(/\.mdx?$/, ''))
   } catch (error) {
-    console.error('Error reading content directory', error)
+    logger.error('Error reading content directory', error)
     return []
   }
 }

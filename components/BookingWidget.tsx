@@ -4,6 +4,9 @@ import { useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { useScrollAnimation } from '@/lib/animations/hooks'
 import { slideUpVariants, staggerContainerVariants, staggerItemVariants } from '@/lib/animations/variants'
+import { logger } from '@/lib/logger'
+import { siteConfig } from '@/config/site'
+import { env } from '@/lib/env'
 
 export default function BookingWidget() {
   const { ref: headerRef, controls: headerControls } = useScrollAnimation({
@@ -24,11 +27,11 @@ export default function BookingWidget() {
   useEffect(() => {
     // TODO: Add Hospitable widget script
     // This will be replaced with actual Hospitable widget code
-    const widgetId = process.env.NEXT_PUBLIC_HOSPITABLE_WIDGET_ID
+    const widgetId = env.HOSPITABLE_WIDGET_ID
 
     if (widgetId) {
       // Load Hospitable widget script
-      console.log('Hospitable Widget ID:', widgetId)
+      logger.info('Hospitable Widget ID configured')
       // Add script loading logic here when widget is configured
     }
   }, [])
@@ -116,12 +119,12 @@ export default function BookingWidget() {
                 Questions about your booking?
               </p>
               <motion.a
-                href="mailto:cnattress@gmail.com"
+                href={`mailto:${siteConfig.contact.email}`}
                 className="mt-2 inline-block text-sm font-medium text-primary hover:text-primary-dark"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                cnattress@gmail.com
+                {siteConfig.contact.email}
               </motion.a>
             </motion.div>
 
@@ -147,12 +150,12 @@ export default function BookingWidget() {
                 Speak with property management
               </p>
               <motion.a
-                href="tel:+15706901180"
+                href={`tel:${siteConfig.contact.phone.tel}`}
                 className="mt-2 inline-block text-sm font-medium text-primary hover:text-primary-dark"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                (570) 690-1180
+                {siteConfig.contact.phone.display}
               </motion.a>
             </motion.div>
           </motion.div>

@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { motion } from 'framer-motion'
 import { useScrollAnimation } from '@/lib/animations/hooks'
 import { slideUpVariants, staggerContainerVariants, staggerItemVariants } from '@/lib/animations/variants'
+import { siteConfig } from '@/config/site'
 
 export default function Footer() {
   const currentYear = new Date().getFullYear()
@@ -39,11 +40,11 @@ export default function Footer() {
             </p>
             <div className="mt-4">
               <p className="text-sm">
-                Unit 324
+                {siteConfig.property.address.unit}
                 <br />
-                11 Emmons Road
+                {siteConfig.property.address.street}
                 <br />
-                Crested Butte, CO 81224
+                {siteConfig.property.address.city}, {siteConfig.property.address.state} {siteConfig.property.address.zip}
               </p>
             </div>
           </motion.div>
@@ -96,7 +97,7 @@ export default function Footer() {
               </li>
               <li>
                 <a
-                  href="https://airbnb.com/h/elevenemmons"
+                  href={siteConfig.booking.airbnbUrl}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="transition-colors hover:text-white"
@@ -115,18 +116,18 @@ export default function Footer() {
             <ul className="space-y-2 text-sm">
               <li>
                 <a
-                  href="mailto:cnattress@gmail.com"
+                  href={`mailto:${siteConfig.contact.email}`}
                   className="transition-colors hover:text-white"
                 >
-                  cnattress@gmail.com
+                  {siteConfig.contact.email}
                 </a>
               </li>
               <li>
                 <a
-                  href="tel:+15706901180"
+                  href={`tel:${siteConfig.contact.phone.tel}`}
                   className="transition-colors hover:text-white"
                 >
-                  (570) 690-1180
+                  {siteConfig.contact.phone.display}
                 </a>
               </li>
             </ul>

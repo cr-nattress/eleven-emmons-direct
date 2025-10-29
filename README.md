@@ -74,12 +74,27 @@ This website showcases a premium 1-bedroom condo in Mt. Crested Butte with immed
    npm install
    ```
 
-3. Run the development server:
+3. Set up environment variables:
+   ```bash
+   # Copy the example environment file
+   cp .env.example .env.local
+
+   # Edit .env.local and add your API keys (optional)
+   ```
+
+   The site will work without environment variables, but you can configure:
+   - `NEXT_PUBLIC_GA_MEASUREMENT_ID` - Google Analytics 4 tracking (optional)
+   - `NEXT_PUBLIC_HOSPITABLE_WIDGET_ID` - Booking widget integration (optional)
+   - `NEXT_PUBLIC_DISABLE_ANIMATIONS` - Disable animations in development (optional)
+
+   See the [Environment Variables](#environment-variables) section below for detailed configuration.
+
+4. Run the development server:
    ```bash
    npm run dev
    ```
 
-4. Open [http://localhost:3000](http://localhost:3000) in your browser to see the website.
+5. Open [http://localhost:3000](http://localhost:3000) in your browser to see the website.
 
 ### Available Scripts
 
@@ -87,6 +102,106 @@ This website showcases a premium 1-bedroom condo in Mt. Crested Butte with immed
 - `npm run build` - Build for production
 - `npm start` - Start production server
 - `npm run lint` - Run ESLint
+- `npm test` - Run test suite
+- `npm run test:watch` - Run tests in watch mode
+- `npm run test:coverage` - Run tests with coverage report
+- `npm run test:e2e` - Run Playwright end-to-end tests
+
+## Testing
+
+The project uses a comprehensive testing strategy focused on critical user paths and core functionality.
+
+### Test Stack
+
+- **[Jest](https://jestjs.io/)** - Test framework
+- **[React Testing Library](https://testing-library.com/react)** - Component testing utilities
+- **[@testing-library/user-event](https://testing-library.com/docs/user-event/intro)** - User interaction simulation
+- **[@testing-library/jest-dom](https://testing-library.com/docs/ecosystem-jest-dom/)** - Custom Jest matchers
+- **[Playwright](https://playwright.dev/)** - End-to-end testing
+
+### Running Tests
+
+```bash
+# Run all tests
+npm test
+
+# Run tests in watch mode (auto-rerun on file changes)
+npm run test:watch
+
+# Run tests with coverage report
+npm run test:coverage
+
+# Run E2E tests
+npm run test:e2e
+```
+
+### Test Coverage
+
+Current test coverage: **40%+ across all metrics**
+
+**Coverage by Category:**
+- **Critical Components**: 100% (Header, Footer, Hero, About, Booking Widget)
+- **Utility Functions**: 100% (markdown parsing, logger, configuration)
+- **Animated Components**: 70%+ (AnimatedButton, AnimatedCard, AnimatedSection)
+- **Overall**: 40% statements, 25% branches, 28% functions, 41% lines
+
+**Testing Strategy:**
+We follow a "critical path" testing approach, prioritizing:
+1. User-facing components (Header, Footer, Hero, About, Booking)
+2. Core utilities (markdown processing, logging, environment config)
+3. Interactive elements (buttons, cards, animations)
+4. Accessibility features (ARIA attributes, semantic HTML)
+
+### Test Structure
+
+Tests are co-located with components in `__tests__` directories:
+
+```
+components/
+├── Header.tsx
+├── __tests__/
+│   └── Header.test.tsx
+lib/
+├── markdown.ts
+├── __tests__/
+│   └── markdown.test.ts
+```
+
+### Writing Tests
+
+Example component test:
+
+```typescript
+import { render, screen } from '@testing-library/react'
+import userEvent from '@testing-library/user-event'
+import Header from '@/components/Header'
+
+describe('Header Component', () => {
+  it('renders navigation links', () => {
+    render(<Header />)
+    expect(screen.getByText('Home')).toBeInTheDocument()
+    expect(screen.getByText('About')).toBeInTheDocument()
+  })
+
+  it('toggles mobile menu when button clicked', async () => {
+    const user = userEvent.setup()
+    render(<Header />)
+
+    const menuButton = screen.getByRole('button', { name: /menu/i })
+    await user.click(menuButton)
+
+    expect(screen.getAllByText('Home').length).toBeGreaterThan(1)
+  })
+})
+```
+
+### Continuous Integration
+
+Tests run automatically on all pull requests. Coverage thresholds are enforced to maintain code quality:
+- Statements: 40%
+- Branches: 25%
+- Functions: 28%
+- Lines: 40%
 
 ## Project Structure
 
@@ -218,9 +333,67 @@ This project uses Tailwind CSS. Common patterns:
 
 ### Environment Variables
 
-Set these in your hosting platform:
+This project uses environment variables for optional third-party integrations. All variables are **optional** - the site works perfectly without them, with graceful fallbacks.
 
-- `NEXT_PUBLIC_GA_ID` - Google Analytics tracking ID (optional)
+#### Setup
+
+1. Copy the example file:
+   ```bash
+   cp .env.example .env.local
+   ```
+
+2. Add your configuration values to `.env.local` (never commit this file!)
+
+#### Available Variables
+
+**Analytics & Tracking**
+
+- `NEXT_PUBLIC_GA_MEASUREMENT_ID`
+  - **Description**: Google Analytics 4 Measurement ID for visitor tracking
+  - **Format**: `G-XXXXXXXXXX`
+  - **Required**: No (analytics disabled if not set)
+  - **Get it from**: [Google Analytics](https://analytics.google.com/)
+  - **Example**: `NEXT_PUBLIC_GA_MEASUREMENT_ID=G-1234567890`
+
+**Booking Integration**
+
+- `NEXT_PUBLIC_HOSPITABLE_WIDGET_ID`
+  - **Description**: Hospitable booking widget integration ID
+  - **Format**: Alphanumeric string from your Hospitable dashboard
+  - **Required**: No (shows Airbnb link fallback if not set)
+  - **Get it from**: Your Hospitable account dashboard
+  - **Example**: `NEXT_PUBLIC_HOSPITABLE_WIDGET_ID=abc123xyz`
+
+**Development Options**
+
+- `NEXT_PUBLIC_DISABLE_ANIMATIONS`
+  - **Description**: Disable animations for faster development iteration
+  - **Format**: `true` or `false`
+  - **Required**: No (defaults to `false`)
+  - **Example**: `NEXT_PUBLIC_DISABLE_ANIMATIONS=true`
+
+#### Development Warnings
+
+In development mode, the app will show helpful console warnings if optional environment variables are missing. These warnings include:
+- Which variable is missing
+- What feature will be affected
+- Where to find setup instructions
+
+#### Production Deployment
+
+For production deployments (Vercel, Netlify, etc.), add these environment variables in your hosting platform's dashboard:
+
+**Vercel:**
+1. Go to Project Settings → Environment Variables
+2. Add variables with the `NEXT_PUBLIC_` prefix
+3. Redeploy your application
+
+**Netlify:**
+1. Go to Site Settings → Environment Variables
+2. Add variables with the `NEXT_PUBLIC_` prefix
+3. Trigger a new deploy
+
+**Important**: Never commit `.env.local` or any file containing real API keys to version control. The `.gitignore` file is configured to exclude these files automatically.
 
 ## Migration Notes
 

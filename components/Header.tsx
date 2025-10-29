@@ -5,6 +5,7 @@ import Link from 'next/link'
 import { motion, AnimatePresence } from 'framer-motion'
 import { slideDownVariants, staggerContainerVariants, staggerItemVariants } from '@/lib/animations/variants'
 import { useMounted } from '@/lib/animations/hooks'
+import { siteConfig } from '@/config/site'
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false)
@@ -16,7 +17,7 @@ export default function Header() {
     { name: 'Amenities', href: '#amenities' },
     { name: 'Gallery', href: '#gallery' },
     { name: 'Location', href: '#location' },
-    { name: 'Book Now', href: 'https://airbnb.com/h/elevenemmons', external: true },
+    { name: 'Book Now', href: siteConfig.booking.airbnbUrl, external: true },
   ]
 
   return (
