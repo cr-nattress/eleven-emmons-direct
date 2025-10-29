@@ -23,62 +23,62 @@ export default function Gallery() {
   const images = [
     {
       src: '/images/airbnb-2-1.png',
-      alt: 'Building exterior with mountain flowers in summer',
+      alt: 'Ski in ski out Crested Butte vacation rental - 11 Emmons Road building exterior just 50 feet from Red Lady Express lift',
       placeholder: false,
     },
     {
       src: '/images/airbnb-1-1.png',
-      alt: 'Modern living room with open kitchen and mountain decor',
+      alt: 'Modern living room at 11 Emmons Road ski in ski out rental with open kitchen and mountain decor',
       placeholder: false,
     },
     {
       src: '/images/airbnb-3-1.png',
-      alt: 'Living room with private balcony access',
+      alt: 'Living room with private mountain view balcony at 11 Emmons Road Crested Butte ski rental',
       placeholder: false,
     },
     {
       src: '/images/airbnb-4-1.png',
-      alt: 'Fully equipped kitchen with bar seating',
+      alt: 'Fully equipped modern kitchen with bar seating at 11 Emmons ski in ski out property',
       placeholder: false,
     },
     {
       src: '/images/airbnb-5-2.png',
-      alt: 'Master bedroom with custom wood accent wall',
+      alt: 'Master bedroom with custom wood accent wall at 11 Emmons Road Crested Butte vacation rental',
       placeholder: false,
     },
     {
       src: '/images/airbnb-6-1.png',
-      alt: 'Second bedroom with workspace and mountain art',
+      alt: 'Second bedroom with workspace at ski in ski out 11 Emmons Road rental',
       placeholder: false,
     },
     {
       src: '/images/airbnb-5-1.png',
-      alt: 'Modern bathroom with ambient lighting',
+      alt: 'Modern bathroom with ambient lighting at 11 Emmons Road Crested Butte ski rental',
       placeholder: false,
     },
     {
       src: '/images/airbnb-7-1.png',
-      alt: 'Private covered balcony with seating',
+      alt: 'Private covered balcony with mountain views at ski in ski out 11 Emmons Road Crested Butte',
       placeholder: false,
     },
     {
       src: '/images/airbnb-6-2.png',
-      alt: 'Sunny outdoor deck with red seating',
+      alt: 'Sunny outdoor deck with red seating and ski slope views at 11 Emmons Road',
       placeholder: false,
     },
     {
       src: '/images/airbnb-1-2.png',
-      alt: 'Cozy living room with balcony dining area',
+      alt: 'Cozy living room with balcony dining area at ski in ski out Crested Butte rental',
       placeholder: false,
     },
     {
       src: '/images/airbnb-3-2.png',
-      alt: 'Kitchen with butcher block countertops',
+      alt: 'Gourmet kitchen with butcher block countertops at 11 Emmons Road ski rental',
       placeholder: false,
     },
     {
       src: '/images/airbnb-7-2.png',
-      alt: 'Games and entertainment for all ages',
+      alt: 'Games and entertainment at 11 Emmons Road Crested Butte vacation rental',
       placeholder: false,
     },
   ]

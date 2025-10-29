@@ -13,7 +13,7 @@ export default function Hero() {
         <div className="relative h-full w-full">
           <Image
             src="/images/airbnb-2-1.png"
-            alt="11 Emmons Road Vacation Rental in Crested Butte"
+            alt="Ski in ski out Crested Butte vacation rental - 11 Emmons Road building exterior just 50 feet from Red Lady Express lift"
             fill
             className="object-cover"
             priority
