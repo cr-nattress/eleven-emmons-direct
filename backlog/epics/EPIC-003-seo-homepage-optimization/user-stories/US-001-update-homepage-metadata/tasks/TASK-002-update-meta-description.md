@@ -59,20 +59,24 @@ Verification:
 ## Implementation Steps
 
 1. **Open the file**
+
    ```bash
    code app/layout.tsx
    ```
 
 2. **Locate the description field** (around line 10-12)
+
    ```typescript
    export const metadata: Metadata = {
      title: '...',
-     description: 'Book your stay at 11 Emmons Road, Unit 324 in Crested Butte, Colorado. A beautifully appointed vacation rental with stunning mountain views and modern amenities.',
+     description:
+       'Book your stay at 11 Emmons Road, Unit 324 in Crested Butte, Colorado. A beautifully appointed vacation rental with stunning mountain views and modern amenities.',
      // ... other fields
    }
    ```
 
 3. **Update the description**
+
    ```typescript
    description: 'True ski-in/ski-out luxury at 11 Emmons Road, Crested Butte. Just 50 feet from lifts, 4.98★ rated, modern amenities. Book direct and save 15%. No shuttle needed.',
    ```
@@ -80,21 +84,25 @@ Verification:
 4. **Verify character count**
    - Count: 175 characters (too long)
    - Need to shorten to 150-155
-   
+
    **Optimized version:**
+
    ```typescript
    description: 'Ski-in/ski-out at 11 Emmons Road, Crested Butte - 50 feet from lifts. 4.98★ rated. Book direct & save 15%. Modern luxury, no shuttle needed.',
    ```
+
    - Count: 154 characters ✓
 
 5. **Alternative versions to consider:**
-   
+
    **Version A (155 chars):**
+
    ```typescript
    'Ski-in/ski-out Crested Butte luxury. 11 Emmons Road is 50 feet from lifts. 4.98★ rated, modern amenities. Book direct & save 15%. No shuttle required.'
    ```
-   
+
    **Version B (149 chars):**
+
    ```typescript
    'True ski-in/ski-out at 11 Emmons Road, Crested Butte. 50 feet to lifts, 4.98★ rated. Book direct & save 15%. Modern luxury rental.'
    ```
@@ -104,11 +112,13 @@ Verification:
 ## Verification Steps
 
 1. **Check syntax**
+
    ```bash
    npm run build
    ```
 
 2. **Run dev server**
+
    ```bash
    npm run dev
    ```
@@ -133,19 +143,22 @@ Verification:
 ## Expected Output
 
 ```html
-<meta name="description" content="Ski-in/ski-out at 11 Emmons Road, Crested Butte - 50 feet from lifts. 4.98★ rated. Book direct & save 15%. Modern luxury, no shuttle needed.">
+<meta
+  name="description"
+  content="Ski-in/ski-out at 11 Emmons Road, Crested Butte - 50 feet from lifts. 4.98★ rated. Book direct & save 15%. Modern luxury, no shuttle needed."
+/>
 ```
 
 ## Character Count Analysis
 
-| Element | Count |
-|---------|-------|
-| "Ski-in/ski-out at 11 Emmons Road, Crested Butte" | 50 |
-| " - 50 feet from lifts." | 21 |
-| " 4.98★ rated." | 14 |
-| " Book direct & save 15%." | 26 |
-| " Modern luxury, no shuttle needed." | 36 |
-| **Total** | **154** ✓ |
+| Element                                           | Count     |
+| ------------------------------------------------- | --------- |
+| "Ski-in/ski-out at 11 Emmons Road, Crested Butte" | 50        |
+| " - 50 feet from lifts."                          | 21        |
+| " 4.98★ rated."                                   | 14        |
+| " Book direct & save 15%."                        | 26        |
+| " Modern luxury, no shuttle needed."              | 36        |
+| **Total**                                         | **154** ✓ |
 
 ## SEO Best Practices Applied
 
@@ -156,7 +169,7 @@ Verification:
 ✅ Clear benefit (no shuttle needed)  
 ✅ 150-155 characters (optimal length)  
 ✅ Compelling and action-oriented  
-✅ Unique selling proposition (true ski-in/ski-out)  
+✅ Unique selling proposition (true ski-in/ski-out)
 
 ## Common Mistakes to Avoid
 
@@ -166,11 +179,12 @@ Verification:
 ❌ Generic descriptions  
 ❌ Missing call-to-action  
 ❌ No value proposition  
-❌ Boring or un-clickable  
+❌ Boring or un-clickable
 
 ## Rollback Plan
 
 If issues arise, revert to original:
+
 ```typescript
 description: 'Book your stay at 11 Emmons Road, Unit 324 in Crested Butte, Colorado. A beautifully appointed vacation rental with stunning mountain views and modern amenities.'
 ```
@@ -187,6 +201,7 @@ description: 'Book your stay at 11 Emmons Road, Unit 324 in Crested Butte, Color
 ## A/B Testing Consideration
 
 After deployment, consider testing these variations:
+
 1. Current version (feature-focused)
 2. Benefit-focused: "Save 2+ hours daily with true ski-in/ski-out..."
 3. Urgency-focused: "Limited ski-in/ski-out availability..."

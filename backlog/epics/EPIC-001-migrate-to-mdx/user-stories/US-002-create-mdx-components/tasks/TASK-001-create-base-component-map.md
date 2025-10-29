@@ -11,7 +11,7 @@ Create the base MDX component mapping file that overrides default HTML elements 
 
 ## Agent Prompt
 
-```
+````
 Create a new file at /components/mdx-components.tsx with the following content:
 
 The file should:
@@ -55,12 +55,14 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     ...components,
   }
 }
-```
+````
 
 After creation:
+
 1. Verify the file exists at the correct path
 2. Check that TypeScript has no errors
 3. Ensure imports resolve correctly
+
 ```
 
 ## File to Create
@@ -85,3 +87,4 @@ After creation:
 - This provides the base for all MDX component overrides
 - Will be enhanced with custom components in next task
 - Follows Next.js best practices for optimized links and images
+```

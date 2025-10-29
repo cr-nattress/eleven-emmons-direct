@@ -26,11 +26,13 @@
 ## Problem Statement
 
 Production code contains TODO comments for incomplete features:
+
 - `tailwind.config.js:10` - Placeholder color scheme
 - `components/BookingWidget.tsx:25` - Hospitable widget TODO
 - `app/layout.tsx:29, 43` - Missing OG images
 
 **Issues:**
+
 - Looks unprofessional to reviewers/employers
 - Unclear if features are intentionally incomplete
 - Technical debt accumulates
@@ -73,12 +75,14 @@ module.exports = {
 ### 2. Create OG Image
 
 **Option A: Design Custom OG Image**
+
 - Size: 1200×630px
 - Content: Property photo + "11 Emmons Road" text
 - Tool: Canva, Figma, or Photoshop
 - Save as: `public/images/og-image.jpg`
 
 **Option B: Use Existing Hero Image**
+
 - Crop hero image to 1200×630
 - Add text overlay with property name
 - Optimize for file size
@@ -90,7 +94,7 @@ export const metadata: Metadata = {
   openGraph: {
     images: [
       {
-        url: '/images/og-image.jpg',  // ✅ Actual image
+        url: '/images/og-image.jpg', // ✅ Actual image
         width: 1200,
         height: 630,
         alt: '11 Emmons Road - Ski-in/ski-out vacation rental',
@@ -98,7 +102,7 @@ export const metadata: Metadata = {
     ],
   },
   twitter: {
-    images: ['/images/og-image.jpg'],  // ✅ Actual image
+    images: ['/images/og-image.jpg'], // ✅ Actual image
   },
 }
 ```
@@ -106,6 +110,7 @@ export const metadata: Metadata = {
 ### 3. Complete or Remove Hospitable Widget
 
 **Option A: Complete Integration**
+
 ```typescript
 // components/BookingWidget.tsx (UPDATE)
 // Implement actual Hospitable widget script
@@ -113,6 +118,7 @@ export const metadata: Metadata = {
 ```
 
 **Option B: Remove TODO, Keep Fallback**
+
 ```typescript
 // components/BookingWidget.tsx (UPDATE)
 // Remove TODO comment
@@ -141,8 +147,10 @@ export const metadata: Metadata = {
 ### 5. Move Remaining TODOs to GitHub Issues
 
 Create issues for any legitimate future work:
+
 ```markdown
 # GitHub Issue Template
+
 Title: [TODO] Complete Hospitable Widget Integration
 
 Description:
@@ -150,6 +158,7 @@ Currently showing Airbnb fallback link.
 Need to integrate Hospitable booking widget.
 
 Acceptance Criteria:
+
 - [ ] Widget script integrated
 - [ ] Widget ID configured
 - [ ] Testing completed

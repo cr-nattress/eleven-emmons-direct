@@ -3,11 +3,13 @@
 ## 🚀 Quick Commands
 
 ### Create an Epic (with git branch)
+
 ```bash
 node backlog/scripts/create-epic.js
 ```
 
 **Prompts you for:**
+
 - Epic number (auto-suggests next available)
 - Epic name (kebab-case, e.g., "interactive-map-leaflet")
 - Epic title (human-readable, e.g., "Interactive Map Implementation")
@@ -17,6 +19,7 @@ node backlog/scripts/create-epic.js
 - Create git branch? (yes/no)
 
 **Creates:**
+
 - `backlog/epics/EPIC-XXX-name/` folder
 - `epic.md` file with template
 - `user-stories/` subfolder
@@ -25,12 +28,14 @@ node backlog/scripts/create-epic.js
 ---
 
 ### Create a User Story
+
 ```bash
 node backlog/scripts/create-user-story.js
 # Or specify epic: node backlog/scripts/create-user-story.js EPIC-009
 ```
 
 **Prompts you for:**
+
 - Epic selection (shows list if not specified)
 - Story number (auto-suggests next available)
 - Story name (kebab-case, e.g., "setup-basic-map")
@@ -40,6 +45,7 @@ node backlog/scripts/create-user-story.js
 - Sprint/week
 
 **Creates:**
+
 - `backlog/epics/EPIC-XXX/user-stories/US-XXX-name/` folder
 - `story.md` file with template
 - `tasks/` subfolder
@@ -47,12 +53,14 @@ node backlog/scripts/create-user-story.js
 ---
 
 ### Create a Task
+
 ```bash
 node backlog/scripts/create-task.js
 # Or specify: node backlog/scripts/create-task.js EPIC-009 US-001
 ```
 
 **Prompts you for:**
+
 - Epic selection (shows list if not specified)
 - User story selection (shows list if not specified)
 - Task number (auto-suggests next available)
@@ -62,6 +70,7 @@ node backlog/scripts/create-task.js
 - Estimated time (e.g., "30 minutes", "2 hours")
 
 **Creates:**
+
 - `TASK-XXX-name.md` file with agent prompt template
 
 ---
@@ -71,6 +80,7 @@ node backlog/scripts/create-task.js
 ### Scenario: Building a New Feature
 
 **Step 1: Create the Epic**
+
 ```bash
 $ node backlog/scripts/create-epic.js
 
@@ -87,6 +97,7 @@ Create git branch? y
 ```
 
 **Step 2: Create User Stories**
+
 ```bash
 $ node backlog/scripts/create-user-story.js EPIC-010
 
@@ -114,6 +125,7 @@ Sprint: Week 3
 ```
 
 **Step 3: Create Tasks for First Story**
+
 ```bash
 $ node backlog/scripts/create-task.js EPIC-010 US-001
 
@@ -139,6 +151,7 @@ Estimated time: 2 hours
 ```
 
 **Step 4: Execute Tasks**
+
 1. Open task file: `EPIC-010/.../tasks/TASK-001-create-gallery-component.md`
 2. Fill in the "Agent Prompt" section
 3. Copy the agent prompt to your AI coding assistant
@@ -148,6 +161,7 @@ Estimated time: 2 hours
 7. Move to next task
 
 **Step 5: Complete Epic**
+
 1. All user stories done ✅
 2. All acceptance criteria met ✅
 3. Merge `epic/010-photo-gallery` to `master`
@@ -158,25 +172,30 @@ Estimated time: 2 hours
 ## 🎯 Tips & Best Practices
 
 ### Epic Creation
+
 - **Naming**: Use clear, descriptive names (2-4 words)
 - **Scope**: Keep epics focused on one major feature
 - **Story Points**: Start with rough estimate, refine as you learn
 - **Branch**: Always create from clean `master` branch
 
 ### User Story Creation
+
 - **As a... I want... So that**: Follow this format strictly
 - **Testable**: Write acceptance criteria that can be verified
 - **Independent**: Each story should be potentially shippable
 - **Small**: 1-5 story points ideal, break down larger work
 
 ### Task Creation
+
 - **Agent Prompts**: Be VERY specific and detailed
 - **Commands**: Include exact commands to run
 - **Verification**: Add clear steps to verify completion
 - **Troubleshooting**: Document common issues you encounter
 
 ### Agent Prompts
+
 Good agent prompt:
+
 ```
 Install React-Leaflet and Leaflet packages.
 
@@ -199,6 +218,7 @@ Verification:
 ```
 
 Bad agent prompt:
+
 ```
 Install the map stuff.
 ```
@@ -233,25 +253,30 @@ backlog/
 ## 🔧 Troubleshooting
 
 **Q: Script says "Epic not found"**
+
 - Check you're in the project root directory
 - Verify epic folder name matches exactly
 - Epic must start with "EPIC-"
 
 **Q: Git branch creation failed**
+
 - Ensure you're on master/main branch
 - Check for uncommitted changes
 - Verify git is initialized
 
 **Q: Task numbers not sequential**
+
 - This is OK! Numbers are for organization, not strict sequence
 - You can manually adjust if needed
 
 **Q: Can I rename folders after creation?**
+
 - Yes, but update all internal references
 - Update links in parent epic/story files
 - Easier to delete and recreate if just made
 
 **Q: How do I delete/archive an epic?**
+
 - Move folder to `backlog/archive/` directory
 - Or delete if no longer needed
 - Update main `backlog/README.md`

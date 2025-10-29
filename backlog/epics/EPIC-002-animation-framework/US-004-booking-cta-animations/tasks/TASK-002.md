@@ -1,15 +1,19 @@
 # TASK-002: Animate Contact Cards
 
 ## Task Description
+
 Implement staggered entrance animations for the email and phone contact cards to create a smooth, sequential reveal effect.
 
 ## Priority
+
 HIGH
 
 ## Estimated Effort
+
 1-2 hours
 
 ## Acceptance Criteria
+
 - [ ] Contact cards animate when scrolled into view
 - [ ] Cards have staggered animation (150ms apart)
 - [ ] Animation uses fade + slide up effect
@@ -22,7 +26,9 @@ HIGH
 ## Technical Details
 
 ### Contact Cards Structure
+
 In `/components/Booking.tsx`:
+
 - Container div with two cards (email and phone)
 - Each card has: icon, title, contact info, and link
 - Cards likely have hover effects
@@ -30,6 +36,7 @@ In `/components/Booking.tsx`:
 - Phone uses tel: link
 
 ### Animation Strategy
+
 - Use stagger container/item pattern
 - Cards fade in and slide up sequentially
 - 150ms delay between cards
@@ -40,6 +47,7 @@ In `/components/Booking.tsx`:
 You are tasked with implementing staggered entrance animations for the contact cards.
 
 **Context:**
+
 - TASK-001 completed (booking widget animates)
 - Contact cards section in `/components/Booking.tsx`
 - Two cards: Email and Phone
@@ -48,11 +56,18 @@ You are tasked with implementing staggered entrance animations for the contact c
 **Instructions:**
 
 1. **Import stagger variants if not already imported:**
+
    ```typescript
-   import { slideUpVariants, scaleInVariants, staggerContainerVariants, staggerItemVariants } from '@/lib/animations/variants'
+   import {
+     slideUpVariants,
+     scaleInVariants,
+     staggerContainerVariants,
+     staggerItemVariants,
+   } from '@/lib/animations/variants'
    ```
 
 2. **Add scroll animation hook for contact cards:**
+
    ```typescript
    export default function Booking() {
      const { ref: headerRef, controls: headerControls } = useScrollAnimation()
@@ -66,6 +81,7 @@ You are tasked with implementing staggered entrance animations for the contact c
 3. **Find the contact cards container and convert to motion.div:**
 
    Look for the div containing the email and phone cards:
+
    ```typescript
    <motion.div
      ref={cardsRef}
@@ -81,6 +97,7 @@ You are tasked with implementing staggered entrance animations for the contact c
 4. **Convert each contact card to motion.div:**
 
    Email card:
+
    ```typescript
    <motion.div
      variants={staggerItemVariants}
@@ -102,6 +119,7 @@ You are tasked with implementing staggered entrance animations for the contact c
    ```
 
    Phone card:
+
    ```typescript
    <motion.div
      variants={staggerItemVariants}
@@ -131,6 +149,7 @@ You are tasked with implementing staggered entrance animations for the contact c
    - Keep all mailto: and tel: links exactly as they are
 
 **Animation Sequence:**
+
 1. User scrolls to contact cards section
 2. Container triggers animation
 3. Email card fades in and slides up
@@ -138,6 +157,7 @@ You are tasked with implementing staggered entrance animations for the contact c
 5. Total animation: ~550ms
 
 **Testing:**
+
 1. Save the file
 2. Refresh browser
 3. Scroll to booking section
@@ -152,12 +172,14 @@ You are tasked with implementing staggered entrance animations for the contact c
 6. Check console for errors
 
 **Expected Result:**
+
 - Smooth staggered entrance for contact cards
 - Email card appears first, phone card follows
 - Professional, polished appearance
 - All functionality maintained
 
 **Success Criteria:**
+
 - Both cards animate with stagger effect
 - Hover effects work
 - Links work (mailto and tel)
@@ -166,14 +188,17 @@ You are tasked with implementing staggered entrance animations for the contact c
 - No console errors
 
 ## Dependencies
+
 - TASK-001: Animate booking widget (should be completed)
 - US-001: Setup Animation Infrastructure (must be completed)
 
 ## Related Tasks
+
 - TASK-001: Animate booking widget (previous)
 - TASK-003: Add CTA button animations (next)
 
 ## References
+
 - [Booking Component](../../../../components/Booking.tsx)
 - [Stagger Variants](../../../../lib/animations/variants.ts)
 - [useScrollAnimation Hook](../../../../lib/animations/hooks.ts)

@@ -36,9 +36,9 @@ export default function Page() {
   return (
     <main>
       {/* Existing content */}
-      
+
       <PropertyMap />
-      
+
       {/* More content */}
     </main>
   )

@@ -1,15 +1,19 @@
 # TASK-002: Create Animation Utilities and Constants
 
 ## Task Description
+
 Create the foundational animation utilities and constants that will be used across the entire application.
 
 ## Priority
+
 CRITICAL
 
 ## Estimated Effort
+
 2-3 hours
 
 ## Acceptance Criteria
+
 - [ ] `/lib/animations/` directory created
 - [ ] `/lib/animations/variants.ts` created with reusable animation variants
 - [ ] `/lib/animations/constants.ts` created with timing and easing values
@@ -22,6 +26,7 @@ CRITICAL
 ## Technical Details
 
 ### File Structure
+
 ```
 /lib
   /animations
@@ -30,6 +35,7 @@ CRITICAL
 ```
 
 ### Required Variants
+
 1. **fadeIn** - Basic opacity fade
 2. **slideUp** - Slide from bottom with fade
 3. **slideDown** - Slide from top with fade
@@ -40,6 +46,7 @@ CRITICAL
 8. **staggerItem** - Individual items in stagger sequence
 
 ### Required Constants
+
 - Animation durations (fast: 300ms, normal: 500ms, slow: 700ms)
 - Easing curves (easeOut, easeIn, easeInOut)
 - Stagger delays (50ms, 100ms, 150ms)
@@ -51,6 +58,7 @@ CRITICAL
 You are tasked with creating the animation utilities and constants for the Eleven Emmons vacation rental website.
 
 **Context:**
+
 - Framer Motion has been installed (TASK-001 completed)
 - This is a Next.js 14 project with TypeScript
 - These utilities will be used across ALL components that need animations
@@ -59,6 +67,7 @@ You are tasked with creating the animation utilities and constants for the Eleve
 **Instructions:**
 
 1. **Create Directory Structure:**
+
    ```bash
    mkdir -p lib/animations
    ```
@@ -73,6 +82,7 @@ You are tasked with creating the animation utilities and constants for the Eleve
    - Add JSDoc comments explaining each constant
 
    Example structure:
+
    ```typescript
    /**
     * Animation duration constants in milliseconds
@@ -106,6 +116,7 @@ You are tasked with creating the animation utilities and constants for the Eleve
    - Add JSDoc comments explaining each variant
 
    Example structure:
+
    ```typescript
    import { Variants } from 'framer-motion'
    import { DURATION_NORMAL, EASING_EASE_OUT } from './constants'
@@ -155,6 +166,7 @@ You are tasked with creating the animation utilities and constants for the Eleve
    - Explain animation principles (duration, easing, etc.)
 
 **Animation Principles to Follow:**
+
 - Duration: 300-600ms feels natural (avoid too slow or too fast)
 - Easing: Use easeOut for entrances, easeIn for exits
 - Distance: Keep translateY/translateX values subtle (20-40px)
@@ -162,11 +174,13 @@ You are tasked with creating the animation utilities and constants for the Eleve
 - Stagger: 50-100ms between items works well
 
 **Accessibility:**
+
 - The `getReducedMotionConfig()` utility should check `window.matchMedia('(prefers-reduced-motion: reduce)')`
 - Return instant transitions (duration: 0) if user prefers reduced motion
 - This will be used in later tasks when implementing components
 
 **Success Criteria:**
+
 - Both files created with no TypeScript errors
 - All variants use the constants defined
 - Variants cover all common animation patterns needed
@@ -174,19 +188,23 @@ You are tasked with creating the animation utilities and constants for the Eleve
 - Files can be imported and used in components
 
 **Testing:**
+
 - Verify TypeScript compilation succeeds: `npm run build` or check editor
 - Verify imports work: `import { fadeInVariants } from '@/lib/animations/variants'`
 - Verify no linting errors: `npm run lint`
 
 ## Dependencies
+
 - TASK-001: Install Framer Motion (must be completed first)
 
 ## Related Tasks
+
 - TASK-003: Create custom animation hooks (uses these utilities)
 - TASK-004: Create animated wrapper components (uses these variants)
 - All future animation implementation tasks will use these utilities
 
 ## References
+
 - [Framer Motion Variants](https://www.framer.com/motion/animation/##variants)
 - [Framer Motion Transitions](https://www.framer.com/motion/transition/)
 - [Animation Principles](../../../knowledge/feedback/feedback-01.md#L27-36)

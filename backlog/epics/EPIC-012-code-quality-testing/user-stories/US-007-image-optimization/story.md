@@ -26,6 +26,7 @@
 ## Problem Statement
 
 All 12 gallery images load immediately, even though they're below the fold:
+
 - **Current:** 12 images × 300KB = 3.6MB loaded immediately
 - **Impact:** LCP ~3.5s on slow connections
 - **Mobile:** 3.6MB on 3G takes 20+ seconds
@@ -98,7 +99,7 @@ const nextConfig = {
   images: {
     formats: ['image/avif', 'image/webp'],
     deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
-    minimumCacheTTL: 60 * 60 * 24 * 365,  // ✅ Cache 1 year
+    minimumCacheTTL: 60 * 60 * 24 * 365, // ✅ Cache 1 year
     dangerouslyAllowSVG: true,
     contentDispositionType: 'attachment',
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
@@ -112,11 +113,13 @@ const nextConfig = {
 ### Performance Targets
 
 **Before:**
+
 - LCP: 3.5s
 - Page Weight: 3.6MB
 - Images Loaded: 12
 
 **After:**
+
 - LCP: < 2.0s (43% improvement)
 - Page Weight: < 2MB (45% reduction)
 - Images Loaded: 6 initially, 6 on scroll
@@ -129,11 +132,11 @@ const nextConfig = {
 
 ### Image Loading Strategy
 
-| Image | Loading | Priority | When Loaded |
-|-------|---------|----------|-------------|
-| Hero | eager | high | Immediately |
-| Gallery 1-3 | eager | high | Immediately |
-| Gallery 4-12 | lazy | low | When in viewport |
+| Image        | Loading | Priority | When Loaded      |
+| ------------ | ------- | -------- | ---------------- |
+| Hero         | eager   | high     | Immediately      |
+| Gallery 1-3  | eager   | high     | Immediately      |
+| Gallery 4-12 | lazy    | low      | When in viewport |
 
 ## Definition of Done
 

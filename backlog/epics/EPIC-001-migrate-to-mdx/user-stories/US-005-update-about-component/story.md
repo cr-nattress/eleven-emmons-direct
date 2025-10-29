@@ -26,11 +26,13 @@ So that **I can view enhanced content with proper formatting**.
 ## Technical Notes
 
 Replace:
+
 ```tsx
 <div dangerouslySetInnerHTML={{ __html: content.contentHtml }} />
 ```
 
 With:
+
 ```tsx
 <MDXClient mdxSource={content.mdxSource} />
 ```

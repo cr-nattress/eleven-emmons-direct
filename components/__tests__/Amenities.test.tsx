@@ -9,11 +9,17 @@ jest.mock('@/lib/markdown', () => ({
 // Mock AmenitiesContent component
 jest.mock('@/components/AmenitiesContent', () => {
   return function MockAmenitiesContent({ data }: any) {
-    return <div data-testid="amenities-content">Amenities Content with {data.title}</div>
+    return (
+      <div data-testid="amenities-content">
+        Amenities Content with {data.title}
+      </div>
+    )
   }
 })
 
-const mockGetMarkdownContent = getMarkdownContent as jest.MockedFunction<typeof getMarkdownContent>
+const mockGetMarkdownContent = getMarkdownContent as jest.MockedFunction<
+  typeof getMarkdownContent
+>
 
 describe('Amenities Component', () => {
   beforeEach(() => {

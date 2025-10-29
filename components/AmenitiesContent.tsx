@@ -2,7 +2,11 @@
 
 import { motion } from 'framer-motion'
 import { useScrollAnimation } from '@/lib/animations/hooks'
-import { slideUpVariants, staggerContainerVariants, staggerItemVariants } from '@/lib/animations/variants'
+import {
+  slideUpVariants,
+  staggerContainerVariants,
+  staggerItemVariants,
+} from '@/lib/animations/variants'
 import ExpandableCard from './location/ExpandableCard'
 import StatBadge from './location/StatBadge'
 import FeatureList from './location/FeatureList'
@@ -36,9 +40,7 @@ export default function AmenitiesContent({ data }: AmenitiesContentProps) {
           {data.title}
         </h2>
         {data.subtitle && (
-          <p className="mt-4 text-lg text-gray-600">
-            {data.subtitle}
-          </p>
+          <p className="mt-4 text-lg text-gray-600">{data.subtitle}</p>
         )}
       </motion.div>
 
@@ -100,19 +102,20 @@ export default function AmenitiesContent({ data }: AmenitiesContentProps) {
             icon={data.livingEntertainment.icon}
             preview={data.livingEntertainment.preview}
           >
-            {data.livingEntertainment.stats && data.livingEntertainment.stats.length > 0 && (
-              <div className="grid grid-cols-2 gap-4 mb-6">
-                {data.livingEntertainment.stats.map((stat, index) => (
-                  <StatBadge
-                    key={index}
-                    value={stat.value}
-                    label={stat.label}
-                    icon={stat.icon}
-                    highlight={stat.highlight}
-                  />
-                ))}
-              </div>
-            )}
+            {data.livingEntertainment.stats &&
+              data.livingEntertainment.stats.length > 0 && (
+                <div className="grid grid-cols-2 gap-4 mb-6">
+                  {data.livingEntertainment.stats.map((stat, index) => (
+                    <StatBadge
+                      key={index}
+                      value={stat.value}
+                      label={stat.label}
+                      icon={stat.icon}
+                      highlight={stat.highlight}
+                    />
+                  ))}
+                </div>
+              )}
             {data.livingEntertainment.features && (
               <FeatureList items={data.livingEntertainment.features} />
             )}
@@ -126,19 +129,20 @@ export default function AmenitiesContent({ data }: AmenitiesContentProps) {
             icon={data.internetWorkspace.icon}
             preview={data.internetWorkspace.preview}
           >
-            {data.internetWorkspace.stats && data.internetWorkspace.stats.length > 0 && (
-              <div className="grid grid-cols-2 gap-4 mb-6">
-                {data.internetWorkspace.stats.map((stat, index) => (
-                  <StatBadge
-                    key={index}
-                    value={stat.value}
-                    label={stat.label}
-                    icon={stat.icon}
-                    highlight={stat.highlight}
-                  />
-                ))}
-              </div>
-            )}
+            {data.internetWorkspace.stats &&
+              data.internetWorkspace.stats.length > 0 && (
+                <div className="grid grid-cols-2 gap-4 mb-6">
+                  {data.internetWorkspace.stats.map((stat, index) => (
+                    <StatBadge
+                      key={index}
+                      value={stat.value}
+                      label={stat.label}
+                      icon={stat.icon}
+                      highlight={stat.highlight}
+                    />
+                  ))}
+                </div>
+              )}
             {data.internetWorkspace.features && (
               <FeatureList items={data.internetWorkspace.features} />
             )}
@@ -196,18 +200,19 @@ export default function AmenitiesContent({ data }: AmenitiesContentProps) {
             icon={data.outdoorSpaces.icon}
             preview={data.outdoorSpaces.preview}
           >
-            {data.outdoorSpaces.stats && data.outdoorSpaces.stats.length > 0 && (
-              <div className="grid grid-cols-1 gap-4 mb-6">
-                {data.outdoorSpaces.stats.map((stat, index) => (
-                  <StatBadge
-                    key={index}
-                    value={stat.value}
-                    label={stat.label}
-                    icon={stat.icon}
-                  />
-                ))}
-              </div>
-            )}
+            {data.outdoorSpaces.stats &&
+              data.outdoorSpaces.stats.length > 0 && (
+                <div className="grid grid-cols-1 gap-4 mb-6">
+                  {data.outdoorSpaces.stats.map((stat, index) => (
+                    <StatBadge
+                      key={index}
+                      value={stat.value}
+                      label={stat.label}
+                      icon={stat.icon}
+                    />
+                  ))}
+                </div>
+              )}
             {data.outdoorSpaces.features && (
               <FeatureList items={data.outdoorSpaces.features} />
             )}

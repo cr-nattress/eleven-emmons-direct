@@ -1,15 +1,19 @@
 # TASK-002: Add Map Container Animation
 
 ## Task Description
+
 Add scroll-triggered animation to the map container with subtle fade and scale effect.
 
 ## Priority
+
 MEDIUM
 
 ## Estimated Effort
+
 1-2 hours
 
 ## Acceptance Criteria
+
 - [ ] Map container animates on scroll
 - [ ] Uses fade + subtle scale
 - [ ] Map functionality maintained
@@ -26,6 +30,7 @@ MEDIUM
 5. Ensure map remains interactive after animation
 
 **Example:**
+
 ```typescript
 const { ref: mapRef, controls: mapControls } = useScrollAnimation()
 
@@ -46,23 +51,28 @@ const { ref: mapRef, controls: mapControls } = useScrollAnimation()
 ```
 
 **Important:**
+
 - Don't animate the iframe/map directly, animate the wrapper
 - Ensure map remains clickable/draggable after animation
 - Test map interactions after animation completes
 
 **Testing:**
+
 - Scroll to map
 - Verify container animates
 - Test map interactions (zoom, pan)
 - Check console for errors
 
 ## Dependencies
+
 - TASK-001: Animate section header
 
 ## Related Tasks
+
 - TASK-003: Animate nearby attractions cards (next)
 
 ## References
+
 - [Location Component](../../../../components/Location.tsx)
 - [scaleInVariants](../../../../lib/animations/variants.ts)
 

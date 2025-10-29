@@ -56,12 +56,14 @@ Verification:
 ## Implementation Steps
 
 1. **Open the file**
+
    ```bash
    # Navigate to the app directory
    code app/layout.tsx
    ```
 
 2. **Locate the metadata export** (around line 8-20)
+
    ```typescript
    export const metadata: Metadata = {
      title: '11 Emmons Road - Luxury Vacation Rental | Crested Butte, CO',
@@ -70,9 +72,11 @@ Verification:
    ```
 
 3. **Update the title**
+
    ```typescript
    export const metadata: Metadata = {
-     title: 'Ski In Ski Out Crested Butte | 11 Emmons Road | Book Direct & Save 15%',
+     title:
+       'Ski In Ski Out Crested Butte | 11 Emmons Road | Book Direct & Save 15%',
      // ... other metadata
    }
    ```
@@ -88,15 +92,19 @@ Verification:
 ## Verification Steps
 
 1. **Check syntax**
+
    ```bash
    npm run build
    ```
+
    - Should compile without errors
 
 2. **Run dev server**
+
    ```bash
    npm run dev
    ```
+
    - Open http://localhost:3000
    - Check browser tab title
 
@@ -117,7 +125,9 @@ Verification:
 ## Expected Output
 
 ```html
-<title>Ski In Ski Out Crested Butte | 11 Emmons Road | Book Direct & Save 15%</title>
+<title>
+  Ski In Ski Out Crested Butte | 11 Emmons Road | Book Direct & Save 15%
+</title>
 ```
 
 Or if shortened:
@@ -129,6 +139,7 @@ Or if shortened:
 ## Rollback Plan
 
 If issues arise, revert to original:
+
 ```typescript
 title: '11 Emmons Road - Luxury Vacation Rental | Crested Butte, CO'
 ```
@@ -138,7 +149,7 @@ title: '11 Emmons Road - Luxury Vacation Rental | Crested Butte, CO'
 - **Character Limit**: Google typically displays first 50-60 characters
 - **Mobile**: Even shorter on mobile (50 chars)
 - **Recommendation**: Consider "Ski In Ski Out Crested Butte | 11 Emmons Road" (51 chars)
-- **Pipe Symbol**: Use ` | ` (space-pipe-space) for readability
+- **Pipe Symbol**: Use `|` (space-pipe-space) for readability
 - **Brand First vs Keyword First**: Keyword first is better for SEO when not yet well-known
 
 ## SEO Best Practices Applied
@@ -148,7 +159,7 @@ title: '11 Emmons Road - Luxury Vacation Rental | Crested Butte, CO'
 ✅ Call-to-action included  
 ✅ Under 60 characters (if using shorter version)  
 ✅ Natural language, not keyword stuffing  
-✅ Compelling and click-worthy  
+✅ Compelling and click-worthy
 
 ## Related Tasks
 

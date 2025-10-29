@@ -1,15 +1,19 @@
 # TASK-003: Add Feature Card Animations
 
 ## Task Description
+
 Add staggered entrance animations to feature cards in the about section.
 
 ## Priority
+
 MEDIUM
 
 ## Estimated Effort
+
 2 hours
 
 ## Acceptance Criteria
+
 - [ ] Feature cards animate with stagger effect
 - [ ] Each card fades and scales in
 - [ ] Timing feels natural
@@ -26,6 +30,7 @@ MEDIUM
 5. Use 100-150ms stagger delay
 
 **Example:**
+
 ```typescript
 const { ref: cardsRef, controls: cardsControls } = useScrollAnimation()
 
@@ -43,17 +48,21 @@ const { ref: cardsRef, controls: cardsControls } = useScrollAnimation()
 ```
 
 **Testing:**
+
 - Scroll to feature cards
 - Verify staggered entrance
 - Check console for errors
 
 ## Dependencies
+
 - TASK-001: Animate section header
 
 ## Related Tasks
+
 - TASK-004: Animate list items (next)
 
 ## References
+
 - [About Component](../../../../components/About.tsx)
 - [Stagger Variants](../../../../lib/animations/variants.ts)
 

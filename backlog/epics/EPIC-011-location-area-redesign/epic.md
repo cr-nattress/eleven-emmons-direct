@@ -17,6 +17,7 @@ The current Location section contains 80+ data points across 12 major sections, 
 ## Solution
 
 Implement a **Hybrid Tab + Accordion** interface:
+
 - 4 primary tabs: Overview, Winter, Summer, Area Info
 - Expandable cards within each tab for progressive disclosure
 - Stat badges for key numbers (acres, trails, miles)
@@ -46,16 +47,19 @@ Implement a **Hybrid Tab + Accordion** interface:
 ## Success Metrics
 
 **Engagement:**
+
 - Average time in section
 - Tab switch rate
 - Card expansion rate
 - Scroll depth
 
 **Conversion:**
+
 - Booking clicks from location section
 - Exit rate improvement
 
 **Performance:**
+
 - FCP < 1.5s
 - LCP < 2.5s
 - CLS < 0.1
@@ -63,15 +67,18 @@ Implement a **Hybrid Tab + Accordion** interface:
 ## Technical Approach
 
 **New Components:**
+
 - `LocationTabs.tsx` - Tab navigation (client component)
 - `ExpandableCard.tsx` - Collapsible cards (client component)
 - `StatBadge.tsx` - Stat display (server component)
 - Tab panels: `OverviewTab.tsx`, `WinterTab.tsx`, `SummerTab.tsx`, `InfoTab.tsx`
 
 **Reused Components:**
+
 - `FeatureList.tsx` from About section
 
 **Content Structure:**
+
 - Structured frontmatter in `content/area.md`
 - Dynamic content loading via MDX
 - Server-side rendering with client-side interactivity

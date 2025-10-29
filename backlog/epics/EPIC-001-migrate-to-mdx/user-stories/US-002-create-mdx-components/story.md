@@ -26,6 +26,7 @@ So that **I can create rich, interactive content with reusable UI elements**.
 ## Technical Notes
 
 Create a component mapping file that:
+
 - Overrides default HTML elements with Next.js optimized versions
 - Provides custom shortcode components for content authors
 - Maintains site styling and theme

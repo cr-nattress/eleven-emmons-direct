@@ -1,15 +1,19 @@
 # TASK-003: Animate Nearby Attractions Cards
 
 ## Task Description
+
 Add staggered entrance animations to nearby attractions cards.
 
 ## Priority
+
 MEDIUM
 
 ## Estimated Effort
+
 2 hours
 
 ## Acceptance Criteria
+
 - [ ] Attractions cards animate with stagger effect
 - [ ] Each card fades and scales in
 - [ ] Links and interactions maintained
@@ -26,6 +30,7 @@ MEDIUM
 5. Use 100-150ms stagger delay
 
 **Example:**
+
 ```typescript
 const { ref: attractionsRef, controls: attractionsControls } = useScrollAnimation()
 
@@ -46,19 +51,23 @@ const { ref: attractionsRef, controls: attractionsControls } = useScrollAnimatio
 ```
 
 **Testing:**
+
 - Scroll to attractions section
 - Verify staggered card entrance
 - Test any links within cards
 - Check console for errors
 
 ## Dependencies
+
 - TASK-001: Animate section header
 
 ## Related Tasks
+
 - TASK-001: Animate section header
 - TASK-002: Add map container animation
 
 ## References
+
 - [Location Component](../../../../components/Location.tsx)
 - [Stagger Variants](../../../../lib/animations/variants.ts)
 

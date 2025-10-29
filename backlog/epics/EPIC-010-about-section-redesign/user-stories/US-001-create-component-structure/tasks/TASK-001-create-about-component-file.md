@@ -29,6 +29,7 @@ You are implementing the About section redesign for the 11 Emmons Road vacation 
    - Do NOT add `"use client"` directive (server component by default)
 
 2. **Add basic structure:**
+
    ```typescript
    // components/About.tsx
    export default function About() {
@@ -80,6 +81,7 @@ export default function About() {
 - ✅ Component ready for section container implementation (TASK-002)
 
 **Commit Message**:
+
 ```
 feat(about): Create About component with basic structure
 

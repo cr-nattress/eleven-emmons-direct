@@ -1,32 +1,35 @@
 # EPIC-002: Animation Framework - Quick Reference
 
 ## Overview
+
 Implement Framer Motion animations across the entire site to improve user engagement by 30-45% and increase booking conversions by 15-25%.
 
 ## Status: 🔴 Not Started
 
 ## Progress: 0/10 User Stories Complete
 
-| User Story | Status | Priority | Effort | Impact |
-|------------|--------|----------|--------|--------|
-| US-001: Setup Infrastructure | ⬜ Not Started | CRITICAL | 1 day | Foundation |
-| US-002: Hero Animations | ⬜ Not Started | CRITICAL | 1 day | High |
-| US-003: Gallery Animations | ⬜ Not Started | CRITICAL | 1 day | High |
-| US-004: Booking CTA Animations | ⬜ Not Started | CRITICAL | 1 day | Critical |
-| US-005: Amenities Animations | ⬜ Not Started | HIGH | 2 days | High |
-| US-006: Mobile Menu Animations | ⬜ Not Started | HIGH | 1 day | High |
-| US-007: About Section Animations | ⬜ Not Started | HIGH | 2 days | Medium |
-| US-008: Location Animations | ⬜ Not Started | MEDIUM | 1 day | Medium |
-| US-009: Header/Footer Animations | ⬜ Not Started | MEDIUM | 1 day | Low |
-| US-010: Testing & Optimization | ⬜ Not Started | HIGH | 2 days | Critical |
+| User Story                       | Status         | Priority | Effort | Impact     |
+| -------------------------------- | -------------- | -------- | ------ | ---------- |
+| US-001: Setup Infrastructure     | ⬜ Not Started | CRITICAL | 1 day  | Foundation |
+| US-002: Hero Animations          | ⬜ Not Started | CRITICAL | 1 day  | High       |
+| US-003: Gallery Animations       | ⬜ Not Started | CRITICAL | 1 day  | High       |
+| US-004: Booking CTA Animations   | ⬜ Not Started | CRITICAL | 1 day  | Critical   |
+| US-005: Amenities Animations     | ⬜ Not Started | HIGH     | 2 days | High       |
+| US-006: Mobile Menu Animations   | ⬜ Not Started | HIGH     | 1 day  | High       |
+| US-007: About Section Animations | ⬜ Not Started | HIGH     | 2 days | Medium     |
+| US-008: Location Animations      | ⬜ Not Started | MEDIUM   | 1 day  | Medium     |
+| US-009: Header/Footer Animations | ⬜ Not Started | MEDIUM   | 1 day  | Low        |
+| US-010: Testing & Optimization   | ⬜ Not Started | HIGH     | 2 days | Critical   |
 
 ## Quick Stats
+
 - **Total Tasks**: 35 tasks across 10 user stories
 - **Estimated Time**: 15 days (3 weeks)
 - **Expected ROI**: +20% booking conversions, +35% engagement
 - **Tech Stack**: Framer Motion + Intersection Observer API
 
 ## Critical Path (Week 1)
+
 1. ✅ Install Framer Motion
 2. ✅ Create animation utilities
 3. ✅ Hero section entrance animations
@@ -34,6 +37,7 @@ Implement Framer Motion animations across the entire site to improve user engage
 5. ✅ Booking CTA animations
 
 ## Next Actions
+
 1. Run: `npm install framer-motion`
 2. Create `/lib/animations/` directory
 3. Start with US-001 tasks
@@ -41,6 +45,7 @@ Implement Framer Motion animations across the entire site to improve user engage
 ## Key Files to Create/Modify
 
 ### New Files (9)
+
 - `/lib/animations/variants.ts`
 - `/lib/animations/hooks.ts`
 - `/lib/animations/constants.ts`
@@ -52,6 +57,7 @@ Implement Framer Motion animations across the entire site to improve user engage
 - `/components/animated/AnimatedMenu.tsx`
 
 ### Files to Modify (8)
+
 - `/components/Hero.tsx`
 - `/components/Gallery.tsx`
 - `/components/BookingWidget.tsx`
@@ -64,6 +70,7 @@ Implement Framer Motion animations across the entire site to improve user engage
 ## Animation Inventory
 
 ### Component Animation Count
+
 - Hero: 6 animations (title, subtitle, buttons, scroll arrow)
 - Gallery: 7 animations (6 cards + lightbox)
 - Booking: 4 animations (widget, 2 contact cards, CTA)
@@ -78,6 +85,7 @@ Implement Framer Motion animations across the entire site to improve user engage
 ## Success Criteria Checklist
 
 ### Must Have ✓
+
 - [ ] Framer Motion installed
 - [ ] Animation utilities created
 - [ ] Hero entrance animations working
@@ -88,6 +96,7 @@ Implement Framer Motion animations across the entire site to improve user engage
 - [ ] Lighthouse score > 90
 
 ### Performance Targets
+
 - [ ] First Contentful Paint < 1.5s
 - [ ] Time to Interactive < 3.5s
 - [ ] No layout shift from animations
@@ -96,12 +105,12 @@ Implement Framer Motion animations across the entire site to improve user engage
 
 ## Risk Mitigation
 
-| Risk | Status | Mitigation |
-|------|--------|------------|
-| Performance degradation | ⚠️ Monitor | Test after each phase |
-| Server/Client boundaries | ⚠️ Monitor | Use composition pattern |
-| Accessibility issues | ⚠️ Monitor | Respect prefers-reduced-motion |
-| Mobile lag | ⚠️ Monitor | Test on real devices |
+| Risk                     | Status     | Mitigation                     |
+| ------------------------ | ---------- | ------------------------------ |
+| Performance degradation  | ⚠️ Monitor | Test after each phase          |
+| Server/Client boundaries | ⚠️ Monitor | Use composition pattern        |
+| Accessibility issues     | ⚠️ Monitor | Respect prefers-reduced-motion |
+| Mobile lag               | ⚠️ Monitor | Test on real devices           |
 
 ## Resources
 
@@ -111,6 +120,7 @@ Implement Framer Motion animations across the entire site to improve user engage
 - [Animation Research](../../../knowledge/feedback/index.md)
 
 ## Notes
+
 - Focus on conversion-driven animations first
 - Keep animations subtle (300-600ms)
 - Mobile-first approach

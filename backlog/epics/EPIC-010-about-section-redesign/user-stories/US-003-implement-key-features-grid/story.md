@@ -27,6 +27,7 @@
 ## Technical Notes
 
 ### Required Features
+
 1. ✓ **Ski-in/ski-out access** (0 min walk to lift)
 2. ✓ **Smart home controls** (thermostat, lights, locks)
 3. ✓ **Recently renovated** (2024)
@@ -35,6 +36,7 @@
 6. ✓ **In-unit washer/dryer**
 
 ### Component Structure
+
 ```typescript
 // Inside About.tsx
 const features = [
@@ -61,6 +63,7 @@ const features = [
 ```
 
 ### Design Specifications
+
 - **Grid Layout:** `grid sm:grid-cols-2 gap-4`
 - **Feature Item:** `flex items-start gap-3`
 - **Checkmark Color:** `text-green-600` (#10B981)
@@ -71,6 +74,7 @@ const features = [
 - **Gap Between Items:** `gap-4` (16px)
 
 ### Responsive Breakpoints
+
 - **Mobile (<640px):** 1 column
 - **Tablet/Desktop (640px+):** 2 columns
 

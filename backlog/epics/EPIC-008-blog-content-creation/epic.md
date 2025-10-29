@@ -46,22 +46,27 @@ Create 10 supporting blog posts (1,200-1,800 words each) focused on ski-in/ski-o
 ## Blog Post Schedule
 
 **Week 2:**
+
 - "How Close is 11 Emmons Road to the Ski Lifts?" (1,200w)
 - "What Does Ski-In/Ski-Out Really Mean?" (1,500w)
 
 **Week 3:**
+
 - "5 Reasons Ski-In/Ski-Out Changes Your Vacation" (1,800w)
 - "Ski-In/Ski-Out vs Shuttle Comparison" (1,500w)
 
 **Week 4:**
+
 - "A Day at a Ski-In/Ski-Out Rental" (1,200w)
 - "Best Ski Runs from 11 Emmons" (1,500w)
 
 **Week 5:**
+
 - "Why Families Love Ski-In/Ski-Out" (1,300w)
 - "Planning: Why Location Matters" (1,600w)
 
 **Week 6:**
+
 - "What to Pack for Ski-In/Ski-Out" (1,200w)
 - "Best Time to Book" (1,400w)
 

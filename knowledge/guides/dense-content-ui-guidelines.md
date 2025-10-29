@@ -1,4 +1,5 @@
 # Dense Content UI/UX Guidelines
+
 **A Pattern Library for Long Lists, Grouped Content, and Information-Heavy Sections**
 
 ---
@@ -8,6 +9,7 @@
 **Purpose:** Provide reusable UI/UX patterns for displaying dense, information-heavy content in a scannable, mobile-friendly, and engaging manner.
 
 **Applies To:**
+
 - Sections with 15+ list items
 - Multiple grouped lists (categories, subcategories)
 - Stat-heavy content (metrics, numbers, data points)
@@ -15,6 +17,7 @@
 - Content that creates "walls of text" or "list fatigue"
 
 **Tech Stack:**
+
 - Next.js 14 App Router
 - TypeScript
 - Tailwind CSS
@@ -29,6 +32,7 @@
 ## Core Design Principles
 
 ### 1. Progressive Disclosure
+
 **Don't show everything at once. Let users explore what interests them.**
 
 - Users should see overview first, details on demand
@@ -37,6 +41,7 @@
 - Enable deep-dive when interested
 
 ### 2. Scannability Over Completeness
+
 **Make it easy to find information, not just display it.**
 
 - Use visual hierarchy (headings, spacing, cards)
@@ -45,6 +50,7 @@
 - Use icons and checkmarks for quick scanning
 
 ### 3. Mobile-First Responsiveness
+
 **Design for the smallest screen first.**
 
 - Vertical stacking on mobile
@@ -53,6 +59,7 @@
 - Optimize for thumb reach zones
 
 ### 4. Accessibility as Standard
+
 **WCAG 2.1 AA compliance is non-negotiable.**
 
 - Semantic HTML
@@ -68,18 +75,21 @@
 ## Pattern 1: Tab-Based Organization
 
 ### When to Use
+
 - Content has **3-6 distinct categories**
 - Users typically only need one category at a time
 - Categories are mutually exclusive (Winter vs Summer, Indoor vs Outdoor)
 - Want to dramatically reduce initial visual complexity
 
 ### Advantages
+
 - ✅ Reduces cognitive load (users choose relevant category)
 - ✅ Clean, modern interface
 - ✅ Easy mobile adaptation (scrollable tabs)
 - ✅ Hides irrelevant content
 
 ### Disadvantages
+
 - ❌ Content in inactive tabs not immediately visible
 - ❌ Requires extra interaction to explore
 - ❌ May not be ideal if users need to compare across tabs
@@ -234,18 +244,21 @@ import { motion, AnimatePresence } from 'framer-motion'
 ## Pattern 2: Accordion/Expandable Cards
 
 ### When to Use
+
 - Content has **4-10 distinct sections**
 - Users may want to view multiple sections simultaneously
 - Need all content on same page for SEO
 - Sections can be understood independently
 
 ### Advantages
+
 - ✅ All content on one page (SEO-friendly)
 - ✅ User controls expansion (progressive disclosure)
 - ✅ Mobile-friendly (vertical stacking)
 - ✅ Familiar interaction pattern
 
 ### Disadvantages
+
 - ❌ Can still feel long on mobile (many accordions)
 - ❌ Requires clicking to see content
 - ❌ May not reduce perceived length as much as tabs
@@ -394,12 +407,14 @@ const handleKeyDown = (e: React.KeyboardEvent) => {
 ## Pattern 3: Stat Cards Grid
 
 ### When to Use
+
 - Content includes **4-12 key metrics/numbers**
 - Numbers are more important than text descriptions
 - Want to create visual hierarchy
 - Users need to scan/compare values quickly
 
 ### Advantages
+
 - ✅ Makes numbers scannable
 - ✅ Creates visual interest
 - ✅ Highlights key data points
@@ -506,16 +521,16 @@ export function StatCard({
 // Common grid configurations
 
 // 4 items: 2x2 mobile → 4 cols desktop
-className="grid grid-cols-2 md:grid-cols-4 gap-4"
+className = 'grid grid-cols-2 md:grid-cols-4 gap-4'
 
 // 5 items: 2x3 mobile → 5 cols desktop
-className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4"
+className = 'grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4'
 
 // 6 items: 2x3 mobile → 3x2 tablet → 6 cols desktop
-className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4"
+className = 'grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4'
 
 // 3 items: 1 col mobile → 3 cols desktop
-className="grid grid-cols-1 md:grid-cols-3 gap-4"
+className = 'grid grid-cols-1 md:grid-cols-3 gap-4'
 ```
 
 ---
@@ -523,12 +538,14 @@ className="grid grid-cols-1 md:grid-cols-3 gap-4"
 ## Pattern 4: Feature Lists with Checkmarks
 
 ### When to Use
+
 - Content is **bulleted list of 6+ items**
 - All items have equal importance
 - Items are short phrases (not paragraphs)
 - Want scannable, glanceable format
 
 ### Advantages
+
 - ✅ Highly scannable
 - ✅ Visual consistency
 - ✅ Easy to add/remove items
@@ -627,18 +644,21 @@ export function FeatureListWithIcons({ items }: { items: FeatureItem[] }) {
 ## Pattern 5: Hybrid (Tabs + Accordions)
 
 ### When to Use
+
 - Content has **both** high-level categories AND sub-categories
 - Example: Tabs for Winter/Summer, Accordions within each for Resort/Nordic/Activities
 - Most complex content organization needs
 - Want maximum flexibility
 
 ### Advantages
+
 - ✅ Best of both worlds
 - ✅ Handles very complex content
 - ✅ Maximum organization
 - ✅ Users can drill down progressively
 
 ### Disadvantages
+
 - ❌ Most complex to implement
 - ❌ Requires more user interactions
 - ❌ May be overkill for simple content
@@ -714,16 +734,16 @@ function WinterAccordions() {
 
 ## Decision Matrix: Which Pattern to Use?
 
-| Criteria | Tabs | Accordions | Hybrid | Stat Cards Only | Feature List Only |
-|----------|------|------------|--------|-----------------|-------------------|
-| **3-6 main categories** | ✅ Best | ❌ | ✅ Good | ❌ | ❌ |
-| **7+ categories** | ❌ | ✅ Best | ✅ Good | ❌ | ❌ |
-| **Stat-heavy content** | ✅ | ✅ | ✅ | ✅ Best | ❌ |
-| **Long text lists** | ✅ | ✅ | ✅ | ❌ | ✅ Best |
-| **SEO critical** | ⚠️ Moderate | ✅ Best | ✅ Good | ✅ | ✅ |
-| **Simple content** | ❌ Overkill | ❌ Overkill | ❌ | ✅ | ✅ |
-| **Complex hierarchy** | ⚠️ | ⚠️ | ✅ Best | ❌ | ❌ |
-| **Mobile-first** | ✅ | ✅ Best | ✅ | ✅ | ✅ |
+| Criteria                | Tabs        | Accordions  | Hybrid  | Stat Cards Only | Feature List Only |
+| ----------------------- | ----------- | ----------- | ------- | --------------- | ----------------- |
+| **3-6 main categories** | ✅ Best     | ❌          | ✅ Good | ❌              | ❌                |
+| **7+ categories**       | ❌          | ✅ Best     | ✅ Good | ❌              | ❌                |
+| **Stat-heavy content**  | ✅          | ✅          | ✅      | ✅ Best         | ❌                |
+| **Long text lists**     | ✅          | ✅          | ✅      | ❌              | ✅ Best           |
+| **SEO critical**        | ⚠️ Moderate | ✅ Best     | ✅ Good | ✅              | ✅                |
+| **Simple content**      | ❌ Overkill | ❌ Overkill | ❌      | ✅              | ✅                |
+| **Complex hierarchy**   | ⚠️          | ⚠️          | ✅ Best | ❌              | ❌                |
+| **Mobile-first**        | ✅          | ✅ Best     | ✅      | ✅              | ✅                |
 
 ---
 
@@ -734,60 +754,63 @@ function WinterAccordions() {
 ```typescript
 // Tailwind breakpoints used
 const breakpoints = {
-  sm: '640px',   // Small tablets
-  md: '768px',   // Tablets
-  lg: '1024px',  // Desktops
-  xl: '1280px',  // Large desktops
-  '2xl': '1536px' // Extra large screens
+  sm: '640px', // Small tablets
+  md: '768px', // Tablets
+  lg: '1024px', // Desktops
+  xl: '1280px', // Large desktops
+  '2xl': '1536px', // Extra large screens
 }
 ```
 
 ### Mobile (<640px)
+
 ```typescript
 // Tabs: Horizontal scroll
-className="overflow-x-auto scrollbar-hide"
+className = 'overflow-x-auto scrollbar-hide'
 
 // Stats: 2x2 grid
-className="grid grid-cols-2 gap-4"
+className = 'grid grid-cols-2 gap-4'
 
 // Features: 1 column
-className="grid grid-cols-1 gap-3"
+className = 'grid grid-cols-1 gap-3'
 
 // Cards: Full width, vertical stack
-className="w-full space-y-4"
+className = 'w-full space-y-4'
 
 // Text: Smaller sizes
-className="text-sm md:text-base"
+className = 'text-sm md:text-base'
 ```
 
 ### Tablet (640-1024px)
+
 ```typescript
 // Tabs: May need scroll if 5+
-className="flex gap-4 overflow-x-auto"
+className = 'flex gap-4 overflow-x-auto'
 
 // Stats: 2x2 or 3x1
-className="grid grid-cols-2 md:grid-cols-3 gap-4"
+className = 'grid grid-cols-2 md:grid-cols-3 gap-4'
 
 // Features: 2 columns
-className="grid sm:grid-cols-2 gap-3"
+className = 'grid sm:grid-cols-2 gap-3'
 
 // Cards: Full width or 2-col
-className="grid sm:grid-cols-2 gap-4"
+className = 'grid sm:grid-cols-2 gap-4'
 ```
 
 ### Desktop (1024px+)
+
 ```typescript
 // Tabs: All visible
-className="flex gap-6"
+className = 'flex gap-6'
 
 // Stats: 4-5 in single row
-className="grid lg:grid-cols-4 gap-4"
+className = 'grid lg:grid-cols-4 gap-4'
 
 // Features: 2 columns
-className="grid lg:grid-cols-2 gap-4"
+className = 'grid lg:grid-cols-2 gap-4'
 
 // Cards: 2-3 columns possible
-className="grid lg:grid-cols-3 gap-6"
+className = 'grid lg:grid-cols-3 gap-6'
 ```
 
 ---
@@ -840,7 +863,9 @@ const tabVariants = {
 
 /* Button hover */
 .button {
-  transition: background-color 0.2s ease, color 0.2s ease;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
 }
 ```
 
@@ -863,6 +888,7 @@ const shouldAnimate = useMediaQuery('(min-width: 768px)')
 ## Accessibility Checklist
 
 ### Semantic HTML
+
 - [ ] Use `<section>` for major content areas
 - [ ] Use `<h2>`, `<h3>` for headings (proper hierarchy)
 - [ ] Use `<button>` for interactive elements (not `<div>`)
@@ -870,6 +896,7 @@ const shouldAnimate = useMediaQuery('(min-width: 768px)')
 - [ ] Use proper ARIA roles (`role="tab"`, `role="tabpanel"`, etc.)
 
 ### Keyboard Navigation
+
 - [ ] Tab key navigates through interactive elements
 - [ ] Enter/Space activates buttons and accordions
 - [ ] Arrow keys navigate between tabs
@@ -877,6 +904,7 @@ const shouldAnimate = useMediaQuery('(min-width: 768px)')
 - [ ] Focus visible on all interactive elements
 
 ### Screen Reader Support
+
 - [ ] Descriptive `aria-label` on all buttons
 - [ ] `aria-expanded` on accordion buttons
 - [ ] `aria-selected` on active tab
@@ -885,16 +913,18 @@ const shouldAnimate = useMediaQuery('(min-width: 768px)')
 - [ ] Status announcements with `aria-live` (when tab changes)
 
 ### Color Contrast
+
 - [ ] Body text: 4.5:1 minimum (WCAG AA)
 - [ ] Large text (18pt+): 3:1 minimum
 - [ ] UI components: 3:1 minimum
 - [ ] Test with WebAIM Contrast Checker
 
 ### Focus Management
+
 ```css
 /* Always show focus indicators */
 button:focus-visible {
-  outline: 2px solid #3B82F6;
+  outline: 2px solid #3b82f6;
   outline-offset: 2px;
 }
 
@@ -904,7 +934,7 @@ button:focus-visible {
 }
 
 *:focus-visible {
-  outline: 2px solid #3B82F6;
+  outline: 2px solid #3b82f6;
   outline-offset: 2px;
 }
 ```
@@ -914,32 +944,42 @@ button:focus-visible {
 ## Content Writing Guidelines
 
 ### Stat Card Labels
+
 **Keep concise (1-3 words):**
+
 - ✅ "Acres of Terrain"
 - ❌ "Total Skiable Acres Available"
 
 **Be specific:**
+
 - ✅ "Inches Annual Snow"
 - ❌ "Snow"
 
 ### Feature List Items
+
 **Be action-oriented:**
+
 - ✅ "Trails ranging from beginner to expert"
 - ❌ "Various trail difficulties"
 
 **Include specifics:**
+
 - ✅ "30+ km of groomed cross-country trails"
 - ❌ "Cross-country skiing available"
 
 ### Accordion Previews
+
 **Formula:** `[Stat] • [Stat] • [Benefit]`
 
 **Examples:**
+
 - "1,547 acres • 121 trails • All skill levels"
 - "30+ km trails • Backcountry access • Rentals available"
 
 ### Tab Labels
+
 **Keep ultra-short (1-2 words):**
+
 - ✅ "Overview", "Winter", "Summer"
 - ❌ "Overview of Area", "Winter Activities & Sports"
 
@@ -951,8 +991,8 @@ button:focus-visible {
 
 ```yaml
 ---
-title: "Section Title"
-subtitle: "Brief description"
+title: 'Section Title'
+subtitle: 'Brief description'
 
 # Tab configuration (if using tabs)
 tabs:
@@ -965,34 +1005,33 @@ tabs:
 
 # Stat data
 stats:
-  - value: "1,547"
-    label: "Acres"
-    icon: "🏔️"
+  - value: '1,547'
+    label: 'Acres'
+    icon: '🏔️'
     highlight: false
-  - value: "121"
-    label: "Trails"
-    icon: "⛷️"
+  - value: '121'
+    label: 'Trails'
+    icon: '⛷️'
     highlight: true
 
 # Feature lists
 features:
-  - "Feature one with specific details"
-  - "Feature two with specific details"
-  - "Feature three with specific details"
+  - 'Feature one with specific details'
+  - 'Feature two with specific details'
+  - 'Feature three with specific details'
 
 # Grouped content (for accordions)
 categories:
-  - title: "Category One"
-    icon: "🏔️"
-    preview: "Quick summary"
+  - title: 'Category One'
+    icon: '🏔️'
+    preview: 'Quick summary'
     stats:
-      - value: "100"
-        label: "Count"
+      - value: '100'
+        label: 'Count'
     features:
-      - "Feature A"
-      - "Feature B"
+      - 'Feature A'
+      - 'Feature B'
 ---
-
 # Main content here
 ```
 
@@ -1011,7 +1050,7 @@ export async function getContentData(slug: string) {
 
   return {
     frontmatter: data,
-    source: content
+    source: content,
   }
 }
 ```
@@ -1021,6 +1060,7 @@ export async function getContentData(slug: string) {
 ## Testing Checklist
 
 ### Functional Tests
+
 - [ ] Tabs switch content correctly
 - [ ] Accordions expand/collapse
 - [ ] Stat cards display all values
@@ -1029,7 +1069,9 @@ export async function getContentData(slug: string) {
 - [ ] No content overflow or clipping
 
 ### Responsive Tests
+
 **Mobile (375px, 414px):**
+
 - [ ] Tabs scroll horizontally
 - [ ] Cards stack vertically
 - [ ] Stats in 2-column grid
@@ -1037,16 +1079,19 @@ export async function getContentData(slug: string) {
 - [ ] No horizontal scroll
 
 **Tablet (768px, 1024px):**
+
 - [ ] Tabs fit viewport or scroll smoothly
 - [ ] Optimal stat card grid
 - [ ] Good use of space
 
 **Desktop (1440px, 1920px):**
+
 - [ ] Content max-width maintained
 - [ ] Hover states work
 - [ ] Stats in single row
 
 ### Accessibility Tests
+
 - [ ] WAVE: 0 errors
 - [ ] Screen reader: All content announced
 - [ ] Keyboard-only: All features accessible
@@ -1054,6 +1099,7 @@ export async function getContentData(slug: string) {
 - [ ] Focus indicators: Visible on all elements
 
 ### Performance Tests
+
 - [ ] First Contentful Paint < 1.5s
 - [ ] Largest Contentful Paint < 2.5s
 - [ ] Cumulative Layout Shift < 0.1
@@ -1067,6 +1113,7 @@ export async function getContentData(slug: string) {
 When implementing these patterns:
 
 ### Phase 1: Planning
+
 - [ ] Audit current content (count items, identify groups)
 - [ ] Choose appropriate pattern(s)
 - [ ] Sketch mobile and desktop layouts
@@ -1074,6 +1121,7 @@ When implementing these patterns:
 - [ ] Review with stakeholders
 
 ### Phase 2: Components
+
 - [ ] Create base components (TabNav, ExpandableCard, etc.)
 - [ ] Add TypeScript interfaces
 - [ ] Implement responsive classes
@@ -1081,12 +1129,14 @@ When implementing these patterns:
 - [ ] Test accessibility
 
 ### Phase 3: Content
+
 - [ ] Migrate content to MDX
 - [ ] Structure frontmatter
 - [ ] Write preview summaries
 - [ ] Optimize copy for scannability
 
 ### Phase 4: Testing
+
 - [ ] Functional testing
 - [ ] Responsive testing
 - [ ] Accessibility audit
@@ -1094,6 +1144,7 @@ When implementing these patterns:
 - [ ] Browser compatibility
 
 ### Phase 5: Deploy & Monitor
+
 - [ ] Deploy to production
 - [ ] Monitor analytics
 - [ ] Track engagement metrics
@@ -1104,30 +1155,37 @@ When implementing these patterns:
 ## Common Pitfalls to Avoid
 
 ### 1. Too Many Tabs
+
 ❌ **Bad:** 8+ tabs (overwhelming choice)
 ✅ **Good:** 3-5 tabs (clear categories)
 
 ### 2. Nested Accordions
+
 ❌ **Bad:** Accordions inside accordions
 ✅ **Good:** Use hybrid pattern (tabs + accordions)
 
 ### 3. Tiny Touch Targets
+
 ❌ **Bad:** 24x24px buttons on mobile
 ✅ **Good:** 48x48px minimum (WCAG)
 
 ### 4. Hidden Important Content
+
 ❌ **Bad:** Key information in collapsed accordion
 ✅ **Good:** Expand first/important section by default
 
 ### 5. No Loading States
+
 ❌ **Bad:** Blank screen while loading
 ✅ **Good:** Skeleton screens or spinners
 
 ### 6. Breaking Keyboard Navigation
+
 ❌ **Bad:** Tab traps, missing focus indicators
 ✅ **Good:** Logical tab order, visible focus
 
 ### 7. Over-Animation
+
 ❌ **Bad:** Every element animates constantly
 ✅ **Good:** Subtle transitions on user interactions
 

@@ -1,15 +1,19 @@
 # TASK-004: Animate List Items
 
 ## Task Description
+
 Add staggered entrance animations to list items in the about section.
 
 ## Priority
+
 LOW
 
 ## Estimated Effort
+
 1-2 hours
 
 ## Acceptance Criteria
+
 - [ ] List items animate sequentially
 - [ ] Each item fades and slides in
 - [ ] Timing feels natural
@@ -26,6 +30,7 @@ LOW
 5. Use subtle animation (fade + slight slide)
 
 **Example:**
+
 ```typescript
 const { ref: listRef, controls: listControls } = useScrollAnimation()
 
@@ -43,17 +48,21 @@ const { ref: listRef, controls: listControls } = useScrollAnimation()
 ```
 
 **Testing:**
+
 - Scroll to lists
 - Verify sequential animation
 - Ensure readability
 
 ## Dependencies
+
 - TASK-001: Animate section header
 
 ## Related Tasks
+
 - TASK-003: Add feature card animations
 
 ## References
+
 - [About Component](../../../../components/About.tsx)
 - [Stagger Variants](../../../../lib/animations/variants.ts)
 

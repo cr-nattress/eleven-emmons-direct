@@ -1,15 +1,19 @@
 # TASK-004: Create Animated Wrapper Components
 
 ## Task Description
+
 Create reusable animated wrapper components that will be used throughout the application to add consistent animations to sections, cards, and buttons.
 
 ## Priority
+
 CRITICAL
 
 ## Estimated Effort
+
 2-3 hours
 
 ## Acceptance Criteria
+
 - [ ] `/components/animated/` directory created
 - [ ] `AnimatedSection.tsx` created with scroll-triggered animations
 - [ ] `AnimatedCard.tsx` created with hover and entrance animations
@@ -24,7 +28,9 @@ CRITICAL
 ## Technical Details
 
 ### Component Architecture
+
 Each wrapper component should:
+
 - Be a client component ('use client')
 - Accept children to wrap
 - Accept optional animation variant customization
@@ -59,6 +65,7 @@ Each wrapper component should:
 You are tasked with creating animated wrapper components for the Eleven Emmons vacation rental website.
 
 **Context:**
+
 - Framer Motion is installed (TASK-001 complete)
 - Animation utilities created (TASK-002 complete)
 - Custom hooks created (TASK-003 complete)
@@ -68,11 +75,13 @@ You are tasked with creating animated wrapper components for the Eleven Emmons v
 **Instructions:**
 
 1. **Create Directory:**
+
    ```bash
    mkdir -p components/animated
    ```
 
 2. **Create `/components/animated/AnimatedSection.tsx`:**
+
    ```typescript
    'use client'
 
@@ -138,6 +147,7 @@ You are tasked with creating animated wrapper components for the Eleven Emmons v
    ```
 
 3. **Create `/components/animated/AnimatedCard.tsx`:**
+
    ```typescript
    'use client'
 
@@ -209,6 +219,7 @@ You are tasked with creating animated wrapper components for the Eleven Emmons v
    ```
 
 4. **Create `/components/animated/AnimatedButton.tsx`:**
+
    ```typescript
    'use client'
 
@@ -292,6 +303,7 @@ You are tasked with creating animated wrapper components for the Eleven Emmons v
 
 5. **Create Index File (Optional but Recommended):**
    Create `/components/animated/index.ts` to simplify imports:
+
    ```typescript
    export { default as AnimatedSection } from './AnimatedSection'
    export { default as AnimatedCard } from './AnimatedCard'
@@ -322,6 +334,7 @@ You are tasked with creating animated wrapper components for the Eleven Emmons v
 **Component Usage Patterns:**
 
 These components will be used like this in other parts of the app:
+
 ```typescript
 // In a page or component
 import { AnimatedSection, AnimatedCard, AnimatedButton } from '@/components/animated'
@@ -346,12 +359,14 @@ import { AnimatedSection, AnimatedCard, AnimatedButton } from '@/components/anim
 ```
 
 **Server/Client Boundary:**
+
 - These are CLIENT components (they use hooks and browser APIs)
 - Parent components can be SERVER components
 - Pass server data as props to these components
 - Don't fetch data inside these components
 
 **Success Criteria:**
+
 - All three components created with 'use client'
 - No TypeScript errors
 - Components can be imported and used
@@ -360,6 +375,7 @@ import { AnimatedSection, AnimatedCard, AnimatedButton } from '@/components/anim
 - Proper TypeScript typing
 
 **Testing:**
+
 - Verify TypeScript compilation: `npm run build`
 - Verify imports work
 - Test in browser by temporarily adding to a page
@@ -368,14 +384,17 @@ import { AnimatedSection, AnimatedCard, AnimatedButton } from '@/components/anim
 - Check console for errors
 
 ## Dependencies
+
 - TASK-001: Install Framer Motion (required)
 - TASK-002: Create animation utilities (imports variants)
 - TASK-003: Create custom hooks (imports hooks)
 
 ## Related Tasks
+
 - US-002 through US-009: All future user stories will use these components
 
 ## References
+
 - [Framer Motion Components](https://www.framer.com/motion/component/)
 - [Next.js Client Components](https://nextjs.org/docs/app/building-your-application/rendering/client-components)
 - [React Children Props](https://react.dev/learn/passing-props-to-a-component#passing-jsx-as-children)

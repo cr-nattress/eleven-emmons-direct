@@ -12,6 +12,7 @@
 ## Business Value
 
 Enable the ability to embed React components directly in markdown content files, providing:
+
 - Interactive components in content (callouts, alerts, booking widgets)
 - Better plugin ecosystem for enhanced content features
 - GitHub Flavored Markdown support (tables, strikethrough, task lists)
@@ -22,6 +23,7 @@ Enable the ability to embed React components directly in markdown content files,
 ## Current State
 
 The site currently uses:
+
 - `marked` library for Markdown → HTML conversion
 - Simple markdown parsing with frontmatter support
 - Server-side rendering with gray-matter
@@ -30,6 +32,7 @@ The site currently uses:
 ## Target State
 
 Upgrade to:
+
 - `next-mdx-remote` for MDX serialization
 - Support for React components in content
 - Remark/Rehype plugin ecosystem
@@ -73,12 +76,12 @@ Upgrade to:
 
 ## Risks and Mitigations
 
-| Risk | Impact | Likelihood | Mitigation |
-|------|--------|------------|------------|
-| Breaking changes in rendering | High | Medium | Test thoroughly before removing old code |
-| Bundle size increase | Medium | High | Monitor bundle, use code splitting if needed |
-| Plugin compatibility issues | Medium | Low | Use well-maintained, popular plugins |
-| Styling breaks with new HTML structure | High | Medium | Review prose styles, add custom styles if needed |
+| Risk                                   | Impact | Likelihood | Mitigation                                       |
+| -------------------------------------- | ------ | ---------- | ------------------------------------------------ |
+| Breaking changes in rendering          | High   | Medium     | Test thoroughly before removing old code         |
+| Bundle size increase                   | Medium | High       | Monitor bundle, use code splitting if needed     |
+| Plugin compatibility issues            | Medium | Low        | Use well-maintained, popular plugins             |
+| Styling breaks with new HTML structure | High   | Medium     | Review prose styles, add custom styles if needed |
 
 ## Dependencies
 
@@ -89,6 +92,7 @@ Upgrade to:
 ## Rollback Plan
 
 If issues arise:
+
 1. Keep backup of original `lib/markdown.ts` file
 2. Git commit before starting changes
 3. Can revert to marked by reverting commits

@@ -6,7 +6,9 @@ jest.mock('@/lib/markdown', () => ({
   getMarkdownContent: jest.fn(),
 }))
 
-const mockGetMarkdownContent = getMarkdownContent as jest.MockedFunction<typeof getMarkdownContent>
+const mockGetMarkdownContent = getMarkdownContent as jest.MockedFunction<
+  typeof getMarkdownContent
+>
 
 describe('About Component', () => {
   beforeEach(() => {
@@ -108,7 +110,9 @@ describe('About Component', () => {
     const component = await About()
     render(component)
 
-    expect(screen.getByText('Welcome to our beautiful mountain retreat.')).toBeInTheDocument()
+    expect(
+      screen.getByText('Welcome to our beautiful mountain retreat.')
+    ).toBeInTheDocument()
   })
 
   it('renders closing narrative when provided', async () => {
@@ -123,7 +127,9 @@ describe('About Component', () => {
     const component = await About()
     render(component)
 
-    expect(screen.getByText('Book your stay today and create lasting memories.')).toBeInTheDocument()
+    expect(
+      screen.getByText('Book your stay today and create lasting memories.')
+    ).toBeInTheDocument()
   })
 
   it('has proper accessibility attributes', async () => {
@@ -158,6 +164,8 @@ describe('About Component', () => {
     const component = await About()
     render(component)
 
-    expect(screen.getByRole('heading', { name: /About This Property/i })).toBeInTheDocument()
+    expect(
+      screen.getByRole('heading', { name: /About This Property/i })
+    ).toBeInTheDocument()
   })
 })

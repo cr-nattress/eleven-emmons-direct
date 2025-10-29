@@ -1,15 +1,19 @@
 # TASK-001: Animate Section Header
 
 ## Task Description
+
 Add 'use client' directive if needed and implement scroll-triggered entrance animation for the amenities section header.
 
 ## Priority
+
 HIGH
 
 ## Estimated Effort
+
 1 hour
 
 ## Acceptance Criteria
+
 - [ ] Amenities.tsx has 'use client' directive (add if missing)
 - [ ] Section header (title + description) animates on scroll
 - [ ] Animation uses fade + slide up effect
@@ -22,13 +26,16 @@ HIGH
 ## Technical Details
 
 ### Current Structure
+
 Located in `/components/Amenities.tsx`:
+
 - Section with id="amenities"
 - Section header (h2 + p)
 - Grid of amenity cards
 - May or may not have 'use client' directive
 
 ### Animation Strategy
+
 - Add 'use client' if missing
 - Animate h2 with slide up effect
 - Animate p with slight delay (150ms)
@@ -39,6 +46,7 @@ Located in `/components/Amenities.tsx`:
 You are tasked with adding entrance animations to the amenities section header.
 
 **Context:**
+
 - Amenities component at `/components/Amenities.tsx`
 - Component may need 'use client' directive added
 - Header should animate before cards (which come in later tasks)
@@ -50,6 +58,7 @@ You are tasked with adding entrance animations to the amenities section header.
    - Locate section header
 
 2. **Add 'use client' if missing:**
+
    ```typescript
    'use client'
 
@@ -59,6 +68,7 @@ You are tasked with adding entrance animations to the amenities section header.
    ```
 
 3. **Add scroll animation hook:**
+
    ```typescript
    export default function Amenities() {
      const { ref: headerRef, controls: headerControls } = useScrollAnimation()
@@ -94,6 +104,7 @@ You are tasked with adding entrance animations to the amenities section header.
    ```
 
 **Testing:**
+
 1. Save the file
 2. Run dev server and navigate to amenities section
 3. Observe header animation on scroll
@@ -101,19 +112,23 @@ You are tasked with adding entrance animations to the amenities section header.
 5. Check console for errors
 
 **Success Criteria:**
+
 - Header animates smoothly on scroll
 - No TypeScript or console errors
 - No layout shift
 
 ## Dependencies
+
 - US-001: Setup Animation Infrastructure
 
 ## Related Tasks
+
 - TASK-002: Implement amenity card stagger animations (next)
 - TASK-003: Add icon animations
 - TASK-004: Add card hover enhancements
 
 ## References
+
 - [Amenities Component](../../../../components/Amenities.tsx)
 - [slideUpVariants](../../../../lib/animations/variants.ts)
 

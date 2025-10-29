@@ -39,12 +39,14 @@ This skill automatically analyzes a requirements or feature document and generat
 **Break requirements into epics (major features/initiatives):**
 
 Rules for Epic creation:
+
 - Each epic = 1 major feature or capability
 - Target: 4-8 hours of work per epic
 - Should deliver standalone business value
 - Can be prioritized independently
 
 **Epic components to generate:**
+
 ```
 - Epic ID (EPIC-XXX)
 - Title (clear, action-oriented)
@@ -63,12 +65,14 @@ Rules for Epic creation:
 **Break each epic into user stories (features/capabilities):**
 
 Rules for User Story creation:
+
 - Each story = 1 specific capability or improvement
 - Target: 30 minutes to 2 hours of work per story
 - Follow format: "As a [who], I want [what], so that [why]"
 - Assign story points (1, 2, 3, 5, 8 using Fibonacci)
 
 **Story components to generate:**
+
 ```
 - Story ID (US-XXX)
 - Epic reference
@@ -86,12 +90,14 @@ Rules for User Story creation:
 **Break each user story into actionable tasks:**
 
 Rules for Task creation:
+
 - Each task = 1 atomic action
 - Target: 5-30 minutes of work per task
 - Must be executable by AI or human
 - Include verification steps
 
 **Task components to generate:**
+
 ```
 - Task ID (TASK-XXX)
 - User Story reference
@@ -135,17 +141,20 @@ Use Fibonacci sequence for estimation:
 ## Priority Guidelines
 
 **🔴 Critical (High)**:
+
 - Blocks other work
 - Urgent business need
 - Quick wins with high impact
 - Week 1 priorities
 
 **🟡 Medium**:
+
 - Important but not blocking
 - Weeks 2-4 work
 - Moderate business impact
 
 **🟢 Low**:
+
 - Nice to have
 - Future iterations
 - Polish and refinement
@@ -164,19 +173,22 @@ You are working on [EPIC-XXX: Epic Title].
 **Context**: [Why this task matters, what it's part of]
 
 **Instructions**:
+
 1. [Step 1 with specific details]
 2. [Step 2 with file paths and code snippets]
 3. [Step 3 with expected outcomes]
 
 **Implementation Details**:
+
 - File to modify: `path/to/file.ts`
 - Specific changes: [exact changes needed]
 - Code example:
-\`\`\`typescript
-// Example of what to implement
-\`\`\`
+  \`\`\`typescript
+  // Example of what to implement
+  \`\`\`
 
 **Verification**:
+
 1. Run: `npm run dev`
 2. Check: [specific behavior to verify]
 3. Test: [how to test the change]
@@ -284,6 +296,7 @@ You are implementing structured data for the vacation rental website.
 **Context**: This is part of EPIC-004 (SEO Optimization). Schema markup helps search engines understand our property and display enhanced results.
 
 **Instructions**:
+
 1. Open `app/layout.tsx` or create `app/schema.json`
 2. Add JSON-LD script with VacationRental schema
 3. Include these fields:
@@ -300,6 +313,7 @@ File: `app/layout.tsx`
 Add this script tag to the <head>:
 
 \`\`\`typescript
+
 <script
   type="application/ld+json"
   dangerouslySetInnerHTML={{
@@ -367,3 +381,4 @@ Before completing, verify:
 
 ```
 User: "Generate backlog from requirements document at docs/features/analytics.md"
+```

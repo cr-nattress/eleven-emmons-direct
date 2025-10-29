@@ -46,17 +46,21 @@ Verification:
 ## Implementation Steps
 
 1. **[Step 1 Title]**
+
    ```bash
    # Command(s) to execute
    [command here]
    ```
+
    - Additional notes or explanation
 
 2. **[Step 2 Title]**
+
    ```bash
    # Command(s) to execute
    [command here]
    ```
+
    - Additional notes or explanation
 
 3. **[Step 3 Title]**
@@ -77,10 +81,12 @@ Verification:
    - Expected outcome: [description]
 
 2. **[Verification 2]**
+
    ```bash
    # Command to verify
    [command here]
    ```
+
    - Expected output: [description]
 
 3. **[Verification 3]**
@@ -104,20 +110,24 @@ Verification:
 ## Troubleshooting
 
 **Problem**: [Common issue 1]
+
 - **Solution**: [How to resolve]
 - **Command**: `[command if applicable]`
 
 **Problem**: [Common issue 2]
+
 - **Solution**: [How to resolve]
 - **Alternative**: [Alternate approach]
 
 **Problem**: [Common issue 3]
+
 - **Solution**: [How to resolve]
 - **Note**: [Important consideration]
 
 ## Rollback Plan
 
 If issues arise, revert changes:
+
 ```bash
 # Commands to undo changes
 [rollback command 1]
@@ -125,6 +135,7 @@ If issues arise, revert changes:
 ```
 
 Or restore from:
+
 - [Git commit/branch]
 - [Backup location]
 

@@ -27,6 +27,7 @@ So that **I have all the necessary dependencies to implement MDX rendering**.
 ## Technical Notes
 
 Install these packages:
+
 ```bash
 npm install next-mdx-remote remark-gfm rehype-slug rehype-autolink-headings
 npm install rehype-pretty-code shiki

@@ -1,15 +1,19 @@
 # TASK-003: Add Icon Animations on Scroll
 
 ## Task Description
+
 Add subtle entrance animations to the amenity icons to add visual interest and polish.
 
 ## Priority
+
 MEDIUM
 
 ## Estimated Effort
+
 1-2 hours
 
 ## Acceptance Criteria
+
 - [ ] Icons animate when cards enter viewport
 - [ ] Animation is subtle (scale or bounce)
 - [ ] Icons don't distract from content
@@ -21,6 +25,7 @@ MEDIUM
 You are tasked with adding subtle icon animations to amenity cards.
 
 **Context:**
+
 - TASK-001 and TASK-002 completed
 - Each amenity card has an icon
 - Icons should enhance cards without being distracting
@@ -28,6 +33,7 @@ You are tasked with adding subtle icon animations to amenity cards.
 **Instructions:**
 
 1. **Create icon animation variant:**
+
    ```typescript
    const iconVariants = {
      hidden: { opacity: 0, scale: 0.8 },
@@ -44,6 +50,7 @@ You are tasked with adding subtle icon animations to amenity cards.
    ```
 
 2. **Wrap icons in motion.div:**
+
    ```typescript
    <motion.div variants={iconVariants} className="mb-4">
      {/* Icon SVG or component */}
@@ -69,23 +76,28 @@ You are tasked with adding subtle icon animations to amenity cards.
    ```
 
 **Testing:**
+
 1. Scroll to amenities section
 2. Observe icons animate with cards
 3. Verify subtle, not distracting
 4. Check console for errors
 
 **Success Criteria:**
+
 - Icons animate subtly
 - Enhances cards without distraction
 - No performance issues
 
 ## Dependencies
+
 - TASK-002: Implement amenity card stagger animations
 
 ## Related Tasks
+
 - TASK-004: Add card hover enhancements (next)
 
 ## References
+
 - [Amenities Component](../../../../components/Amenities.tsx)
 - [Spring Animations](https://www.framer.com/motion/transition/##spring)
 

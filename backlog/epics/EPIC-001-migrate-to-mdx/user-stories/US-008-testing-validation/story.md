@@ -28,6 +28,7 @@ So that **we ensure all content renders correctly and no regressions occur**.
 ## Technical Notes
 
 Comprehensive testing of:
+
 - Visual rendering
 - Console logs
 - Network requests

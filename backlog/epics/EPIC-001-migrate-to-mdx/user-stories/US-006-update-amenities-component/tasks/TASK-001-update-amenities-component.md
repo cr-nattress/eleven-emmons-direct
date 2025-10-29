@@ -11,7 +11,7 @@ Update the Amenities component to use MDX rendering instead of dangerouslySetInn
 
 ## Agent Prompt
 
-```
+````
 Update /components/Amenities.tsx to use the MDX client wrapper.
 
 Follow the same pattern as About component:
@@ -20,11 +20,12 @@ Follow the same pattern as About component:
 
 ```typescript
 import MDXClient from './mdx-remote-client'
-```
+````
 
 2. **Find the content rendering** (around line 18-20):
 
 Current:
+
 ```tsx
 <div className="prose prose-lg max-w-none">
   <div dangerouslySetInnerHTML={{ __html: content.contentHtml }} />
@@ -40,6 +41,7 @@ Current:
 ```
 
 After making changes:
+
 1. Save the file
 2. Check the Amenities section in browser
 3. Verify the amenity icon grid still displays below the content
@@ -47,6 +49,7 @@ After making changes:
 5. Confirm all styling is preserved
 
 The icon grid (lines 23-77) should remain unchanged.
+
 ```
 
 ## File to Update
@@ -72,3 +75,4 @@ The icon grid (lines 23-77) should remain unchanged.
 - Keep the icon grid section unchanged (it's hard-coded, not from content)
 - Only update the content rendering part
 - Same pattern as About component
+```

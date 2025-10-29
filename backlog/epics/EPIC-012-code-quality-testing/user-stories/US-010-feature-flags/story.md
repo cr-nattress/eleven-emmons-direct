@@ -26,6 +26,7 @@
 ## Problem Statement
 
 Features are deployed to 100% of users immediately:
+
 - No ability to test in production with limited users
 - Can't quickly disable features without redeployment
 - No A/B testing capability
@@ -58,7 +59,7 @@ export enum Feature {
 
 interface FeatureConfig {
   enabled: boolean
-  rolloutPercentage?: number  // 0-100
+  rolloutPercentage?: number // 0-100
   environments?: Array<'development' | 'production'>
 }
 
@@ -81,7 +82,7 @@ const featureFlags: Record<Feature, FeatureConfig> = {
     environments: ['production'],
   },
   [Feature.NEW_HEADER_DESIGN]: {
-    enabled: false,  // ✅ Future feature, disabled
+    enabled: false, // ✅ Future feature, disabled
     rolloutPercentage: 0,
   },
 }
@@ -194,11 +195,13 @@ export default function Gallery() {
 ## Technical Implementation
 
 ### Files to Create
+
 1. **`lib/features/flags.ts`** - Feature flag system
 2. **`lib/features/hooks.ts`** - React hooks for features
 3. **`lib/features/index.ts`** - Barrel export
 
 ### Files to Update
+
 1. **`components/BookingWidget.tsx`** - Use feature flags
 2. **`components/Gallery.tsx`** - Use feature flags
 3. **`lib/analytics.tsx`** - Use feature flags
@@ -303,6 +306,7 @@ if (enableFeature) {
 ### Advanced Feature Flag Service
 
 Integrate with LaunchDarkly or Flagsmith:
+
 - Real-time flag updates (no redeploy)
 - User targeting (by email, location, etc.)
 - A/B test analytics

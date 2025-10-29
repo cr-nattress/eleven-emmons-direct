@@ -11,14 +11,14 @@ Check if the Location component uses markdown content, and if so, update it to u
 
 ## Agent Prompt
 
-```
+````
 Check and potentially update /components/Location.tsx:
 
 1. **Read the file** to see if it uses markdown content:
 
 ```bash
 Read /components/Location.tsx
-```
+````
 
 2. **Look for these patterns**:
    - Import of `getMarkdownContent` from '@/lib/markdown'
@@ -37,20 +37,24 @@ Read /components/Location.tsx
 Example update (if needed):
 
 Before:
+
 ```tsx
 <div dangerouslySetInnerHTML={{ __html: content.contentHtml }} />
 ```
 
 After:
+
 ```tsx
 <MDXClient mdxSource={content.mdxSource} />
 ```
 
 After checking:
+
 1. Report whether component needs updating
 2. If updated, verify it renders correctly
 3. Check console for errors
 4. Confirm styling is preserved
+
 ```
 
 ## File to Check
@@ -81,3 +85,4 @@ After checking:
 - Check if there's a /content/area.md file
 - The component might use static HTML instead of markdown
 - Only update if it actually uses markdown content
+```

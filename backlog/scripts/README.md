@@ -5,9 +5,11 @@ This directory contains Node.js scripts for automating backlog creation.
 ## Scripts
 
 ### create-epic.js
+
 Creates a new epic with folder structure and git branch.
 
 **Usage:**
+
 ```bash
 node backlog/scripts/create-epic.js
 # or
@@ -15,6 +17,7 @@ npm run epic:create
 ```
 
 **Creates:**
+
 - Epic folder: `backlog/epics/EPIC-XXX-name/`
 - Epic file: `epic.md` with template
 - User stories folder: `user-stories/`
@@ -23,9 +26,11 @@ npm run epic:create
 ---
 
 ### create-user-story.js
+
 Creates a new user story within an epic.
 
 **Usage:**
+
 ```bash
 node backlog/scripts/create-user-story.js [EPIC-XXX]
 # or
@@ -33,6 +38,7 @@ npm run story:create
 ```
 
 **Creates:**
+
 - User story folder: `US-XXX-name/`
 - Story file: `story.md` with template
 - Tasks folder: `tasks/`
@@ -40,9 +46,11 @@ npm run story:create
 ---
 
 ### create-task.js
+
 Creates a new task within a user story.
 
 **Usage:**
+
 ```bash
 node backlog/scripts/create-task.js [EPIC-XXX] [US-XXX]
 # or
@@ -50,6 +58,7 @@ npm run task:create
 ```
 
 **Creates:**
+
 - Task file: `TASK-XXX-name.md` with agent prompt template
 
 ---
@@ -71,6 +80,7 @@ npm run task:create
 ## Error Handling
 
 All scripts include:
+
 - Input validation
 - Existence checks (no overwriting)
 - Clear error messages
@@ -79,6 +89,7 @@ All scripts include:
 ## Extending
 
 To add new features:
+
 1. Modify the script file
 2. Update templates if needed
 3. Test thoroughly

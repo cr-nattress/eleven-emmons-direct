@@ -24,14 +24,16 @@ You are setting up the MDX content system for the About section.
 **Instructions**:
 
 1. **Create the content directory (if it doesn't exist):**
+
    ```bash
    mkdir -p content
    ```
 
 2. **Create `content/property.md` with this structure:**
+
    ```markdown
    ---
-   title: "About This Property"
+   title: 'About This Property'
    guests: 4
    bedrooms: 1
    bathrooms: 1
@@ -39,17 +41,17 @@ You are setting up the MDX content system for the About section.
    rating: 4.98
    reviewCount: 88
    features:
-     - "Ski-in/ski-out access (0 min walk to lift)"
-     - "Smart home controls (thermostat, lights, locks)"
-     - "Recently renovated (2024)"
-     - "High-speed WiFi (250+ Mbps)"
-     - "Mountain view balcony"
-     - "In-unit washer/dryer"
+     - 'Ski-in/ski-out access (0 min walk to lift)'
+     - 'Smart home controls (thermostat, lights, locks)'
+     - 'Recently renovated (2024)'
+     - 'High-speed WiFi (250+ Mbps)'
+     - 'Mountain view balcony'
+     - 'In-unit washer/dryer'
    ---
 
    Wake up to panoramic views of snow-capped peaks and step directly onto the slopes from your private entrance. This thoughtfully designed condo at 11 Emmons Road offers true ski-in/ski-out access—no shuttles, no walking, just pure mountain convenience. Inside, you'll find a perfect blend of modern comfort and alpine charm, recently updated in 2024 to exceed the expectations of discerning travelers.
 
-   {/* Stats and features will be inserted here by the component */}
+   {/_ Stats and features will be inserted here by the component _/}
 
    With smart home controls at your fingertips and high-speed WiFi throughout, this mountain retreat seamlessly blends modern technology with natural beauty. Whether you're here for epic powder days or peaceful mountain evenings, you'll appreciate the attention to detail that makes this condo feel like home.
    ```
@@ -99,6 +101,7 @@ You are setting up the MDX content system for the About section.
 - ✅ Ready for component integration (TASK-011, TASK-012)
 
 **Commit Message**:
+
 ```
 feat(content): Add property.md with MDX frontmatter schema
 

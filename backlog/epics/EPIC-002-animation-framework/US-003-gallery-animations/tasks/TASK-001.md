@@ -1,15 +1,19 @@
 # TASK-001: Animate Gallery Section Header
 
 ## Task Description
+
 Add scroll-triggered entrance animations to the gallery section header (title and description) to create an engaging introduction to the property images.
 
 ## Priority
+
 HIGH
 
 ## Estimated Effort
+
 1-2 hours
 
 ## Acceptance Criteria
+
 - [ ] Gallery section title animates when scrolled into view
 - [ ] Description text animates with 150ms delay after title
 - [ ] Animations use fade + slide up effect
@@ -22,6 +26,7 @@ HIGH
 ## Technical Details
 
 ### Elements to Animate
+
 1. **Section Title** (h2): "Photo Gallery"
    - Animation: fade + slide up from below
    - Delay: 0ms (first)
@@ -35,6 +40,7 @@ HIGH
    - Trigger: Same as title (staggered)
 
 ### Animation Strategy
+
 - Use `useScrollAnimation` hook from `/lib/animations/hooks.ts`
 - Use `slideUpVariants` from `/lib/animations/variants.ts`
 - Wrap elements in motion components
@@ -45,6 +51,7 @@ HIGH
 You are tasked with implementing scroll-triggered entrance animations for the Gallery section header.
 
 **Context:**
+
 - Gallery component is at `/components/Gallery.tsx`
 - Component already has 'use client' directive
 - Animation infrastructure is ready (US-001 completed)
@@ -52,6 +59,7 @@ You are tasked with implementing scroll-triggered entrance animations for the Ga
 
 **Current Gallery Structure:**
 Located in `/components/Gallery.tsx`:
+
 - Section wrapper with id="gallery"
 - Container div
 - Section header with h2 + p (lines to animate)
@@ -65,6 +73,7 @@ Located in `/components/Gallery.tsx`:
    - Understand current structure
 
 2. **Import animation utilities at top of file:**
+
    ```typescript
    'use client'
 
@@ -76,6 +85,7 @@ Located in `/components/Gallery.tsx`:
    ```
 
 3. **Add scroll animation hook in component:**
+
    ```typescript
    export default function Gallery() {
      const [selectedImage, setSelectedImage] = useState<number | null>(null)
@@ -88,6 +98,7 @@ Located in `/components/Gallery.tsx`:
 
 4. **Wrap section header in animated div:**
    Find the section header (h2 and p) and wrap them:
+
    ```typescript
    <motion.div
      ref={headerRef}
@@ -120,6 +131,7 @@ Located in `/components/Gallery.tsx`:
    - Animation only plays once (controlled by the hook)
 
 **How It Works:**
+
 1. Component renders with header hidden (initial="hidden")
 2. `useScrollAnimation` hook watches the ref element
 3. When scrolled into view (80% visible), controls trigger "visible" state
@@ -128,11 +140,13 @@ Located in `/components/Gallery.tsx`:
 6. Both fade in while sliding up
 
 **Accessibility:**
+
 - The `slideUpVariants` automatically respects `prefers-reduced-motion`
 - Users who prefer reduced motion see instant display
 - No additional accessibility code needed
 
 **Testing:**
+
 1. Save the file
 2. Run dev server: `npm run dev`
 3. Visit http://localhost:3000
@@ -146,6 +160,7 @@ Located in `/components/Gallery.tsx`:
 8. Verify TypeScript compilation: no errors
 
 **Testing Reduced Motion:**
+
 1. Enable reduced motion in OS settings:
    - macOS: System Preferences → Accessibility → Display → Reduce motion
    - Windows: Settings → Ease of Access → Display → Show animations
@@ -153,6 +168,7 @@ Located in `/components/Gallery.tsx`:
 3. Header should appear instantly without animation
 
 **Expected Result:**
+
 - Smooth entrance effect when gallery section enters viewport
 - Title appears first, then description
 - Professional, polished appearance
@@ -160,6 +176,7 @@ Located in `/components/Gallery.tsx`:
 - Animation plays once per page load
 
 **Success Criteria:**
+
 - Gallery header animates on scroll into view
 - Stagger timing feels natural (150ms between elements)
 - No layout shift during animation
@@ -169,6 +186,7 @@ Located in `/components/Gallery.tsx`:
 - Reduced motion respected
 
 **Common Issues to Avoid:**
+
 - Don't remove the 'use client' directive (already present)
 - Don't change any classNames - keep styling identical
 - Don't animate the gallery cards yet (that's TASK-002)
@@ -176,20 +194,24 @@ Located in `/components/Gallery.tsx`:
 - Make sure to import all utilities from correct paths
 
 **Deliverables:**
+
 - Updated `/components/Gallery.tsx` with animated header
 - Confirmation that animation works on scroll
 - No errors in console or TypeScript
 
 ## Dependencies
+
 - US-001: Setup Animation Infrastructure (must be completed)
 - Gallery.tsx already has 'use client' directive
 
 ## Related Tasks
+
 - TASK-002: Implement staggered card entrance animations (next)
 - TASK-003: Add lightbox open/close animations
 - US-002-TASK-002: Similar scroll animation pattern
 
 ## References
+
 - [Gallery Component](../../../../components/Gallery.tsx)
 - [useScrollAnimation Hook](../../../../lib/animations/hooks.ts)
 - [slideUpVariants](../../../../lib/animations/variants.ts)

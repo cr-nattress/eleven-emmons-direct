@@ -247,7 +247,9 @@ export function useStaggerAnimation(
  *   Content
  * </motion.div>
  */
-export function useEntranceAnimation(delay: number = 0): ReturnType<typeof useAnimation> {
+export function useEntranceAnimation(
+  delay: number = 0
+): ReturnType<typeof useAnimation> {
   const controls = useAnimation()
 
   useEffect(() => {
@@ -281,10 +283,13 @@ export function useSequenceAnimation(
 
   useEffect(() => {
     if (currentStep < sequence.length) {
-      const timer = setTimeout(() => {
-        controls.start(sequence[currentStep])
-        setCurrentStep((prev) => prev + 1)
-      }, currentStep === 0 ? 0 : stepDelay * 1000)
+      const timer = setTimeout(
+        () => {
+          controls.start(sequence[currentStep])
+          setCurrentStep((prev) => prev + 1)
+        },
+        currentStep === 0 ? 0 : stepDelay * 1000
+      )
 
       return () => clearTimeout(timer)
     }

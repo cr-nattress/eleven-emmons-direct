@@ -62,6 +62,7 @@ For each error/warning:
 ## Testing Checklist
 
 Browser Console:
+
 - [ ] No red errors on page load
 - [ ] No hydration errors
 - [ ] No prop mismatch warnings
@@ -69,6 +70,7 @@ Browser Console:
 - [ ] No network errors (404s)
 
 Terminal:
+
 - [ ] Build/compile succeeds
 - [ ] No TypeScript errors
 - [ ] No ESLint errors
@@ -76,6 +78,7 @@ Terminal:
 - [ ] No deprecation warnings
 
 Interactions:
+
 - [ ] No errors when clicking links
 - [ ] No errors when scrolling
 - [ ] No errors on hover
@@ -84,6 +87,7 @@ Interactions:
 ## Expected Results
 
 **Zero errors** in:
+
 - Browser console
 - Terminal output
 - Build process

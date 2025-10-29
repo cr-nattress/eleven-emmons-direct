@@ -4,7 +4,11 @@ import { useState } from 'react'
 import Image from 'next/image'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useScrollAnimation } from '@/lib/animations/hooks'
-import { slideUpVariants, staggerContainerVariants, staggerItemVariants } from '@/lib/animations/variants'
+import {
+  slideUpVariants,
+  staggerContainerVariants,
+  staggerItemVariants,
+} from '@/lib/animations/variants'
 
 export default function Gallery() {
   const [selectedImage, setSelectedImage] = useState<number | null>(null)

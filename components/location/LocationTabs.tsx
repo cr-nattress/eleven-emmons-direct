@@ -88,7 +88,12 @@ export default function LocationTabs({
       </nav>
 
       {/* Screen reader status announcement */}
-      <div role="status" aria-live="polite" aria-atomic="true" className="sr-only">
+      <div
+        role="status"
+        aria-live="polite"
+        aria-atomic="true"
+        className="sr-only"
+      >
         {tabs.find((t) => t.id === activeTab)?.label} tab activated
       </div>
     </div>

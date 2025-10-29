@@ -29,12 +29,14 @@
 ### Functional Testing Checklist
 
 **Section Rendering:**
+
 - [ ] Section renders with correct ID (`#about`)
 - [ ] Section heading displays "About This Property"
 - [ ] Opening narrative displays from MDX
 - [ ] Closing narrative displays from MDX
 
 **Stats Cards:**
+
 - [ ] All 4-5 stat cards display
 - [ ] Stats show correct values from frontmatter
 - [ ] Rating includes star emoji (⭐)
@@ -42,12 +44,14 @@
 - [ ] Cards are in correct order
 
 **Features Grid:**
+
 - [ ] All 6+ features display
 - [ ] Each feature has green checkmark
 - [ ] Features load from frontmatter array
 - [ ] Features are in correct order
 
 **Content Loading:**
+
 - [ ] MDX content loads without errors
 - [ ] Frontmatter values override defaults
 - [ ] Content renders with proper formatting
@@ -55,6 +59,7 @@
 ### Visual Regression Testing
 
 Test at these viewports:
+
 - [ ] **Mobile (375x667):** iPhone SE layout
 - [ ] **Mobile (390x844):** iPhone 12/13/14 layout
 - [ ] **Tablet (768x1024):** iPad layout
@@ -62,6 +67,7 @@ Test at these viewports:
 - [ ] **Desktop (2560x1440):** Large desktop
 
 **Visual Checks:**
+
 - [ ] Font sizes match design specs at all breakpoints
 - [ ] Spacing/padding matches design specs
 - [ ] Colors match design system (gray-900, gray-700, green-600)
@@ -73,11 +79,13 @@ Test at these viewports:
 ### Accessibility Testing
 
 **Automated Tools:**
+
 - [ ] Lighthouse accessibility score: 100/100
 - [ ] WAVE extension shows 0 errors
 - [ ] axe DevTools shows 0 issues
 
 **Manual Testing:**
+
 - [ ] Screen reader test (NVDA or VoiceOver)
 - [ ] Keyboard navigation (Tab key works correctly)
 - [ ] Color contrast verified (WebAIM tool)
@@ -88,6 +96,7 @@ Test at these viewports:
 ### Cross-Browser Testing
 
 Test in latest versions:
+
 - [ ] **Chrome** (Windows/Mac)
 - [ ] **Firefox** (Windows/Mac)
 - [ ] **Safari** (Mac/iOS)
@@ -96,6 +105,7 @@ Test in latest versions:
 - [ ] **Safari iOS** (mobile)
 
 **Browser Checks:**
+
 - [ ] Section renders identically
 - [ ] Fonts load correctly (no FOUT/FOIT)
 - [ ] Transitions work smoothly
@@ -105,16 +115,19 @@ Test in latest versions:
 ### Performance Testing
 
 **Core Web Vitals:**
+
 - [ ] **LCP (Largest Contentful Paint):** < 2.5s
 - [ ] **FID (First Input Delay):** < 100ms (N/A if no interactive elements)
 - [ ] **CLS (Cumulative Layout Shift):** < 0.1
 
 **Additional Metrics:**
+
 - [ ] **FCP (First Contentful Paint):** < 1s
 - [ ] **TTI (Time to Interactive):** < 3s
 - [ ] **TBT (Total Blocking Time):** < 200ms
 
 **Performance Checks:**
+
 - [ ] No layout shift during render
 - [ ] MDX content compiles at build time (SSR)
 - [ ] No client-side JavaScript required
@@ -177,12 +190,14 @@ Test in latest versions:
 ## Testing Tools
 
 ### Automated Testing
+
 1. **Lighthouse** (Chrome DevTools): Performance, accessibility, SEO
 2. **WAVE** (Browser extension): Accessibility checker
 3. **axe DevTools** (Browser extension): Accessibility validation
 4. **WebAIM Contrast Checker**: Color contrast validation
 
 ### Manual Testing
+
 1. **Screen Readers:**
    - NVDA (Windows, free)
    - VoiceOver (Mac, built-in)
@@ -199,6 +214,7 @@ Test in latest versions:
    - iPad (Safari)
 
 ### Build & Code Quality
+
 1. **TypeScript:** `npm run type-check` or `tsc --noEmit`
 2. **ESLint:** `npm run lint`
 3. **Prettier:** `npm run format`
@@ -208,6 +224,7 @@ Test in latest versions:
 ## Post-Testing Actions
 
 After all tests pass:
+
 1. **Code Review:** Request review from team member
 2. **Documentation:** Update README and component docs
 3. **Changelog:** Add entry to CHANGELOG.md
@@ -224,6 +241,7 @@ After all tests pass:
 ## Success Criteria
 
 This epic is considered fully complete and production-ready when:
+
 - ✅ All tests pass in all categories
 - ✅ Lighthouse scores: Performance 90+, Accessibility 100, Best Practices 90+, SEO 90+
 - ✅ Zero accessibility errors in WAVE and axe

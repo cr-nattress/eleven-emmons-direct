@@ -27,6 +27,7 @@
 ## Technical Notes
 
 ### Component Structure
+
 ```typescript
 // components/About.tsx
 export default function About() {
@@ -44,6 +45,7 @@ export default function About() {
 ```
 
 ### Key Requirements
+
 - Use Next.js 14 server component (no "use client" directive needed)
 - Follow existing project structure for components
 - Use Tailwind utility classes (no inline styles)
@@ -51,6 +53,7 @@ export default function About() {
 - Section must be accessible via anchor link (#about)
 
 ### Design Specifications
+
 - **Section Padding:** 64px mobile (py-16), 80px desktop (py-20)
 - **Max Width:** 1280px (max-w-7xl)
 - **Horizontal Padding:** 16px mobile (px-4), 24px sm (sm:px-6), 32px lg (lg:px-8)

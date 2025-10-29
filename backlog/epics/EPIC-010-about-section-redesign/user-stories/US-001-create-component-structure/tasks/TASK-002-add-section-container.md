@@ -58,11 +58,13 @@ export default function About() {
 **Class Breakdown**:
 
 **Section Classes:**
+
 - `py-16` = 64px top/bottom padding (mobile)
 - `md:py-20` = 80px top/bottom padding (desktop, 768px+)
 - `bg-white` = white background (#FFFFFF)
 
 **Inner Div Classes:**
+
 - `mx-auto` = center the container
 - `max-w-7xl` = max-width 1280px
 - `px-4` = 16px horizontal padding (mobile, <640px)
@@ -91,6 +93,7 @@ export default function About() {
 - ✅ Ready for heading in TASK-003
 
 **Commit Message**:
+
 ```
 feat(about): Add section container with responsive layout
 

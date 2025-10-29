@@ -53,6 +53,7 @@
 ### Color Contrast Requirements
 
 Test all color combinations:
+
 - **Text on white:** gray-900 (#111827) - Contrast: 15.3:1 ✅
 - **Body text:** gray-700 (#374151) - Contrast: 9.7:1 ✅
 - **Labels:** gray-600 (#6B7280) at 14px+ - Contrast: 7.0:1 ✅
@@ -61,6 +62,7 @@ Test all color combinations:
 ### Screen Reader Considerations
 
 **Reading Order:**
+
 1. Section announcement: "About This Property, section"
 2. Heading: "About This Property, heading level 2"
 3. Opening paragraph
@@ -69,6 +71,7 @@ Test all color combinations:
 6. Closing paragraph
 
 **Aria Labels (if needed):**
+
 ```typescript
 // Only if needed for clarity
 <div role="region" aria-label="Property details and features">
@@ -79,11 +82,13 @@ Test all color combinations:
 ### Keyboard Navigation
 
 Since this section has no interactive elements:
+
 - No keyboard traps to worry about
 - Skip link should allow jumping to `#about`
 - If stat cards become interactive, add `tabindex="0"` and visible focus styles
 
 ### ARIA Best Practices
+
 - Avoid redundant ARIA labels
 - Only use ARIA when HTML semantics aren't sufficient
 - Checkmarks: `aria-hidden="true"` (decorative, text conveys meaning)

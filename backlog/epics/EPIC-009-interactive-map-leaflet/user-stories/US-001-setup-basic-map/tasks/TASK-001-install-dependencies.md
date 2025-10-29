@@ -45,16 +45,19 @@ Verification:
 ## Implementation Steps
 
 1. **Navigate to project directory**
+
    ```bash
    cd c:\Users\RED\OneDrive\Documents\github\eleven-emmons
    ```
 
 2. **Install React-Leaflet and Leaflet**
+
    ```bash
    npm install react-leaflet leaflet
    ```
 
 3. **Install TypeScript types**
+
    ```bash
    npm install --save-dev @types/leaflet
    ```
@@ -79,11 +82,13 @@ Verification:
    - `@types/leaflet`: ^1.9.8 or higher
 
 3. **Check node_modules**
+
    ```bash
    ls node_modules/react-leaflet
    ls node_modules/leaflet
    ls node_modules/@types/leaflet
    ```
+
    - All directories should exist
 
 4. **Test import (optional)**
@@ -122,20 +127,25 @@ added 1 package
 ## Troubleshooting
 
 **Problem**: Peer dependency warnings
+
 - **Solution**: Safe to ignore if React 18 is installed
 
 **Problem**: Version conflicts
+
 - **Solution**: Use `npm install --legacy-peer-deps` flag
 
 **Problem**: Installation fails
+
 - **Solution**: Clear npm cache with `npm cache clean --force` and retry
 
 **Problem**: TypeScript can't find types
+
 - **Solution**: Restart TypeScript server in VS Code (Cmd/Ctrl + Shift + P → "Restart TypeScript Server")
 
 ## Rollback Plan
 
 If issues arise, uninstall packages:
+
 ```bash
 npm uninstall react-leaflet leaflet @types/leaflet
 ```
@@ -150,18 +160,21 @@ npm uninstall react-leaflet leaflet @types/leaflet
 ## Package Details
 
 ### react-leaflet
+
 - **Purpose**: React components wrapper for Leaflet
 - **Size**: ~20KB
 - **Weekly Downloads**: 267k+
 - **Maintained**: Yes (active development)
 
 ### leaflet
+
 - **Purpose**: Core mapping library
 - **Size**: ~42KB minified
 - **Weekly Downloads**: 2M+
 - **License**: BSD-2-Clause (open source)
 
 ### @types/leaflet
+
 - **Purpose**: TypeScript type definitions
 - **Size**: Types only (no runtime impact)
 - **Maintained**: Yes (DefinitelyTyped)

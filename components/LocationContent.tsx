@@ -3,7 +3,11 @@
 import { ReactNode } from 'react'
 import { motion } from 'framer-motion'
 import { useScrollAnimation } from '@/lib/animations/hooks'
-import { slideUpVariants, staggerContainerVariants, staggerItemVariants } from '@/lib/animations/variants'
+import {
+  slideUpVariants,
+  staggerContainerVariants,
+  staggerItemVariants,
+} from '@/lib/animations/variants'
 import PropertyMap from '@/components/PropertyMap'
 
 const gettingHere = [
@@ -28,7 +32,12 @@ const attractions = {
     'Snowshoeing trails',
     'Ice skating',
   ],
-  summer: ['Mountain biking', 'Hiking trails', 'Wildflower viewing', 'Fly fishing'],
+  summer: [
+    'Mountain biking',
+    'Hiking trails',
+    'Wildflower viewing',
+    'Fly fishing',
+  ],
 }
 
 interface LocationContentProps {
@@ -46,20 +55,22 @@ export default function LocationContent({ children }: LocationContentProps) {
     triggerOnce: true,
   })
 
-  const { ref: directionsRef, controls: directionsControls } = useScrollAnimation({
-    threshold: 0.1,
-    triggerOnce: true,
-  })
+  const { ref: directionsRef, controls: directionsControls } =
+    useScrollAnimation({
+      threshold: 0.1,
+      triggerOnce: true,
+    })
 
   const { ref: proseRef, controls: proseControls } = useScrollAnimation({
     threshold: 0.1,
     triggerOnce: true,
   })
 
-  const { ref: attractionsRef, controls: attractionsControls } = useScrollAnimation({
-    threshold: 0.1,
-    triggerOnce: true,
-  })
+  const { ref: attractionsRef, controls: attractionsControls } =
+    useScrollAnimation({
+      threshold: 0.1,
+      triggerOnce: true,
+    })
 
   return (
     <>
@@ -101,7 +112,9 @@ export default function LocationContent({ children }: LocationContentProps) {
             variants={slideUpVariants}
             className="mt-6 rounded-lg bg-white p-6 shadow-sm"
           >
-            <h3 className="mb-4 text-lg font-semibold text-gray-900">Getting Here</h3>
+            <h3 className="mb-4 text-lg font-semibold text-gray-900">
+              Getting Here
+            </h3>
             <motion.ul
               variants={staggerContainerVariants}
               initial="hidden"
@@ -109,7 +122,11 @@ export default function LocationContent({ children }: LocationContentProps) {
               className="space-y-3 text-sm text-gray-600"
             >
               {gettingHere.map((item, index) => (
-                <motion.li key={index} variants={staggerItemVariants} className="flex items-start">
+                <motion.li
+                  key={index}
+                  variants={staggerItemVariants}
+                  className="flex items-start"
+                >
                   <svg
                     className="mr-2 h-5 w-5 flex-shrink-0 text-primary"
                     fill="none"
@@ -153,7 +170,9 @@ export default function LocationContent({ children }: LocationContentProps) {
             variants={slideUpVariants}
             className="mt-8 rounded-lg bg-white p-6 shadow-sm"
           >
-            <h3 className="mb-4 text-lg font-semibold text-gray-900">Nearby Attractions</h3>
+            <h3 className="mb-4 text-lg font-semibold text-gray-900">
+              Nearby Attractions
+            </h3>
             <motion.div
               variants={staggerContainerVariants}
               initial="hidden"

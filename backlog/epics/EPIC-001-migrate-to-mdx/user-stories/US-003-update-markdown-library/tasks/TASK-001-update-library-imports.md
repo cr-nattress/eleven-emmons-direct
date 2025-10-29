@@ -11,7 +11,7 @@ Update the /lib/markdown.ts file to import next-mdx-remote and configure the plu
 
 ## Agent Prompt
 
-```
+````
 Update /lib/markdown.ts file to use next-mdx-remote with the following changes:
 
 1. **Update imports** - Replace marked imports with next-mdx-remote:
@@ -27,7 +27,7 @@ import rehypeSlug from 'rehype-slug'
 import rehypeAutolinkHeadings from 'rehype-autolink-headings'
 // @ts-ignore - optional
 import rehypePrettyCode from 'rehype-pretty-code'
-```
+````
 
 2. **Update the MarkdownContent interface**:
 
@@ -35,7 +35,7 @@ import rehypePrettyCode from 'rehype-pretty-code'
 export interface MarkdownContent {
   slug: string
   title?: string
-  mdxSource: MDXRemoteSerializeResult  // Changed from contentHtml: string
+  mdxSource: MDXRemoteSerializeResult // Changed from contentHtml: string
   data: { [key: string]: any }
 }
 ```
@@ -71,21 +71,24 @@ async function compileMDX(source: string): Promise<MDXRemoteSerializeResult> {
 4. **Update getMarkdownContent function** to use serialize instead of marked:
 
 Replace this line:
+
 ```typescript
 const contentHtml = await marked(content)
 ```
 
 With:
+
 ```typescript
 const mdxSource = await compileMDX(content)
 ```
 
 And update the return statement:
+
 ```typescript
 return {
   slug,
   title: data.title,
-  mdxSource,  // Changed from contentHtml
+  mdxSource, // Changed from contentHtml
   data,
 }
 ```
@@ -112,10 +115,12 @@ catch (error) {
 ```
 
 After making changes:
+
 1. Save the file
 2. Verify TypeScript compilation succeeds
 3. Check that no errors appear in the console
 4. Verify the dev server still runs
+
 ```
 
 ## File to Update
@@ -143,3 +148,4 @@ After making changes:
 - Remove marked import (no longer needed)
 - Add @ts-ignore for rehype-pretty-code if needed
 - Plugin order matters: remark runs first, then rehype
+```

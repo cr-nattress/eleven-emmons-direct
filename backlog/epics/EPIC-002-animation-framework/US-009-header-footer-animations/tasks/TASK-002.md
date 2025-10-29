@@ -1,15 +1,19 @@
 # TASK-002: Animate Navigation Links
 
 ## Task Description
+
 Add subtle staggered entrance animation to desktop navigation links on page load.
 
 ## Priority
+
 LOW
 
 ## Estimated Effort
+
 1-2 hours
 
 ## Acceptance Criteria
+
 - [ ] Desktop nav links stagger in on page load
 - [ ] Animation is very subtle
 - [ ] Links remain clickable immediately
@@ -26,6 +30,7 @@ LOW
 4. Keep animation subtle and quick
 
 **Example:**
+
 ```typescript
 const navItemsVariant = {
   hidden: { opacity: 0, y: -5 },
@@ -61,23 +66,28 @@ const navContainerVariant = {
 ```
 
 **Important:**
+
 - Only animate desktop nav (mobile handled in US-006)
 - Keep stagger very subtle (50ms max between items)
 - Links should be clickable immediately (pointer-events: auto)
 
 **Testing:**
+
 - Reload page
 - Observe subtle nav link stagger
 - Verify links clickable immediately
 - Test on desktop viewport only
 
 ## Dependencies
+
 - TASK-001: Add header entrance animation
 
 ## Related Tasks
+
 - TASK-003: Add footer section animations (next)
 
 ## References
+
 - [Header Component](../../../../components/Header.tsx)
 
 **Created**: 2025-10-20

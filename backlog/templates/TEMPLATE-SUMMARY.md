@@ -5,22 +5,26 @@
 A complete template and automation system for managing project backlog with:
 
 ### 📁 Templates
+
 - **Epic Template** - Complete epic structure with all sections
 - **User Story Template** - User story format with acceptance criteria
 - **Task Template** - Task structure with agent prompt section
 
 ### 🤖 Automation Scripts
+
 - **create-epic.js** - Creates epic folder + git branch
 - **create-user-story.js** - Creates user story folder
 - **create-task.js** - Creates task file with template
 
 ### 📚 Documentation
+
 - **README.md** - System overview
 - **QUICK-START.md** - Fast reference guide
 - **USAGE-GUIDE.md** - Complete usage documentation
 - **Script README** - Script-specific docs
 
 ### ⚡ NPM Commands
+
 ```bash
 npm run epic:create    # Create new epic
 npm run story:create   # Create new user story
@@ -69,24 +73,28 @@ backlog/
 ## Quick Workflow
 
 ### 1. Create Epic
+
 ```bash
 npm run epic:create
 # Answer prompts, git branch created automatically
 ```
 
 ### 2. Create User Stories
+
 ```bash
 npm run story:create
 # Select epic, answer prompts
 ```
 
 ### 3. Create Tasks
+
 ```bash
 npm run task:create
 # Select epic and story, answer prompts
 ```
 
 ### 4. Execute Tasks
+
 - Open task file
 - Copy "Agent Prompt" section
 - Paste to AI assistant
@@ -98,27 +106,33 @@ npm run task:create
 ## Key Features
 
 ### 🎯 Follows Project Conventions
+
 - Matches existing epic structure (EPIC-009)
 - Uses project naming conventions
 - Includes all standard sections
 
 ### 🌿 Git Branch Management
+
 - Auto-creates epic branches from master
 - Follows naming convention: `epic/XXX-name`
 - Optional - can skip if not needed
 
 ### 🤖 AI-Ready Agent Prompts
+
 - Every task includes detailed agent prompt
 - Copy-paste ready for Claude, ChatGPT, Cursor, etc.
 - Includes context, requirements, and verification
 
 ### 📊 Progressive Disclosure
+
 - Epic → User Story → Task hierarchy
 - Each level adds more detail
 - Clear separation of concerns
 
 ### ✅ Complete Templates
+
 All important sections included:
+
 - Business value and metrics
 - Acceptance criteria
 - Technical notes
@@ -131,6 +145,7 @@ All important sections included:
 ## Template Contents
 
 ### Epic Template Sections
+
 - Epic Overview
 - Business Value
 - Current State / Target State
@@ -143,6 +158,7 @@ All important sections included:
 - Related Epics
 
 ### User Story Template Sections
+
 - User Story (As a... I want... So that...)
 - Acceptance Criteria
 - Technical Notes
@@ -151,6 +167,7 @@ All important sections included:
 - Related Stories
 
 ### Task Template Sections
+
 - Task Description
 - **Agent Prompt** (copy-paste ready)
 - Implementation Steps (with commands)
@@ -197,20 +214,26 @@ This makes tasks immediately executable by AI coding assistants.
 ## Customization
 
 ### Modify Templates
+
 Edit files in `templates/` directory:
+
 - `epic-template/epic.md`
 - `user-story-template/story.md`
 - `task-template.md`
 
 ### Modify Scripts
+
 Edit files in `scripts/` directory:
+
 - Add new prompts
 - Change naming conventions
 - Add validation rules
 - Customize git behavior
 
 ### Add Custom Scripts
+
 Create new scripts for:
+
 - Bulk creation
 - Status updates
 - Reporting
@@ -221,6 +244,7 @@ Create new scripts for:
 ## Best Practices
 
 ### Epic Creation
+
 ✅ Create from master branch
 ✅ Define clear business value
 ✅ List all planned user stories
@@ -228,6 +252,7 @@ Create new scripts for:
 ✅ Identify dependencies early
 
 ### User Story Creation
+
 ✅ Follow "As a... I want... So that..." format
 ✅ Make acceptance criteria testable
 ✅ Keep stories small (1-5 points)
@@ -235,6 +260,7 @@ Create new scripts for:
 ✅ Break into 3-5 tasks
 
 ### Task Creation
+
 ✅ Write detailed agent prompts
 ✅ Include exact commands
 ✅ Add verification steps
@@ -242,6 +268,7 @@ Create new scripts for:
 ✅ Keep tasks focused (15min-2hrs)
 
 ### Agent Prompts
+
 ✅ Be extremely specific
 ✅ Include all context
 ✅ List exact requirements
@@ -253,6 +280,7 @@ Create new scripts for:
 ## Integration with Workflow
 
 ### With AI Assistants
+
 1. Create task from template
 2. Fill in agent prompt section
 3. Copy prompt to Claude/ChatGPT/Cursor
@@ -260,12 +288,14 @@ Create new scripts for:
 5. Verify using verification steps
 
 ### With Git
+
 1. Epic branch created automatically
 2. Work in epic branch
 3. Commit as you complete tasks
 4. Merge epic to master when done
 
 ### With Project Management
+
 - Epics = Epics/Initiatives
 - User Stories = Stories
 - Tasks = Subtasks
@@ -276,6 +306,7 @@ Create new scripts for:
 ## Examples in Project
 
 See real examples in:
+
 - `backlog/epics/EPIC-009-interactive-map-leaflet/`
   - See complete epic structure
   - See user stories with tasks
@@ -297,6 +328,7 @@ This epic was built with similar structure that these templates codify.
 ## Version History
 
 **v1.0.0** (2025-10-20)
+
 - Initial template system
 - Epic, user story, and task templates
 - Automation scripts with git integration
@@ -308,6 +340,7 @@ This epic was built with similar structure that these templates codify.
 ## Future Enhancements
 
 Potential additions:
+
 - Status update scripts
 - Bulk epic creation from CSV
 - Reporting/dashboard scripts

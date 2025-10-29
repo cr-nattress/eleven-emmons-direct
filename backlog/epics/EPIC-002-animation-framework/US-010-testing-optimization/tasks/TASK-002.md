@@ -1,15 +1,19 @@
 # TASK-002: Test Reduced Motion Support
 
 ## Task Description
+
 Comprehensively test that all animations respect the `prefers-reduced-motion` setting and provide appropriate fallbacks for users who prefer reduced motion.
 
 ## Priority
+
 CRITICAL
 
 ## Estimated Effort
+
 2-3 hours
 
 ## Acceptance Criteria
+
 - [ ] All animations tested with reduced motion enabled
 - [ ] Content appears instantly (no motion) with reduced motion
 - [ ] No broken layouts with reduced motion
@@ -21,7 +25,9 @@ CRITICAL
 ## Technical Details
 
 ### What to Test
+
 All animated components from US-001 through US-009:
+
 - Hero section (title, subtitle, description, buttons, scroll arrow)
 - Gallery (header, cards, lightbox)
 - Booking (header, widget, contact cards, CTA)
@@ -32,7 +38,9 @@ All animated components from US-001 through US-009:
 - Header & Footer (entrance, nav links, sections)
 
 ### Reduced Motion Expectations
+
 With `prefers-reduced-motion: reduce`:
+
 - NO scale, translate, rotate animations
 - Instant opacity changes (or very quick <100ms)
 - Instant state transitions
@@ -41,6 +49,7 @@ With `prefers-reduced-motion: reduce`:
 - Modal/menu transitions instant
 
 ### WCAG 2.1 Compliance
+
 - Success Criterion 2.3.3 Animation from Interactions (Level AAA)
 - Motion should be disableable
 - Essential motion excluded (but we have no essential motion)
@@ -50,6 +59,7 @@ With `prefers-reduced-motion: reduce`:
 You are tasked with testing all animations with reduced motion enabled.
 
 **Context:**
+
 - All animations implemented (US-001 through US-009)
 - Must respect `prefers-reduced-motion: reduce`
 - Animation variants should handle this automatically
@@ -79,6 +89,7 @@ You are tasked with testing all animations with reduced motion enabled.
 2. **Create Test Document:**
 
    Create `/docs/reduced-motion-test.md`:
+
    ```markdown
    # Reduced Motion Testing Report
 
@@ -88,6 +99,7 @@ You are tasked with testing all animations with reduced motion enabled.
    OS: [OS VERSION]
 
    ## Test Setup
+
    - [ ] Reduced motion enabled in OS
    - [ ] Verified in browser (test animation still works on other sites)
    - [ ] Dev server running
@@ -95,6 +107,7 @@ You are tasked with testing all animations with reduced motion enabled.
    ## Component Testing
 
    ### US-002: Hero Section
+
    - [ ] Title appears instantly (no slide up animation)
    - [ ] Subtitle appears instantly
    - [ ] Description appears instantly
@@ -106,6 +119,7 @@ You are tasked with testing all animations with reduced motion enabled.
    - **Issues**: [if any]
 
    ### US-003: Gallery Section
+
    - [ ] Header appears instantly when scrolled into view
    - [ ] Gallery cards appear instantly (no stagger)
    - [ ] Lightbox opens instantly (no fade/scale)
@@ -115,6 +129,7 @@ You are tasked with testing all animations with reduced motion enabled.
    - **Issues**: [if any]
 
    ### US-004: Booking Section
+
    - [ ] Header appears instantly
    - [ ] Widget appears instantly (no scale)
    - [ ] Contact cards appear instantly (no stagger)
@@ -124,6 +139,7 @@ You are tasked with testing all animations with reduced motion enabled.
    - **Issues**: [if any]
 
    ### US-005: Amenities Section
+
    - [ ] Header appears instantly
    - [ ] Amenity cards appear instantly (no stagger)
    - [ ] Icons appear instantly (no scale/bounce)
@@ -132,6 +148,7 @@ You are tasked with testing all animations with reduced motion enabled.
    - **Issues**: [if any]
 
    ### US-006: Mobile Menu
+
    - [ ] Menu appears instantly (no slide-in)
    - [ ] Backdrop appears instantly
    - [ ] Menu items appear instantly (no stagger)
@@ -141,6 +158,7 @@ You are tasked with testing all animations with reduced motion enabled.
    - **Issues**: [if any]
 
    ### US-007: About Section
+
    - [ ] Header appears instantly
    - [ ] Prose content appears instantly
    - [ ] Feature cards appear instantly
@@ -149,6 +167,7 @@ You are tasked with testing all animations with reduced motion enabled.
    - **Issues**: [if any]
 
    ### US-008: Location Section
+
    - [ ] Header appears instantly
    - [ ] Map container appears instantly
    - [ ] Attractions cards appear instantly
@@ -157,6 +176,7 @@ You are tasked with testing all animations with reduced motion enabled.
    - **Issues**: [if any]
 
    ### US-009: Header & Footer
+
    - [ ] Header appears instantly on page load
    - [ ] Nav links appear instantly
    - [ ] Footer sections appear instantly when scrolled into view
@@ -166,6 +186,7 @@ You are tasked with testing all animations with reduced motion enabled.
    ## Overall Assessment
 
    ### Summary
+
    - Components tested: [X] / [Total]
    - Components passing: [X]
    - Components failing: [X]
@@ -173,7 +194,9 @@ You are tasked with testing all animations with reduced motion enabled.
    - Minor issues: [X]
 
    ### Issues Found
+
    [List each issue with:]
+
    - Component: [Name]
    - Issue: [Description]
    - Severity: Critical / Major / Minor
@@ -181,12 +204,15 @@ You are tasked with testing all animations with reduced motion enabled.
    - Fix description: [What needs to be done]
 
    ### Recommendations
+
    [List recommendations for fixes]
 
    ## Code Review
 
    ### Variants Check
+
    Verified animation variants in `/lib/animations/variants.ts`:
+
    - [ ] fadeInVariants respects reduced motion
    - [ ] slideUpVariants respects reduced motion
    - [ ] scaleInVariants respects reduced motion
@@ -194,16 +220,20 @@ You are tasked with testing all animations with reduced motion enabled.
    - [ ] staggerItemVariants respects reduced motion
 
    ### Hook Check
+
    Verified useScrollAnimation hook:
+
    - [ ] Respects reduced motion setting
    - [ ] Content appears when in viewport
 
    ## Compliance
+
    - [ ] WCAG 2.1 Success Criterion 2.3.3 (Level AAA) - Met
    - [ ] All motion can be disabled - Confirmed
    - [ ] No essential motion - Confirmed
 
    ## Conclusion
+
    [PASS / NEEDS FIXES]
 
    [If PASS: All animations properly respect reduced motion. Site is accessible to users with motion sensitivity.]
@@ -223,6 +253,7 @@ You are tasked with testing all animations with reduced motion enabled.
 4. **Verify Variant Implementation:**
 
    Check `/lib/animations/variants.ts`:
+
    ```typescript
    // Variants should check for reduced motion like this:
    const prefersReducedMotion =
@@ -250,6 +281,7 @@ You are tasked with testing all animations with reduced motion enabled.
 5. **Test useScrollAnimation Hook:**
 
    Verify the hook in `/lib/animations/hooks.ts` respects reduced motion:
+
    ```typescript
    // Hook should trigger "visible" state immediately with reduced motion
    // Or variants should handle instant display
@@ -281,6 +313,7 @@ You are tasked with testing all animations with reduced motion enabled.
 
    **Issue: Animations still playing**
    Fix in variants:
+
    ```typescript
    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
 
@@ -299,6 +332,7 @@ You are tasked with testing all animations with reduced motion enabled.
 **Alternative Testing Method (Browser Only):**
 
 If you can't change OS settings:
+
 1. Use browser DevTools emulation
 2. OR temporarily add this to global CSS:
    ```css
@@ -312,6 +346,7 @@ If you can't change OS settings:
    ```
 
 **Deliverables:**
+
 1. Complete `/docs/reduced-motion-test.md` with all results
 2. Screenshots or video of reduced motion behavior (optional but helpful)
 3. List of issues found (if any)
@@ -319,6 +354,7 @@ If you can't change OS settings:
 5. Final verdict: PASS or FAIL
 
 **Success Criteria:**
+
 - All components tested
 - All components respect reduced motion
 - Content appears instantly with reduced motion enabled
@@ -328,14 +364,17 @@ If you can't change OS settings:
 - Test report completed
 
 ## Dependencies
+
 - US-001 through US-009: All animations implemented
 
 ## Related Tasks
+
 - TASK-001: Run Lighthouse performance audit (parallel)
 - TASK-003: Test on mobile devices (parallel)
 - TASK-004: Fix any performance issues found (if issues found)
 
 ## References
+
 - [WCAG 2.1 - Animation from Interactions](https://www.w3.org/WAI/WCAG21/Understanding/animation-from-interactions)
 - [prefers-reduced-motion MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-reduced-motion)
 - [Reduced Motion Testing](https://web.dev/prefers-reduced-motion/)

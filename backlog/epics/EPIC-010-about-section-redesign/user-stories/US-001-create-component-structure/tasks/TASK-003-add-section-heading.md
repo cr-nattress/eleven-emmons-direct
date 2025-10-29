@@ -29,6 +29,7 @@ You are completing the foundational structure for the About section.
    - Tailwind classes: `text-3xl md:text-4xl font-bold text-gray-900 mb-8`
 
 2. **Component structure:**
+
    ```typescript
    <section id="about" className="py-16 md:py-20 bg-white">
      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -78,6 +79,7 @@ export default function About() {
 **Verification**:
 
 1. **Run dev server:**
+
    ```bash
    npm run dev
    ```
@@ -103,9 +105,11 @@ export default function About() {
    - No layout shift
 
 6. **TypeScript check:**
+
    ```bash
    npm run type-check
    ```
+
    - Should pass with no errors
 
 **Expected Outcome**:
@@ -118,6 +122,7 @@ export default function About() {
 - ✅ Component ready for Stats Cards (US-002)
 
 **Commit Message**:
+
 ```
 feat(about): Add section heading with responsive typography
 

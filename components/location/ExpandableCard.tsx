@@ -76,9 +76,7 @@ export default function ExpandableCard({
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.3, ease: 'easeInOut' }}
           >
-            <div className="px-6 py-4 border-t border-gray-100">
-              {children}
-            </div>
+            <div className="px-6 py-4 border-t border-gray-100">{children}</div>
           </motion.div>
         )}
       </AnimatePresence>

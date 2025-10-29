@@ -27,9 +27,10 @@
 ## Technical Notes
 
 ### MDX File Structure
+
 ```markdown
 ---
-title: "About This Property"
+title: 'About This Property'
 guests: 4
 bedrooms: 1
 bathrooms: 1
@@ -37,22 +38,23 @@ squareFeet: 650
 rating: 4.98
 reviewCount: 88
 features:
-  - "Ski-in/ski-out access (0 min walk to lift)"
-  - "Smart home controls (thermostat, lights, locks)"
-  - "Recently renovated (2024)"
-  - "High-speed WiFi (250+ Mbps)"
-  - "Mountain view balcony"
-  - "In-unit washer/dryer"
+  - 'Ski-in/ski-out access (0 min walk to lift)'
+  - 'Smart home controls (thermostat, lights, locks)'
+  - 'Recently renovated (2024)'
+  - 'High-speed WiFi (250+ Mbps)'
+  - 'Mountain view balcony'
+  - 'In-unit washer/dryer'
 ---
 
 Wake up to panoramic views of snow-capped peaks and step directly onto the slopes from your private entrance. This thoughtfully designed condo at 11 Emmons Road offers true ski-in/ski-out access—no shuttles, no walking, just pure mountain convenience. Inside, you'll find a perfect blend of modern comfort and alpine charm, recently updated in 2024 to exceed the expectations of discerning travelers.
 
-{/* Stats and features inserted here by component */}
+{/_ Stats and features inserted here by component _/}
 
 With smart home controls at your fingertips and high-speed WiFi throughout, this mountain retreat seamlessly blends modern technology with natural beauty. Whether you're here for epic powder days or peaceful mountain evenings, you'll appreciate the attention to detail that makes this condo feel like home.
 ```
 
 ### TypeScript Interfaces
+
 ```typescript
 // types/property.ts
 export interface PropertyStats {
@@ -74,6 +76,7 @@ export interface PropertyContent {
 ```
 
 ### Component Integration
+
 ```typescript
 // components/About.tsx
 import { MDXRemote } from 'next-mdx-remote/rsc'
@@ -103,7 +106,9 @@ export default async function About() {
 ```
 
 ### Required Utilities
+
 May need to create or verify:
+
 - `/lib/markdown.ts` - MDX processing utility
 - Ensure `next-mdx-remote` is installed and configured
 

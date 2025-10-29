@@ -12,7 +12,9 @@ export default function FeatureList({
   icon = '✓',
 }: FeatureListProps) {
   return (
-    <ul className={`grid ${columns === 2 ? 'md:grid-cols-2' : ''} gap-3 list-none`}>
+    <ul
+      className={`grid ${columns === 2 ? 'md:grid-cols-2' : ''} gap-3 list-none`}
+    >
       {items.map((item, index) => (
         <li key={index} className="flex items-start gap-3">
           <span

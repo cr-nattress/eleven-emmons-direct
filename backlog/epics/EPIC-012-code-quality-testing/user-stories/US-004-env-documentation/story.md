@@ -26,10 +26,12 @@
 ## Problem Statement
 
 The project uses environment variables but provides no documentation:
+
 - `NEXT_PUBLIC_GA_MEASUREMENT_ID` - Google Analytics
 - `NEXT_PUBLIC_HOSPITABLE_WIDGET_ID` - Booking widget
 
 **Issues:**
+
 - New developers don't know what variables are needed
 - No example format provided
 - Silent failures when variables missing
@@ -107,16 +109,16 @@ if (process.env.NODE_ENV === 'development') {
   if (!env.GA_MEASUREMENT_ID) {
     console.warn(
       '⚠️  NEXT_PUBLIC_GA_MEASUREMENT_ID is not set.\n' +
-      '   Analytics will be disabled.\n' +
-      '   See .env.example for setup instructions.'
+        '   Analytics will be disabled.\n' +
+        '   See .env.example for setup instructions.'
     )
   }
 
   if (!env.HOSPITABLE_WIDGET_ID) {
     console.warn(
       '⚠️  NEXT_PUBLIC_HOSPITABLE_WIDGET_ID is not set.\n' +
-      '   Booking widget will show Airbnb link fallback.\n' +
-      '   See .env.example for setup instructions.'
+        '   Booking widget will show Airbnb link fallback.\n' +
+        '   See .env.example for setup instructions.'
     )
   }
 }
@@ -124,7 +126,7 @@ if (process.env.NODE_ENV === 'development') {
 
 ### 3. Update README.md
 
-```markdown
+````markdown
 ## Environment Variables
 
 This project uses environment variables for configuration.
@@ -135,6 +137,7 @@ This project uses environment variables for configuration.
    ```bash
    cp .env.example .env.local
    ```
+````
 
 2. Fill in the required values:
    - `NEXT_PUBLIC_GA_MEASUREMENT_ID` - Your Google Analytics 4 tracking ID
@@ -148,12 +151,13 @@ This project uses environment variables for configuration.
 
 ### Available Variables
 
-| Variable | Required | Description |
-|----------|----------|-------------|
-| `NEXT_PUBLIC_GA_MEASUREMENT_ID` | No | Google Analytics 4 measurement ID |
-| `NEXT_PUBLIC_HOSPITABLE_WIDGET_ID` | No | Hospitable booking widget ID |
-| `NEXT_PUBLIC_DISABLE_ANIMATIONS` | No | Disable animations (dev only) |
-```
+| Variable                           | Required | Description                       |
+| ---------------------------------- | -------- | --------------------------------- |
+| `NEXT_PUBLIC_GA_MEASUREMENT_ID`    | No       | Google Analytics 4 measurement ID |
+| `NEXT_PUBLIC_HOSPITABLE_WIDGET_ID` | No       | Hospitable booking widget ID      |
+| `NEXT_PUBLIC_DISABLE_ANIMATIONS`   | No       | Disable animations (dev only)     |
+
+````
 
 ### 4. Update Components to Use lib/env.ts
 
@@ -169,15 +173,17 @@ export function Analytics() {
   }
   // ...
 }
-```
+````
 
 ## Technical Implementation
 
 ### Files to Create
+
 1. **`.env.example`** - Example environment file
 2. **`lib/env.ts`** - Type-safe env access with validation
 
 ### Files to Update
+
 1. **`README.md`** - Add environment setup section
 2. **`lib/analytics.tsx`** - Use `env` helper
 3. **`components/BookingWidget.tsx`** - Use `env` helper

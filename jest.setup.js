@@ -5,29 +5,165 @@ jest.mock('framer-motion', () => {
   const React = require('react')
   return {
     motion: {
-      div: React.forwardRef(({ children, whileHover, whileTap, initial, animate, exit, variants, transition, ...props }, ref) =>
-        <div ref={ref} {...props}>{children}</div>
+      div: React.forwardRef(
+        (
+          {
+            children,
+            whileHover,
+            whileTap,
+            initial,
+            animate,
+            exit,
+            variants,
+            transition,
+            ...props
+          },
+          ref
+        ) => (
+          <div ref={ref} {...props}>
+            {children}
+          </div>
+        )
       ),
-      button: React.forwardRef(({ children, whileHover, whileTap, initial, animate, exit, variants, transition, ...props }, ref) =>
-        <button ref={ref} {...props}>{children}</button>
+      button: React.forwardRef(
+        (
+          {
+            children,
+            whileHover,
+            whileTap,
+            initial,
+            animate,
+            exit,
+            variants,
+            transition,
+            ...props
+          },
+          ref
+        ) => (
+          <button ref={ref} {...props}>
+            {children}
+          </button>
+        )
       ),
-      a: React.forwardRef(({ children, whileHover, whileTap, initial, animate, exit, variants, transition, ...props }, ref) =>
-        <a ref={ref} {...props}>{children}</a>
+      a: React.forwardRef(
+        (
+          {
+            children,
+            whileHover,
+            whileTap,
+            initial,
+            animate,
+            exit,
+            variants,
+            transition,
+            ...props
+          },
+          ref
+        ) => (
+          <a ref={ref} {...props}>
+            {children}
+          </a>
+        )
       ),
-      section: React.forwardRef(({ children, whileHover, whileTap, initial, animate, exit, variants, transition, ...props }, ref) =>
-        <section ref={ref} {...props}>{children}</section>
+      section: React.forwardRef(
+        (
+          {
+            children,
+            whileHover,
+            whileTap,
+            initial,
+            animate,
+            exit,
+            variants,
+            transition,
+            ...props
+          },
+          ref
+        ) => (
+          <section ref={ref} {...props}>
+            {children}
+          </section>
+        )
       ),
-      h1: React.forwardRef(({ children, whileHover, whileTap, initial, animate, exit, variants, transition, ...props }, ref) =>
-        <h1 ref={ref} {...props}>{children}</h1>
+      h1: React.forwardRef(
+        (
+          {
+            children,
+            whileHover,
+            whileTap,
+            initial,
+            animate,
+            exit,
+            variants,
+            transition,
+            ...props
+          },
+          ref
+        ) => (
+          <h1 ref={ref} {...props}>
+            {children}
+          </h1>
+        )
       ),
-      h2: React.forwardRef(({ children, whileHover, whileTap, initial, animate, exit, variants, transition, ...props }, ref) =>
-        <h2 ref={ref} {...props}>{children}</h2>
+      h2: React.forwardRef(
+        (
+          {
+            children,
+            whileHover,
+            whileTap,
+            initial,
+            animate,
+            exit,
+            variants,
+            transition,
+            ...props
+          },
+          ref
+        ) => (
+          <h2 ref={ref} {...props}>
+            {children}
+          </h2>
+        )
       ),
-      h3: React.forwardRef(({ children, whileHover, whileTap, initial, animate, exit, variants, transition, ...props }, ref) =>
-        <h3 ref={ref} {...props}>{children}</h3>
+      h3: React.forwardRef(
+        (
+          {
+            children,
+            whileHover,
+            whileTap,
+            initial,
+            animate,
+            exit,
+            variants,
+            transition,
+            ...props
+          },
+          ref
+        ) => (
+          <h3 ref={ref} {...props}>
+            {children}
+          </h3>
+        )
       ),
-      p: React.forwardRef(({ children, whileHover, whileTap, initial, animate, exit, variants, transition, ...props }, ref) =>
-        <p ref={ref} {...props}>{children}</p>
+      p: React.forwardRef(
+        (
+          {
+            children,
+            whileHover,
+            whileTap,
+            initial,
+            animate,
+            exit,
+            variants,
+            transition,
+            ...props
+          },
+          ref
+        ) => (
+          <p ref={ref} {...props}>
+            {children}
+          </p>
+        )
       ),
     },
     AnimatePresence: ({ children }) => <>{children}</>,
@@ -41,7 +177,11 @@ jest.mock('framer-motion', () => {
 // Mock Next.js Link component
 jest.mock('next/link', () => {
   return ({ children, href, ...props }) => {
-    return <a href={href} {...props}>{children}</a>
+    return (
+      <a href={href} {...props}>
+        {children}
+      </a>
+    )
   }
 })
 
@@ -56,7 +196,11 @@ jest.mock('next/image', () => ({
 
 // Mock Leaflet to avoid window/document issues in tests
 jest.mock('react-leaflet', () => ({
-  MapContainer: ({ children, ...props }) => <div data-testid="map-container" {...props}>{children}</div>,
+  MapContainer: ({ children, ...props }) => (
+    <div data-testid="map-container" {...props}>
+      {children}
+    </div>
+  ),
   TileLayer: () => <div data-testid="tile-layer" />,
   Marker: ({ children }) => <div data-testid="marker">{children}</div>,
   Popup: ({ children }) => <div data-testid="popup">{children}</div>,

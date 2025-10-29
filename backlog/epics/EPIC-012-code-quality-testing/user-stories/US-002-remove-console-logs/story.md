@@ -26,11 +26,13 @@
 ## Problem Statement
 
 Console statements currently exist in production code:
+
 - `components/BookingWidget.tsx:31` - Logs environment variable
 - `lib/markdown.ts:36, 57` - Logs file read errors
 - `backlog/scripts/*.js` - Development scripts (acceptable)
 
 **Risks:**
+
 - **Security:** Can leak environment variables or sensitive data
 - **Performance:** Console operations have runtime overhead
 - **Professionalism:** Users seeing errors in console
@@ -59,16 +61,17 @@ export const logger = {
     if (typeof window !== 'undefined' && window.gtag) {
       window.gtag('event', 'exception', {
         description: String(args[0]),
-        fatal: false
+        fatal: false,
       })
     }
-  }
+  },
 }
 ```
 
 ### 2. Update Components
 
 **components/BookingWidget.tsx:**
+
 ```typescript
 // BEFORE
 console.log('Hospitable Widget ID:', widgetId)
@@ -79,6 +82,7 @@ logger.info('Hospitable Widget ID configured')
 ```
 
 **lib/markdown.ts:**
+
 ```typescript
 // BEFORE
 console.error(`Error reading markdown file: ${slug}.md`, error)

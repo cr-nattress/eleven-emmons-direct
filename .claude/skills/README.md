@@ -81,18 +81,22 @@ To create a new skill:
 
 1. Create a new `.md` file in `.claude/skills/`
 2. Follow the format:
+
    ```markdown
    # Skill: Skill Name
 
    Description of what the skill does
 
    ## Usage
+
    [Usage instructions]
 
    ## What This Skill Does
+
    [Detailed explanation]
 
    ## Skill Execution Steps
+
    [Step-by-step process]
    ```
 

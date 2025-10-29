@@ -24,21 +24,31 @@ describe('Footer Component', () => {
     render(<Footer />)
 
     expect(screen.getByText(siteConfig.contact.email)).toBeInTheDocument()
-    expect(screen.getByText(siteConfig.contact.phone.display)).toBeInTheDocument()
+    expect(
+      screen.getByText(siteConfig.contact.phone.display)
+    ).toBeInTheDocument()
   })
 
   it('has mailto link for email', () => {
     render(<Footer />)
 
     const emailLink = screen.getByText(siteConfig.contact.email).closest('a')
-    expect(emailLink).toHaveAttribute('href', `mailto:${siteConfig.contact.email}`)
+    expect(emailLink).toHaveAttribute(
+      'href',
+      `mailto:${siteConfig.contact.email}`
+    )
   })
 
   it('has tel link for phone', () => {
     render(<Footer />)
 
-    const phoneLink = screen.getByText(siteConfig.contact.phone.display).closest('a')
-    expect(phoneLink).toHaveAttribute('href', `tel:${siteConfig.contact.phone.tel}`)
+    const phoneLink = screen
+      .getByText(siteConfig.contact.phone.display)
+      .closest('a')
+    expect(phoneLink).toHaveAttribute(
+      'href',
+      `tel:${siteConfig.contact.phone.tel}`
+    )
   })
 
   it('renders all navigation sections', () => {
@@ -52,7 +62,9 @@ describe('Footer Component', () => {
     render(<Footer />)
 
     const currentYear = new Date().getFullYear()
-    expect(screen.getByText(new RegExp(currentYear.toString()))).toBeInTheDocument()
+    expect(
+      screen.getByText(new RegExp(currentYear.toString()))
+    ).toBeInTheDocument()
   })
 
   it('includes QR code information', () => {

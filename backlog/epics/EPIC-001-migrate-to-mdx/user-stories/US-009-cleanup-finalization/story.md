@@ -27,6 +27,7 @@ So that **the codebase is clean and production-ready**.
 ## Technical Notes
 
 Final cleanup:
+
 - Remove marked dependency
 - Clean up any unused code
 - Update documentation

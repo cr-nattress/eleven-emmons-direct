@@ -26,6 +26,7 @@
 ## Problem Statement
 
 Currently, any React error crashes the entire application:
+
 - Gallery error → entire site broken
 - Booking widget error → lost conversion opportunity
 - No error tracking or visibility into failures
@@ -151,21 +152,25 @@ export default function Home() {
 ## Technical Implementation
 
 ### Files to Create
+
 1. **`components/ErrorBoundary.tsx`** - Reusable error boundary component
 2. **`components/SuspenseErrorBoundary.tsx`** - Combined Suspense + Error Boundary
 
 ### Files to Update
+
 1. **`app/page.tsx`** - Wrap sections with boundaries
 2. **`lib/analytics.tsx`** - Ensure trackEvent supports error events
 
 ### Error Tracking
 
 Integrate with Google Analytics:
+
 ```typescript
 trackEvent('error', 'ErrorBoundary', `${section}: ${error.message}`)
 ```
 
 View in GA:
+
 - Events → Error category
 - Track frequency by section
 - Monitor which components fail most
@@ -184,12 +189,14 @@ View in GA:
 ## Testing Strategy
 
 **Manual Testing:**
+
 1. Add intentional error to Gallery component
 2. Verify only Gallery section shows error
 3. Verify rest of page still works
 4. Test "Try Again" button recovery
 
 **Example Test Error:**
+
 ```typescript
 // Add temporarily to Gallery.tsx
 useEffect(() => {

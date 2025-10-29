@@ -1,15 +1,19 @@
 # TASK-001: Refactor Hero Component for Animations
 
 ## Task Description
+
 Refactor the Hero component to support Framer Motion animations while maintaining server-side rendering where possible.
 
 ## Priority
+
 CRITICAL
 
 ## Estimated Effort
+
 1-2 hours
 
 ## Acceptance Criteria
+
 - [ ] Hero component updated to support animations
 - [ ] 'use client' directive added if needed
 - [ ] Component structure allows for individual element animations
@@ -20,23 +24,28 @@ CRITICAL
 ## Technical Details
 
 ### Current State
+
 - `/components/Hero.tsx` is a server component
 - Contains: title, subtitle, description, 2 CTAs, scroll arrow
 - Uses Tailwind for styling
 - Scroll arrow has `animate-bounce` class
 
 ### Refactoring Strategy
+
 **Option 1**: Convert entire Hero to client component
+
 - Simplest approach
 - Add 'use client' at top
 - Can use motion components directly
 
 **Option 2**: Hybrid approach (RECOMMENDED)
+
 - Keep Hero as server component
 - Create HeroContent client component for animated parts
 - Best for performance
 
 ### Implementation Pattern
+
 ```typescript
 // Option 2 structure:
 // /components/Hero.tsx (server)
@@ -61,12 +70,14 @@ export default function HeroContent() {
 You are tasked with refactoring the Hero component to support Framer Motion animations.
 
 **Context:**
+
 - Current Hero component at `/components/Hero.tsx` is a server component
 - We need to add animations without breaking server-side rendering benefits
 - Animation infrastructure is ready (US-001 completed)
 - Hero is the first impression - critical for engagement
 
 **Current Hero Structure (lines from Hero.tsx):**
+
 - Line 6: `<section>` wrapper
 - Lines 8-17: Background image div (static, no animation needed)
 - Lines 20-48: Content div with title, subtitle, description, buttons
@@ -81,6 +92,7 @@ You are tasked with refactoring the Hero component to support Framer Motion anim
    - Note the background, content, and scroll indicator sections
 
 2. **Create `/components/HeroContent.tsx` (client component):**
+
    ```typescript
    'use client'
 
@@ -137,6 +149,7 @@ You are tasked with refactoring the Hero component to support Framer Motion anim
    - Do NOT add 'use client' to Hero.tsx - keep it as server component
 
    Updated structure:
+
    ```typescript
    import Image from 'next/image'
    import Link from 'next/link'
@@ -165,11 +178,13 @@ You are tasked with refactoring the Hero component to support Framer Motion anim
 **ALTERNATIVE APPROACH - Full Client (Option 1):**
 
 If you choose this simpler approach:
+
 1. Add `'use client'` to the top of `/components/Hero.tsx`
 2. Import `motion` from framer-motion
 3. That's it - component is ready for animations
 
 **Important Notes:**
+
 - Do NOT implement animations yet - that's for TASK-002, TASK-003, TASK-004
 - Just set up the structure to support animations
 - Verify the component still renders correctly
@@ -177,6 +192,7 @@ If you choose this simpler approach:
 - Test that the page loads without errors
 
 **Testing:**
+
 1. Run dev server: `npm run dev`
 2. Visit http://localhost:3000
 3. Verify hero section renders correctly
@@ -186,6 +202,7 @@ If you choose this simpler approach:
 7. Verify TypeScript compilation: no errors
 
 **Success Criteria:**
+
 - Hero component refactored and rendering correctly
 - No visual changes to the hero section yet
 - Component ready to receive animations in next tasks
@@ -193,19 +210,23 @@ If you choose this simpler approach:
 - No runtime errors
 
 **Deliverables:**
+
 - Updated `/components/Hero.tsx`
 - New `/components/HeroContent.tsx` (if using Option 2)
 - Confirmation that page loads without errors
 
 ## Dependencies
+
 - US-001 completed (Framer Motion installed)
 
 ## Related Tasks
+
 - TASK-002: Implement title and subtitle animations (next)
 - TASK-003: Implement CTA button animations
 - TASK-004: Enhance scroll arrow animation
 
 ## References
+
 - [Current Hero Component](../../../../components/Hero.tsx)
 - [Next.js Client Components](https://nextjs.org/docs/app/building-your-application/rendering/client-components)
 - [Framer Motion with Next.js](https://www.framer.com/motion/guide-nextjs/)

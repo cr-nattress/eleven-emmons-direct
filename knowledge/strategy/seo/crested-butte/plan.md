@@ -60,15 +60,15 @@ Current: Single-page site
 New Structure:
 ├── / (homepage - Crested Butte overview)
 ├── /things-to-do/
-│   ├── /winter/
-│   ├── /summer/
-│   ├── /hiking/
-│   ├── /mountain-biking/
-│   └── /skiing/
+│ ├── /winter/
+│ ├── /summer/
+│ ├── /hiking/
+│ ├── /mountain-biking/
+│ └── /skiing/
 ├── /restaurants/
 ├── /events/
 ├── /accommodations/
-│   └── /11-emmons-road/ (your property)
+│ └── /11-emmons-road/ (your property)
 ├── /neighborhoods/
 ├── /visitor-guide/
 └── /blog/

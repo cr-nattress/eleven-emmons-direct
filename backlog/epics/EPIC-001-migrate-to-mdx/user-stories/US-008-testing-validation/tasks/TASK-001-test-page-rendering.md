@@ -71,6 +71,7 @@ Take screenshots if issues found.
 ## Expected Results
 
 All sections should:
+
 - Display content correctly
 - Match previous visual design
 - Show proper formatting (headings, lists, etc.)
@@ -79,6 +80,7 @@ All sections should:
 ## Issue Documentation
 
 If issues found, document:
+
 - Section name
 - Description of issue
 - Screenshot (if applicable)

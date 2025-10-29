@@ -29,14 +29,17 @@
 ### Opening Paragraph Requirements
 
 **Structure:**
+
 1. Sensory/emotional hook (1 sentence)
 2. Unique value proposition (1 sentence)
 3. Location/convenience benefit (1 sentence)
 
 **Example Opening:**
+
 > "Wake up to panoramic views of snow-capped peaks and step directly onto the slopes from your private entrance. This thoughtfully designed condo at 11 Emmons Road offers true ski-in/ski-out access—no shuttles, no walking, just pure mountain convenience. Inside, you'll find a perfect blend of modern comfort and alpine charm, recently updated in 2024 to exceed the expectations of discerning travelers."
 
 **Required Elements to Include:**
+
 - Mention of 4.98 rating or 88+ reviews
 - Specific ski lift access (0 min walk)
 - Year of recent renovation (2024)
@@ -46,28 +49,34 @@
 ### Closing Paragraph Requirements
 
 **Structure:**
+
 1. Convenience/technology benefits (1 sentence)
 2. Emotional resonance (1 sentence)
 3. Subtle call-to-action or booking confidence statement
 
 **Example Closing:**
+
 > "With smart home controls at your fingertips and high-speed WiFi throughout, this mountain retreat seamlessly blends modern technology with natural beauty. Whether you're here for epic powder days or peaceful mountain evenings, you'll appreciate the attention to detail that makes this condo feel like home."
 
 ### Content Guidelines
 
 **Voice & Tone:**
+
 - **Voice:** Warm, confident, professional
 - **Tone:** Inviting but not overly sales-y
 - **POV:** Second person ("you'll find", "you'll enjoy")
 
 **Sentence Length:**
+
 - Mix of short (8-12 words) and medium (15-20 words)
 - Avoid very long sentences (25+ words)
 
 **Paragraph Length:**
+
 - 3-4 sentences maximum per paragraph
 
 **Banned Phrases:**
+
 - ❌ "World-class" (overused)
 - ❌ "Luxury" (unless truly ultra-luxury)
 - ❌ Technical terms (SSR, framework names, developer jargon)
@@ -75,6 +84,7 @@
 - ❌ "Don't miss out" (creates pressure)
 
 **Preferred Language:**
+
 - ✅ Benefit-driven ("you'll enjoy", "you'll appreciate")
 - ✅ Specific details (numbers, measurements, facts)
 - ✅ Sensory language (views, warmth, ambiance)
@@ -138,9 +148,11 @@
 ## Example Content Variations
 
 **Opening Variation 1 (Example from docs):**
+
 > "Wake up to panoramic views of snow-capped peaks and step directly onto the slopes from your private entrance. This thoughtfully designed condo at 11 Emmons Road offers true ski-in/ski-out access—no shuttles, no walking, just pure mountain convenience. Inside, you'll find a perfect blend of modern comfort and alpine charm, recently updated in 2024 to exceed the expectations of discerning travelers."
 
 **Opening Variation 2 (Alternative):**
+
 > "Imagine waking up to fresh powder and being on the slopes in seconds—not minutes, seconds. This 650-square-foot mountain retreat at 11 Emmons Road delivers genuine ski-in/ski-out access with zero walking required. Freshly renovated in 2024 and rated 4.98 by 88+ guests, this smart home-enabled condo blends modern technology with Crested Butte's natural beauty."
 
 **Choose the variation that best matches brand voice.**

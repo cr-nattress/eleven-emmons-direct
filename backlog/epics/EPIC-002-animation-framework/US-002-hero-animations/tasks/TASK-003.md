@@ -1,15 +1,19 @@
 # TASK-003: Implement CTA Button Animations
 
 ## Task Description
+
 Add entrance and interactive animations to the two Call-to-Action buttons in the hero section.
 
 ## Priority
+
 CRITICAL
 
 ## Estimated Effort
+
 1 hour
 
 ## Acceptance Criteria
+
 - [ ] Primary CTA button ("Book Your Stay") has entrance animation
 - [ ] Secondary CTA button ("Learn More") has entrance animation
 - [ ] Buttons animate with stagger delay (50-100ms apart)
@@ -22,6 +26,7 @@ CRITICAL
 ## Technical Details
 
 ### Buttons to Animate
+
 1. **Primary CTA**: "Book Your Stay" button
    - Delay: 400ms (after description)
    - Animation: fade + slide up
@@ -35,6 +40,7 @@ CRITICAL
    - Tap: scale down slightly
 
 ### Animation Approach
+
 Use motion.div wrapper around Link components to maintain Next.js Link functionality while adding animations.
 
 ## Agent Prompt
@@ -42,6 +48,7 @@ Use motion.div wrapper around Link components to maintain Next.js Link functiona
 You are tasked with implementing entrance and interactive animations for the hero CTA buttons.
 
 **Context:**
+
 - HeroContent.tsx is a client component
 - Title and subtitle animations are complete (TASK-002)
 - These buttons are the conversion point - animations should draw attention
@@ -49,6 +56,7 @@ You are tasked with implementing entrance and interactive animations for the her
 
 **Current Structure:**
 In `/components/HeroContent.tsx`:
+
 - Buttons container div with flex layout
 - Two Link components for buttons
 
@@ -57,6 +65,7 @@ In `/components/HeroContent.tsx`:
 1. **Update `/components/HeroContent.tsx`:**
 
 2. **Import motion (should already be imported):**
+
    ```typescript
    import { motion } from 'framer-motion'
    import { slideUpVariants } from '@/lib/animations/variants'
@@ -65,11 +74,13 @@ In `/components/HeroContent.tsx`:
 3. **Wrap the buttons container in motion.div:**
 
    Find the current buttons container:
+
    ```typescript
    <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
    ```
 
    Wrap the entire buttons div in a parent motion.div with fade animation:
+
    ```typescript
    <motion.div
      initial={{ opacity: 0 }}
@@ -84,6 +95,7 @@ In `/components/HeroContent.tsx`:
 4. **Animate Primary Button:**
 
    Wrap the "Book Your Stay" Link in motion.div:
+
    ```typescript
    <motion.div
      initial={{ opacity: 0, y: 20 }}
@@ -104,6 +116,7 @@ In `/components/HeroContent.tsx`:
 5. **Animate Secondary Button:**
 
    Wrap the "Learn More" Link in motion.div:
+
    ```typescript
    <motion.div
      initial={{ opacity: 0, y: 20 }}
@@ -124,6 +137,7 @@ In `/components/HeroContent.tsx`:
 **Alternative Simpler Approach:**
 
 If you prefer, you can use the AnimatedButton component from US-001:
+
 ```typescript
 import AnimatedButton from '@/components/animated/AnimatedButton'
 
@@ -144,6 +158,7 @@ import AnimatedButton from '@/components/animated/AnimatedButton'
 However, the first approach is simpler and keeps the Link component intact.
 
 **Key Points:**
+
 - Wrap Link components, don't replace them (maintain Next.js routing)
 - Use `whileHover` and `whileTap` for interactive feedback
 - Primary button: 400ms delay
@@ -152,6 +167,7 @@ However, the first approach is simpler and keeps the Link component intact.
 - Keep all existing classNames and hrefs
 
 **Animation Sequence Summary:**
+
 - 0ms: Title starts
 - 200ms: Subtitle starts
 - 300ms: Description starts
@@ -160,6 +176,7 @@ However, the first approach is simpler and keeps the Link component intact.
 - Total sequence: 1000ms (1 second)
 
 **Visual Effect:**
+
 - Buttons fade in and slide up after text
 - Slight stagger between buttons creates polish
 - Hover makes buttons grow slightly (attention-grabbing)
@@ -167,12 +184,14 @@ However, the first approach is simpler and keeps the Link component intact.
 - Smooth, professional feel
 
 **Accessibility:**
+
 - Reduced motion users see instant buttons (no entrance animation)
 - Interactive animations (hover/tap) are always subtle
 - Links remain keyboard accessible
 - Screen readers work normally
 
 **Testing:**
+
 1. Refresh browser at http://localhost:3000
 2. Watch full hero entrance sequence
 3. Verify buttons appear after text (400ms and 500ms)
@@ -183,6 +202,7 @@ However, the first approach is simpler and keeps the Link component intact.
 8. Check console for errors
 
 **Expected Result:**
+
 - Smooth entrance for both buttons with subtle stagger
 - Interactive hover effects feel responsive
 - Tap feedback is satisfying
@@ -190,6 +210,7 @@ However, the first approach is simpler and keeps the Link component intact.
 - Professional, polished appearance
 
 **Success Criteria:**
+
 - Both buttons animate on entrance
 - Stagger timing feels natural (100ms between buttons)
 - Interactive animations work smoothly
@@ -198,6 +219,7 @@ However, the first approach is simpler and keeps the Link component intact.
 - No console errors
 
 **Common Issues to Avoid:**
+
 - Don't break the Link component - wrap it, don't replace it
 - Keep href values intact
 - Maintain all existing classNames
@@ -205,13 +227,16 @@ However, the first approach is simpler and keeps the Link component intact.
 - Ensure buttons are clickable during and after animation
 
 ## Dependencies
+
 - TASK-001: Refactor Hero Component (must be completed)
 - TASK-002: Title and subtitle animations (should be completed for sequence)
 
 ## Related Tasks
+
 - TASK-004: Enhance scroll arrow animation (next)
 
 ## References
+
 - [Framer Motion Interactive Animations](https://www.framer.com/motion/gestures/)
 - [whileHover](https://www.framer.com/motion/gestures/##whilehover)
 - [whileTap](https://www.framer.com/motion/gestures/##whiletap)

@@ -12,7 +12,6 @@ Advanced Patterns
 Testing & Validation
 Performance Considerations
 
-
 Executive Summary
 What is Shadcn/UI?
 Shadcn/ui is a collection of re-usable components built on top of Radix UI primitives and styled with Tailwind CSS. Unlike traditional UI libraries, shadcn/ui copies components directly into your project, giving you full ownership and control.
@@ -84,12 +83,14 @@ npx shadcn@latest add accordion
 npx shadcn@latest add tabs
 
 # Supporting components (Install second)
+
 npx shadcn@latest add badge
 npx shadcn@latest add separator
 npx shadcn@latest add carousel
 npx shadcn@latest add tooltip
 
 # Optional enhancement components (Install as needed)
+
 npx shadcn@latest add alert
 npx shadcn@latest add skeleton
 npx shadcn@latest add sheet
@@ -107,95 +108,95 @@ Current Configuration (Likely):
 typescriptimport type { Config } from "tailwindcss";
 
 const config: Config = {
-  content: [
-    "./pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./app/**/*.{js,ts,jsx,tsx,mdx}",
-  ],
-  theme: {
-    extend: {},
-  },
-  plugins: [],
+content: [
+"./pages/**/*.{js,ts,jsx,tsx,mdx}",
+"./components/**/*.{js,ts,jsx,tsx,mdx}",
+"./app/**/*.{js,ts,jsx,tsx,mdx}",
+],
+theme: {
+extend: {},
+},
+plugins: [],
 };
 export default config;
 Updated Configuration:
 typescriptimport type { Config } from "tailwindcss";
 
 const config: Config = {
-  darkMode: ["class"],
-  content: [
-    "./pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./app/**/*.{js,ts,jsx,tsx,mdx}",
-    // Add this line for shadcn/ui components
-    "./components/ui/**/*.{js,ts,jsx,tsx,mdx}",
-  ],
-  theme: {
-    container: {
-      center: true,
-      padding: "2rem",
-      screens: {
-        "2xl": "1400px",
-      },
-    },
-    extend: {
-      colors: {
-        border: "hsl(var(--border))",
-        input: "hsl(var(--input))",
-        ring: "hsl(var(--ring))",
-        background: "hsl(var(--background))",
-        foreground: "hsl(var(--foreground))",
-        primary: {
-          DEFAULT: "hsl(var(--primary))",
-          foreground: "hsl(var(--primary-foreground))",
-        },
-        secondary: {
-          DEFAULT: "hsl(var(--secondary))",
-          foreground: "hsl(var(--secondary-foreground))",
-        },
-        destructive: {
-          DEFAULT: "hsl(var(--destructive))",
-          foreground: "hsl(var(--destructive-foreground))",
-        },
-        muted: {
-          DEFAULT: "hsl(var(--muted))",
-          foreground: "hsl(var(--muted-foreground))",
-        },
-        accent: {
-          DEFAULT: "hsl(var(--accent))",
-          foreground: "hsl(var(--accent-foreground))",
-        },
-        popover: {
-          DEFAULT: "hsl(var(--popover))",
-          foreground: "hsl(var(--popover-foreground))",
-        },
-        card: {
-          DEFAULT: "hsl(var(--card))",
-          foreground: "hsl(var(--card-foreground))",
-        },
-      },
-      borderRadius: {
-        lg: "var(--radius)",
-        md: "calc(var(--radius) - 2px)",
-        sm: "calc(var(--radius) - 4px)",
-      },
-      keyframes: {
-        "accordion-down": {
-          from: { height: "0" },
-          to: { height: "var(--radix-accordion-content-height)" },
-        },
-        "accordion-up": {
-          from: { height: "var(--radix-accordion-content-height)" },
-          to: { height: "0" },
-        },
-      },
-      animation: {
-        "accordion-down": "accordion-down 0.2s ease-out",
-        "accordion-up": "accordion-up 0.2s ease-out",
-      },
-    },
-  },
-  plugins: [require("tailwindcss-animate")],
+darkMode: ["class"],
+content: [
+"./pages/**/*.{js,ts,jsx,tsx,mdx}",
+"./components/**/*.{js,ts,jsx,tsx,mdx}",
+"./app/**/*.{js,ts,jsx,tsx,mdx}",
+// Add this line for shadcn/ui components
+"./components/ui/**/*.{js,ts,jsx,tsx,mdx}",
+],
+theme: {
+container: {
+center: true,
+padding: "2rem",
+screens: {
+"2xl": "1400px",
+},
+},
+extend: {
+colors: {
+border: "hsl(var(--border))",
+input: "hsl(var(--input))",
+ring: "hsl(var(--ring))",
+background: "hsl(var(--background))",
+foreground: "hsl(var(--foreground))",
+primary: {
+DEFAULT: "hsl(var(--primary))",
+foreground: "hsl(var(--primary-foreground))",
+},
+secondary: {
+DEFAULT: "hsl(var(--secondary))",
+foreground: "hsl(var(--secondary-foreground))",
+},
+destructive: {
+DEFAULT: "hsl(var(--destructive))",
+foreground: "hsl(var(--destructive-foreground))",
+},
+muted: {
+DEFAULT: "hsl(var(--muted))",
+foreground: "hsl(var(--muted-foreground))",
+},
+accent: {
+DEFAULT: "hsl(var(--accent))",
+foreground: "hsl(var(--accent-foreground))",
+},
+popover: {
+DEFAULT: "hsl(var(--popover))",
+foreground: "hsl(var(--popover-foreground))",
+},
+card: {
+DEFAULT: "hsl(var(--card))",
+foreground: "hsl(var(--card-foreground))",
+},
+},
+borderRadius: {
+lg: "var(--radius)",
+md: "calc(var(--radius) - 2px)",
+sm: "calc(var(--radius) - 4px)",
+},
+keyframes: {
+"accordion-down": {
+from: { height: "0" },
+to: { height: "var(--radix-accordion-content-height)" },
+},
+"accordion-up": {
+from: { height: "var(--radix-accordion-content-height)" },
+to: { height: "0" },
+},
+},
+animation: {
+"accordion-down": "accordion-down 0.2s ease-out",
+"accordion-up": "accordion-up 0.2s ease-out",
+},
+},
+},
+plugins: [require("tailwindcss-animate")],
 };
 export default config;
 Why These Changes:
@@ -213,85 +214,85 @@ css@tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Add these shadcn/ui CSS variables */
+/_ Add these shadcn/ui CSS variables _/
 @layer base {
-  :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
-    --radius: 0.5rem;
-  }
+:root {
+--background: 0 0% 100%;
+--foreground: 222.2 84% 4.9%;
+--card: 0 0% 100%;
+--card-foreground: 222.2 84% 4.9%;
+--popover: 0 0% 100%;
+--popover-foreground: 222.2 84% 4.9%;
+--primary: 222.2 47.4% 11.2%;
+--primary-foreground: 210 40% 98%;
+--secondary: 210 40% 96.1%;
+--secondary-foreground: 222.2 47.4% 11.2%;
+--muted: 210 40% 96.1%;
+--muted-foreground: 215.4 16.3% 46.9%;
+--accent: 210 40% 96.1%;
+--accent-foreground: 222.2 47.4% 11.2%;
+--destructive: 0 84.2% 60.2%;
+--destructive-foreground: 210 40% 98%;
+--border: 214.3 31.8% 91.4%;
+--input: 214.3 31.8% 91.4%;
+--ring: 222.2 84% 4.9%;
+--radius: 0.5rem;
+}
 
-  .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-  }
+.dark {
+--background: 222.2 84% 4.9%;
+--foreground: 210 40% 98%;
+--card: 222.2 84% 4.9%;
+--card-foreground: 210 40% 98%;
+--popover: 222.2 84% 4.9%;
+--popover-foreground: 210 40% 98%;
+--primary: 210 40% 98%;
+--primary-foreground: 222.2 47.4% 11.2%;
+--secondary: 217.2 32.6% 17.5%;
+--secondary-foreground: 210 40% 98%;
+--muted: 217.2 32.6% 17.5%;
+--muted-foreground: 215 20.2% 65.1%;
+--accent: 217.2 32.6% 17.5%;
+--accent-foreground: 210 40% 98%;
+--destructive: 0 62.8% 30.6%;
+--destructive-foreground: 210 40% 98%;
+--border: 217.2 32.6% 17.5%;
+--input: 217.2 32.6% 17.5%;
+--ring: 212.7 26.8% 83.9%;
+}
 }
 
 @layer base {
-  * {
-    @apply border-border;
+
+- {
+  @apply border-border;
   }
   body {
-    @apply bg-background text-foreground;
+  @apply bg-background text-foreground;
   }
-}
-Why These Variables:
+  }
+  Why These Variables:
 
 HSL color format: Easier to adjust lightness/saturation
 CSS variables: Enable dynamic theming without rebuilding
 Dark mode support: Future-proof for optional dark mode
 Consistent naming: Semantic color names improve maintainability
 
-
 Project Structure Changes
 Before Shadcn/UI
 eleven-emmons/
 ├── app/
 ├── components/
-│   ├── About.tsx
-│   ├── Amenities.tsx
-│   ├── Booking.tsx
-│   ├── Footer.tsx
-│   ├── Gallery.tsx
-│   ├── Header.tsx
-│   ├── Hero.tsx
-│   ├── Location.tsx
-│   ├── Reviews.tsx
-│   └── mdx-components.tsx
+│ ├── About.tsx
+│ ├── Amenities.tsx
+│ ├── Booking.tsx
+│ ├── Footer.tsx
+│ ├── Gallery.tsx
+│ ├── Header.tsx
+│ ├── Hero.tsx
+│ ├── Location.tsx
+│ ├── Reviews.tsx
+│ └── mdx-components.tsx
 ├── content/
 ├── lib/
 └── public/
@@ -299,40 +300,40 @@ After Shadcn/UI
 eleven-emmons/
 ├── app/
 ├── components/
-│   ├── ui/                          # NEW: Shadcn components
-│   │   ├── accordion.tsx
-│   │   ├── alert.tsx
-│   │   ├── badge.tsx
-│   │   ├── button.tsx
-│   │   ├── card.tsx
-│   │   ├── carousel.tsx
-│   │   ├── dialog.tsx
-│   │   ├── separator.tsx
-│   │   ├── sheet.tsx
-│   │   ├── skeleton.tsx
-│   │   ├── tabs.tsx
-│   │   └── tooltip.tsx
-│   ├── features/                    # NEW: Feature-specific components
-│   │   ├── BookingDialog.tsx
-│   │   ├── GalleryLightbox.tsx
-│   │   ├── ReviewCard.tsx
-│   │   ├── AmenityAccordion.tsx
-│   │   └── FeatureCard.tsx
-│   ├── About.tsx                    # UPDATED
-│   ├── Amenities.tsx                # UPDATED
-│   ├── Booking.tsx                  # UPDATED
-│   ├── Footer.tsx                   # UPDATED
-│   ├── Gallery.tsx                  # UPDATED
-│   ├── Header.tsx                   # UPDATED
-│   ├── Hero.tsx                     # UPDATED
-│   ├── Location.tsx                 # UPDATED
-│   ├── Reviews.tsx                  # UPDATED
-│   └── mdx-components.tsx
+│ ├── ui/ # NEW: Shadcn components
+│ │ ├── accordion.tsx
+│ │ ├── alert.tsx
+│ │ ├── badge.tsx
+│ │ ├── button.tsx
+│ │ ├── card.tsx
+│ │ ├── carousel.tsx
+│ │ ├── dialog.tsx
+│ │ ├── separator.tsx
+│ │ ├── sheet.tsx
+│ │ ├── skeleton.tsx
+│ │ ├── tabs.tsx
+│ │ └── tooltip.tsx
+│ ├── features/ # NEW: Feature-specific components
+│ │ ├── BookingDialog.tsx
+│ │ ├── GalleryLightbox.tsx
+│ │ ├── ReviewCard.tsx
+│ │ ├── AmenityAccordion.tsx
+│ │ └── FeatureCard.tsx
+│ ├── About.tsx # UPDATED
+│ ├── Amenities.tsx # UPDATED
+│ ├── Booking.tsx # UPDATED
+│ ├── Footer.tsx # UPDATED
+│ ├── Gallery.tsx # UPDATED
+│ ├── Header.tsx # UPDATED
+│ ├── Hero.tsx # UPDATED
+│ ├── Location.tsx # UPDATED
+│ ├── Reviews.tsx # UPDATED
+│ └── mdx-components.tsx
 ├── content/
 ├── lib/
-│   ├── utils.ts                     # NEW: Shadcn utility functions
-│   ├── analytics.tsx
-│   └── markdown.ts
+│ ├── utils.ts # NEW: Shadcn utility functions
+│ ├── analytics.tsx
+│ └── markdown.ts
 └── public/
 Why This Structure:
 
@@ -341,14 +342,14 @@ components/features/: Custom components built using shadcn primitives
 Separation of concerns: UI primitives vs. feature-specific logic
 Reusability: Base components can be used across multiple features
 
-
 Component-by-Component Implementation
+
 1. Dialog Component - Image Lightbox Gallery
-Priority: High
-Impact: User Experience & Engagement
-What It Is
-A modal overlay for displaying full-screen images with navigation, perfect for showcasing property photos in detail.
-Why Use Dialog
+   Priority: High
+   Impact: User Experience & Engagement
+   What It Is
+   A modal overlay for displaying full-screen images with navigation, perfect for showcasing property photos in detail.
+   Why Use Dialog
 
 Current Issue: Basic image grid with no way to view images in detail
 Solution: Full-screen image viewing with keyboard navigation
@@ -365,51 +366,51 @@ import { Button } from '@/components/ui/button';
 import { ChevronLeft, ChevronRight, X } from 'lucide-react';
 
 interface GalleryLightboxProps {
-  images: {
-    src: string;
-    alt: string;
-    width: number;
-    height: number;
-  }[];
-  initialIndex?: number;
+images: {
+src: string;
+alt: string;
+width: number;
+height: number;
+}[];
+initialIndex?: number;
 }
 
 export function GalleryLightbox({ images, initialIndex = 0 }: GalleryLightboxProps) {
-  const [currentIndex, setCurrentIndex] = useState(initialIndex);
-  const [open, setOpen] = useState(false);
+const [currentIndex, setCurrentIndex] = useState(initialIndex);
+const [open, setOpen] = useState(false);
 
-  const goToPrevious = () => {
-    setCurrentIndex((prev) => (prev === 0 ? images.length - 1 : prev - 1));
-  };
+const goToPrevious = () => {
+setCurrentIndex((prev) => (prev === 0 ? images.length - 1 : prev - 1));
+};
 
-  const goToNext = () => {
-    setCurrentIndex((prev) => (prev === images.length - 1 ? 0 : prev + 1));
-  };
+const goToNext = () => {
+setCurrentIndex((prev) => (prev === images.length - 1 ? 0 : prev + 1));
+};
 
-  // Keyboard navigation
-  const handleKeyDown = (e: React.KeyboardEvent) => {
-    if (e.key === 'ArrowLeft') goToPrevious();
-    if (e.key === 'ArrowRight') goToNext();
-    if (e.key === 'Escape') setOpen(false);
-  };
+// Keyboard navigation
+const handleKeyDown = (e: React.KeyboardEvent) => {
+if (e.key === 'ArrowLeft') goToPrevious();
+if (e.key === 'ArrowRight') goToNext();
+if (e.key === 'Escape') setOpen(false);
+};
 
-  return (
-    <Dialog open={open} onOpenChange={setOpen}>
-      <DialogTrigger asChild>
-        <button 
-          className="relative aspect-[4/3] overflow-hidden rounded-lg cursor-pointer hover:opacity-90 transition-opacity"
-          onClick={() => setOpen(true)}
-        >
-          <Image
+return (
+
+<Dialog open={open} onOpenChange={setOpen}>
+<DialogTrigger asChild>
+<button
+className="relative aspect-[4/3] overflow-hidden rounded-lg cursor-pointer hover:opacity-90 transition-opacity"
+onClick={() => setOpen(true)} >
+<Image
             src={images[currentIndex].src}
             alt={images[currentIndex].alt}
             fill
             className="object-cover"
           />
-        </button>
-      </DialogTrigger>
-      
-      <DialogContent 
+</button>
+</DialogTrigger>
+
+      <DialogContent
         className="max-w-7xl w-full h-[90vh] p-0 bg-black/95"
         onKeyDown={handleKeyDown}
       >
@@ -449,7 +450,7 @@ export function GalleryLightbox({ images, initialIndex = 0 }: GalleryLightboxPro
         >
           <ChevronLeft className="h-8 w-8" />
         </Button>
-        
+
         <Button
           variant="ghost"
           size="icon"
@@ -467,8 +468,8 @@ export function GalleryLightbox({ images, initialIndex = 0 }: GalleryLightboxPro
                 key={idx}
                 onClick={() => setCurrentIndex(idx)}
                 className={`relative flex-shrink-0 w-20 h-20 rounded overflow-hidden border-2 transition-all ${
-                  idx === currentIndex 
-                    ? 'border-white scale-110' 
+                  idx === currentIndex
+                    ? 'border-white scale-110'
                     : 'border-transparent opacity-50 hover:opacity-100'
                 }`}
               >
@@ -484,7 +485,8 @@ export function GalleryLightbox({ images, initialIndex = 0 }: GalleryLightboxPro
         </div>
       </DialogContent>
     </Dialog>
-  );
+
+);
 }
 What This Code Does:
 
@@ -501,32 +503,33 @@ typescript'use client';
 import { GalleryLightbox } from './features/GalleryLightbox';
 
 const propertyImages = [
-  {
-    src: '/images/property/living-room.jpg',
-    alt: 'Spacious living room with mountain views',
-    width: 1920,
-    height: 1280,
-  },
-  {
-    src: '/images/property/bedroom.jpg',
-    alt: 'Comfortable bedroom with king bed',
-    width: 1920,
-    height: 1280,
-  },
-  // ... more images
+{
+src: '/images/property/living-room.jpg',
+alt: 'Spacious living room with mountain views',
+width: 1920,
+height: 1280,
+},
+{
+src: '/images/property/bedroom.jpg',
+alt: 'Comfortable bedroom with king bed',
+width: 1920,
+height: 1280,
+},
+// ... more images
 ];
 
 export function Gallery() {
-  return (
-    <section className="py-20 bg-white">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl mb-12">
-          Photo Gallery
-        </h2>
-        
+return (
+
+<section className="py-20 bg-white">
+<div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+<h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl mb-12">
+Photo Gallery
+</h2>
+
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
           {propertyImages.map((img, idx) => (
-            <GalleryLightbox 
+            <GalleryLightbox
               key={idx}
               images={propertyImages}
               initialIndex={idx}
@@ -535,7 +538,8 @@ export function Gallery() {
         </div>
       </div>
     </section>
-  );
+
+);
 }
 Why This Approach:
 
@@ -544,13 +548,12 @@ Accessibility: Dialog component handles focus trap and keyboard navigation
 Performance: Next.js Image optimization still applies
 Mobile-friendly: Touch gestures automatically supported by Radix UI
 
-
 2. Accordion Component - Amenities & FAQ
-Priority: High
-Impact: Information Discovery & Reduced Cognitive Load
-What It Is
-Collapsible content sections that reveal information on demand, perfect for organizing amenities by category.
-Why Use Accordion
+   Priority: High
+   Impact: Information Discovery & Reduced Cognitive Load
+   What It Is
+   Collapsible content sections that reveal information on demand, perfect for organizing amenities by category.
+   Why Use Accordion
 
 Current Issue: Long list of amenities can overwhelm users
 Solution: Organized, expandable categories
@@ -561,147 +564,147 @@ File: components/features/AmenityAccordion.tsx (NEW FILE)
 typescript'use client';
 
 import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
+Accordion,
+AccordionContent,
+AccordionItem,
+AccordionTrigger,
 } from '@/components/ui/accordion';
 import { Badge } from '@/components/ui/badge';
-import { 
-  Home, 
-  Wifi, 
-  Tv, 
-  Coffee, 
-  Snowflake, 
-  Wind,
-  UtensilsCrossed,
-  Bath,
-  Bed,
-  ParkingCircle
+import {
+Home,
+Wifi,
+Tv,
+Coffee,
+Snowflake,
+Wind,
+UtensilsCrossed,
+Bath,
+Bed,
+ParkingCircle
 } from 'lucide-react';
 
 interface AmenityCategory {
-  id: string;
-  title: string;
-  icon: React.ReactNode;
-  items: string[];
-  highlights?: string[];
+id: string;
+title: string;
+icon: React.ReactNode;
+items: string[];
+highlights?: string[];
 }
 
 const amenityCategories: AmenityCategory[] = [
-  {
-    id: 'bedroom',
-    title: 'Bedroom & Sleeping',
-    icon: <Bed className="h-5 w-5" />,
-    items: [
-      'King-size bed with premium linens',
-      'Blackout curtains for quality sleep',
-      'Ample closet space',
-      'Hair dryer provided',
-    ],
-    highlights: ['Premium Linens'],
-  },
-  {
-    id: 'kitchen',
-    title: 'Kitchen & Dining',
-    icon: <UtensilsCrossed className="h-5 w-5" />,
-    items: [
-      'Full kitchen with modern appliances',
-      'Dishwasher',
-      'Coffee maker (drip & Keurig)',
-      'Dining table for 4',
-      'Cookware and utensils',
-    ],
-    highlights: ['Full Kitchen'],
-  },
-  {
-    id: 'comfort',
-    title: 'Comfort & Climate',
-    icon: <Wind className="h-5 w-5" />,
-    items: [
-      'Central heating',
-      'Air conditioning',
-      'Gas fireplace',
-      'Thermostat control',
-    ],
-  },
-  {
-    id: 'entertainment',
-    title: 'Entertainment',
-    icon: <Tv className="h-5 w-5" />,
-    items: [
-      '55" Smart TV',
-      'High-speed WiFi (100+ Mbps)',
-      'Netflix, Hulu, Disney+ available',
-      'Board games and puzzles',
-    ],
-    highlights: ['High-Speed WiFi'],
-  },
-  {
-    id: 'bathroom',
-    title: 'Bathroom',
-    icon: <Bath className="h-5 w-5" />,
-    items: [
-      'Full bathroom with tub/shower combo',
-      'Premium bath products',
-      'Plush towels',
-      'Basic first aid kit',
-    ],
-  },
-  {
-    id: 'ski',
-    title: 'Ski & Winter',
-    icon: <Snowflake className="h-5 w-5" />,
-    items: [
-      'Ski-in/ski-out access',
-      'Ski storage rack',
-      'Boot dryer',
-      'Sled available',
-    ],
-    highlights: ['Ski-In/Ski-Out'],
-  },
-  {
-    id: 'parking',
-    title: 'Parking & Access',
-    icon: <ParkingCircle className="h-5 w-5" />,
-    items: [
-      'One reserved parking spot',
-      'Building elevator access',
-      'Secure entry system',
-      'Keyless entry',
-    ],
-  },
+{
+id: 'bedroom',
+title: 'Bedroom & Sleeping',
+icon: <Bed className="h-5 w-5" />,
+items: [
+'King-size bed with premium linens',
+'Blackout curtains for quality sleep',
+'Ample closet space',
+'Hair dryer provided',
+],
+highlights: ['Premium Linens'],
+},
+{
+id: 'kitchen',
+title: 'Kitchen & Dining',
+icon: <UtensilsCrossed className="h-5 w-5" />,
+items: [
+'Full kitchen with modern appliances',
+'Dishwasher',
+'Coffee maker (drip & Keurig)',
+'Dining table for 4',
+'Cookware and utensils',
+],
+highlights: ['Full Kitchen'],
+},
+{
+id: 'comfort',
+title: 'Comfort & Climate',
+icon: <Wind className="h-5 w-5" />,
+items: [
+'Central heating',
+'Air conditioning',
+'Gas fireplace',
+'Thermostat control',
+],
+},
+{
+id: 'entertainment',
+title: 'Entertainment',
+icon: <Tv className="h-5 w-5" />,
+items: [
+'55" Smart TV',
+'High-speed WiFi (100+ Mbps)',
+'Netflix, Hulu, Disney+ available',
+'Board games and puzzles',
+],
+highlights: ['High-Speed WiFi'],
+},
+{
+id: 'bathroom',
+title: 'Bathroom',
+icon: <Bath className="h-5 w-5" />,
+items: [
+'Full bathroom with tub/shower combo',
+'Premium bath products',
+'Plush towels',
+'Basic first aid kit',
+],
+},
+{
+id: 'ski',
+title: 'Ski & Winter',
+icon: <Snowflake className="h-5 w-5" />,
+items: [
+'Ski-in/ski-out access',
+'Ski storage rack',
+'Boot dryer',
+'Sled available',
+],
+highlights: ['Ski-In/Ski-Out'],
+},
+{
+id: 'parking',
+title: 'Parking & Access',
+icon: <ParkingCircle className="h-5 w-5" />,
+items: [
+'One reserved parking spot',
+'Building elevator access',
+'Secure entry system',
+'Keyless entry',
+],
+},
 ];
 
 export function AmenityAccordion() {
-  return (
-    <Accordion 
-      type="multiple" 
-      defaultValue={['bedroom', 'kitchen', 'ski']} 
-      className="w-full space-y-2"
-    >
-      {amenityCategories.map((category) => (
-        <AccordionItem 
+return (
+<Accordion
+type="multiple"
+defaultValue={['bedroom', 'kitchen', 'ski']}
+className="w-full space-y-2" >
+{amenityCategories.map((category) => (
+<AccordionItem 
           key={category.id} 
           value={category.id}
           className="border rounded-lg px-6 bg-white hover:bg-gray-50 transition-colors"
         >
-          <AccordionTrigger className="hover:no-underline">
-            <div className="flex items-center gap-3">
-              <div className="text-blue-600">{category.icon}</div>
-              <span className="text-lg font-semibold">{category.title}</span>
-              {category.highlights && (
-                <div className="ml-auto flex gap-2">
-                  {category.highlights.map((highlight) => (
-                    <Badge key={highlight} variant="secondary">
-                      {highlight}
-                    </Badge>
-                  ))}
-                </div>
-              )}
-            </div>
-          </AccordionTrigger>
-          
+<AccordionTrigger className="hover:no-underline">
+
+<div className="flex items-center gap-3">
+<div className="text-blue-600">{category.icon}</div>
+<span className="text-lg font-semibold">{category.title}</span>
+{category.highlights && (
+<div className="ml-auto flex gap-2">
+{category.highlights.map((highlight) => (
+<Badge key={highlight} variant="secondary">
+{highlight}
+</Badge>
+))}
+</div>
+)}
+</div>
+</AccordionTrigger>
+
           <AccordionContent>
             <ul className="mt-4 space-y-2 text-gray-600">
               {category.items.map((item, idx) => (
@@ -715,7 +718,8 @@ export function AmenityAccordion() {
         </AccordionItem>
       ))}
     </Accordion>
-  );
+
+);
 }
 What This Code Does:
 
@@ -729,26 +733,28 @@ Update: components/Amenities.tsx
 typescriptimport { AmenityAccordion } from './features/AmenityAccordion';
 
 export function Amenities() {
-  return (
-    <section className="py-20 bg-gray-50">
-      <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-            Amenities & Features
-          </h2>
-          <p className="mt-4 text-lg text-gray-600">
-            Everything you need for a comfortable mountain getaway
-          </p>
-        </div>
-        
+return (
+
+<section className="py-20 bg-gray-50">
+<div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+<div className="text-center mb-12">
+<h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+Amenities & Features
+</h2>
+<p className="mt-4 text-lg text-gray-600">
+Everything you need for a comfortable mountain getaway
+</p>
+</div>
+
         <AmenityAccordion />
-        
+
         <div className="mt-8 text-center text-sm text-gray-500">
           Click any category to expand and see full details
         </div>
       </div>
     </section>
-  );
+
+);
 }
 Why This Approach:
 
@@ -757,13 +763,12 @@ Reduced scroll: Compact view initially, users choose what to see
 Better mobile UX: Takes up less vertical space
 Scannable: Icons and badges allow quick identification of key features
 
-
 3. Tabs Component - Location Information
-Priority: High
-Impact: Content Organization & Navigation
-What It Is
-Tabbed interface for switching between different views of content without page refresh.
-Why Use Tabs
+   Priority: High
+   Impact: Content Organization & Navigation
+   What It Is
+   Tabbed interface for switching between different views of content without page refresh.
+   Why Use Tabs
 
 Current Issue: Location section might have too much text in one block
 Solution: Separate "The Area", "Activities", "Dining", "Getting Here"
@@ -779,17 +784,18 @@ import { Badge } from '@/components/ui/badge';
 import { MapPin, Utensils, Activity, Car } from 'lucide-react';
 
 export function Location() {
-  return (
-    <section className="py-20 bg-white">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-            Location & Area
-          </h2>
-          <p className="mt-4 text-lg text-gray-600">
-            Discover everything Crested Butte has to offer
-          </p>
-        </div>
+return (
+
+<section className="py-20 bg-white">
+<div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+<div className="text-center mb-12">
+<h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+Location & Area
+</h2>
+<p className="mt-4 text-lg text-gray-600">
+Discover everything Crested Butte has to offer
+</p>
+</div>
 
         <Tabs defaultValue="area" className="w-full">
           <TabsList className="grid w-full grid-cols-4 mb-8">
@@ -825,12 +831,12 @@ export function Location() {
               </CardHeader>
               <CardContent className="space-y-4">
                 <p className="text-gray-600">
-                  Located at the base of the iconic Red Lady mountain, our condo offers 
-                  immediate access to world-class skiing and mountain activities. Mt. Crested 
-                  Butte is a charming alpine village with a laid-back atmosphere and stunning 
+                  Located at the base of the iconic Red Lady mountain, our condo offers
+                  immediate access to world-class skiing and mountain activities. Mt. Crested
+                  Butte is a charming alpine village with a laid-back atmosphere and stunning
                   360-degree mountain views.
                 </p>
-                
+
                 <div className="grid md:grid-cols-2 gap-4 mt-6">
                   <div className="p-4 bg-blue-50 rounded-lg">
                     <h4 className="font-semibold text-blue-900 mb-2">Distance to Lifts</h4>
@@ -968,7 +974,7 @@ export function Location() {
 
                 <div className="bg-yellow-50 p-4 rounded-lg">
                   <p className="text-sm">
-                    <strong>Pro Tip:</strong> Many restaurants require reservations during peak 
+                    <strong>Pro Tip:</strong> Many restaurants require reservations during peak
                     season (December-March). Book ahead!
                   </p>
                 </div>
@@ -1023,7 +1029,7 @@ export function Location() {
                 <div className="bg-green-50 p-4 rounded-lg">
                   <h4 className="font-semibold text-green-900 mb-2">Parking at the Condo</h4>
                   <p className="text-sm text-green-800">
-                    One reserved parking spot included. Additional overflow parking available 
+                    One reserved parking spot included. Additional overflow parking available
                     nearby. No need to move your car once you arrive!
                   </p>
                 </div>
@@ -1033,7 +1039,8 @@ export function Location() {
         </Tabs>
       </div>
     </section>
-  );
+
+);
 }
 What This Code Does:
 
@@ -1050,13 +1057,12 @@ Better mobile UX: Tabs scroll horizontally on small screens
 Quick navigation: Jump to relevant section without scrolling
 SEO friendly: All content still in DOM for search engines
 
-
 4. Card Component - Review Display
-Priority: High
-Impact: Trust & Social Proof
-What It Is
-Structured card layout for displaying guest reviews with consistent styling and visual hierarchy.
-Why Use Card
+   Priority: High
+   Impact: Trust & Social Proof
+   What It Is
+   Structured card layout for displaying guest reviews with consistent styling and visual hierarchy.
+   Why Use Card
 
 Current Issue: Reviews might be displayed as plain text
 Solution: Structured cards with avatar, rating, date, highlight
@@ -1070,47 +1076,48 @@ import { Star } from 'lucide-react';
 import Image from 'next/image';
 
 interface Review {
-  id: string;
-  guestName: string;
-  guestAvatar?: string;
-  rating: number;
-  date: string;
-  title: string;
-  comment: string;
-  stayType?: string;
-  verified?: boolean;
+id: string;
+guestName: string;
+guestAvatar?: string;
+rating: number;
+date: string;
+title: string;
+comment: string;
+stayType?: string;
+verified?: boolean;
 }
 
 interface ReviewCardProps {
-  review: Review;
+review: Review;
 }
 
 export function ReviewCard({ review }: ReviewCardProps) {
-  return (
-    <Card className="h-full hover:shadow-lg transition-shadow">
-      <CardHeader>
-        <div className="flex items-start justify-between">
-          <div className="flex items-center gap-3">
-            {review.guestAvatar ? (
-              <Image
+return (
+<Card className="h-full hover:shadow-lg transition-shadow">
+<CardHeader>
+
+<div className="flex items-start justify-between">
+<div className="flex items-center gap-3">
+{review.guestAvatar ? (
+<Image
                 src={review.guestAvatar}
                 alt={review.guestName}
                 width={48}
                 height={48}
                 className="rounded-full"
               />
-            ) : (
-              <div className="w-12 h-12 rounded-full bg-gradient-to-br from-blue-400 to-blue-600 flex items-center justify-center text-white font-semibold">
-                {review.guestName.charAt(0)}
-              </div>
-            )}
-            
+) : (
+<div className="w-12 h-12 rounded-full bg-gradient-to-br from-blue-400 to-blue-600 flex items-center justify-center text-white font-semibold">
+{review.guestName.charAt(0)}
+</div>
+)}
+
             <div>
               <CardTitle className="text-lg">{review.guestName}</CardTitle>
               <CardDescription className="flex items-center gap-2">
-                <span>{new Date(review.date).toLocaleDateString('en-US', { 
-                  month: 'short', 
-                  year: 'numeric' 
+                <span>{new Date(review.date).toLocaleDateString('en-US', {
+                  month: 'short',
+                  year: 'numeric'
                 })}</span>
                 {review.verified && (
                   <Badge variant="secondary" className="text-xs">
@@ -1139,7 +1146,7 @@ export function ReviewCard({ review }: ReviewCardProps) {
       <CardContent className="space-y-3">
         <h4 className="font-semibold text-gray-900">{review.title}</h4>
         <p className="text-gray-600 text-sm leading-relaxed">{review.comment}</p>
-        
+
         {review.stayType && (
           <div className="pt-3 border-t">
             <Badge variant="outline" className="text-xs">
@@ -1149,7 +1156,8 @@ export function ReviewCard({ review }: ReviewCardProps) {
         )}
       </CardContent>
     </Card>
-  );
+
+);
 }
 Update: components/Reviews.tsx
 typescriptimport { ReviewCard } from './features/ReviewCard';
@@ -1157,56 +1165,57 @@ import { Button } from './ui/button';
 import { ExternalLink } from 'lucide-react';
 
 const featuredReviews = [
-  {
-    id: '1',
-    guestName: 'Sarah M.',
-    rating: 5,
-    date: '2024-02-15',
-    title: 'Perfect Ski Weekend!',
-    comment: 'The location is unbeatable - we literally walked out the door and onto the slopes. The condo was spotless, well-stocked, and the bed was incredibly comfortable. Chris was very responsive and helpful. We'll definitely be back!',
-    stayType: 'Ski Trip',
-    verified: true,
-  },
-  {
-    id: '2',
-    guestName: 'Michael & Jennifer T.',
-    rating: 5,
-    date: '2024-01-28',
-    title: 'Amazing Mountain Getaway',
-    comment: 'Everything about this place exceeded our expectations. The ski-in/ski-out access saved us so much time, and the condo had all the amenities we needed. The kitchen was perfect for making breakfast before hitting the slopes.',
-    stayType: 'Couples Trip',
-    verified: true,
-  },
-  {
-    id: '3',
-    guestName: 'David L.',
-    rating: 5,
-    date: '2024-01-10',
-    title: 'Highly Recommend',
-    comment: 'Great value for a ski-in/ski-out property. The condo is modern, clean, and very comfortable. Loved the gas fireplace after long days on the mountain. Would absolutely stay here again.',
-    stayType: 'Solo Trip',
-    verified: true,
-  },
-  // ... more reviews
+{
+id: '1',
+guestName: 'Sarah M.',
+rating: 5,
+date: '2024-02-15',
+title: 'Perfect Ski Weekend!',
+comment: 'The location is unbeatable - we literally walked out the door and onto the slopes. The condo was spotless, well-stocked, and the bed was incredibly comfortable. Chris was very responsive and helpful. We'll definitely be back!',
+stayType: 'Ski Trip',
+verified: true,
+},
+{
+id: '2',
+guestName: 'Michael & Jennifer T.',
+rating: 5,
+date: '2024-01-28',
+title: 'Amazing Mountain Getaway',
+comment: 'Everything about this place exceeded our expectations. The ski-in/ski-out access saved us so much time, and the condo had all the amenities we needed. The kitchen was perfect for making breakfast before hitting the slopes.',
+stayType: 'Couples Trip',
+verified: true,
+},
+{
+id: '3',
+guestName: 'David L.',
+rating: 5,
+date: '2024-01-10',
+title: 'Highly Recommend',
+comment: 'Great value for a ski-in/ski-out property. The condo is modern, clean, and very comfortable. Loved the gas fireplace after long days on the mountain. Would absolutely stay here again.',
+stayType: 'Solo Trip',
+verified: true,
+},
+// ... more reviews
 ];
 
 export function Reviews() {
-  return (
-    <section className="py-20 bg-gray-50">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12">
-          <div className="inline-flex items-center gap-2 mb-4">
-            <span className="text-5xl font-bold text-gray-900">4.98</span>
-            <div className="text-left">
-              <div className="flex items-center gap-1">
-                {Array.from({ length: 5 }).map((_, idx) => (
-                  <span key={idx} className="text-yellow-400 text-xl">★</span>
-                ))}
-              </div>
-              <p className="text-sm text-gray-600">Based on 88 reviews</p>
-            </div>
-          </div>
-          
+return (
+
+<section className="py-20 bg-gray-50">
+<div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+<div className="text-center mb-12">
+<div className="inline-flex items-center gap-2 mb-4">
+<span className="text-5xl font-bold text-gray-900">4.98</span>
+<div className="text-left">
+<div className="flex items-center gap-1">
+{Array.from({ length: 5 }).map((\_, idx) => (
+<span key={idx} className="text-yellow-400 text-xl">★</span>
+))}
+</div>
+<p className="text-sm text-gray-600">Based on 88 reviews</p>
+</div>
+</div>
+
           <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
             Guest Reviews
           </h2>
@@ -1223,9 +1232,9 @@ export function Reviews() {
 
         <div className="text-center">
           <Button variant="outline" size="lg" asChild>
-            <a 
-              href="https://airbnb.com/your-listing-link" 
-              target="_blank" 
+            <a
+              href="https://airbnb.com/your-listing-link"
+              target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2"
             >
@@ -1236,7 +1245,8 @@ export function Reviews() {
         </div>
       </div>
     </section>
-  );
+
+);
 }
 What This Code Does:
 
@@ -1253,13 +1263,12 @@ Scannable: Users can quickly assess review quality
 Professional: Polished card design looks more premium
 Consistent: All reviews follow same visual pattern
 
-
 5. Button Component - Consistent CTAs
-Priority: High
-Impact: Conversion & Brand Consistency
-What It Is
-Standardized button component with variants for different contexts and consistent interaction patterns.
-Why Use Button
+   Priority: High
+   Impact: Conversion & Brand Consistency
+   What It Is
+   Standardized button component with variants for different contexts and consistent interaction patterns.
+   Why Use Button
 
 Current Issue: Buttons might have inconsistent styling
 Solution: Unified button system with variants and sizes
@@ -1272,19 +1281,20 @@ import { Calendar, Star, MapPin } from 'lucide-react';
 import Image from 'next/image';
 
 export function Hero() {
-  return (
-    <section className="relative h-[600px] sm:h-[700px] lg:h-[800px]">
-      {/* Hero Image */}
-      <div className="absolute inset-0">
-        <Image
+return (
+
+<section className="relative h-[600px] sm:h-[700px] lg:h-[800px]">
+{/_ Hero Image _/}
+<div className="absolute inset-0">
+<Image
           src="/images/hero-mountain-view.jpg"
           alt="Ski-in/ski-out condo at Mt. Crested Butte"
           fill
           priority
           className="object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/60 to-black/30" />
-      </div>
+<div className="absolute inset-0 bg-gradient-to-r from-black/60 to-black/30" />
+</div>
 
       {/* Hero Content */}
       <div className="relative h-full flex items-center">
@@ -1320,8 +1330,8 @@ export function Hero() {
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button 
-                size="lg" 
+              <Button
+                size="lg"
                 className="text-lg px-8 py-6"
                 asChild
               >
@@ -1331,8 +1341,8 @@ export function Hero() {
                 </a>
               </Button>
 
-              <Button 
-                size="lg" 
+              <Button
+                size="lg"
                 variant="outline"
                 className="text-lg px-8 py-6 bg-white/95 hover:bg-white backdrop-blur-sm"
                 asChild
@@ -1362,7 +1372,8 @@ export function Hero() {
         </div>
       </div>
     </section>
-  );
+
+);
 }
 Update: components/Booking.tsx
 typescript'use client';
@@ -1374,17 +1385,18 @@ import { Badge } from './ui/badge';
 import { Calendar, DollarSign, Users, Shield } from 'lucide-react';
 
 export function Booking() {
-  return (
-    <section id="booking" className="py-20 bg-white">
-      <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-            Book Your Stay
-          </h2>
-          <p className="mt-4 text-lg text-gray-600">
-            Reserve directly and save on booking fees
-          </p>
-        </div>
+return (
+
+<section id="booking" className="py-20 bg-white">
+<div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+<div className="text-center mb-12">
+<h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+Book Your Stay
+</h2>
+<p className="mt-4 text-lg text-gray-600">
+Reserve directly and save on booking fees
+</p>
+</div>
 
         <div className="grid lg:grid-cols-2 gap-8">
           {/* Pricing Card */}
@@ -1401,7 +1413,7 @@ export function Booking() {
                 <span className="text-gray-600">/ night</span>
                 <Badge variant="secondary">Low Season</Badge>
               </div>
-              
+
               <div className="flex items-baseline gap-2">
                 <span className="text-4xl font-bold text-gray-900">$350</span>
                 <span className="text-gray-600">/ night</span>
@@ -1454,16 +1466,16 @@ export function Booking() {
                 <p className="text-gray-600 mb-6">
                   Booking calendar widget will be embedded here
                 </p>
-                
+
                 <div className="space-y-3 w-full max-w-xs">
                   <Button size="lg" className="w-full">
                     Check Availability
                   </Button>
-                  
+
                   <Button size="lg" variant="outline" className="w-full">
                     Request to Book
                   </Button>
-                  
+
                   <Button size="lg" variant="ghost" className="w-full">
                     Contact Host
                   </Button>
@@ -1514,7 +1526,8 @@ export function Booking() {
         </Card>
       </div>
     </section>
-  );
+
+);
 }
 Button Variants Used:
 
@@ -1529,7 +1542,6 @@ Consistent sizing: lg size for prominent CTAs maintains hierarchy
 Accessibility: Focus states, keyboard navigation built-in
 Responsive: Touch-friendly sizes on mobile (44px minimum)
 
-
 File-Specific Implementation Details
 File: lib/utils.ts (NEW FILE - Auto-created by shadcn)
 Purpose: Utility function for merging Tailwind classes
@@ -1537,7 +1549,7 @@ typescriptimport { type ClassValue, clsx } from "clsx";
 import { twMerge } from "tailwind-merge";
 
 export function cn(...inputs: ClassValue[]) {
-  return twMerge(clsx(inputs));
+return twMerge(clsx(inputs));
 }
 What This Does:
 
@@ -1547,9 +1559,9 @@ Used in ALL shadcn components for dynamic className handling
 
 Example Usage:
 typescript<div className={cn(
-  "base-class",
-  isActive && "active-class",
-  customClassName
+"base-class",
+isActive && "active-class",
+customClassName
 )}>
 
 File: components/ui/ Directory
@@ -1568,16 +1580,16 @@ typescript// ❌ DON'T: Modify components/ui/button.tsx directly
 import { Button } from '@/components/ui/button';
 
 export function BookingButton({ propertyId }: { propertyId: string }) {
-  const handleClick = () => {
-    // Custom booking logic
-    analytics.track('booking_clicked', { propertyId });
-  };
+const handleClick = () => {
+// Custom booking logic
+analytics.track('booking_clicked', { propertyId });
+};
 
-  return (
-    <Button size="lg" onClick={handleClick}>
-      Book Now
-    </Button>
-  );
+return (
+<Button size="lg" onClick={handleClick}>
+Book Now
+</Button>
+);
 }
 
 File: app/layout.tsx (POTENTIAL UPDATE)
@@ -1585,39 +1597,39 @@ Add Font Optimization (Optional Enhancement)
 typescriptimport { Inter } from 'next/font/google';
 import './globals.css';
 
-const inter = Inter({ 
-  subsets: ['latin'],
-  display: 'swap',
-  variable: '--font-inter',
+const inter = Inter({
+subsets: ['latin'],
+display: 'swap',
+variable: '--font-inter',
 });
 
 export default function RootLayout({
-  children,
+children,
 }: {
-  children: React.ReactNode;
+children: React.ReactNode;
 }) {
-  return (
-    <html lang="en" className={inter.variable}>
-      <body className="font-sans">
-        {children}
-      </body>
-    </html>
-  );
+return (
+
+<html lang="en" className={inter.variable}>
+<body className="font-sans">
+{children}
+</body>
+</html>
+);
 }
 Update tailwind.config.ts:
 typescripttheme: {
-  extend: {
-    fontFamily: {
-      sans: ['var(--font-inter)', ...defaultTheme.fontFamily.sans],
-    },
-  },
+extend: {
+fontFamily: {
+sans: ['var(--font-inter)', ...defaultTheme.fontFamily.sans],
+},
+},
 },
 Why:
 
 Better font rendering
 Reduced layout shift
 Professional typography system
-
 
 Advanced Patterns
 Pattern 1: Sticky Booking CTA (Conversion Optimization)
@@ -1630,39 +1642,40 @@ import { Calendar, Star } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 export function StickyBookingBar() {
-  const [isVisible, setIsVisible] = useState(false);
+const [isVisible, setIsVisible] = useState(false);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      // Show sticky bar after user scrolls past hero section (e.g., 600px)
-      setIsVisible(window.scrollY > 600);
-    };
+useEffect(() => {
+const handleScroll = () => {
+// Show sticky bar after user scrolls past hero section (e.g., 600px)
+setIsVisible(window.scrollY > 600);
+};
 
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
 
-  return (
-    <div
-      className={cn(
-        'fixed bottom-0 left-0 right-0 z-50 bg-white border-t shadow-lg transition-transform duration-300',
-        isVisible ? 'translate-y-0' : 'translate-y-full'
-      )}
-    >
-      <div className="mx-auto max-w-7xl px-4 py-4">
-        <div className="flex items-center justify-between gap-4">
-          {/* Property Info (hidden on mobile) */}
-          <div className="hidden md:block">
-            <h3 className="font-semibold text-gray-900">11 Emmons Road</h3>
-            <div className="flex items-center gap-2 text-sm text-gray-600">
-              <div className="flex items-center gap-1">
-                {Array.from({ length: 5 }).map((_, idx) => (
-                  <Star key={idx} className="h-3 w-3 fill-yellow-400 text-yellow-400" />
-                ))}
-              </div>
-              <span>4.98 • 88 reviews</span>
-            </div>
-          </div>
+}, []);
+
+return (
+
+<div
+className={cn(
+'fixed bottom-0 left-0 right-0 z-50 bg-white border-t shadow-lg transition-transform duration-300',
+isVisible ? 'translate-y-0' : 'translate-y-full'
+)} >
+<div className="mx-auto max-w-7xl px-4 py-4">
+<div className="flex items-center justify-between gap-4">
+{/_ Property Info (hidden on mobile) _/}
+<div className="hidden md:block">
+<h3 className="font-semibold text-gray-900">11 Emmons Road</h3>
+<div className="flex items-center gap-2 text-sm text-gray-600">
+<div className="flex items-center gap-1">
+{Array.from({ length: 5 }).map((\_, idx) => (
+<Star key={idx} className="h-3 w-3 fill-yellow-400 text-yellow-400" />
+))}
+</div>
+<span>4.98 • 88 reviews</span>
+</div>
+</div>
 
           {/* Pricing */}
           <div className="flex items-baseline gap-2">
@@ -1681,27 +1694,30 @@ export function StickyBookingBar() {
         </div>
       </div>
     </div>
-  );
+
+);
 }
 Add to: app/page.tsx
 typescriptimport { StickyBookingBar } from '@/components/features/StickyBookingBar';
 
 export default function Home() {
-  return (
-    <main>
-      <Hero />
-      <About />
-      <Amenities />
-      <Gallery />
-      <Location />
-      <Reviews />
-      <Booking />
-      <Footer />
-      
+return (
+
+<main>
+<Hero />
+<About />
+<Amenities />
+<Gallery />
+<Location />
+<Reviews />
+<Booking />
+<Footer />
+
       {/* Add sticky booking bar */}
       <StickyBookingBar />
     </main>
-  );
+
+);
 }
 Why This Pattern:
 
@@ -1710,37 +1726,37 @@ Scroll-triggered: Appears after user sees hero (not immediately)
 Responsive: Shows condensed version on mobile
 High conversion impact: Persistent reminder to book
 
-
 Pattern 2: Loading Skeletons for Better UX
 File: components/features/ReviewsSkeleton.tsx (NEW FILE)
 typescriptimport { Skeleton } from '@/components/ui/skeleton';
 import { Card, CardContent, CardHeader } from '@/components/ui/card';
 
 export function ReviewsSkeleton() {
-  return (
-    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-      {Array.from({ length: 6 }).map((_, idx) => (
-        <Card key={idx}>
-          <CardHeader>
-            <div className="flex items-start justify-between">
-              <div className="flex items-center gap-3">
-                <Skeleton className="w-12 h-12 rounded-full" />
-                <div className="space-y-2">
-                  <Skeleton className="h-4 w-24" />
-                  <Skeleton className="h-3 w-16" />
-                </div>
-              </div>
-              <Skeleton className="h-4 w-20" />
-            </div>
-          </CardHeader>
-          <CardContent className="space-y-3">
-            <Skeleton className="h-5 w-full" />
-            <Skeleton className="h-20 w-full" />
-          </CardContent>
-        </Card>
-      ))}
-    </div>
-  );
+return (
+
+<div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+{Array.from({ length: 6 }).map((\_, idx) => (
+<Card key={idx}>
+<CardHeader>
+<div className="flex items-start justify-between">
+<div className="flex items-center gap-3">
+<Skeleton className="w-12 h-12 rounded-full" />
+<div className="space-y-2">
+<Skeleton className="h-4 w-24" />
+<Skeleton className="h-3 w-16" />
+</div>
+</div>
+<Skeleton className="h-4 w-20" />
+</div>
+</CardHeader>
+<CardContent className="space-y-3">
+<Skeleton className="h-5 w-full" />
+<Skeleton className="h-20 w-full" />
+</CardContent>
+</Card>
+))}
+</div>
+);
 }
 Usage in: components/Reviews.tsx
 typescript'use client';
@@ -1751,25 +1767,27 @@ import { ReviewsSkeleton } from './features/ReviewsSkeleton';
 
 // If fetching reviews from API:
 async function ReviewsList() {
-  const reviews = await fetchReviews(); // Your API call
-  
-  return (
-    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-      {reviews.map((review) => (
-        <ReviewCard key={review.id} review={review} />
-      ))}
-    </div>
-  );
+const reviews = await fetchReviews(); // Your API call
+
+return (
+
+<div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+{reviews.map((review) => (
+<ReviewCard key={review.id} review={review} />
+))}
+</div>
+);
 }
 
 export function Reviews() {
-  return (
-    <section className="py-20 bg-gray-50">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        {/* Header */}
-        <div className="text-center mb-12">
-          {/* ... heading content ... */}
-        </div>
+return (
+
+<section className="py-20 bg-gray-50">
+<div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+{/_ Header _/}
+<div className="text-center mb-12">
+{/_ ... heading content ... _/}
+</div>
 
         {/* Reviews with loading state */}
         <Suspense fallback={<ReviewsSkeleton />}>
@@ -1777,7 +1795,8 @@ export function Reviews() {
         </Suspense>
       </div>
     </section>
-  );
+
+);
 }
 Why This Pattern:
 
@@ -1785,7 +1804,6 @@ Perceived performance: Shows layout immediately while content loads
 Prevents layout shift: Skeleton matches final content dimensions
 Professional feel: Loading states indicate activity
 Better UX: Users know something is happening
-
 
 Pattern 3: Responsive Navigation with Sheet (Mobile Menu)
 File: components/Header.tsx (UPDATED)
@@ -1795,35 +1813,36 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { Button } from './ui/button';
 import {
-  Sheet,
-  SheetContent,
-  SheetDescription,
-  SheetHeader,
-  SheetTitle,
-  SheetTrigger,
+Sheet,
+SheetContent,
+SheetDescription,
+SheetHeader,
+SheetTitle,
+SheetTrigger,
 } from './ui/sheet';
 import { Menu, Calendar, Home } from 'lucide-react';
 
 const navigation = [
-  { name: 'Home', href: '#' },
-  { name: 'Amenities', href: '#amenities' },
-  { name: 'Gallery', href: '#gallery' },
-  { name: 'Location', href: '#location' },
-  { name: 'Reviews', href: '#reviews' },
+{ name: 'Home', href: '#' },
+{ name: 'Amenities', href: '#amenities' },
+{ name: 'Gallery', href: '#gallery' },
+{ name: 'Location', href: '#location' },
+{ name: 'Reviews', href: '#reviews' },
 ];
 
 export function Header() {
-  const [open, setOpen] = useState(false);
+const [open, setOpen] = useState(false);
 
-  return (
-    <header className="sticky top-0 z-40 bg-white border-b">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
-          {/* Logo */}
-          <Link href="/" className="flex items-center gap-2 font-bold text-xl">
-            <Home className="h-6 w-6 text-blue-600" />
-            <span>11 Emmons</span>
-          </Link>
+return (
+
+<header className="sticky top-0 z-40 bg-white border-b">
+<div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+<div className="flex items-center justify-between h-16">
+{/_ Logo _/}
+<Link href="/" className="flex items-center gap-2 font-bold text-xl">
+<Home className="h-6 w-6 text-blue-600" />
+<span>11 Emmons</span>
+</Link>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-6">
@@ -1852,7 +1871,7 @@ export function Header() {
                   <Menu className="h-6 w-6" />
                 </Button>
               </SheetTrigger>
-              
+
               <SheetContent side="right" className="w-[300px]">
                 <SheetHeader>
                   <SheetTitle>Menu</SheetTitle>
@@ -1872,10 +1891,10 @@ export function Header() {
                       {item.name}
                     </Link>
                   ))}
-                  
-                  <Button 
-                    asChild 
-                    size="lg" 
+
+                  <Button
+                    asChild
+                    size="lg"
                     className="mt-4"
                     onClick={() => setOpen(false)}
                   >
@@ -1891,7 +1910,8 @@ export function Header() {
         </div>
       </div>
     </header>
-  );
+
+);
 }
 Why This Pattern:
 
@@ -1899,7 +1919,6 @@ Mobile-friendly: Slide-in panel instead of dropdown
 Focus management: Sheet handles keyboard navigation
 Smooth animation: Built-in slide transition
 Accessibility: ARIA attributes handled automatically
-
 
 Testing & Validation
 Accessibility Testing
@@ -1909,23 +1928,24 @@ Add to: app/layout.tsx (development only)
 typescriptimport dynamic from 'next/dynamic';
 
 const AxeDevTools = dynamic(
-  () =>
-    import('@axe-core/react').then((axe) => {
-      axe.default(React, ReactDOM, 1000);
-      return () => null;
-    }),
-  { ssr: false }
+() =>
+import('@axe-core/react').then((axe) => {
+axe.default(React, ReactDOM, 1000);
+return () => null;
+}),
+{ ssr: false }
 );
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
-  return (
-    <html lang="en">
-      <body>
-        {children}
-        {process.env.NODE_ENV === 'development' && <AxeDevTools />}
-      </body>
-    </html>
-  );
+return (
+
+<html lang="en">
+<body>
+{children}
+{process.env.NODE_ENV === 'development' && <AxeDevTools />}
+</body>
+</html>
+);
 }
 Visual Testing Checklist
 Test all components at these breakpoints:
@@ -1955,14 +1975,15 @@ Performance Testing
 Run Lighthouse audits:
 bashnpm run build
 npm start
+
 # Open Chrome DevTools > Lighthouse > Run audit
+
 Target scores:
 
 Performance: 90+
 Accessibility: 100
 Best Practices: 100
 SEO: 100
-
 
 Performance Considerations
 Bundle Size Impact
@@ -1986,15 +2007,15 @@ Example lazy loading:
 typescriptimport dynamic from 'next/dynamic';
 
 const GalleryLightbox = dynamic(
-  () => import('./features/GalleryLightbox').then(mod => mod.GalleryLightbox),
-  { ssr: false }
+() => import('./features/GalleryLightbox').then(mod => mod.GalleryLightbox),
+{ ssr: false }
 );
 CSS Optimization
 Tailwind automatically purges unused CSS in production.
 Ensure content paths in tailwind.config.ts are correct:
 typescriptcontent: [
-  "./app/**/*.{js,ts,jsx,tsx,mdx}",
-  "./components/**/*.{js,ts,jsx,tsx,mdx}",
+"./app/**/*.{js,ts,jsx,tsx,mdx}",
+"./components/**/*.{js,ts,jsx,tsx,mdx}",
 ],
 Image Optimization
 Continue using Next.js Image component:
@@ -2003,36 +2024,34 @@ Shadcn components work seamlessly with next/image
 AVIF/WebP formats still apply
 Lazy loading still works
 
-
 Migration Timeline
 Week 1: Foundation
 
- Install shadcn/ui
- Add Button, Card, Badge components
- Update Hero and Booking sections
- Test on mobile and desktop
+Install shadcn/ui
+Add Button, Card, Badge components
+Update Hero and Booking sections
+Test on mobile and desktop
 
 Week 2: Core Features
 
- Add Dialog component for gallery
- Add Accordion for amenities
- Add Tabs for location info
- Update Reviews with Card layout
+Add Dialog component for gallery
+Add Accordion for amenities
+Add Tabs for location info
+Update Reviews with Card layout
 
 Week 3: Enhancement
 
- Add Skeleton loading states
- Implement StickyBookingBar
- Add mobile Sheet navigation
- Add Tooltip for additional info
+Add Skeleton loading states
+Implement StickyBookingBar
+Add mobile Sheet navigation
+Add Tooltip for additional info
 
 Week 4: Polish
 
- Accessibility audit and fixes
- Performance optimization
- Browser testing
- Final QA and launch
-
+Accessibility audit and fixes
+Performance optimization
+Browser testing
+Final QA and launch
 
 Conclusion
 This implementation guide provides a comprehensive roadmap for integrating shadcn/ui into the Eleven Emmons Direct website. The changes will result in:

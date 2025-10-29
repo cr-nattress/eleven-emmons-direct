@@ -9,6 +9,7 @@
 ## ✅ Completed Tasks
 
 ### TASK-003: Create Map Component (DONE)
+
 - ✅ Created `components/LeafletMap.tsx` - Interactive map with OpenStreetMap
 - ✅ Created `components/PropertyMap.tsx` - SSR-compatible wrapper
 - ✅ Features implemented:
@@ -20,6 +21,7 @@
   - Optional heading and instructions (configurable props)
 
 ### TASK-004: Add to Location Page (DONE)
+
 - ✅ Integrated into `components/LocationContent.tsx`
 - ✅ Replaced placeholder "Interactive Map" div
 - ✅ Added to Location & Area section
@@ -27,6 +29,7 @@
 - ✅ Made PropertyMap component flexible with props
 
 ### Directory Structure Created
+
 - ✅ `public/leaflet/` directory exists
 - ✅ Ready for marker icon files
 
@@ -37,6 +40,7 @@
 ### TASK-001: Install Dependencies (REQUIRED)
 
 **Run these commands in terminal:**
+
 ```bash
 npm install react-leaflet leaflet
 npm install --save-dev @types/leaflet
@@ -47,12 +51,14 @@ npm install --save-dev @types/leaflet
 ### TASK-002: Setup Marker Icons (REQUIRED)
 
 **Option 1: Copy from node_modules (after installing packages)**
+
 ```bash
 xcopy /Y "node_modules\leaflet\dist\images\*" "public\leaflet\"
 ```
 
 **Option 2: Download manually**
 Download these files to `public/leaflet/`:
+
 1. https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon.png
 2. https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon-2x.png
 3. https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png
@@ -64,13 +70,16 @@ Download these files to `public/leaflet/`:
 ## 📦 Files Created
 
 ### Components
+
 - `components/LeafletMap.tsx` - Core map component (61 lines)
 - `components/PropertyMap.tsx` - Wrapper component (46 lines)
 
 ### Directory
+
 - `public/leaflet/` - Marker icons directory
 
 ### Modified
+
 - `components/LocationContent.tsx` - Integrated PropertyMap
 
 ---
@@ -96,6 +105,7 @@ Download these files to `public/leaflet/`:
 Once dependencies are installed:
 
 ### Local Development
+
 - [ ] Run `npm run dev`
 - [ ] Visit `/location` or wherever LocationContent is used
 - [ ] Map should load within 2 seconds
@@ -105,12 +115,14 @@ Once dependencies are installed:
 - [ ] Check mobile responsiveness (DevTools)
 
 ### Build Test
+
 - [ ] Run `npm run build`
 - [ ] Should compile without errors
 - [ ] No TypeScript errors
 - [ ] No console warnings about Leaflet
 
 ### Browser Test
+
 - [ ] Test in Chrome
 - [ ] Test in Firefox
 - [ ] Test in Safari (if available)
@@ -121,15 +133,18 @@ Once dependencies are installed:
 ## 🐛 Known Issues & Solutions
 
 ### Issue: "window is not defined" error
+
 **Cause**: Leaflet trying to run on server  
 **Status**: SOLVED - Using dynamic import with `ssr: false`
 
 ### Issue: Marker icons don't display
+
 **Cause**: Webpack breaks default Leaflet icon paths  
 **Status**: SOLVED - Manual icon configuration in LeafletMap.tsx  
 **Requires**: Marker icon files in `public/leaflet/`
 
 ### Issue: Hydration mismatch
+
 **Cause**: SSR/Client mismatch  
 **Status**: SOLVED - Using `'use client'` directive + dynamic import
 
@@ -138,15 +153,18 @@ Once dependencies are installed:
 ## 📊 Performance
 
 **Bundle Size Impact**:
+
 - Leaflet: ~42KB minified
 - React-Leaflet: ~20KB
 - **Total**: ~62KB (very lightweight)
 
 **Load Time** (expected):
+
 - First load: < 2 seconds
 - Cached: < 500ms
 
 **SEO Impact**:
+
 - Map loads after initial render (doesn't block FCP)
 - No impact on Lighthouse score
 - Enhances user experience
@@ -156,18 +174,21 @@ Once dependencies are installed:
 ## 🚀 Next Steps (Optional Enhancements)
 
 ### Short-term (Week 2-3)
+
 - [ ] Add ski lift marker (second pin)
 - [ ] Add line connecting property to lift
 - [ ] Custom icons (house icon for property, lift icon for ski lift)
 - [ ] Add "Distance: 50 feet" label on line
 
 ### Medium-term (Week 4-6)
+
 - [ ] Multiple points of interest (parking, ski school, restaurants)
 - [ ] Layer toggle (show/hide different amenities)
 - [ ] Photo thumbnails in popups
 - [ ] Directions button integration
 
 ### Long-term (Month 2+)
+
 - [ ] Custom map styling (match brand colors)
 - [ ] Winter/summer layer toggle
 - [ ] Trail overlay (ski runs)
@@ -179,21 +200,25 @@ Once dependencies are installed:
 ## 📝 Code Quality
 
 ### TypeScript
+
 - ✅ Fully typed components
 - ✅ No `any` types (except for Leaflet icon fix - required)
 - ✅ Props interfaces defined
 
 ### Accessibility
+
 - ✅ Semantic HTML structure
 - ⚠️ Future: Add aria-labels to map container
 - ⚠️ Future: Add keyboard navigation instructions
 
 ### Performance
+
 - ✅ Lazy loading with dynamic import
 - ✅ Loading state provides feedback
 - ✅ No layout shift (fixed height)
 
 ### Mobile
+
 - ✅ Touch-friendly controls
 - ✅ Disabled scroll wheel zoom (prevents accidental zooming)
 - ✅ Responsive sizing
@@ -205,9 +230,10 @@ Once dependencies are installed:
 
 **Development Cost**: ~2 hours actual work  
 **Maintenance Cost**: $0/month (no API fees)  
-**Hosting Cost**: $0 (static assets)  
+**Hosting Cost**: $0 (static assets)
 
 **Ongoing Benefits**:
+
 - Visual proof of ski-in/ski-out claim
 - Improved conversion rates
 - Better user trust
@@ -220,6 +246,7 @@ Once dependencies are installed:
 ### For Future Developers
 
 **To use the map component elsewhere:**
+
 ```typescript
 import PropertyMap from '@/components/PropertyMap'
 
@@ -234,6 +261,7 @@ import PropertyMap from '@/components/PropertyMap'
 ```
 
 **To customize the map:**
+
 1. Edit `components/LeafletMap.tsx`
 2. Adjust `propertyLocation` coordinates
 3. Modify `zoom` level (15-18 recommended)
@@ -241,6 +269,7 @@ import PropertyMap from '@/components/PropertyMap'
 5. Update popup content
 
 **To add more markers:**
+
 ```typescript
 <Marker position={[lat, lng]}>
   <Popup>Your content</Popup>
@@ -252,6 +281,7 @@ import PropertyMap from '@/components/PropertyMap'
 ## ✨ Summary
 
 **What we built:**
+
 - ✅ Interactive map showing property location
 - ✅ Visual proof of "50 feet to ski lifts"
 - ✅ Mobile-optimized and performant
@@ -259,6 +289,7 @@ import PropertyMap from '@/components/PropertyMap'
 - ✅ Integrated into Location & Area section
 
 **What's pending:**
+
 - ⚠️ npm install packages (2 min)
 - ⚠️ Copy marker icon files (3 min)
 

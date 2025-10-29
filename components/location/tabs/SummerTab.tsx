@@ -21,19 +21,20 @@ export default function SummerTab({ data }: SummerTabProps) {
           defaultExpanded={true}
         >
           {/* Stats Grid */}
-          {data.mountainBiking.stats && data.mountainBiking.stats.length > 0 && (
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-6">
-              {data.mountainBiking.stats.map((stat, index) => (
-                <StatBadge
-                  key={index}
-                  value={stat.value}
-                  label={stat.label}
-                  icon={stat.icon}
-                  highlight={stat.highlight}
-                />
-              ))}
-            </div>
-          )}
+          {data.mountainBiking.stats &&
+            data.mountainBiking.stats.length > 0 && (
+              <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-6">
+                {data.mountainBiking.stats.map((stat, index) => (
+                  <StatBadge
+                    key={index}
+                    value={stat.value}
+                    label={stat.label}
+                    icon={stat.icon}
+                    highlight={stat.highlight}
+                  />
+                ))}
+              </div>
+            )}
 
           {/* Features */}
           <FeatureList items={data.mountainBiking.features} />

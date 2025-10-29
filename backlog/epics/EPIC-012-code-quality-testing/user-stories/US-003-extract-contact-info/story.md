@@ -26,11 +26,13 @@
 ## Problem Statement
 
 Personal contact information is hardcoded in multiple locations:
+
 - `components/BookingWidget.tsx:119, 150` - Email and phone
 - `components/Footer.tsx:118, 126` - Email and phone (duplicated)
 - `components/Header.tsx:19` - Airbnb URL
 
 **Issues:**
+
 - Changing email requires updating 4+ locations
 - Easy to miss instances during updates
 - Can't reuse codebase for other properties
@@ -81,8 +83,8 @@ export const siteConfig: SiteConfig = {
     email: 'cnattress@gmail.com',
     phone: {
       display: '(570) 690-1180',
-      tel: '+15706901180'
-    }
+      tel: '+15706901180',
+    },
   },
   property: {
     address: {
@@ -90,18 +92,19 @@ export const siteConfig: SiteConfig = {
       street: '11 Emmons Road',
       city: 'Crested Butte',
       state: 'CO',
-      zip: '81224'
-    }
+      zip: '81224',
+    },
   },
   booking: {
-    airbnbUrl: 'https://airbnb.com/h/elevenemmons'
-  }
+    airbnbUrl: 'https://airbnb.com/h/elevenemmons',
+  },
 }
 ```
 
 ### 2. Update Components
 
 **components/BookingWidget.tsx:**
+
 ```typescript
 import { siteConfig } from '@/config/site'
 
@@ -117,6 +120,7 @@ import { siteConfig } from '@/config/site'
 ```
 
 **components/Footer.tsx:**
+
 ```typescript
 import { siteConfig } from '@/config/site'
 
@@ -134,21 +138,24 @@ import { siteConfig } from '@/config/site'
 ```
 
 **components/Header.tsx:**
+
 ```typescript
 import { siteConfig } from '@/config/site'
 
 const navigation = [
   // ...
-  { name: 'Book Now', href: siteConfig.booking.airbnbUrl, external: true }
+  { name: 'Book Now', href: siteConfig.booking.airbnbUrl, external: true },
 ]
 ```
 
 ## Technical Implementation
 
 ### Files to Create
+
 1. **`config/site.ts`** - Centralized configuration
 
 ### Files to Update
+
 1. **`components/BookingWidget.tsx`** - Import and use config
 2. **`components/Footer.tsx`** - Import and use config
 3. **`components/Header.tsx`** - Use config for Airbnb URL

@@ -26,7 +26,10 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     ),
 
     // Custom Callout component for info boxes, warnings, and success messages
-    Callout: ({ children, type = 'info' }: {
+    Callout: ({
+      children,
+      type = 'info',
+    }: {
       children: React.ReactNode
       type?: 'info' | 'warning' | 'success' | 'error'
     }) => {
@@ -47,9 +50,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     // BookingCTA component for call-to-action boxes
     BookingCTA: ({ children }: { children: React.ReactNode }) => (
       <div className="bg-primary/10 border-2 border-primary rounded-lg p-6 my-8 text-center">
-        <div className="prose prose-lg max-w-none">
-          {children}
-        </div>
+        <div className="prose prose-lg max-w-none">{children}</div>
         <a
           href="#booking"
           className="inline-block mt-4 bg-primary text-white px-8 py-3 rounded-lg hover:bg-primary-dark transition-colors font-semibold"
@@ -60,15 +61,16 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     ),
 
     // FeatureHighlight component for highlighting key features
-    FeatureHighlight: ({ title, children }: {
+    FeatureHighlight: ({
+      title,
+      children,
+    }: {
       title: string
       children: React.ReactNode
     }) => (
       <div className="bg-gray-50 rounded-lg p-6 my-6 border border-gray-200">
         <h4 className="text-xl font-semibold text-gray-900 mb-3">{title}</h4>
-        <div className="text-gray-700">
-          {children}
-        </div>
+        <div className="text-gray-700">{children}</div>
       </div>
     ),
 

@@ -46,18 +46,20 @@ Verification:
 ### Option 1: Copy from node_modules (Easiest)
 
 1. **Create public directory**
+
    ```bash
    mkdir public/leaflet
    ```
 
 2. **Copy marker images**
+
    ```bash
    # Windows (PowerShell)
    Copy-Item "node_modules/leaflet/dist/images/*" -Destination "public/leaflet/" -Force
-   
+
    # Windows (Command Prompt)
    xcopy /Y "node_modules\leaflet\dist\images\*" "public\leaflet\"
-   
+
    # macOS/Linux
    cp node_modules/leaflet/dist/images/* public/leaflet/
    ```
@@ -75,18 +77,20 @@ Verification:
 ### Option 2: Download directly (If node_modules method doesn't work)
 
 1. **Create directory**
+
    ```bash
    mkdir public/leaflet
    ```
 
 2. **Download from Leaflet GitHub**
-   
+
    Visit these URLs and save to `public/leaflet/`:
    - https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon.png
    - https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon-2x.png
    - https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png
 
    Or use wget/curl:
+
    ```bash
    cd public/leaflet
    curl -O https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon.png
@@ -97,11 +101,13 @@ Verification:
 ## Verification Steps
 
 1. **Check files exist**
+
    ```bash
    ls -la public/leaflet/
    ```
-   
+
    Expected output:
+
    ```
    marker-icon.png      (1-3 KB)
    marker-icon-2x.png   (2-5 KB)
@@ -132,16 +138,19 @@ public/
 ## Image Details
 
 ### marker-icon.png
+
 - **Size**: ~1.5 KB
 - **Dimensions**: 25x41 pixels
 - **Description**: Default blue marker icon
 
 ### marker-icon-2x.png
+
 - **Size**: ~2.5 KB
 - **Dimensions**: 50x82 pixels
 - **Description**: Retina display version (2x resolution)
 
 ### marker-shadow.png
+
 - **Size**: ~618 bytes
 - **Dimensions**: 41x41 pixels
 - **Description**: Shadow that appears under marker
@@ -149,24 +158,29 @@ public/
 ## Troubleshooting
 
 **Problem**: Files not found in node_modules
+
 - **Solution**: Make sure Leaflet is installed: `npm install leaflet`
 - **Alternative**: Use Option 2 (download directly)
 
 **Problem**: "Access denied" or permission errors
+
 - **Solution**: Run command prompt/terminal as administrator
 - **Alternative**: Manually copy files using file explorer
 
 **Problem**: Images don't show in browser
+
 - **Solution**: Restart dev server (`npm run dev`)
 - **Check**: Make sure files are in `/public/` not `/src/public/`
 
 **Problem**: Wrong directory structure
+
 - **Correct**: `/public/leaflet/marker-icon.png`
 - **Wrong**: `/public/images/leaflet/marker-icon.png`
 
 ## Next Steps
 
 After completing this task:
+
 1. Images will be accessible at `/leaflet/marker-icon.png`
 2. Next task will configure Leaflet to use these paths
 3. Component will be created that uses these images

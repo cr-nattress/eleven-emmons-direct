@@ -3,6 +3,7 @@
 ## Why This Keyword is Your Fast-Track to #1
 
 **Target**: "ski in ski out crested butte"
+
 - **Volume**: 200-500 monthly searches
 - **Competition**: LOW-MEDIUM
 - **Intent**: EXTREMELY HIGH (premium guests)
@@ -16,17 +17,20 @@
 ### Homepage Optimization
 
 **New Title:**
+
 ```
 Ski In Ski Out Crested Butte | 11 Emmons Road | Book Direct & Save 15%
 ```
 
 **New Meta:**
+
 ```
-True ski-in/ski-out luxury at 11 Emmons Road. Steps from lifts, 4.98★ rated. 
+True ski-in/ski-out luxury at 11 Emmons Road. Steps from lifts, 4.98★ rated.
 Book direct and save 15%. No shuttle needed - ski right to your door.
 ```
 
 ### URL Structure
+
 ```
 ├── / (Homepage - ski-in/ski-out focus)
 ├── /ski-in-ski-out/ (Pillar content 2,500+ words)
@@ -36,6 +40,7 @@ Book direct and save 15%. No shuttle needed - ski right to your door.
 ```
 
 ### Schema Markup
+
 - VacationRental schema with ski-in/ski-out emphasis
 - FAQPage for "Is this truly ski-in/ski-out?"
 - AggregateRating (4.98 stars)
@@ -48,6 +53,7 @@ Book direct and save 15%. No shuttle needed - ski right to your door.
 ### Main Page: `/ski-in-ski-out/` (2,500 words)
 
 **Sections:**
+
 1. Hero - What makes 11 Emmons special
 2. What "Ski-In/Ski-Out" Really Means (400 words)
 3. Benefits of Ski-In/Ski-Out (500 words)
@@ -67,12 +73,14 @@ Book direct and save 15%. No shuttle needed - ski right to your door.
 ### Homepage Redesign
 
 **Hero:**
+
 - Image/video showing lift proximity
 - H1: "Ski In Ski Out Luxury in Crested Butte"
 - "50 feet to Red Lady Express Lift"
 - Primary CTA: "Book Your Ski-In/Ski-Out Stay"
 
 **Key Sections:**
+
 - Proof of ski-in/ski-out (map, photos)
 - Benefits quick list
 - Guest reviews (filter for location mentions)
@@ -85,22 +93,27 @@ Book direct and save 15%. No shuttle needed - ski right to your door.
 **2 posts per week:**
 
 ### Week 2
+
 1. "How Close is 11 Emmons Road to the Lifts?" (1,200 words)
 2. "What Does 'Ski-In/Ski-Out' Really Mean?" (1,500 words)
 
 ### Week 3
+
 3. "5 Reasons Ski-In/Ski-Out Changes Your Vacation" (1,800 words)
 4. "Ski-In/Ski-Out vs Shuttle: Comparison" (1,500 words)
 
 ### Week 4
+
 5. "A Day at a Ski-In/Ski-Out Rental" (1,200 words)
 6. "Best Ski Runs from 11 Emmons Road" (1,500 words)
 
 ### Week 5
+
 7. "Why Families Love Ski-In/Ski-Out" (1,300 words)
 8. "Planning a Ski Trip: Why Location Matters" (1,600 words)
 
 ### Week 6
+
 9. "What to Pack for Ski-In/Ski-Out" (1,200 words)
 10. "Best Time to Book Ski-In/Ski-Out" (1,400 words)
 
@@ -109,6 +122,7 @@ Book direct and save 15%. No shuttle needed - ski right to your door.
 ## Phase 4: On-Page SEO
 
 ### Keyword Variations
+
 - ski in ski out crested butte
 - ski-in ski-out crested butte
 - ski in/ski out crested butte
@@ -117,6 +131,7 @@ Book direct and save 15%. No shuttle needed - ski right to your door.
 - ski in ski out condo crested butte
 
 ### Optimization Checklist (Every Page)
+
 - [ ] Target keyword in H1
 - [ ] Keyword in first 100 words
 - [ ] Keyword in URL slug
@@ -127,6 +142,7 @@ Book direct and save 15%. No shuttle needed - ski right to your door.
 - [ ] Meta description with keyword + CTA
 
 ### Internal Linking
+
 - Homepage → all ski-in/ski-out content
 - /ski-in-ski-out/ → all blog posts
 - Every blog → pillar page + booking page
@@ -141,13 +157,15 @@ Book direct and save 15%. No shuttle needed - ski right to your door.
 **Name:** "11 Emmons Road - Ski In Ski Out Vacation Rental"
 
 **Description:**
+
 ```
-True ski-in/ski-out luxury at 11 Emmons Road, Mt. Crested Butte. 
-Just 50 feet from Red Lady Express lift. 4.98★ rated, modern amenities, 
+True ski-in/ski-out luxury at 11 Emmons Road, Mt. Crested Butte.
+Just 50 feet from Red Lady Express lift. 4.98★ rated, modern amenities,
 no shuttle needed.
 ```
 
 **Actions:**
+
 - [ ] Upload 50+ photos (prioritize lift proximity)
 - [ ] Add video walkthrough
 - [ ] Post weekly updates
@@ -159,24 +177,29 @@ no shuttle needed.
 ## Phase 6: Link Building (Weeks 2-12)
 
 ### Local Partnerships (Priority 1)
+
 - **Ski rental shops**: Partner for "stay + rent" packages
 - **Ski school**: Link exchange, referral program
 - **Base restaurants**: Guest discounts for backlinks
 - **Tourism boards**: Get listed in ski accommodations
 
 ### Content Marketing (Weeks 3-8)
+
 **Guest posts on:**
+
 - Colorado ski blogs
 - Family travel sites
 - Luxury travel magazines
 - Remote work blogs
 
 **Topics:**
+
 - "Why True Ski-In/Ski-Out Matters"
 - "Hidden Value of Ski-In/Ski-Out Rentals"
 - "Skiing with Kids: Why Location Is Everything"
 
 ### Linkable Assets
+
 1. **Interactive map** of ski-in/ski-out properties
 2. **Time savings calculator** (shuttle vs ski-in/ski-out)
 3. **Photo essay**: "50 Feet to Powder"
@@ -187,6 +210,7 @@ no shuttle needed.
 ## Phase 7: Conversion Optimization
 
 ### Booking Page Enhancements
+
 - Video/slider showing walk to lifts
 - "Under 60 seconds from door to lift"
 - Comparison table: Ski-in/ski-out vs shuttle
@@ -194,12 +218,14 @@ no shuttle needed.
 - Urgency: "Only property this close available"
 
 ### Trust Signals
+
 - Guest quotes about location convenience
 - Photo testimonials (guests with skis outside)
 - Google Maps link showing exact distance
 - 4.98★ rating prominent
 
 ### Mobile Optimization
+
 - Fast load (< 2 seconds)
 - Large "Book Now" buttons
 - Click-to-call prominent
@@ -213,19 +239,23 @@ no shuttle needed.
 ### YouTube Videos
 
 **Video 1**: "50 Feet to Powder: Location Tour" (2 min)
+
 - POV walk from door to lift
 - Timestamp on screen
 - Title: "Ski In Ski Out Crested Butte: 11 Emmons Road"
 
 **Video 2**: "A Day Skiing From Ski-In/Ski-Out" (4 min)
+
 - Morning routine to afternoon skiing
 - Shows lunch break convenience
 
 **Video 3**: "Why Ski-In/Ski-Out Matters" (3 min)
+
 - Educational comparison
 - Time savings demonstration
 
 **Optimization:**
+
 - Keywords in title, description, tags
 - Detailed descriptions (300+ words)
 - Embed on all relevant pages
@@ -236,6 +266,7 @@ no shuttle needed.
 ## Phase 9: Analytics & Tracking
 
 ### Google Analytics 4 Events
+
 - "Book Ski-In/Ski-Out Stay" button clicks
 - Video plays (location walkthrough)
 - Map interactions
@@ -243,23 +274,28 @@ no shuttle needed.
 - Form submissions
 
 ### Google Search Console
+
 - Track "ski in ski out crested butte" daily
 - Monitor CTR (target: 8-12%)
 - Watch for featured snippets
 - Track related queries
 
 ### Weekly KPIs
+
 **Rankings:**
+
 - "ski in ski out crested butte" → #1 by Week 8
 - "ski in ski out mt crested butte" → #1 by Week 6
 - "11 emmons road" → #1 by Week 2
 
 **Traffic:**
+
 - Week 4: 50-100 visitors
 - Week 8: 150-300 visitors
 - Month 3: 300-500 visitors
 
 **Conversions:**
+
 - Week 4: 1-2 inquiries
 - Week 8: 3-5 inquiries
 - Month 3: 8-12 inquiries
@@ -269,6 +305,7 @@ no shuttle needed.
 ## Timeline & Milestones
 
 ### Week 1: Launch
+
 - Homepage redesigned
 - Pillar page published (2,500 words)
 - Schema markup live
@@ -276,12 +313,14 @@ no shuttle needed.
 - **Result**: Site indexed, baseline set
 
 ### Week 2-4: Content Build
+
 - 6 blog posts published
 - Video #1 live on YouTube
 - 10+ local directory listings
 - **Result**: Ranking #10-20 for main keyword
 
 ### Week 5-8: Growth
+
 - 12 blog posts total
 - All 3 videos live
 - 5-10 quality backlinks
@@ -289,6 +328,7 @@ no shuttle needed.
 - **Result**: 2-4 booking inquiries
 
 ### Week 9-12: Domination
+
 - 16+ blog posts
 - 20+ backlinks
 - Featured snippet captured
@@ -296,6 +336,7 @@ no shuttle needed.
 - **Result**: 5-10 booking inquiries/month
 
 ### Month 4-6: Scale
+
 - Additional long-tail keywords
 - Expand to "crested butte vacation rentals"
 - **Result**: 10-20 bookings/month from organic
@@ -330,12 +371,14 @@ no shuttle needed.
 ## Budget & ROI
 
 **Minimal Investment:**
+
 - Content: Your time (15-20 hrs/week)
 - Tools: $0-50/month (free tier mostly)
 - Video: Phone camera
 - **Total**: $0-50/month
 
 **Expected ROI:**
+
 - Month 3: 3-5 bookings = $4K-8K
 - Month 6: 10-15 bookings = $15K-25K
 - Year 1: 50-100 bookings = $75K-150K

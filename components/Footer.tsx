@@ -3,7 +3,11 @@
 import Link from 'next/link'
 import { motion } from 'framer-motion'
 import { useScrollAnimation } from '@/lib/animations/hooks'
-import { slideUpVariants, staggerContainerVariants, staggerItemVariants } from '@/lib/animations/variants'
+import {
+  slideUpVariants,
+  staggerContainerVariants,
+  staggerItemVariants,
+} from '@/lib/animations/variants'
 import { siteConfig } from '@/config/site'
 
 export default function Footer() {
@@ -44,7 +48,9 @@ export default function Footer() {
                 <br />
                 {siteConfig.property.address.street}
                 <br />
-                {siteConfig.property.address.city}, {siteConfig.property.address.state} {siteConfig.property.address.zip}
+                {siteConfig.property.address.city},{' '}
+                {siteConfig.property.address.state}{' '}
+                {siteConfig.property.address.zip}
               </p>
             </div>
           </motion.div>

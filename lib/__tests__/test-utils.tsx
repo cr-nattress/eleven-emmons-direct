@@ -22,7 +22,8 @@ export function mockIntersectionObserver() {
     unobserve: () => null,
     disconnect: () => null,
   })
-  window.IntersectionObserver = mockIntersectionObserver as unknown as typeof IntersectionObserver
+  window.IntersectionObserver =
+    mockIntersectionObserver as unknown as typeof IntersectionObserver
 }
 
 /**

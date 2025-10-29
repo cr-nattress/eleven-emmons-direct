@@ -1,15 +1,19 @@
 # TASK-003: Add Lightbox Open/Close Animations
 
 ## Task Description
+
 Add smooth open and close animations to the gallery lightbox modal to create a premium, polished image viewing experience.
 
 ## Priority
+
 MEDIUM
 
 ## Estimated Effort
+
 2-3 hours
 
 ## Acceptance Criteria
+
 - [ ] Lightbox opens with smooth fade + scale animation
 - [ ] Lightbox closes with reverse animation
 - [ ] Backdrop fades in/out smoothly
@@ -25,7 +29,9 @@ MEDIUM
 ## Technical Details
 
 ### Current Lightbox Structure
+
 In `/components/Gallery.tsx`:
+
 - Conditional render based on `selectedImage !== null`
 - Fixed positioned overlay (backdrop)
 - Centered modal container
@@ -35,11 +41,13 @@ In `/components/Gallery.tsx`:
 - Image counter (1/6, etc.)
 
 ### Animation Strategy
+
 1. **Backdrop**: Fade opacity 0 → 1 on open, 1 → 0 on close
 2. **Modal Container**: Scale 0.9 → 1 + fade on open, reverse on close
 3. **Navigation Elements**: Fade in slightly delayed
 
 ### Animation Components Needed
+
 - Use `AnimatePresence` from Framer Motion for exit animations
 - Use motion.div for animated elements
 - Use modal variants for coordinated animation
@@ -49,6 +57,7 @@ In `/components/Gallery.tsx`:
 You are tasked with implementing smooth open/close animations for the gallery lightbox modal.
 
 **Context:**
+
 - Gallery component at `/components/Gallery.tsx` already has 'use client'
 - TASK-001 and TASK-002 completed (header and cards animate)
 - Lightbox is conditionally rendered based on `selectedImage` state
@@ -56,6 +65,7 @@ You are tasked with implementing smooth open/close animations for the gallery li
 
 **Current Lightbox Structure:**
 Located in `/components/Gallery.tsx`, at the bottom:
+
 ```typescript
 {selectedImage !== null && (
   <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-90">
@@ -70,17 +80,23 @@ Located in `/components/Gallery.tsx`, at the bottom:
 **Instructions:**
 
 1. **Update imports in `/components/Gallery.tsx`:**
+
    ```typescript
    'use client'
 
    import { useState } from 'react'
    import Image from 'next/image'
    import { motion, AnimatePresence } from 'framer-motion'
-   import { slideUpVariants, staggerContainerVariants, staggerItemVariants } from '@/lib/animations/variants'
+   import {
+     slideUpVariants,
+     staggerContainerVariants,
+     staggerItemVariants,
+   } from '@/lib/animations/variants'
    import { useScrollAnimation } from '@/lib/animations/hooks'
    ```
 
 2. **Create lightbox animation variants (add to component, before return):**
+
    ```typescript
    export default function Gallery() {
      const [selectedImage, setSelectedImage] = useState<number | null>(null)
@@ -129,6 +145,7 @@ Located in `/components/Gallery.tsx`, at the bottom:
 3. **Wrap lightbox in AnimatePresence:**
 
    Find the lightbox conditional render and wrap it:
+
    ```typescript
    <AnimatePresence>
      {selectedImage !== null && (
@@ -150,6 +167,7 @@ Located in `/components/Gallery.tsx`, at the bottom:
 4. **Animate the modal container:**
 
    Wrap the main content in a motion.div with modal variants:
+
    ```typescript
    <AnimatePresence>
      {selectedImage !== null && (
@@ -177,6 +195,7 @@ Located in `/components/Gallery.tsx`, at the bottom:
 5. **Animate close button:**
 
    Convert close button to motion.button:
+
    ```typescript
    <motion.button
      variants={elementFadeVariants}
@@ -191,6 +210,7 @@ Located in `/components/Gallery.tsx`, at the bottom:
 6. **Animate navigation arrows:**
 
    Convert Previous button:
+
    ```typescript
    <motion.button
      variants={elementFadeVariants}
@@ -206,6 +226,7 @@ Located in `/components/Gallery.tsx`, at the bottom:
    ```
 
    Convert Next button:
+
    ```typescript
    <motion.button
      variants={elementFadeVariants}
@@ -223,6 +244,7 @@ Located in `/components/Gallery.tsx`, at the bottom:
 7. **Animate image counter:**
 
    Convert counter paragraph:
+
    ```typescript
    <motion.p
      variants={elementFadeVariants}
@@ -241,6 +263,7 @@ Located in `/components/Gallery.tsx`, at the bottom:
    - All existing event handlers preserved
 
 **Complete Lightbox Structure:**
+
 ```typescript
 <AnimatePresence>
   {selectedImage !== null && (
@@ -272,6 +295,7 @@ Located in `/components/Gallery.tsx`, at the bottom:
 **How Animation Works:**
 
 **Opening:**
+
 1. User clicks a gallery card
 2. `setSelectedImage(index)` triggers render
 3. AnimatePresence detects new element
@@ -281,6 +305,7 @@ Located in `/components/Gallery.tsx`, at the bottom:
 7. Total entrance: 400ms
 
 **Closing:**
+
 1. User clicks backdrop, close button, or presses ESC
 2. `setSelectedImage(null)` triggers exit
 3. Close button, arrows, counter fade out - 100ms
@@ -290,7 +315,9 @@ Located in `/components/Gallery.tsx`, at the bottom:
 7. Total exit: 200ms (faster than entrance)
 
 **Accessibility:**
+
 - Add reduced motion support:
+
   ```typescript
   const prefersReducedMotion =
     typeof window !== 'undefined' &&
@@ -311,6 +338,7 @@ Located in `/components/Gallery.tsx`, at the bottom:
   ```
 
 **Testing:**
+
 1. Save the file
 2. Run dev server: `npm run dev`
 3. Visit http://localhost:3000
@@ -331,6 +359,7 @@ Located in `/components/Gallery.tsx`, at the bottom:
 10. Check console for errors
 
 **Testing Reduced Motion:**
+
 1. Enable reduced motion in OS settings
 2. Open lightbox
 3. Should appear instantly (no scale, quick fade)
@@ -338,6 +367,7 @@ Located in `/components/Gallery.tsx`, at the bottom:
 5. Should disappear instantly
 
 **Expected Result:**
+
 - Smooth, premium feel when opening/closing lightbox
 - Backdrop fades elegantly
 - Modal appears with subtle scale effect
@@ -346,6 +376,7 @@ Located in `/components/Gallery.tsx`, at the bottom:
 - All interactions maintained
 
 **Success Criteria:**
+
 - Lightbox opens smoothly with fade + scale
 - Lightbox closes smoothly
 - All controls animate appropriately
@@ -357,6 +388,7 @@ Located in `/components/Gallery.tsx`, at the bottom:
 - Reduced motion respected
 
 **Common Issues to Avoid:**
+
 - Don't forget AnimatePresence wrapper (required for exit animations)
 - Don't forget `key` prop on animated element
 - Don't remove stopPropagation from modal content
@@ -365,6 +397,7 @@ Located in `/components/Gallery.tsx`, at the bottom:
 - Make sure all onClick handlers are preserved
 
 **Debugging Tips:**
+
 - If exit animation doesn't work, check AnimatePresence wrapper
 - If backdrop click doesn't close, check onClick handler
 - If modal content closes when clicked, add stopPropagation
@@ -372,22 +405,26 @@ Located in `/components/Gallery.tsx`, at the bottom:
 - If keyboard doesn't work, check for existing useEffect with keyboard listener
 
 **Deliverables:**
+
 - Updated `/components/Gallery.tsx` with animated lightbox
 - Smooth open/close animations working
 - All existing functionality maintained
 - No errors in console or TypeScript
 
 ## Dependencies
+
 - TASK-001: Animate gallery section header (completed)
 - TASK-002: Implement staggered card animations (completed)
 - US-001: Setup Animation Infrastructure (must be completed)
 
 ## Related Tasks
+
 - TASK-001: Animate gallery section header
 - TASK-002: Implement staggered card entrance animations
 - US-002-TASK-004: Similar modal/overlay animation patterns
 
 ## References
+
 - [Gallery Component](../../../../components/Gallery.tsx)
 - [Framer Motion AnimatePresence](https://www.framer.com/motion/animate-presence/)
 - [Framer Motion Exit Animations](https://www.framer.com/motion/animation/#exit-animations)

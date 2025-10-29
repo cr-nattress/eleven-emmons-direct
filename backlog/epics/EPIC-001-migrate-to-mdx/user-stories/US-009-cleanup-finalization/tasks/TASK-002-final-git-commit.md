@@ -11,20 +11,22 @@ Create a comprehensive git commit documenting the MDX migration with a clear com
 
 ## Agent Prompt
 
-```
+````
 Create a git commit for the MDX migration:
 
 1. **Check git status** to see all changed files:
 ```bash
 git status
-```
+````
 
 2. **Review the changes**:
+
 ```bash
 git diff
 ```
 
 3. **Stage all migration-related files**:
+
 ```bash
 git add lib/markdown.ts
 git add components/mdx-components.tsx
@@ -37,6 +39,7 @@ git add package-lock.json
 ```
 
 4. **Create commit with descriptive message**:
+
 ```bash
 git commit -m "Migrate from marked to next-mdx-remote for MDX support
 
@@ -56,6 +59,7 @@ Related: EPIC-001"
 ```
 
 5. **Verify commit**:
+
 ```bash
 git log -1 --stat
 ```
@@ -63,6 +67,7 @@ git log -1 --stat
 This shows the commit message and files changed.
 
 6. **Optional - Push to remote** (if working with a team):
+
 ```bash
 git push origin [branch-name]
 ```
@@ -74,6 +79,7 @@ git commit
 ```
 
 Then write in the editor:
+
 ```
 Migrate from marked to next-mdx-remote for MDX support
 
@@ -128,6 +134,7 @@ Save and exit the editor.
 ## Commit Message Template
 
 ```
+
 Migrate from marked to next-mdx-remote for MDX support
 
 - [List of key changes]
@@ -135,6 +142,7 @@ Migrate from marked to next-mdx-remote for MDX support
 - [Focus on what and why]
 
 Related: EPIC-001
+
 ```
 
 ## Verification Steps
@@ -147,10 +155,12 @@ Related: EPIC-001
 ## Expected Output
 
 ```
+
 [branch-name abc1234] Migrate from marked to next-mdx-remote for MDX support
- 8 files changed, 245 insertions(+), 87 deletions(-)
- create mode 100644 components/mdx-components.tsx
- create mode 100644 components/mdx-remote-client.tsx
+8 files changed, 245 insertions(+), 87 deletions(-)
+create mode 100644 components/mdx-components.tsx
+create mode 100644 components/mdx-remote-client.tsx
+
 ```
 
 ## Notes
@@ -160,3 +170,4 @@ Related: EPIC-001
 - Include "why" not just "what"
 - Keep commit atomic (one feature/change)
 - Push to remote after verification
+```

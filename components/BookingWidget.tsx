@@ -3,7 +3,11 @@
 import { useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { useScrollAnimation } from '@/lib/animations/hooks'
-import { slideUpVariants, staggerContainerVariants, staggerItemVariants } from '@/lib/animations/variants'
+import {
+  slideUpVariants,
+  staggerContainerVariants,
+  staggerItemVariants,
+} from '@/lib/animations/variants'
 import { logger } from '@/lib/logger'
 import { siteConfig } from '@/config/site'
 import { env } from '@/lib/env'

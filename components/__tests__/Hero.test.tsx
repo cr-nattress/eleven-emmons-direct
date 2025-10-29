@@ -22,7 +22,9 @@ describe('Hero Component', () => {
 
   it('renders hero image with correct attributes', () => {
     render(<Hero />)
-    const image = screen.getByAltText('11 Emmons Road Vacation Rental in Crested Butte')
+    const image = screen.getByAltText(
+      '11 Emmons Road Vacation Rental in Crested Butte'
+    )
     expect(image).toBeInTheDocument()
     expect(image).toHaveAttribute('src')
   })

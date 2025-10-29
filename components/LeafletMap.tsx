@@ -8,7 +8,8 @@ import { siteConfig } from '@/config/site'
 // Fix for default marker icons in Next.js
 // This is required because webpack breaks the default icon paths
 type IconDefault = typeof L.Icon.Default.prototype
-delete (L.Icon.Default.prototype as IconDefault & { _getIconUrl?: unknown })._getIconUrl
+delete (L.Icon.Default.prototype as IconDefault & { _getIconUrl?: unknown })
+  ._getIconUrl
 L.Icon.Default.mergeOptions({
   iconRetinaUrl: '/leaflet/marker-icon-2x.png',
   iconUrl: '/leaflet/marker-icon.png',
@@ -31,7 +32,7 @@ export default function LeafletMap() {
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
       />
-      
+
       {/* Property marker */}
       <Marker position={propertyLocation}>
         <Popup className="custom-popup">
@@ -51,17 +52,17 @@ export default function LeafletMap() {
           </div>
         </Popup>
       </Marker>
-      
+
       {/* Optional: Circle showing approximate 50-foot radius */}
       <Circle
         center={propertyLocation}
         radius={15} // ~50 feet in meters
-        pathOptions={{ 
-          color: 'blue', 
-          fillColor: 'blue', 
+        pathOptions={{
+          color: 'blue',
+          fillColor: 'blue',
           fillOpacity: 0.1,
           weight: 2,
-          dashArray: '5, 5'
+          dashArray: '5, 5',
         }}
       />
     </MapContainer>

@@ -18,7 +18,10 @@ interface PropertyMapProps {
   showInstructions?: boolean
 }
 
-export default function PropertyMap({ showHeading = false, showInstructions = true }: PropertyMapProps) {
+export default function PropertyMap({
+  showHeading = false,
+  showInstructions = true,
+}: PropertyMapProps) {
   return (
     <div>
       {showHeading && (
@@ -35,8 +38,8 @@ export default function PropertyMap({ showHeading = false, showInstructions = tr
       {showInstructions && (
         <div className="mt-4 text-sm text-gray-500">
           <p>
-            Click the marker for more details. 
-            Use two fingers to pan the map on mobile devices.
+            Click the marker for more details. Use two fingers to pan the map on
+            mobile devices.
           </p>
         </div>
       )}

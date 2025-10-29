@@ -52,7 +52,9 @@ export function getAllContentSlugs(): string[] {
   try {
     const fileNames = fs.readdirSync(contentDirectory)
     return fileNames
-      .filter((fileName) => fileName.endsWith('.md') || fileName.endsWith('.mdx'))
+      .filter(
+        (fileName) => fileName.endsWith('.md') || fileName.endsWith('.mdx')
+      )
       .map((fileName) => fileName.replace(/\.mdx?$/, ''))
   } catch (error) {
     logger.error('Error reading content directory', error)

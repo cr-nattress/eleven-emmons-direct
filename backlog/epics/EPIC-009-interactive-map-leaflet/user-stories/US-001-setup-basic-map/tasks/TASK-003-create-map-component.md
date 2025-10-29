@@ -87,7 +87,7 @@ export default function LeafletMap() {
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
       />
-      
+
       {/* Property marker */}
       <Marker position={propertyLocation}>
         <Popup className="custom-popup">
@@ -96,8 +96,8 @@ export default function LeafletMap() {
             <p className="text-sm text-gray-600 mb-2">
               Your Ski-In/Ski-Out Luxury Rental
             </p>
-            <a 
-              href="#booking" 
+            <a
+              href="#booking"
               className="inline-block px-4 py-2 bg-blue-600 text-white rounded text-sm hover:bg-blue-700 transition-colors"
             >
               Book Now
@@ -105,14 +105,14 @@ export default function LeafletMap() {
           </div>
         </Popup>
       </Marker>
-      
+
       {/* Optional: Circle showing approximate 50-foot radius */}
       <Circle
         center={propertyLocation}
         radius={15} // ~50 feet in meters
-        pathOptions={{ 
-          color: 'blue', 
-          fillColor: 'blue', 
+        pathOptions={{
+          color: 'blue',
+          fillColor: 'blue',
           fillOpacity: 0.1,
           weight: 2,
           dashArray: '5, 5'
@@ -157,7 +157,7 @@ export default function PropertyMap() {
       <DynamicMap />
       <div className="mt-4 text-sm text-gray-500">
         <p>
-          Click the marker for more details. 
+          Click the marker for more details.
           Use two fingers to pan the map on mobile devices.
         </p>
       </div>
@@ -169,11 +169,13 @@ export default function PropertyMap() {
 ### Step 3: Import Leaflet CSS
 
 You need to import Leaflet CSS. This is already done in `LeafletMap.tsx`:
+
 ```typescript
 import 'leaflet/dist/leaflet.css'
 ```
 
 However, if you get styling issues, you can also add it globally in `app/layout.tsx`:
+
 ```typescript
 import 'leaflet/dist/leaflet.css'
 ```
@@ -181,6 +183,7 @@ import 'leaflet/dist/leaflet.css'
 ## Verification Steps
 
 1. **Check file structure**
+
    ```
    components/
    ├── LeafletMap.tsx
@@ -188,16 +191,18 @@ import 'leaflet/dist/leaflet.css'
    ```
 
 2. **Start dev server**
+
    ```bash
    npm run dev
    ```
 
 3. **Test the component** (temporary test)
-   
+
    Add to any page (e.g., `app/page.tsx`) temporarily:
+
    ```typescript
    import PropertyMap from '@/components/PropertyMap'
-   
+
    export default function Home() {
      return (
        <main>
@@ -230,6 +235,7 @@ import 'leaflet/dist/leaflet.css'
 ## Expected Output
 
 ### Desktop View
+
 - Map renders at 400px height
 - Full width of container
 - Rounded corners with shadow
@@ -238,6 +244,7 @@ import 'leaflet/dist/leaflet.css'
 - Smooth interactions
 
 ### Mobile View
+
 - Map maintains 400px height
 - Full width of screen
 - Touch pan/zoom works
@@ -246,25 +253,30 @@ import 'leaflet/dist/leaflet.css'
 ## Troubleshooting
 
 **Problem**: "window is not defined" error
+
 - **Cause**: SSR trying to render Leaflet
 - **Solution**: Verify `ssr: false` in dynamic import
 - **Check**: `'use client'` directive is present
 
 **Problem**: Marker icons don't display
+
 - **Cause**: Icon files not found
 - **Solution**: Verify TASK-002 completed (marker files in /public/leaflet/)
 - **Check**: Icon configuration in LeafletMap.tsx is correct
 
 **Problem**: Map tiles don't load
+
 - **Cause**: Network issue or incorrect tile URL
 - **Solution**: Check internet connection
 - **Alternative**: Try different tile provider (see below)
 
 **Problem**: CSS styling issues
+
 - **Cause**: Leaflet CSS not imported
 - **Solution**: Ensure `import 'leaflet/dist/leaflet.css'` is present
 
 **Problem**: Map container has no height
+
 - **Cause**: Parent container issue
 - **Solution**: Ensure `h-[400px]` class is on MapContainer
 
@@ -273,6 +285,7 @@ import 'leaflet/dist/leaflet.css'
 If OpenStreetMap tiles are slow or unavailable:
 
 ### Stamen Terrain (good for ski areas)
+
 ```typescript
 <TileLayer
   attribution='Map tiles by <a href="http://stamen.com">Stamen Design</a>'
@@ -281,6 +294,7 @@ If OpenStreetMap tiles are slow or unavailable:
 ```
 
 ### CartoDB Positron (clean, minimal)
+
 ```typescript
 <TileLayer
   attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/">CARTO</a>'
@@ -291,10 +305,12 @@ If OpenStreetMap tiles are slow or unavailable:
 ## Coordinates Reference
 
 Update these if needed:
+
 - **11 Emmons Road**: [38.9005, -106.9641] (approximate)
 - **Mt. Crested Butte Base**: [38.9000, -106.9650]
 
 To find exact coordinates:
+
 1. Go to Google Maps
 2. Right-click on property location
 3. Select coordinates to copy
@@ -303,6 +319,7 @@ To find exact coordinates:
 ## Customization Options
 
 ### Zoom Levels
+
 ```typescript
 zoom={15}  // Neighborhood view
 zoom={16}  // Street view
@@ -311,13 +328,15 @@ zoom={18}  // Very close
 ```
 
 ### Map Height
+
 ```typescript
-className="h-[300px]..."  // Shorter
-className="h-[400px]..."  // Current
-className="h-[500px]..."  // Taller
+className = 'h-[300px]...' // Shorter
+className = 'h-[400px]...' // Current
+className = 'h-[500px]...' // Taller
 ```
 
 ### Disable Interactions
+
 ```typescript
 <MapContainer
   dragging={false}        // Disable panning
@@ -338,6 +357,7 @@ className="h-[500px]..."  // Taller
 ## Next Steps
 
 After completing this task:
+
 1. Component is ready to use
 2. Next task will add it to a page
 3. Future enhancements: custom icons, multiple markers, distance lines

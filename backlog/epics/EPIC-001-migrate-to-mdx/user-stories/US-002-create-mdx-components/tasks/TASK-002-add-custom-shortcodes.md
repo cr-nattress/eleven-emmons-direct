@@ -11,7 +11,7 @@ Add custom shortcode components that content authors can use in markdown files (
 
 ## Agent Prompt
 
-```
+````
 Update the /components/mdx-components.tsx file to add custom shortcode components.
 
 Add the following custom components to the return object of useMDXComponents:
@@ -68,28 +68,26 @@ Add these components to the existing mdx-components.tsx file:
         </div>
       </div>
     ),
-```
+````
 
 These components can now be used in content files like:
 
 ```mdx
-<Callout type="success">
-Book now and save 15% on stays over 7 nights!
-</Callout>
+<Callout type="success">Book now and save 15% on stays over 7 nights!</Callout>
 
-<BookingCTA>
-Ready to experience the best of Crested Butte?
-</BookingCTA>
+<BookingCTA>Ready to experience the best of Crested Butte?</BookingCTA>
 
 <FeatureHighlight title="Ski-In/Ski-Out Access">
-Walk right out the door and onto the slopes!
+  Walk right out the door and onto the slopes!
 </FeatureHighlight>
 ```
 
 After updating:
+
 1. Verify TypeScript has no errors
 2. Check that all components render properly
 3. Test styling matches site theme
+
 ```
 
 ## File to Update
@@ -114,3 +112,4 @@ After updating:
 - These are examples - can be customized based on needs
 - Additional components can be added later
 - Components should follow site's design system
+```

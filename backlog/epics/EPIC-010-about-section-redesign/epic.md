@@ -11,6 +11,7 @@
 ## Business Value
 
 ### ROI Projection
+
 - **Conversion Rate Increase:** +15-20% increase in bookings from About section viewers
 - **Bounce Rate Reduction:** -10% decrease in bounce rate
 - **Mobile Conversion Parity:** Match or exceed desktop conversion rates
@@ -18,15 +19,18 @@
 - **Accessibility Score:** 100/100 on Lighthouse
 
 ### Why This Matters
+
 The About section is a critical decision point for potential guests. Currently, the section suffers from information overload, poor hierarchy, and weak trust signals. By redesigning this section with a clean, scannable layout and emotional storytelling, we can significantly increase booking confidence and conversion rates.
 
 **Target Users:**
+
 - **Weekend Warriors** (28-45 years): Need quick, scannable info on ski access and amenities
 - **Family Planners** (35-55 years): Need clear information on safety, space, and reviews
 
 ## Current State vs Target State
 
 ### Current State
+
 - ❌ Information overload with technical documentation mixed with property marketing
 - ❌ Poor visual hierarchy with equal weight given to all content
 - ❌ Lack of emotional connection (feature-focused, not benefit-driven)
@@ -35,6 +39,7 @@ The About section is a critical decision point for potential guests. Currently, 
 - ❌ Inconsistent formatting and visual structure
 
 ### Target State
+
 - ✅ Clean single-column layout with feature cards
 - ✅ Emotional opening narrative (150-200 words)
 - ✅ Prominent Quick Stats Cards (4 stats in grid)
@@ -47,6 +52,7 @@ The About section is a critical decision point for potential guests. Currently, 
 ## Technical Approach
 
 ### Technology Stack
+
 - **Framework:** Next.js 14 (App Router)
 - **Language:** TypeScript
 - **Styling:** Tailwind CSS
@@ -54,6 +60,7 @@ The About section is a critical decision point for potential guests. Currently, 
 - **Component Library:** React 18
 
 ### Component Architecture
+
 ```
 components/About.tsx
   ├── Section Container (#about)
@@ -71,6 +78,7 @@ components/About.tsx
 ```
 
 ### File Structure
+
 ```
 components/
 └── About.tsx          # Main component
@@ -83,6 +91,7 @@ types/
 ```
 
 ### Design System
+
 - **Colors:** Gray scale (gray-50 to gray-900), green-600 for checkmarks
 - **Typography:** 36-40px headings, 18px body (desktop), responsive scaling
 - **Spacing:** 80px section padding (desktop), 64px (mobile)
@@ -91,18 +100,22 @@ types/
 ## User Stories
 
 ### 🏗️ Foundation & Structure
+
 1. **US-001:** Create About component structure and section container (2 points)
 2. **US-004:** Integrate MDX content system (3 points)
 
 ### 🎨 Visual Components
+
 3. **US-002:** Implement Quick Stats Cards component (3 points)
 4. **US-003:** Implement Key Features Grid component (2 points)
 
 ### 📱 Responsive & Accessible
+
 5. **US-005:** Implement responsive design (3 points)
 6. **US-006:** Ensure accessibility compliance (3 points)
 
 ### ✍️ Content & Testing
+
 7. **US-007:** Content migration and copywriting (2 points)
 8. **US-008:** Testing and quality assurance (3 points)
 
@@ -126,35 +139,43 @@ This epic is considered complete when:
 ## Risks and Mitigations
 
 ### Risk 1: Content Too Long
+
 **Impact:** Medium - Users don't read full section, reducing engagement
 **Probability:** Medium
 **Mitigation:**
+
 - Enforce strict word count limits (150-200 words opening, 100-150 closing)
 - Use scannable format with bold key phrases
 - Test scroll depth metrics
 
 ### Risk 2: Mobile Performance
+
 **Impact:** High - Slow load on mobile devices affects 60% of Weekend Warrior users
 **Probability:** Low
 **Mitigation:**
+
 - No images in this section (text-only)
 - Optimize CSS with Tailwind purge
 - Use GPU-accelerated transitions only
 - Test on real devices
 
 ### Risk 3: Outdated Stats
+
 **Impact:** High - Incorrect information damages trust and credibility
 **Probability:** Medium
 **Mitigation:**
+
 - Stats managed in MDX frontmatter (single source of truth)
 - Document update process
 - Add validation to ensure stats are current
 - Future: Pull stats from booking API
 
 ### Risk 4: Accessibility Issues
+
 **Impact:** High - Some users cannot access content, potential legal issues
 **Probability:** Low
 **Mitigation:**
+
 - Follow WCAG 2.1 AA guidelines from the start
 - Test with screen readers (NVDA/JAWS)
 - Use semantic HTML
@@ -164,18 +185,21 @@ This epic is considered complete when:
 ## Success Metrics
 
 ### Primary KPIs
+
 1. **Conversion Rate:** +15-20% increase in bookings from About section viewers
 2. **Engagement Time:** Average time on section > 20 seconds
 3. **Bounce Rate:** Decrease by 10%
 4. **Mobile Conversions:** Match or exceed desktop conversion rates
 
 ### Secondary Metrics
+
 1. **Scroll Depth:** 90%+ of visitors view entire About section
 2. **Page Load Time:** < 2 seconds to First Contentful Paint
 3. **Accessibility Score:** 100/100 on Lighthouse
 4. **User Feedback:** Positive sentiment in user testing (4.5+/5.0)
 
 ### How to Measure
+
 - Google Analytics: Track scroll depth, time on section
 - Hotjar: Heatmaps and session recordings
 - Lighthouse: Performance and accessibility audits
@@ -184,17 +208,20 @@ This epic is considered complete when:
 ## Dependencies
 
 ### External Dependencies
+
 - next-mdx-remote: ^5.0.0 (MDX processing)
 - react: ^18.0.0
 - next: ^14.0.0
 - tailwindcss: ^3.0.0
 
 ### Internal Dependencies
+
 - `/lib/markdown.ts` - For MDX processing (may need to be created)
 - `/content/property.md` - Content source file
 - Tailwind configuration (verify utilities available)
 
 ### Blocking Dependencies
+
 - None - Can start immediately
 
 ## Future Enhancements (Post-MVP)

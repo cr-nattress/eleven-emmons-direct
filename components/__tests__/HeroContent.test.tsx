@@ -15,7 +15,9 @@ describe('HeroContent Component', () => {
 
   it('renders description text', () => {
     render(<HeroContent />)
-    expect(screen.getByText(/Book direct for the best rates/i)).toBeInTheDocument()
+    expect(
+      screen.getByText(/Book direct for the best rates/i)
+    ).toBeInTheDocument()
   })
 
   it('renders Book Your Stay button', () => {

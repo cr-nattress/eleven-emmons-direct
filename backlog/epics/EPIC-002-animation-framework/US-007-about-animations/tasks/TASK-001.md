@@ -1,15 +1,19 @@
 # TASK-001: Animate Section Header
 
 ## Task Description
+
 Add scroll-triggered entrance animation for the about section header.
 
 ## Priority
+
 MEDIUM
 
 ## Estimated Effort
+
 1 hour
 
 ## Acceptance Criteria
+
 - [ ] About.tsx has 'use client' directive (add if missing)
 - [ ] Section header animates on scroll
 - [ ] Title and description have staggered timing
@@ -26,17 +30,21 @@ MEDIUM
 5. Use staggered delays (0ms, 150ms)
 
 **Testing:**
+
 - Scroll to about section
 - Verify header animates smoothly
 - Check console for errors
 
 ## Dependencies
+
 - US-001: Setup Animation Infrastructure
 
 ## Related Tasks
+
 - TASK-002: Animate prose content (next)
 
 ## References
+
 - [About Component](../../../../components/About.tsx)
 
 **Created**: 2025-10-20

@@ -1,15 +1,19 @@
 # TASK-003: Add Footer Section Animations
 
 ## Task Description
+
 Add scroll-triggered entrance animations to footer sections.
 
 ## Priority
+
 LOW
 
 ## Estimated Effort
+
 2-3 hours
 
 ## Acceptance Criteria
+
 - [ ] Footer.tsx has 'use client' directive (add if needed)
 - [ ] Footer sections animate when scrolled into view
 - [ ] Each section (links, contact, social) animates with stagger
@@ -26,6 +30,7 @@ LOW
 4. Animate footer sections with stagger
 
 **Example:**
+
 ```typescript
 'use client'
 
@@ -61,19 +66,23 @@ export default function Footer() {
 ```
 
 **Testing:**
+
 - Scroll to footer
 - Verify sections stagger in
 - Test all links (nav, contact, social)
 - Check console for errors
 
 ## Dependencies
+
 - US-001: Setup Animation Infrastructure
 
 ## Related Tasks
+
 - TASK-001: Add header entrance animation
 - TASK-002: Animate navigation links
 
 ## References
+
 - [Footer Component](../../../../components/Footer.tsx)
 - [Stagger Variants](../../../../lib/animations/variants.ts)
 

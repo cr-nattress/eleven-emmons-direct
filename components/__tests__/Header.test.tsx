@@ -44,7 +44,7 @@ describe('Header Component', () => {
 
     // Wait for any state updates
     await act(async () => {
-      await new Promise(resolve => setTimeout(resolve, 100))
+      await new Promise((resolve) => setTimeout(resolve, 100))
     })
 
     // Mobile nav items should now be visible
@@ -80,6 +80,9 @@ describe('Header Component', () => {
 
     expect(firstBookNow).toHaveAttribute('target', '_blank')
     expect(firstBookNow).toHaveAttribute('rel', 'noopener noreferrer')
-    expect(firstBookNow).toHaveAttribute('href', expect.stringContaining('airbnb.com'))
+    expect(firstBookNow).toHaveAttribute(
+      'href',
+      expect.stringContaining('airbnb.com')
+    )
   })
 })

@@ -1,15 +1,19 @@
 # TASK-004: Fix Any Performance Issues Found
 
 ## Task Description
+
 Address and fix any performance issues, accessibility problems, or animation bugs identified in TASK-001, TASK-002, and TASK-003.
 
 ## Priority
+
 CRITICAL
 
 ## Estimated Effort
+
 Varies (2-8 hours depending on issues found)
 
 ## Acceptance Criteria
+
 - [ ] All critical issues from testing tasks addressed
 - [ ] Lighthouse performance scores meet targets (95+ desktop, 90+ mobile)
 - [ ] Reduced motion support working correctly
@@ -26,6 +30,7 @@ Varies (2-8 hours depending on issues found)
 This task is issue-driven. The specific work depends on findings from TASK-001, TASK-002, and TASK-003.
 
 ### Issue Categories
+
 1. **Performance Issues** (from TASK-001)
    - High CLS (layout shift)
    - High TBT (blocking time)
@@ -48,6 +53,7 @@ This task is issue-driven. The specific work depends on findings from TASK-001, 
 You are tasked with fixing animation performance and accessibility issues.
 
 **Context:**
+
 - TASK-001, TASK-002, TASK-003 completed
 - Issues documented in test reports
 - Need to address all critical and major issues
@@ -91,6 +97,7 @@ You are tasked with fixing animation performance and accessibility issues.
 **Diagnosis:** CLS > 0.1 in Lighthouse
 
 **Solution A: Reserve Space for Animations**
+
 ```typescript
 // BAD - No space reserved
 <motion.div
@@ -111,6 +118,7 @@ You are tasked with fixing animation performance and accessibility issues.
 ```
 
 **Solution B: Use Transform Instead of Margin/Padding**
+
 ```typescript
 // BAD - Changing layout properties
 <motion.div
@@ -126,6 +134,7 @@ You are tasked with fixing animation performance and accessibility issues.
 ```
 
 **Solution C: Ensure Images Have Dimensions**
+
 ```typescript
 <Image
   src="/image.jpg"
@@ -142,6 +151,7 @@ You are tasked with fixing animation performance and accessibility issues.
 **Diagnosis:** TASK-002 test failures
 
 **Solution A: Fix Variants**
+
 ```typescript
 // Add to /lib/animations/variants.ts
 const prefersReducedMotion =
@@ -167,6 +177,7 @@ export const slideUpVariants: Variants = {
 ```
 
 **Solution B: Use Framer Motion's Built-in Support**
+
 ```typescript
 // In motion components
 <motion.div
@@ -181,6 +192,7 @@ export const slideUpVariants: Variants = {
 ```
 
 **Solution C: CSS-based Fallback**
+
 ```css
 /* In global.css */
 @media (prefers-reduced-motion: reduce) {
@@ -198,6 +210,7 @@ export const slideUpVariants: Variants = {
 **Diagnosis:** FPS < 50 in TASK-003
 
 **Solution A: Use GPU Acceleration**
+
 ```typescript
 // Add will-change for GPU acceleration
 <motion.div
@@ -208,6 +221,7 @@ export const slideUpVariants: Variants = {
 ```
 
 **Solution B: Reduce Concurrent Animations**
+
 ```typescript
 // BAD - All cards animate simultaneously
 <div>
@@ -225,6 +239,7 @@ export const slideUpVariants: Variants = {
 ```
 
 **Solution C: Simplify Complex Animations**
+
 ```typescript
 // BAD - Complex multi-property animation
 <motion.div
@@ -248,6 +263,7 @@ export const slideUpVariants: Variants = {
 ```
 
 **Solution D: Lazy Load Below-Fold Animations**
+
 ```typescript
 // Don't load animation library for elements below fold initially
 // Use dynamic imports if needed
@@ -259,6 +275,7 @@ export const slideUpVariants: Variants = {
 **Diagnosis:** TBT > 300ms
 
 **Solution A: Reduce Stagger Counts**
+
 ```typescript
 // If you have many items, reduce stagger
 const itemCount = items.length
@@ -266,9 +283,11 @@ const staggerDelay = itemCount > 10 ? 0.05 : 0.1 // Faster for many items
 ```
 
 **Solution B: Use IntersectionObserver Wisely**
+
 ```typescript
 // In useScrollAnimation hook, adjust threshold
-export function useScrollAnimation(threshold = 0.8) { // Changed from 0.8 to 0.5
+export function useScrollAnimation(threshold = 0.8) {
+  // Changed from 0.8 to 0.5
   // Triggers earlier, spreads out animations
 }
 ```
@@ -279,6 +298,7 @@ export function useScrollAnimation(threshold = 0.8) { // Changed from 0.8 to 0.5
 **Diagnosis:** Touch triggers hover, stays active
 
 **Solution: Use Hover Media Query**
+
 ```typescript
 // In component
 <motion.div
@@ -309,6 +329,7 @@ const isTouchDevice = typeof window !== 'undefined' &&
 **Diagnosis:** Significant increase in bundle size
 
 **Solution A: Verify Tree Shaking**
+
 ```typescript
 // Good - Named imports (tree-shakeable)
 import { motion, AnimatePresence } from 'framer-motion'
@@ -318,6 +339,7 @@ import FramerMotion from 'framer-motion'
 ```
 
 **Solution B: Lazy Load Animations**
+
 ```typescript
 // For components not immediately visible
 const AnimatedGallery = dynamic(() => import('@/components/Gallery'), {
@@ -326,6 +348,7 @@ const AnimatedGallery = dynamic(() => import('@/components/Gallery'), {
 ```
 
 **Solution C: Code Splitting**
+
 ```typescript
 // Split animation utilities if very large
 // Most utilities are small, unlikely to need this
@@ -345,6 +368,7 @@ const AnimatedGallery = dynamic(() => import('@/components/Gallery'), {
 5. **Create Fix Report:**
 
    Create `/docs/performance-fixes.md`:
+
    ```markdown
    # Animation Performance Fixes
 
@@ -354,6 +378,7 @@ const AnimatedGallery = dynamic(() => import('@/components/Gallery'), {
    ## Issues Addressed
 
    ### Issue 1: [Issue Name]
+
    - **Source**: TASK-00X
    - **Severity**: Critical / Major / Minor
    - **Description**: [What was wrong]
@@ -365,11 +390,13 @@ const AnimatedGallery = dynamic(() => import('@/components/Gallery'), {
    - **Result**: FIXED / PARTIALLY FIXED / NOT FIXED
 
    ### Issue 2: [Issue Name]
+
    [Same structure]
 
    ## Performance Impact
 
    ### Before Fixes
+
    - Lighthouse Performance (Desktop): [SCORE]
    - Lighthouse Performance (Mobile): [SCORE]
    - CLS: [SCORE]
@@ -377,6 +404,7 @@ const AnimatedGallery = dynamic(() => import('@/components/Gallery'), {
    - Mobile FPS: [FPS]
 
    ### After Fixes
+
    - Lighthouse Performance (Desktop): [SCORE] (Δ +[CHANGE])
    - Lighthouse Performance (Mobile): [SCORE] (Δ +[CHANGE])
    - CLS: [SCORE] (Δ [CHANGE])
@@ -386,17 +414,20 @@ const AnimatedGallery = dynamic(() => import('@/components/Gallery'), {
    ## Verification
 
    ### Re-run TASK-001 (Lighthouse)
+
    - [ ] Desktop score ≥ 95
    - [ ] Mobile score ≥ 90
    - [ ] CLS < 0.1
    - Result: PASS / FAIL
 
    ### Re-run TASK-002 (Reduced Motion)
+
    - [ ] All components respect reduced motion
    - [ ] No animations play with reduced motion enabled
    - Result: PASS / FAIL
 
    ### Re-run TASK-003 (Mobile)
+
    - [ ] FPS ≥ 50 on all animations
    - [ ] No noticeable jank
    - Result: PASS / FAIL
@@ -404,6 +435,7 @@ const AnimatedGallery = dynamic(() => import('@/components/Gallery'), {
    ## Remaining Issues
 
    [List any issues not fixed, with justification]
+
    - Issue: [Description]
    - Reason not fixed: [Why]
    - Impact: [Severity]
@@ -430,17 +462,20 @@ const AnimatedGallery = dynamic(() => import('@/components/Gallery'), {
 **Common Scenarios:**
 
 **Scenario A: No Issues Found**
+
 - Great! Document in `/docs/performance-fixes.md` that no fixes were needed
 - Include final scores for reference
 - Task complete
 
 **Scenario B: Minor Issues Only**
+
 - Fix what makes sense
 - Document any accepted trade-offs
 - Verify fixes
 - Task complete
 
 **Scenario C: Major Issues**
+
 - Fix all critical issues first
 - Then address major issues
 - Re-test thoroughly
@@ -448,12 +483,14 @@ const AnimatedGallery = dynamic(() => import('@/components/Gallery'), {
 - Document all changes
 
 **Scenario D: Architectural Issues**
+
 - If fundamental animation approach is flawed
 - May need to revisit earlier user stories
 - Consult with team
 - Plan refactoring if needed
 
 **Deliverables:**
+
 1. All critical and major issues fixed
 2. `/docs/performance-fixes.md` documenting all fixes
 3. Updated test reports showing improved scores
@@ -463,6 +500,7 @@ const AnimatedGallery = dynamic(() => import('@/components/Gallery'), {
 7. Code changes committed with clear messages
 
 **Success Criteria:**
+
 - Lighthouse Performance: 95+ (desktop), 90+ (mobile)
 - CLS: < 0.1
 - All animations respect reduced motion
@@ -472,16 +510,19 @@ const AnimatedGallery = dynamic(() => import('@/components/Gallery'), {
 - Documentation complete
 
 ## Dependencies
+
 - TASK-001: Run Lighthouse performance audit (must be completed)
 - TASK-002: Test reduced motion support (must be completed)
 - TASK-003: Test on mobile devices (must be completed)
 
 ## Related Tasks
+
 - TASK-001: Run Lighthouse performance audit
 - TASK-002: Test reduced motion support
 - TASK-003: Test on mobile devices
 
 ## References
+
 - [Web Vitals](https://web.dev/vitals/)
 - [Optimize CLS](https://web.dev/optimize-cls/)
 - [Fix Layout Shift](https://web.dev/layout-shift/)

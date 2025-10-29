@@ -26,6 +26,7 @@ You are implementing the Quick Stats Cards for the About section.
 1. **Open `components/About.tsx`**
 
 2. **Add stats array inside the component function:**
+
    ```typescript
    const stats = [
      { value: '4', label: 'Guests' },
@@ -108,6 +109,7 @@ const stats: Stat[] = [
 - ✅ Ready for grid implementation (TASK-005)
 
 **Commit Message**:
+
 ```
 feat(about): Add stats data structure for Quick Stats Cards
 

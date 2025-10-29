@@ -1,13 +1,13 @@
 # EPIC-012: Code Quality, Testing & Production Readiness - Summary
 
 **Status:** 🚧 In Progress
-**Completion:** 50% (5/10 stories completed, 18/45 story points)
+**Completion:** 53% (6/10 stories completed, 21/45 story points)
 **Last Updated:** 2025-10-28
 
 ## Quick Stats
 
-- **Total Story Points:** 45 (18 completed, 27 remaining)
-- **Estimated Time:** 13-23 hours remaining
+- **Total Story Points:** 45 (21 completed, 24 remaining)
+- **Estimated Time:** 11-21 hours remaining
 - **Priority:** 🔴 Critical
 - **Dependencies:** None (self-contained epic)
 
@@ -22,7 +22,7 @@ Transform the eleven-emmons codebase from a well-architected prototype into a pr
 
 ## User Stories Progress
 
-### ✅ Completed (5/10) - 18 points
+### ✅ Completed (6/10) - 21 points
 
 1. **US-001: Implement Test Suite** (8 pts) - ✅ Completed 2025-10-28
    - ✅ Installed Jest, React Testing Library, Playwright
@@ -56,38 +56,49 @@ Transform the eleven-emmons codebase from a well-architected prototype into a pr
    - ✅ Added environment setup to README with production instructions
    - **Files:** `.env.example` (new), `lib/env.ts` (new), `lib/analytics.tsx`, `components/BookingWidget.tsx`, `README.md`
 
+5. **US-005: CI/CD Pipeline** (5 pts) - ✅ Completed 2025-10-28
+   - ✅ Created GitHub Actions workflow with 4 jobs
+   - ✅ Set up Dependabot for automated dependency updates
+   - ✅ Added validation scripts (type-check, format:check, validate)
+   - ✅ Fixed all ESLint and TypeScript errors in test files
+   - ✅ Updated README with CI badge and workflow documentation
+   - **Files:** `.github/workflows/ci.yml` (new), `.github/dependabot.yml` (new), `package.json`, `.eslintrc.json`, `tsconfig.json`, `README.md`
+
+6. **US-006: Error Boundaries** (3 pts) - ✅ Completed 2025-10-28
+   - ✅ Created ErrorBoundary component with error tracking
+   - ✅ Wrapped critical sections (Header, About, Amenities, Gallery, Location, Footer)
+   - ✅ Added custom fallback for BookingWidget with Airbnb link
+   - ✅ Integrated error tracking with Google Analytics
+   - ✅ Implemented "Try Again" recovery functionality
+   - ✅ Created comprehensive test suite (5 passing tests)
+   - **Files:** `components/ErrorBoundary.tsx` (new), `components/__tests__/ErrorBoundary.test.tsx` (new), `app/page.tsx`
+
 ### 🚧 In Progress (0/10)
 
 _None_
 
-### 📋 To Do (6/10) - 32 points
+### 📋 To Do (4/10) - 24 points
 
-1. **US-005: CI/CD Pipeline** (5 pts, 2-4 hours) - 🔴 Critical
-   - Create `ErrorBoundary` component
-   - Wrap critical sections (Gallery, Booking, Location)
-   - Integrate error tracking with Google Analytics
-   - Implement "Try Again" recovery
-
-2. **US-007: Image Optimization** (5 pts, 1-2 hours) - 🟡 Medium
+1. **US-007: Image Optimization** (5 pts, 1-2 hours) - 🟡 Medium
    - Add priority loading to hero image
    - Implement lazy loading for gallery (first 3 eager, rest lazy)
    - Optimize next.config.js for image performance
    - **Target:** LCP < 2.0s, page weight < 2MB
 
-3. **US-008: Complete TODOs** (4 pts, 2-4 hours) - 🟡 Medium
+2. **US-008: Complete TODOs** (4 pts, 2-4 hours) - 🟡 Medium
    - Finalize color scheme in tailwind.config.js
    - Create and configure OG image (1200×630px)
    - Complete or remove Hospitable widget TODO
    - Add ESLint rule to prevent new TODOs
 
-4. **US-009: Accessibility** (8 pts, 2-3 hours) - 🟡 Medium
+3. **US-009: Accessibility** (8 pts, 2-3 hours) - 🟡 Medium
    - Implement skip links for keyboard users
    - Add ARIA attributes to dynamic elements
    - Make gallery keyboard accessible
    - Add focus visible styles
    - **Target:** WCAG 2.1 AA compliance, Axe 0 critical issues
 
-5. **US-010: Feature Flags** (7 pts, 2-3 hours) - 🟢 Low
+4. **US-010: Feature Flags** (7 pts, 2-3 hours) - 🟢 Low
    - Create feature flag system (`lib/features/flags.ts`)
    - Implement React hooks for feature checks
    - Support gradual rollout (percentage-based)
@@ -252,7 +263,19 @@ Final improvements:
 
 ## Changelog
 
+### 2025-10-28 (Update 5)
+
+- ✅ Completed US-006: Error Boundaries (3 pts)
+  - Created ErrorBoundary component with error tracking and Google Analytics integration
+  - Wrapped all critical sections: Header, About, Amenities, Gallery, Location, BookingWidget, Footer
+  - Implemented custom fallback for BookingWidget with Airbnb link
+  - Added "Try Again" recovery functionality
+  - Created comprehensive test suite with 5 passing tests
+  - All sections now gracefully handle errors without breaking the entire page
+- Epic status: 53% complete (6/10 stories, 21/45 points)
+
 ### 2025-10-28 (Update 4)
+
 - ✅ Completed US-005: CI/CD Pipeline (5 pts)
   - Created GitHub Actions workflow with 4 jobs (quality, test, build, security)
   - Set up Dependabot for automated dependency updates

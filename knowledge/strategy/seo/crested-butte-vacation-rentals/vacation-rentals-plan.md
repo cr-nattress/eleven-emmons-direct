@@ -3,6 +3,7 @@
 ## Reality Check & Opportunity
 
 **Target Keyword**: "crested butte vacation rentals"
+
 - **Search Volume**: 1,000-2,500 monthly searches (high commercial intent)
 - **Difficulty**: Medium-High (much more achievable than "crested butte")
 - **Current Competition**: Airbnb, VRBO, Vacasa, local property managers
@@ -46,6 +47,7 @@ New Structure:
 ### 1.2 Core Technical SEO
 
 **Implement Immediately:**
+
 - [ ] Create `sitemap.xml` with all pages
 - [ ] Add `robots.txt` with sitemap reference
 - [ ] Implement Schema.org structured data:
@@ -61,12 +63,14 @@ New Structure:
 ### 1.3 Meta Optimization
 
 **Homepage (/):**
+
 ```
 Title: Crested Butte Vacation Rentals | Ski-In/Ski-Out | Book Direct & Save 15%
 Description: Premium vacation rental in Crested Butte. Ski-in/ski-out 1BR condo with 4.98â˜… rating. Book direct at 11 Emmons Road and save on fees. Modern amenities, local expertise.
 ```
 
 **Property Page (/rentals/11-emmons-road/):**
+
 ```
 Title: 11 Emmons Road | Luxury Ski-In/Ski-Out Vacation Rental | Mt. Crested Butte
 Description: Luxury vacation rental steps from ski lifts. 1-bedroom condo, 4.98â˜… rating, smart home features, remote work setup. Book direct and save 15% vs Airbnb/VRBO.
@@ -114,6 +118,7 @@ Description: Luxury vacation rental steps from ski lifts. 1-bedroom condo, 4.98â
 ### 2.2 Supporting Content Pages
 
 **Vacation Planning:**
+
 - "Best Time to Visit Crested Butte" (seasonal booking guide)
 - "How to Get to Crested Butte" (airports, driving, shuttles)
 - "What to Pack for Crested Butte" (seasonal packing lists)
@@ -122,12 +127,14 @@ Description: Luxury vacation rental steps from ski lifts. 1-bedroom condo, 4.98â
 - "Romantic Getaway in Crested Butte" (couples)
 
 **Seasonal Guides:**
+
 - "Winter Vacation Guide: Skiing Crested Butte"
 - "Summer Vacation Guide: Hiking & Biking"
 - "Fall Wildflower Festival Guide"
 - "Spring Skiing & Shoulder Season"
 
 **Comparison Content:**
+
 - "Vacation Rental vs Hotel in Crested Butte"
 - "Mt. Crested Butte vs Downtown: Where to Stay"
 - "Ski-In/Ski-Out Rentals: Complete Guide"
@@ -136,6 +143,7 @@ Description: Luxury vacation rental steps from ski lifts. 1-bedroom condo, 4.98â
 ### 2.3 Blog Content (2 posts/week)
 
 **Content Pillars:**
+
 1. **Vacation Planning** (40%)
    - "10 Things Nobody Tells You About Crested Butte"
    - "Perfect 4-Day Crested Butte Itinerary"
@@ -163,12 +171,14 @@ Description: Luxury vacation rental steps from ski lifts. 1-bedroom condo, 4.98â
 ### 3.1 Keyword Targeting
 
 **Primary Keywords:**
+
 - "crested butte vacation rentals" (homepage)
 - "ski in ski out vacation rental crested butte" (property)
 - "vacation rental mt crested butte" (property)
 - "book vacation rental crested butte direct" (booking)
 
 **Secondary Keywords:**
+
 - "best vacation rentals crested butte"
 - "luxury vacation rental crested butte"
 - "family vacation rental crested butte"
@@ -176,6 +186,7 @@ Description: Luxury vacation rental steps from ski lifts. 1-bedroom condo, 4.98â
 - "vacation rental near crested butte ski resort"
 
 **Long-Tail Keywords:**
+
 - "how much does vacation rental cost crested butte"
 - "where to stay for skiing crested butte"
 - "crested butte vacation rental with hot tub"
@@ -184,6 +195,7 @@ Description: Luxury vacation rental steps from ski lifts. 1-bedroom condo, 4.98â
 ### 3.2 Content Optimization Checklist
 
 For every page:
+
 - [ ] Target keyword in H1 title
 - [ ] Target keyword in first 100 words
 - [ ] Target keyword in URL slug
@@ -198,6 +210,7 @@ For every page:
 ### 3.3 Internal Linking Strategy
 
 **Hub-and-Spoke:**
+
 - Homepage â†’ all main sections
 - Property page â†’ conversion hub
 - All blog posts â†’ property page
@@ -223,12 +236,14 @@ For every page:
 ### 4.2 Local Directory Listings
 
 **Submit to:**
+
 - Colorado Tourism directories
 - Crested Butte Chamber of Commerce
 - Gunnison County tourism sites
 - Mountain vacation rental directories
 
 **NAP Consistency:**
+
 ```
 Name: 11 Emmons Road Vacation Rental
 Address: 11 Emmons Rd, Unit 324, Mt. Crested Butte, CO 81225
@@ -251,6 +266,7 @@ Website: https://11emmons.com
 ### 5.1 Local Business Partnerships
 
 **Priority Partners:**
+
 - Restaurants (guest discounts â†’ backlink)
 - Equipment rentals (ski, bike)
 - Tour guide companies
@@ -271,6 +287,7 @@ Website: https://11emmons.com
 ### 5.3 Content Marketing
 
 **Create Shareable Assets:**
+
 - "Ultimate Guide to Vacation Rentals in Crested Butte"
 - Infographic: "Cost: Vacation Rental vs Hotel"
 - Data study: "What Guests Want in CB Rentals"
@@ -279,6 +296,7 @@ Website: https://11emmons.com
 ### 5.4 Guest Posting
 
 **Target Blogs:**
+
 - Colorado travel blogs
 - Skiing/snowboarding sites
 - Mountain biking websites
@@ -286,6 +304,7 @@ Website: https://11emmons.com
 - Family travel blogs
 
 **Pitch Topics:**
+
 - "Why We Chose Crested Butte for Our Rental"
 - "Creating a 4.98-Star Vacation Rental"
 - "Real Cost: Airbnb vs Direct Booking"
@@ -297,6 +316,7 @@ Website: https://11emmons.com
 ### 6.1 Booking Process
 
 **Enhancements:**
+
 - [ ] Instant booking calendar on homepage
 - [ ] Real-time availability
 - [ ] Pricing transparency (no hidden fees)
@@ -309,6 +329,7 @@ Website: https://11emmons.com
 ### 6.2 Social Proof
 
 **Display:**
+
 - 4.98â˜… rating (header, hero)
 - "88+ verified reviews"
 - Guest testimonial carousel
@@ -320,6 +341,7 @@ Website: https://11emmons.com
 ### 6.3 Lead Capture
 
 **Build Email List:**
+
 - "Crested Butte Vacation Checklist" (PDF)
 - "Snow Report Updates" (weekly email)
 - "Exclusive Direct Booking Discounts"
@@ -332,11 +354,13 @@ Website: https://11emmons.com
 ### 7.1 Core Web Vitals
 
 **Target:**
+
 - LCP < 2.5s
 - FID < 100ms
 - CLS < 0.1
 
 **Actions:**
+
 - [ ] Optimize images (WebP/AVIF, lazy load)
 - [ ] Minimize JavaScript
 - [ ] CDN for static assets
@@ -347,6 +371,7 @@ Website: https://11emmons.com
 ### 7.2 Mobile Optimization
 
 **Critical (60%+ mobile traffic):**
+
 - [ ] Mobile-first responsive design
 - [ ] Touch-friendly buttons (48px min)
 - [ ] Fast mobile speed (< 3s)
@@ -358,6 +383,7 @@ Website: https://11emmons.com
 ### 7.3 Page Speed
 
 **Target: 95+ Lighthouse**
+
 - Compress images to 100-200KB
 - Progressive image loading
 - Minimize render-blocking
@@ -372,6 +398,7 @@ Website: https://11emmons.com
 ### 8.1 Setup
 
 **Google Analytics 4:**
+
 - [ ] Track booking button clicks
 - [ ] Scroll depth on property page
 - [ ] Photo gallery interactions
@@ -382,6 +409,7 @@ Website: https://11emmons.com
 - [ ] Traffic sources
 
 **Google Search Console:**
+
 - [ ] Connect & verify
 - [ ] Submit sitemap
 - [ ] Monitor rankings
@@ -390,6 +418,7 @@ Website: https://11emmons.com
 - [ ] Monitor Core Web Vitals
 
 **Additional:**
+
 - [ ] Hotjar/Clarity (heatmaps)
 - [ ] SEMrush/Ahrefs (keywords, competitors)
 - [ ] Booking conversion tracking
@@ -397,6 +426,7 @@ Website: https://11emmons.com
 ### 8.2 KPIs
 
 **Weekly:**
+
 - Organic traffic
 - Keyword rankings (top 10)
 - Direct inquiries
@@ -406,6 +436,7 @@ Website: https://11emmons.com
 - Mobile vs desktop
 
 **Monthly:**
+
 - Domain Authority
 - Backlinks acquired
 - Indexed pages
@@ -420,6 +451,7 @@ Website: https://11emmons.com
 ### 9.1 Analyze Top 10 Competitors
 
 **Research "Crested Butte Vacation Rentals":**
+
 - What content do they have?
 - What keywords rank?
 - Backlink profile?
@@ -428,6 +460,7 @@ Website: https://11emmons.com
 - What's missing?
 
 **Tools:**
+
 - Ahrefs Site Explorer
 - SEMrush Domain Overview
 - Manual SERP analysis
@@ -435,6 +468,7 @@ Website: https://11emmons.com
 ### 9.2 Differentiation
 
 **Your Unique Advantages:**
+
 1. **Real Property Owner** (not aggregator)
    - Authentic content
    - Real reviews
@@ -465,7 +499,9 @@ Website: https://11emmons.com
 ## Timeline & Milestones
 
 ### Month 1: Foundation
+
 **Weeks 1-2:**
+
 - Technical SEO complete
 - Site restructure
 - Schema markup
@@ -473,6 +509,7 @@ Website: https://11emmons.com
 - 5 core pages published
 
 **Weeks 3-4:**
+
 - GBP optimized
 - 10+ directory submissions
 - 4 blog posts
@@ -483,6 +520,7 @@ Website: https://11emmons.com
 ---
 
 ### Months 2-3: Content Build
+
 - 20+ pages published
 - 16+ blog posts (2/week)
 - 10-20 backlinks
@@ -494,6 +532,7 @@ Website: https://11emmons.com
 ---
 
 ### Months 4-6: Growth
+
 - 40+ pages
 - 40+ blog posts
 - 30-50 backlinks
@@ -502,6 +541,7 @@ Website: https://11emmons.com
 - 5-10 local partnerships
 
 **Results:**
+
 - **Position 5-10** for "crested butte vacation rentals"
 - 500-1,000 visitors/month
 - 5-15 inquiries
@@ -510,6 +550,7 @@ Website: https://11emmons.com
 ---
 
 ### Months 7-12: Competition
+
 - 75+ pages
 - 75+ blog posts
 - 100+ backlinks
@@ -517,6 +558,7 @@ Website: https://11emmons.com
 - Top rental resource
 
 **Results:**
+
 - **Position 1-5** for main keyword
 - **Position 1-3** for long-tail
 - 1,500-3,000 visitors/month
@@ -527,6 +569,7 @@ Website: https://11emmons.com
 ---
 
 ### Months 12-24: Domination
+
 - 150+ pages
 - 200+ backlinks
 - Domain Authority 35-40+
@@ -535,6 +578,7 @@ Website: https://11emmons.com
 - 500-1,000+ email list
 
 **Results:**
+
 - **Position #1** "crested butte vacation rentals"
 - Top 3 for 20+ keywords
 - 3,000-5,000 visitors/month
@@ -576,17 +620,20 @@ Website: https://11emmons.com
 ## Budget Considerations
 
 **Minimal Investment Option (DIY):**
+
 - Domain/hosting: $20-50/month (Vercel/Netlify free tier)
 - SEO tools: $0-99/month (free tier Google tools + one paid)
 - Content: Your time (20-30 hrs/month)
 - **Total**: $20-150/month
 
 **Accelerated Option:**
+
 - Above + Content writer: $500-1,000/month
 - Link building: $500-1,000/month
 - **Total**: $1,000-2,500/month
 
 **Expected ROI:**
+
 - Year 1: 10-20 bookings = $15K-30K revenue
 - Year 2: 20-30 bookings/month = $100K-200K revenue
 - Platform fees saved: 15% = $15K-30K annually
@@ -598,6 +645,7 @@ Website: https://11emmons.com
 Once established, target these for more traffic:
 
 **Accommodation-Related:**
+
 - "ski in ski out condo crested butte"
 - "1 bedroom vacation rental crested butte"
 - "mt crested butte lodging ski in ski out"
@@ -605,18 +653,21 @@ Once established, target these for more traffic:
 - "pet friendly cabin crested butte"
 
 **Activity-Related:**
+
 - "where to stay skiing crested butte"
 - "vacation rental near crested butte mountain resort"
 - "mountain biking accommodation crested butte"
 - "wildflower festival lodging crested butte"
 
 **Booking-Related:**
+
 - "direct booking vacation rental crested butte"
 - "no fees vacation rental crested butte"
 - "cheap vacation rental crested butte"
 - "last minute deals crested butte rental"
 
 **Question Keywords:**
+
 - "how much is vacation rental in crested butte"
 - "what is best area to stay crested butte"
 - "where to stay crested butte families"

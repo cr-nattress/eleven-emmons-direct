@@ -27,9 +27,11 @@
 ## Technical Notes
 
 ### Breakpoint Strategy
+
 Use mobile-first approach with Tailwind responsive prefixes:
 
 **Mobile (<640px):**
+
 - Heading: `text-3xl` (28-32px)
 - Body: `text-base` (16px)
 - Section padding: `py-16` (64px vertical)
@@ -38,10 +40,12 @@ Use mobile-first approach with Tailwind responsive prefixes:
 - Horizontal padding: `px-4` (16px)
 
 **Tablet (640-768px):**
+
 - Stats grid: `sm:grid-cols-2` (2 columns)
 - Features grid: `sm:grid-cols-2` (2 columns)
 
 **Desktop (768px+):**
+
 - Heading: `md:text-4xl` (36-40px)
 - Body: `md:text-lg` (18px)
 - Section padding: `md:py-20` (80px vertical)
@@ -79,12 +83,14 @@ Use mobile-first approach with Tailwind responsive prefixes:
 ```
 
 ### Testing Viewports
+
 - **iPhone SE:** 375x667
 - **iPhone 12/13/14:** 390x844
 - **iPad:** 768x1024
 - **Desktop:** 1920x1080
 
 ### Performance Considerations
+
 - Avoid layout shift (CLS) during responsive transitions
 - Test font loading to ensure no FOUT/FOIT
 - Ensure smooth scaling (no jarring jumps)

@@ -1,15 +1,19 @@
 # TASK-001: Animate Booking Widget Entrance
 
 ## Task Description
+
 Add 'use client' directive if needed and implement scroll-triggered entrance animation for the booking widget section header and platform links container.
 
 ## Priority
+
 CRITICAL
 
 ## Estimated Effort
+
 2-3 hours
 
 ## Acceptance Criteria
+
 - [ ] Booking.tsx has 'use client' directive (add if missing)
 - [ ] Section header (title + description) animates on scroll
 - [ ] Booking widget container animates with fade + scale
@@ -22,7 +26,9 @@ CRITICAL
 ## Technical Details
 
 ### Current Booking Structure
+
 Located in `/components/Booking.tsx`:
+
 - Section with id="booking"
 - Section header (h2 + p)
 - Booking widget with VRBO and Airbnb links
@@ -30,6 +36,7 @@ Located in `/components/Booking.tsx`:
 - May or may not have 'use client' directive
 
 ### Animation Strategy
+
 1. Add 'use client' if missing
 2. Animate section header (fade + slide up)
 3. Animate widget container (fade + slight scale)
@@ -40,6 +47,7 @@ Located in `/components/Booking.tsx`:
 You are tasked with adding entrance animations to the booking widget section.
 
 **Context:**
+
 - Booking component at `/components/Booking.tsx`
 - This is the primary conversion point - animations must feel premium
 - Component may need 'use client' directive added
@@ -53,6 +61,7 @@ You are tasked with adding entrance animations to the booking widget section.
    - Locate section header and booking widget
 
 2. **Add 'use client' if missing:**
+
    ```typescript
    'use client'
 
@@ -61,6 +70,7 @@ You are tasked with adding entrance animations to the booking widget section.
    ```
 
 3. **Import animation utilities:**
+
    ```typescript
    'use client'
 
@@ -73,6 +83,7 @@ You are tasked with adding entrance animations to the booking widget section.
 4. **Verify/Add scaleInVariants to `/lib/animations/variants.ts`:**
 
    Check if this exists, if not add:
+
    ```typescript
    export const scaleInVariants: Variants = {
      hidden: { opacity: 0, scale: 0.95 },
@@ -88,6 +99,7 @@ You are tasked with adding entrance animations to the booking widget section.
    ```
 
 5. **Add scroll animation hooks in component:**
+
    ```typescript
    export default function Booking() {
      const { ref: headerRef, controls: headerControls } = useScrollAnimation()
@@ -102,6 +114,7 @@ You are tasked with adding entrance animations to the booking widget section.
 6. **Animate section header:**
 
    Wrap the h2 and p in animated div:
+
    ```typescript
    <motion.div
      ref={headerRef}
@@ -128,6 +141,7 @@ You are tasked with adding entrance animations to the booking widget section.
 7. **Animate booking widget container:**
 
    Find the booking widget div (contains VRBO/Airbnb links) and convert:
+
    ```typescript
    <motion.div
      ref={widgetRef}
@@ -148,6 +162,7 @@ You are tasked with adding entrance animations to the booking widget section.
    - Don't animate contact cards yet (that's TASK-002)
 
 **Testing:**
+
 1. Save files
 2. Run dev server: `npm run dev`
 3. Visit http://localhost:3000
@@ -160,12 +175,14 @@ You are tasked with adding entrance animations to the booking widget section.
 7. Check console for errors
 
 **Expected Result:**
+
 - Smooth entrance for booking section
 - Professional, trustworthy feel
 - Clear visual hierarchy
 - All functionality maintained
 
 **Success Criteria:**
+
 - 'use client' directive present
 - Header animates on scroll
 - Widget animates on scroll
@@ -174,13 +191,16 @@ You are tasked with adding entrance animations to the booking widget section.
 - All links working
 
 ## Dependencies
+
 - US-001: Setup Animation Infrastructure (must be completed)
 
 ## Related Tasks
+
 - TASK-002: Animate contact cards (next)
 - TASK-003: Add CTA button animations
 
 ## References
+
 - [Booking Component](../../../../components/Booking.tsx)
 - [Animation Variants](../../../../lib/animations/variants.ts)
 - [useScrollAnimation Hook](../../../../lib/animations/hooks.ts)

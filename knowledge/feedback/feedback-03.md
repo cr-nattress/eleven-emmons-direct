@@ -1,4 +1,5 @@
 # Location & Area Section Redesign - Dense Content Strategy
+
 ## Product Requirements Document
 
 ## Project Overview
@@ -28,15 +29,18 @@ The Location & Area section currently contains extensive information about Crest
 Based on the uploaded image, the section includes:
 
 **1. Colorado's Last Great Ski Town**
+
 - Descriptive paragraph (100 words)
 - Emotional/historical content
 
 **2. About Crested Butte**
+
 - Location details (elevation, forest)
 - Town characteristics
 - Descriptive paragraph (75 words)
 
 **3. Winter Paradise - Crested Butte Mountain Resort**
+
 - Skiable terrain: 1,547 acres
 - Trail count: 121 trails
 - Terrain difficulty
@@ -45,11 +49,13 @@ Based on the uploaded image, the section includes:
 - Night skiing availability
 
 **4. Nordic Skiing**
+
 - Trail length: 30+ km
 - Backcountry opportunities
 - CBMR Nordic Center details
 
 **5. Other Winter Activities** (7 items)
+
 - Snowshoeing
 - Ice skating
 - Sleigh rides
@@ -57,6 +63,7 @@ Based on the uploaded image, the section includes:
 - Dog sledding
 
 **6. Summer Wonderland**
+
 - [Content continues but cut off in image]
 
 ### Problems Identified
@@ -99,6 +106,7 @@ Based on the uploaded image, the section includes:
 ```
 
 **Benefits:**
+
 - Reduces initial cognitive load
 - Mobile-friendly (vertical stacking)
 - SEO-friendly (content still crawlable)
@@ -112,28 +120,30 @@ Based on the uploaded image, the section includes:
 ### Layout Option 1: Tabbed Interface (Recommended)
 
 **Primary Navigation Tabs:**
+
 1. **Overview** - Town history and character
 2. **Winter** - Skiing and winter activities
 3. **Summer** - Warm weather activities
 4. **Getting Here** - Location, directions, airport
 
 **Advantages:**
+
 - Dramatically reduces visual complexity
 - Users self-select relevant season
 - Clean, modern interface pattern
 - Easy mobile adaptation (scrollable tabs)
 
 **Implementation:**
+
 ```jsx
 <section id="location" className="py-16 md:py-20 bg-gray-50">
   <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-    
     {/* Header */}
     <div className="text-center mb-12">
       <h2>Location & Area</h2>
       <p>Discover Crested Butte - Colorado's Last Great Ski Town</p>
     </div>
-    
+
     {/* Tab Navigation */}
     <div className="flex border-b border-gray-200 overflow-x-auto">
       <button className="tab-active">Overview</button>
@@ -141,12 +151,9 @@ Based on the uploaded image, the section includes:
       <button>Summer</button>
       <button>Getting Here</button>
     </div>
-    
+
     {/* Tab Content */}
-    <div className="tab-panel">
-      {/* Content for active tab */}
-    </div>
-    
+    <div className="tab-panel">{/* Content for active tab */}</div>
   </div>
 </section>
 ```
@@ -156,6 +163,7 @@ Based on the uploaded image, the section includes:
 ### Layout Option 2: Accordion Sections
 
 **Collapsible Sections:**
+
 1. ▼ About Crested Butte (open by default)
 2. ▶ Mountain Resort Stats
 3. ▶ Winter Activities
@@ -164,32 +172,28 @@ Based on the uploaded image, the section includes:
 6. ▶ Getting Here
 
 **Advantages:**
+
 - All content on one page (SEO)
 - User controls expansion
 - Mobile-friendly (vertical only)
 - Familiar interaction pattern
 
 **Implementation:**
+
 ```jsx
 <section id="location" className="py-16 md:py-20 bg-gray-50">
   <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-    
     {/* Accordion Container */}
     <div className="space-y-4">
-      
       {/* Accordion Item */}
       <div className="bg-white rounded-lg shadow">
         <button className="accordion-header">
           <span>About Crested Butte</span>
           <ChevronDown />
         </button>
-        <div className="accordion-content">
-          {/* Content */}
-        </div>
+        <div className="accordion-content">{/* Content */}</div>
       </div>
-      
     </div>
-    
   </div>
 </section>
 ```
@@ -199,11 +203,13 @@ Based on the uploaded image, the section includes:
 ### Layout Option 3: Grid + Modal Deep Dive
 
 **Overview Cards:**
+
 - 2x3 grid of category cards
 - Each card shows preview + icon
 - Click opens modal with full details
 
 **Categories:**
+
 1. 🏔️ Mountain Resort
 2. ⛷️ Downhill Skiing
 3. 🎿 Nordic Skiing
@@ -212,6 +218,7 @@ Based on the uploaded image, the section includes:
 6. 🗺️ Location Info
 
 **Advantages:**
+
 - Highly visual and engaging
 - Great for browsing/discovery
 - Excellent mobile experience
@@ -258,6 +265,7 @@ Combine tabs for primary organization with expandable cards for details:
 ```
 
 **Why This Works:**
+
 - **Tabs** reduce cognitive load (4 categories vs 20+ items)
 - **Cards** add visual interest and scannability
 - **Expandable details** provide progressive disclosure
@@ -332,8 +340,8 @@ export function StatCard({ value, label, icon, highlight }: StatCardProps) {
     <div
       className={`
         p-4 rounded-lg text-center transition-all duration-200
-        ${highlight 
-          ? 'bg-blue-50 border-2 border-blue-500' 
+        ${highlight
+          ? 'bg-blue-50 border-2 border-blue-500'
           : 'bg-gray-50 hover:bg-gray-100'
         }
       `}
@@ -355,6 +363,7 @@ export function StatCard({ value, label, icon, highlight }: StatCardProps) {
 ```
 
 **Usage:**
+
 ```jsx
 <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
   <StatCard value="1,547" label="Acres of Terrain" icon="🏔️" />
@@ -381,15 +390,15 @@ interface ExpandableCardProps {
   defaultExpanded?: boolean
 }
 
-export function ExpandableCard({ 
-  title, 
-  icon, 
-  preview, 
-  children, 
-  defaultExpanded = false 
+export function ExpandableCard({
+  title,
+  icon,
+  preview,
+  children,
+  defaultExpanded = false
 }: ExpandableCardProps) {
   const [isExpanded, setIsExpanded] = useState(defaultExpanded)
-  
+
   return (
     <div className="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
       {/* Header - Always Visible */}
@@ -407,13 +416,13 @@ export function ExpandableCard({
             )}
           </div>
         </div>
-        <ChevronDown 
+        <ChevronDown
           className={`w-5 h-5 text-gray-400 transition-transform duration-200 ${
             isExpanded ? 'rotate-180' : ''
           }`}
         />
       </button>
-      
+
       {/* Expandable Content */}
       {isExpanded && (
         <div className="px-6 py-4 border-t border-gray-100">
@@ -426,6 +435,7 @@ export function ExpandableCard({
 ```
 
 **Usage:**
+
 ```jsx
 <ExpandableCard
   title="Crested Butte Mountain Resort"
@@ -439,13 +449,15 @@ export function ExpandableCard({
     <StatCard value="300+" label="Inches" />
     <StatCard value="✓" label="Parks" />
   </div>
-  
-  <FeatureList items={[
-    "Terrain ranging from gentle groomers to extreme",
-    "Renowned for expert and extreme skiing",
-    "Average snowfall: 300+ inches annually",
-    "Terrain parks and halfpipe"
-  ]} />
+
+  <FeatureList
+    items={[
+      'Terrain ranging from gentle groomers to extreme',
+      'Renowned for expert and extreme skiing',
+      'Average snowfall: 300+ inches annually',
+      'Terrain parks and halfpipe',
+    ]}
+  />
 </ExpandableCard>
 ```
 
@@ -462,10 +474,10 @@ interface FeatureListProps {
   icon?: React.ReactNode
 }
 
-export function FeatureList({ 
-  items, 
-  columns = 2, 
-  icon = '✓' 
+export function FeatureList({
+  items,
+  columns = 2,
+  icon = '✓'
 }: FeatureListProps) {
   return (
     <div className={`grid ${columns === 2 ? 'md:grid-cols-2' : ''} gap-3`}>
@@ -511,11 +523,11 @@ interface LocationData {
 
 export default function Location({ data }: { data: LocationData }) {
   const [activeTab, setActiveTab] = useState('overview')
-  
+
   return (
     <section id="location" className="py-16 md:py-20 bg-gray-50">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        
+
         {/* Header */}
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
@@ -525,14 +537,14 @@ export default function Location({ data }: { data: LocationData }) {
             {data.frontmatter.subtitle}
           </p>
         </div>
-        
+
         {/* Tab Navigation */}
         <TabNav
           tabs={data.frontmatter.tabs}
           activeTab={activeTab}
           onTabChange={setActiveTab}
         />
-        
+
         {/* Tab Content */}
         <div className="space-y-6">
           {activeTab === 'overview' && <OverviewTab />}
@@ -540,7 +552,7 @@ export default function Location({ data }: { data: LocationData }) {
           {activeTab === 'summer' && <SummerTab />}
           {activeTab === 'directions' && <DirectionsTab />}
         </div>
-        
+
       </div>
     </section>
   )
@@ -550,7 +562,7 @@ export default function Location({ data }: { data: LocationData }) {
 function WinterTab() {
   return (
     <div className="space-y-6">
-      
+
       {/* Mountain Resort Card */}
       <ExpandableCard
         title="Crested Butte Mountain Resort"
@@ -565,7 +577,7 @@ function WinterTab() {
           <StatCard value="300+" label="Inches Snow" icon="❄️" highlight />
           <StatCard value="✓" label="Terrain Parks" icon="🎢" />
         </div>
-        
+
         {/* Features */}
         <FeatureList
           items={[
@@ -577,7 +589,7 @@ function WinterTab() {
           ]}
         />
       </ExpandableCard>
-      
+
       {/* Nordic Skiing Card */}
       <ExpandableCard
         title="Nordic Skiing"
@@ -589,7 +601,7 @@ function WinterTab() {
           <StatCard value="✓" label="Backcountry" />
           <StatCard value="✓" label="Nordic Center" />
         </div>
-        
+
         <FeatureList
           items={[
             "30+ km of groomed cross-country trails",
@@ -598,7 +610,7 @@ function WinterTab() {
           ]}
         />
       </ExpandableCard>
-      
+
       {/* Other Activities Card */}
       <ExpandableCard
         title="Other Winter Activities"
@@ -618,7 +630,7 @@ function WinterTab() {
           ]}
         />
       </ExpandableCard>
-      
+
     </div>
   )
 }
@@ -706,7 +718,7 @@ summerActivities:
       - "Wildflower-filled meadows"
       - "Alpine lake hikes"
       - "Summit trails with panoramic views"
-  
+
   mountainBiking:
     title: "Mountain Biking"
     stats:
@@ -738,6 +750,7 @@ Situated in the heart of the Gunnison National Forest, Crested Butte sits at 8,9
 ### Breakpoint Strategy
 
 **< 640px (Mobile)**
+
 - Tabs scroll horizontally
 - Cards stack vertically (1 column)
 - Stats grid: 2x2 layout
@@ -746,12 +759,14 @@ Situated in the heart of the Gunnison National Forest, Crested Butte sits at 8,9
 - Touch-friendly tap targets (48px min)
 
 **640px - 768px (Tablet)**
+
 - Tabs scroll if needed
 - Cards: 1 column
 - Stats grid: 2x2 or 3x1
 - Feature lists: 2 columns
 
 **768px+ (Desktop)**
+
 - All tabs visible
 - Cards: Can be 2-column if desired
 - Stats grid: 4 columns (1 row)
@@ -761,6 +776,7 @@ Situated in the heart of the Gunnison National Forest, Crested Butte sits at 8,9
 ### Mobile Optimizations
 
 **1. Sticky Tab Navigation:**
+
 ```jsx
 <div className="sticky top-16 z-10 bg-gray-50 border-b border-gray-200 shadow-sm">
   <TabNav tabs={tabs} activeTab={activeTab} onTabChange={setActiveTab} />
@@ -768,6 +784,7 @@ Situated in the heart of the Gunnison National Forest, Crested Butte sits at 8,9
 ```
 
 **2. Swipeable Tabs:**
+
 ```jsx
 // Use react-swipeable or similar
 <SwipeableViews
@@ -782,18 +799,20 @@ Situated in the heart of the Gunnison National Forest, Crested Butte sits at 8,9
 ```
 
 **3. Smooth Scroll:**
+
 ```jsx
 const scrollToTop = () => {
-  document.getElementById('location')?.scrollIntoView({ 
-    behavior: 'smooth' 
+  document.getElementById('location')?.scrollIntoView({
+    behavior: 'smooth',
   })
 }
 ```
 
 **4. Touch-Friendly Accordions:**
+
 ```css
 .accordion-button {
-  min-height: 48px;  /* WCAG touch target */
+  min-height: 48px; /* WCAG touch target */
   padding: 12px 16px;
 }
 ```
@@ -805,12 +824,14 @@ const scrollToTop = () => {
 ### Color Palette
 
 **Primary Colors:**
+
 - **Sky Blue**: #3B82F6 (active tabs, highlights)
 - **Mountain Gray**: #6B7280 (text, borders)
 - **Snow White**: #FFFFFF (cards, background)
 - **Cloud Gray**: #F9FAFB (section background)
 
 **Accent Colors:**
+
 - **Success Green**: #10B981 (checkmarks, positive stats)
 - **Winter Blue**: #0EA5E9 (winter-specific elements)
 - **Summer Gold**: #F59E0B (summer-specific elements)
@@ -819,10 +840,11 @@ const scrollToTop = () => {
 ### Typography
 
 **Headers:**
+
 ```css
 .section-title {
-  font-size: 36px;   /* desktop */
-  font-size: 28px;   /* mobile */
+  font-size: 36px; /* desktop */
+  font-size: 28px; /* mobile */
   font-weight: 700;
   line-height: 1.2;
   color: #111827;
@@ -836,11 +858,12 @@ const scrollToTop = () => {
 ```
 
 **Body Text:**
+
 ```css
 .description {
   font-size: 16px;
   line-height: 1.6;
-  color: #4B5563;
+  color: #4b5563;
 }
 
 .stat-value {
@@ -852,7 +875,7 @@ const scrollToTop = () => {
 .stat-label {
   font-size: 14px;
   font-weight: 500;
-  color: #6B7280;
+  color: #6b7280;
 }
 ```
 
@@ -860,16 +883,16 @@ const scrollToTop = () => {
 
 ```css
 /* Section spacing */
-padding-top: 64px;    /* mobile */
-padding-top: 80px;    /* desktop */
+padding-top: 64px; /* mobile */
+padding-top: 80px; /* desktop */
 
 /* Card spacing */
-margin-bottom: 24px;  /* between cards */
-padding: 24px;        /* card internal */
+margin-bottom: 24px; /* between cards */
+padding: 24px; /* card internal */
 
 /* Element spacing */
-gap: 16px;            /* grid gaps */
-margin-bottom: 12px;  /* list items */
+gap: 16px; /* grid gaps */
+margin-bottom: 12px; /* list items */
 ```
 
 ### Shadows & Borders
@@ -878,7 +901,7 @@ margin-bottom: 12px;  /* list items */
 /* Card elevation */
 .card {
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-  border: 1px solid #E5E7EB;
+  border: 1px solid #e5e7eb;
   border-radius: 8px;
 }
 
@@ -888,13 +911,13 @@ margin-bottom: 12px;  /* list items */
 
 /* Stat card */
 .stat-card {
-  background: #F9FAFB;
+  background: #f9fafb;
   border-radius: 8px;
 }
 
 .stat-card.highlight {
-  background: #EFF6FF;
-  border: 2px solid #3B82F6;
+  background: #eff6ff;
+  border: 2px solid #3b82f6;
 }
 ```
 
@@ -946,7 +969,9 @@ margin-bottom: 12px;  /* list items */
 }
 
 .tab-button {
-  transition: color 0.2s ease, border-color 0.2s ease;
+  transition:
+    color 0.2s ease,
+    border-color 0.2s ease;
 }
 ```
 
@@ -957,6 +982,7 @@ margin-bottom: 12px;  /* list items */
 ### Keyboard Navigation
 
 **Tab Component:**
+
 ```jsx
 <div role="tablist" aria-label="Location information">
   <button
@@ -981,6 +1007,7 @@ margin-bottom: 12px;  /* list items */
 ```
 
 **Accordion Component:**
+
 ```jsx
 <button
   aria-expanded={isExpanded}
@@ -1003,6 +1030,7 @@ margin-bottom: 12px;  /* list items */
 ### Screen Reader Support
 
 **Descriptive Labels:**
+
 ```jsx
 <StatCard
   value="1,547"
@@ -1012,13 +1040,9 @@ margin-bottom: 12px;  /* list items */
 ```
 
 **Status Announcements:**
+
 ```jsx
-<div
-  role="status"
-  aria-live="polite"
-  aria-atomic="true"
-  className="sr-only"
->
+<div role="status" aria-live="polite" aria-atomic="true" className="sr-only">
   {`${tabLabel} tab activated`}
 </div>
 ```
@@ -1028,12 +1052,12 @@ margin-bottom: 12px;  /* list items */
 ```css
 /* Visible focus indicators */
 .tab-button:focus-visible {
-  outline: 2px solid #3B82F6;
+  outline: 2px solid #3b82f6;
   outline-offset: 2px;
 }
 
 .accordion-button:focus-visible {
-  outline: 2px solid #3B82F6;
+  outline: 2px solid #3b82f6;
   outline-offset: -2px;
 }
 
@@ -1049,11 +1073,13 @@ margin-bottom: 12px;  /* list items */
 ### Color Contrast
 
 **All text passes WCAG AA:**
+
 - Large text (18pt+): 3:1 minimum
 - Normal text: 4.5:1 minimum
 - UI components: 3:1 minimum
 
 **Test combinations:**
+
 ```
 ✓ #111827 on #FFFFFF (15.8:1)
 ✓ #4B5563 on #FFFFFF (9.7:1)
@@ -1071,12 +1097,12 @@ margin-bottom: 12px;  /* list items */
 // Lazy load tab content
 const WinterTab = dynamic(() => import('./tabs/WinterTab'), {
   loading: () => <TabSkeleton />,
-  ssr: false
+  ssr: false,
 })
 
 const SummerTab = dynamic(() => import('./tabs/SummerTab'), {
   loading: () => <TabSkeleton />,
-  ssr: false
+  ssr: false,
 })
 ```
 
@@ -1122,7 +1148,8 @@ const SummerTab = dynamic(() => import('./tabs/SummerTab'), {
 ### Stat Card Labels
 
 **Be specific and concise:**
-- ✅ "Acres of Terrain" 
+
+- ✅ "Acres of Terrain"
 - ❌ "Skiable Acres Available"
 - ✅ "Inches Annual Snow"
 - ❌ "Average Annual Snowfall"
@@ -1132,6 +1159,7 @@ const SummerTab = dynamic(() => import('./tabs/SummerTab'), {
 **Formula:** `[Key Stat] • [Key Stat] • [Key Benefit]`
 
 **Examples:**
+
 - "1,547 acres • 121 trails • 300+ inches annual snowfall"
 - "30+ km groomed trails • Backcountry access • Rentals available"
 - "300+ miles of trails • All skill levels • Wildflower meadows"
@@ -1139,6 +1167,7 @@ const SummerTab = dynamic(() => import('./tabs/SummerTab'), {
 ### Feature List Items
 
 **Be action-oriented and specific:**
+
 - ✅ "Trails ranging from gentle groomers to extreme terrain"
 - ❌ "Different trail types available"
 - ✅ "30+ km of groomed cross-country trails"
@@ -1147,12 +1176,14 @@ const SummerTab = dynamic(() => import('./tabs/SummerTab'), {
 ### Tab Labels
 
 **Keep short (1-2 words):**
+
 - Overview
 - Winter
 - Summer
 - Getting Here
 
 **Not:**
+
 - Overview of the Area
 - Winter Activities & Sports
 - Summer Fun and Recreation
@@ -1182,6 +1213,7 @@ const SummerTab = dynamic(() => import('./tabs/SummerTab'), {
 ### Responsive Tests
 
 **Mobile (375px):**
+
 - [ ] Tabs scroll horizontally
 - [ ] Cards stack vertically
 - [ ] Stats in 2x2 grid
@@ -1189,12 +1221,14 @@ const SummerTab = dynamic(() => import('./tabs/SummerTab'), {
 - [ ] No horizontal scroll
 
 **Tablet (768px):**
+
 - [ ] Tabs fit in viewport
 - [ ] Cards use full width
 - [ ] Stats in optimal grid
 - [ ] Good use of space
 
 **Desktop (1920px):**
+
 - [ ] Content max-width maintained
 - [ ] Tabs centered/aligned well
 - [ ] Stats in single row
@@ -1228,37 +1262,39 @@ const SummerTab = dynamic(() => import('./tabs/SummerTab'), {
 // Tab engagement
 analytics.track('location_tab_viewed', {
   tab_name: 'winter',
-  time_spent: 45000  // milliseconds
+  time_spent: 45000, // milliseconds
 })
 
 // Card expansion
 analytics.track('location_card_expanded', {
   card_title: 'Mountain Resort',
-  was_default_expanded: true
+  was_default_expanded: true,
 })
 
 // Stat card interaction
 analytics.track('stat_card_viewed', {
   stat_type: 'terrain_acres',
-  stat_value: '1547'
+  stat_value: '1547',
 })
 
 // CTA clicks from location section
 analytics.track('booking_cta_clicked', {
   source_section: 'location',
-  source_tab: 'winter'
+  source_tab: 'winter',
 })
 ```
 
 ### Success Metrics
 
 **Engagement:**
+
 - Average time in section
 - Tab switch rate
 - Card expansion rate
 - Scroll depth
 
 **Conversion:**
+
 - Booking clicks from location section
 - Tab-to-booking conversion rate
 - Exit rate from location section
@@ -1268,24 +1304,28 @@ analytics.track('booking_cta_clicked', {
 ## Migration Strategy
 
 ### Phase 1: Structure Only (Week 1)
+
 - Implement tab navigation
 - Create basic card components
 - No accordion/expansion yet
 - All content visible
 
 ### Phase 2: Progressive Disclosure (Week 2)
+
 - Add accordion functionality
 - Implement expand/collapse
 - Add animations
 - Test extensively
 
 ### Phase 3: Polish (Week 3)
+
 - Add stat cards
 - Implement hover effects
 - Optimize animations
 - Accessibility audit
 
 ### Phase 4: Analytics & Iterate (Week 4+)
+
 - Deploy to production
 - Monitor metrics
 - A/B test variations
@@ -1296,16 +1336,19 @@ analytics.track('booking_cta_clicked', {
 ## A/B Testing Opportunities
 
 ### Test 1: Tab Layout
+
 - **Variant A:** 4 tabs (Overview, Winter, Summer, Directions)
 - **Variant B:** 3 tabs (Overview, Activities, Directions) with season toggle
 - **Metric:** Tab engagement rate
 
 ### Test 2: Default Expansion
+
 - **Variant A:** First card expanded by default
 - **Variant B:** All cards collapsed by default
 - **Metric:** Card expansion rate and time in section
 
 ### Test 3: Stat Card Style
+
 - **Variant A:** Icon + number + label (current design)
 - **Variant B:** Number only with hover tooltip
 - **Metric:** User comprehension (survey or task completion)
@@ -1397,9 +1440,9 @@ This feature is complete when:
 
 ```json
 {
-  "react-swipeable-views": "^0.14.0",  // For swipeable tabs
-  "react-intersection-observer": "^9.0.0",  // For lazy loading
-  "react-spring": "^9.0.0"  // Alternative animation library
+  "react-swipeable-views": "^0.14.0", // For swipeable tabs
+  "react-intersection-observer": "^9.0.0", // For lazy loading
+  "react-spring": "^9.0.0" // Alternative animation library
 }
 ```
 
@@ -1410,6 +1453,7 @@ This feature is complete when:
 ### Example Full Implementation
 
 **location.tsx (complete):**
+
 ```typescript
 'use client'
 
@@ -1438,16 +1482,16 @@ interface LocationProps {
 
 export default function Location({ data }: LocationProps) {
   const [activeTab, setActiveTab] = useState('overview')
-  
+
   // Track tab views
   useEffect(() => {
     analytics.track('location_tab_viewed', { tab_name: activeTab })
   }, [activeTab])
-  
+
   return (
     <section id="location" className="py-16 md:py-20 bg-gray-50">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        
+
         {/* Header */}
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
@@ -1457,14 +1501,14 @@ export default function Location({ data }: LocationProps) {
             {data.frontmatter.subtitle}
           </p>
         </div>
-        
+
         {/* Tab Navigation */}
         <TabNav
           tabs={data.frontmatter.tabs}
           activeTab={activeTab}
           onTabChange={setActiveTab}
         />
-        
+
         {/* Tab Content with Animation */}
         <AnimatePresence mode="wait">
           <motion.div
@@ -1481,7 +1525,7 @@ export default function Location({ data }: LocationProps) {
             {activeTab === 'directions' && <DirectionsTab />}
           </motion.div>
         </AnimatePresence>
-        
+
       </div>
     </section>
   )
@@ -1504,7 +1548,7 @@ function WinterTab({ data }) {
         </div>
         <FeatureList items={data.winterResort.features} />
       </ExpandableCard>
-      
+
       {/* Nordic Skiing */}
       <ExpandableCard
         title="Nordic Skiing"
@@ -1518,14 +1562,14 @@ function WinterTab({ data }) {
         </div>
         <FeatureList items={data.nordicSkiing.features} />
       </ExpandableCard>
-      
+
       {/* Other Activities */}
       <ExpandableCard
         title="Other Winter Activities"
         icon="🥾"
         preview="Snowshoeing, ice skating, sleigh rides, and more"
       >
-        <FeatureList 
+        <FeatureList
           items={data.otherWinterActivities}
           columns={2}
         />

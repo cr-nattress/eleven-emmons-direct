@@ -27,6 +27,7 @@
 ## Problem Statement
 
 The project currently has **0% test coverage** with no testing infrastructure. This creates significant risk:
+
 - Refactoring can introduce bugs without detection
 - Component behavior isn't validated
 - MDX content processing errors go unnoticed
@@ -40,6 +41,7 @@ Without tests, every code change is potentially breaking.
 Install and configure a complete testing stack:
 
 **Testing Libraries:**
+
 ```bash
 npm install --save-dev \
   @testing-library/react \
@@ -51,11 +53,13 @@ npm install --save-dev \
 ```
 
 **Configuration Files:**
+
 - `jest.config.js` - Jest configuration with coverage thresholds
 - `jest.setup.js` - Test setup file
 - `.github/workflows/test.yml` - CI test automation
 
 **Test Coverage:**
+
 - `components/__tests__/` - Component tests
 - `lib/__tests__/` - Utility function tests
 - `app/__tests__/` - Page tests
@@ -192,22 +196,26 @@ describe('Header Component', () => {
 ## Test Coverage Strategy
 
 ### Priority 1: Critical Components (Week 1)
+
 - **Header.test.tsx** - Navigation, mobile menu, ARIA
 - **Gallery.test.tsx** - Image display, lightbox, keyboard nav
 - **BookingWidget.test.tsx** - Widget rendering, fallback
 - **About.test.tsx** - Stats display, features grid
 
 ### Priority 2: Utility Functions (Week 1)
+
 - **lib/markdown.test.ts** - MDX parsing, error handling
 - **lib/animations/hooks.test.ts** - Animation hooks
 - **lib/analytics.test.tsx** - Event tracking (mocked)
 
 ### Priority 3: Integration Tests (Week 2)
+
 - **app/page.test.tsx** - Full page rendering
 - **MDX content loading** - Test markdown file parsing
 - **Error scenarios** - Test fallback behavior
 
 ### Priority 4: E2E Tests (Week 2)
+
 - **Navigation flow** - Click through all sections
 - **Booking flow** - Test booking widget interaction
 - **Mobile experience** - Test responsive behavior

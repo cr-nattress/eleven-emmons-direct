@@ -41,6 +41,7 @@ Epic (Large feature/initiative)
 ### Epic File (`epic.md`)
 
 Contains:
+
 - Epic overview and business value
 - Current state and target state
 - List of user stories
@@ -51,6 +52,7 @@ Contains:
 ### User Story File (`story.md`)
 
 Contains:
+
 - User story in "As a... I want... So that..." format
 - Acceptance criteria
 - Story points estimate
@@ -61,6 +63,7 @@ Contains:
 ### Task File (`TASK-XXX.md`)
 
 Contains:
+
 - Detailed task description
 - Agent prompt (copy-paste ready for AI coding assistants)
 - Commands to execute
@@ -82,6 +85,7 @@ Contains:
 ### For AI Coding Assistants
 
 When given a task file:
+
 1. Read the entire task file
 2. Execute the "Agent Prompt" section
 3. Follow verification steps
@@ -96,16 +100,19 @@ When given a task file:
 ## Status Values
 
 ### Epic Status
+
 - **To Do**: Not started
 - **In Progress**: At least one user story in progress
 - **Done**: All user stories complete
 
 ### User Story Status
+
 - **To Do**: Not started
 - **In Progress**: At least one task started
 - **Done**: All acceptance criteria met
 
 ### Task Status
+
 - **To Do**: Not started
 - **In Progress**: Currently being worked on
 - **Done**: Verification steps passed
@@ -120,6 +127,7 @@ When given a task file:
 ## Story Points
 
 Rough effort estimates:
+
 - **1 point**: 1-2 hours
 - **2 points**: 2-4 hours
 - **3 points**: 4-8 hours
@@ -248,6 +256,7 @@ Rough effort estimates:
 ### GitHub Issues
 
 Tasks can be converted to GitHub issues:
+
 ```bash
 gh issue create --title "TASK-001: Install Core Packages" \
   --body-file backlog/epics/EPIC-001-migrate-to-mdx/user-stories/US-001-install-dependencies/tasks/TASK-001-install-core-packages.md \
@@ -264,6 +273,7 @@ gh issue create --title "TASK-001: Install Core Packages" \
 ### Todo Lists
 
 Use the TodoWrite tool to track active work:
+
 ```
 1. [in_progress] TASK-001: Install Core Packages
 2. [pending] TASK-002: Install Remark Plugins
@@ -280,6 +290,7 @@ Use the TodoWrite tool to track active work:
 ## Questions?
 
 For questions about this backlog system, see:
+
 - [Epic-001 Example](./epics/EPIC-001-migrate-to-mdx/epic.md)
 - Project documentation
 - Team lead

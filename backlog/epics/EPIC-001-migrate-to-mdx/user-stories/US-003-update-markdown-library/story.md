@@ -27,6 +27,7 @@ So that **content files are processed with MDX and all configured plugins**.
 ## Technical Notes
 
 Key changes:
+
 - Replace `marked` with `serialize` from next-mdx-remote
 - Configure plugin pipeline (remark → rehype)
 - Update return type from `contentHtml: string` to `mdxSource: MDXRemoteSerializeResult`

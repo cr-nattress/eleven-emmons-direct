@@ -1,15 +1,19 @@
 # TASK-004: Enhance Scroll Arrow Animation
 
 ## Task Description
+
 Enhance the existing scroll arrow animation by adding a fade-in entrance and improving the visual draw to encourage scrolling.
 
 ## Priority
+
 HIGH
 
 ## Estimated Effort
+
 30 minutes
 
 ## Acceptance Criteria
+
 - [ ] Scroll indicator fades in after buttons (600ms delay)
 - [ ] Maintains existing bounce animation
 - [ ] Arrow provides clear visual cue to scroll
@@ -20,17 +24,20 @@ HIGH
 ## Technical Details
 
 ### Current State
+
 - Scroll indicator at bottom of hero
 - Has `animate-bounce` Tailwind class
 - Contains "Scroll to explore" text and arrow SVG
 - Links to #about section
 
 ### Enhancement
+
 - Add fade-in entrance animation (delay: 600ms)
 - Keep existing bounce animation
 - Optionally enhance bounce with Framer Motion for more control
 
 ### Animation Timing
+
 - Delay: 600ms (after buttons complete)
 - Duration: 500ms
 - Effect: opacity 0 → 1
@@ -40,6 +47,7 @@ HIGH
 You are tasked with enhancing the scroll arrow animation in the hero section.
 
 **Context:**
+
 - Hero animations are nearly complete (TASK-001, TASK-002, TASK-003)
 - Scroll arrow currently has Tailwind `animate-bounce` class
 - Need to add entrance animation to complete the hero sequence
@@ -47,6 +55,7 @@ You are tasked with enhancing the scroll arrow animation in the hero section.
 
 **Current Structure:**
 In `/components/Hero.tsx`:
+
 - Lines 52-70: Scroll indicator div
 - Contains Link with "Scroll to explore" text and arrow SVG
 - Currently has `animate-bounce` class on SVG
@@ -64,6 +73,7 @@ In `/components/Hero.tsx`:
 2. **Update `/components/Hero.tsx`:**
 
 3. **Add 'use client' directive if not present:**
+
    ```typescript
    'use client'
 
@@ -75,6 +85,7 @@ In `/components/Hero.tsx`:
 
 4. **Find the scroll indicator div (around line 52):**
    Current code:
+
    ```typescript
    <div className="absolute bottom-8 left-1/2 -translate-x-1/2">
      <Link
@@ -98,6 +109,7 @@ In `/components/Hero.tsx`:
    ```
 
 5. **Convert to motion.div with fade-in:**
+
    ```typescript
    <motion.div
      initial={{ opacity: 0 }}
@@ -134,6 +146,7 @@ In `/components/Hero.tsx`:
 **Alternative: Enhanced Bounce with Framer Motion:**
 
 If you want to replace Tailwind bounce with Framer Motion (optional):
+
 ```typescript
 <motion.svg
   animate={{
@@ -159,6 +172,7 @@ If you want to replace Tailwind bounce with Framer Motion (optional):
 But the Tailwind animate-bounce is fine - stick with simpler approach.
 
 **Key Points:**
+
 - Change wrapping `<div>` to `<motion.div>`
 - Add `initial={{ opacity: 0 }}`
 - Add `animate={{ opacity: 1 }}`
@@ -168,6 +182,7 @@ But the Tailwind animate-bounce is fine - stick with simpler approach.
 - Keep SVG bounce animation
 
 **Complete Hero Animation Sequence:**
+
 - 0ms: Title fades in
 - 200ms: Subtitle fades in
 - 300ms: Description fades in
@@ -177,18 +192,21 @@ But the Tailwind animate-bounce is fine - stick with simpler approach.
 - **Total**: 1.1 seconds from page load to full hero reveal
 
 **Visual Effect:**
+
 - Scroll indicator appears last in the sequence
 - Draws attention downward after user sees the content
 - Bounce animation provides continuous visual cue
 - Creates natural flow: read content → see scroll arrow → scroll down
 
 **Accessibility:**
+
 - Reduced motion users see instant scroll indicator
 - Link remains keyboard accessible
 - Arrow provides clear affordance to scroll
 - Text label supports screen readers
 
 **Testing:**
+
 1. Refresh browser at http://localhost:3000
 2. Watch complete hero entrance sequence
 3. Verify scroll indicator fades in last (after ~600ms)
@@ -198,12 +216,14 @@ But the Tailwind animate-bounce is fine - stick with simpler approach.
 7. Check console for errors
 
 **Expected Result:**
+
 - Scroll indicator fades in smoothly at end of sequence
 - Bounce animation works correctly
 - Link navigates to about section
 - Professional, complete hero animation
 
 **Success Criteria:**
+
 - Scroll indicator animates on entrance
 - Appears last in the sequence (600ms delay)
 - Bounce animation maintained
@@ -212,20 +232,24 @@ But the Tailwind animate-bounce is fine - stick with simpler approach.
 - No console errors
 
 **Common Issues to Avoid:**
+
 - Don't remove the animate-bounce class
 - Keep Link component functional
 - Maintain positioning classNames (absolute, bottom-8, etc.)
 - Don't make delay too long (600ms is right after buttons)
 
 ## Dependencies
+
 - TASK-001: Refactor Hero Component (must be completed)
 - Recommended: TASK-002 and TASK-003 completed for full sequence
 
 ## Related Tasks
+
 - Completes US-002: Hero Section Animations
 - US-003: Gallery Animations (next user story)
 
 ## References
+
 - [Framer Motion Animations](https://www.framer.com/motion/animation/)
 - [Combining Framer Motion with CSS](https://www.framer.com/motion/guide-upgrade/)
 - [Current Hero Component](../../../../components/Hero.tsx)

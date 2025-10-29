@@ -27,6 +27,7 @@
 ## Problem Statement
 
 Currently, code is deployed without automated checks:
+
 - Type errors can reach production
 - Linting violations go unnoticed
 - No test validation before merge
@@ -145,15 +146,15 @@ jobs:
 # .github/dependabot.yml (NEW FILE)
 version: 2
 updates:
-  - package-ecosystem: "npm"
-    directory: "/"
+  - package-ecosystem: 'npm'
+    directory: '/'
     schedule:
-      interval: "weekly"
+      interval: 'weekly'
     open-pull-requests-limit: 10
     reviewers:
-      - "cr-nattress"
+      - 'cr-nattress'
     labels:
-      - "dependencies"
+      - 'dependencies'
 ```
 
 ### 3. Update package.json Scripts
@@ -180,32 +181,38 @@ updates:
 ## Technical Implementation
 
 ### Files to Create
+
 1. **`.github/workflows/ci.yml`** - Continuous integration workflow
 2. **`.github/dependabot.yml`** - Automated dependency updates
 
 ### Files to Update
+
 1. **`package.json`** - Add validation scripts
 2. **GitHub repository settings** - Configure branch protection
 
 ### Workflow Jobs
 
 **Quality Job:**
+
 - TypeScript type checking
 - ESLint validation
 - Prettier formatting check
 - ~2 minutes runtime
 
 **Test Job:**
+
 - Run Jest tests
 - Upload coverage to Codecov
 - ~3 minutes runtime
 
 **Build Job:**
+
 - Verify production build succeeds
 - Check for build errors
 - ~4 minutes runtime
 
 **Security Job:**
+
 - npm audit for vulnerabilities
 - Optional: Snyk integration
 - ~1 minute runtime
@@ -224,6 +231,7 @@ updates:
 ## Branch Protection Rules
 
 Configure in GitHub repository settings:
+
 - ✅ Require status checks to pass before merging
 - ✅ Require branches to be up to date before merging
 - ✅ Require CI workflow to pass

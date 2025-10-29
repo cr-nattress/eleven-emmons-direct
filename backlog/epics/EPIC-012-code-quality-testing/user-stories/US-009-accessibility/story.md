@@ -28,6 +28,7 @@
 ## Problem Statement
 
 While the site has some accessibility features, gaps exist:
+
 - Mobile menu state not announced to screen readers
 - Gallery lightbox not keyboard accessible
 - No skip links for keyboard navigation
@@ -35,6 +36,7 @@ While the site has some accessibility features, gaps exist:
 - Inconsistent focus indicators
 
 **Impact:**
+
 - ~15% of population excluded
 - Legal compliance risk (ADA)
 - SEO ranking affected
@@ -204,6 +206,7 @@ export default function Gallery() {
 ### Testing Tools
 
 **Automated Testing:**
+
 ```bash
 # Install Axe CLI
 npm install --save-dev @axe-core/cli
@@ -250,6 +253,7 @@ npm run a11y
 ## Testing Checklist
 
 ### Keyboard Navigation
+
 - [ ] Tab through entire page
 - [ ] Skip link visible on Tab
 - [ ] Gallery images focusable
@@ -259,6 +263,7 @@ npm run a11y
 - [ ] All buttons reachable
 
 ### Screen Reader
+
 - [ ] Header navigation announced
 - [ ] Image alt text read correctly
 - [ ] Button purposes clear
@@ -266,6 +271,7 @@ npm run a11y
 - [ ] Landmarks properly labeled
 
 ### Automated Tests
+
 - [ ] Axe: 0 critical, 0 serious issues
 - [ ] Lighthouse: 95+ accessibility score
 - [ ] WAVE: 0 errors
@@ -291,20 +297,24 @@ npm run a11y
 ## WCAG 2.1 AA Requirements
 
 **Perceivable:**
+
 - ✅ Text alternatives (alt text)
 - ✅ Color contrast 4.5:1 minimum
 
 **Operable:**
+
 - ✅ Keyboard accessible
 - ✅ No keyboard traps
 - ✅ Focus visible
 
 **Understandable:**
+
 - ✅ Consistent navigation
 - ✅ ARIA labels
 - ✅ Error messages clear
 
 **Robust:**
+
 - ✅ Valid HTML
 - ✅ ARIA used correctly
 

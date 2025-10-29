@@ -53,6 +53,7 @@ Multiple guests mention the property is **spotless, well-maintained, and recentl
 ### Perfect for Work & Leisure
 
 The bedroom includes a **dedicated workspace** complete with:
+
 - Large 35" ultra-wide monitor
 - Uplift standing desk
 - Professional microphone
@@ -63,12 +64,14 @@ Perfect for remote work or digital nomads who want to work from the mountains!
 ### Luxury Amenities & Thoughtful Details
 
 **New for 2024:**
+
 - Dual Dyson fans for comfort
 - Upgraded 1 GB fiber internet
 - Premium All-Clad cookware and Oxo utensils
 - Induction cooktop with professional-grade equipment
 
 **Coffee Lovers Paradise:**
+
 - Chemex pour-over
 - French press
 - Ninja Duo Pro (K-Cup compatible)
@@ -76,12 +79,14 @@ Perfect for remote work or digital nomads who want to work from the mountains!
 - Complimentary coffee and tea
 
 **Entertainment:**
+
 - 65" LG 4K OLED TV with streaming services
 - Sonos Bluetooth sound system
 - Books and reading materials
 - Board games
 
 **Comfort Features:**
+
 - High-quality bed linens and plush towels
 - Single-use toiletries (shampoo, conditioner, body wash, sunscreen, toothpaste, mouthwash)
 - Room-darkening shades for restful sleep
@@ -100,6 +105,7 @@ Perfect for remote work or digital nomads who want to work from the mountains!
 **Chris** is described as **proactive, responsive, and detail-oriented**, ensuring guests have all the information they need and quickly addressing any questions. He's a Superhost with 2 years of hosting experience.
 
 **About Chris:**
+
 - Software Engineer living in Avon, CO
 - Summited all 58 Colorado 14ers in 3 years
 - Obsessed with skiing and hiking
@@ -109,11 +115,13 @@ Perfect for remote work or digital nomads who want to work from the mountains!
 ### Perfect for All Seasons
 
 **Winter Activities:**
+
 - Direct ski-in/ski-out access to Crested Butte Mountain Resort
 - Snowshoeing and cross-country skiing nearby
 - Easy access to 300+ inches of annual snowfall
 
 **Summer Activities:**
+
 - World-class mountain biking (birthplace of mountain biking!)
 - Hiking to alpine lakes and 14ers
 - Wildflower viewing (Wildflower Capital of Colorado)

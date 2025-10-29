@@ -2,7 +2,11 @@
 
 import { motion } from 'framer-motion'
 import { useScrollAnimation } from '@/lib/animations/hooks'
-import { fadeInVariants, slideUpVariants, slideDownVariants } from '@/lib/animations/variants'
+import {
+  fadeInVariants,
+  slideUpVariants,
+  slideDownVariants,
+} from '@/lib/animations/variants'
 import { ReactNode } from 'react'
 import type { Variants } from 'framer-motion'
 

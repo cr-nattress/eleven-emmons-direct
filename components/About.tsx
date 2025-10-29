@@ -72,7 +72,10 @@ export default async function About() {
         <ul className="grid sm:grid-cols-2 gap-4 my-12 list-none">
           {features.map((feature, index) => (
             <li key={index} className="flex items-start gap-3">
-              <span className="text-green-600 text-xl flex-shrink-0" aria-hidden="true">
+              <span
+                className="text-green-600 text-xl flex-shrink-0"
+                aria-hidden="true"
+              >
                 ✓
               </span>
               <span className="text-gray-700 text-base md:text-lg">

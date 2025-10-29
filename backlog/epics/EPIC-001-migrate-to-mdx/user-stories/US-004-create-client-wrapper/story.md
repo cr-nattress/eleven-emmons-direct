@@ -26,6 +26,7 @@ So that **server components can render MDX content without client-side code**.
 ## Technical Notes
 
 In Next.js App Router, MDXRemote requires client-side rendering. This wrapper:
+
 - Isolates client-side code
 - Keeps parent components as server components
 - Applies component mapping via useMDXComponents hook

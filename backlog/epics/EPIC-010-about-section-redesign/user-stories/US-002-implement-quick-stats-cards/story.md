@@ -27,6 +27,7 @@
 ## Technical Notes
 
 ### Stats to Display
+
 1. **Guests:** 4 (max occupancy)
 2. **Bedrooms:** 1
 3. **Bathrooms:** 1
@@ -34,6 +35,7 @@
 5. **Rating:** 4.98 ⭐
 
 ### Component Structure
+
 ```typescript
 // Inside About.tsx
 const stats = [
@@ -62,6 +64,7 @@ const stats = [
 ```
 
 ### Design Specifications
+
 - **Grid Layout:** `grid grid-cols-2 md:grid-cols-4 gap-4`
 - **Card Background:** `bg-gray-50` (#F9FAFB)
 - **Card Hover:** `hover:bg-gray-100` (#F3F4F6)
@@ -74,6 +77,7 @@ const stats = [
 - **Label Color:** `text-gray-600` (#6B7280)
 
 ### Responsive Breakpoints
+
 - **Mobile (<640px):** 2 columns, 2x3 grid (if 5 stats)
 - **Tablet (640-768px):** 2 columns
 - **Desktop (768px+):** 4 columns (or 5 if using 5 stats)

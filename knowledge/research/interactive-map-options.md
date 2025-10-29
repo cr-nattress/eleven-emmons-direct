@@ -35,6 +35,7 @@
 **Cost**: 100% FREE (no limits, no API keys needed)
 
 #### Pros
+
 - ✅ **Truly free**: No usage limits, no API keys, no credit card
 - ✅ **Lightweight**: Only 42KB, fast load times
 - ✅ **Full control**: Customize everything
@@ -46,11 +47,13 @@
 - ✅ **No vendor lock-in**: Can switch map tiles anytime
 
 #### Cons
+
 - ❌ No 3D views (but you don't need this)
 - ❌ Fewer built-in features than Google Maps
 - ❌ Requires more custom code for advanced features
 
 #### Technical Details
+
 - **Library**: `react-leaflet` (267k weekly downloads)
 - **Map Data**: OpenStreetMap (free, community-maintained)
 - **Rendering**: HTML-based (DOM elements)
@@ -58,12 +61,14 @@
 - **TypeScript**: Fully supported with `@types/leaflet`
 
 #### Installation
+
 ```bash
 npm install react-leaflet leaflet
 npm install -D @types/leaflet  # TypeScript types
 ```
 
 #### Basic Implementation (Next.js 14)
+
 ```tsx
 'use client'
 
@@ -94,23 +99,25 @@ export default function PropertyMap() {
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
       />
-      
+
       {/* Property marker */}
       <Marker position={propertyLocation}>
         <Popup>
           <strong>11 Emmons Road</strong>
-          <br />Your Ski-In/Ski-Out Rental
+          <br />
+          Your Ski-In/Ski-Out Rental
         </Popup>
       </Marker>
-      
+
       {/* Ski lift marker */}
       <Marker position={skiLiftLocation}>
         <Popup>
           <strong>Red Lady Express Lift</strong>
-          <br />50 feet away
+          <br />
+          50 feet away
         </Popup>
       </Marker>
-      
+
       {/* Circle showing 50-foot radius */}
       <Circle
         center={propertyLocation}
@@ -123,12 +130,14 @@ export default function PropertyMap() {
 ```
 
 #### Map Tile Providers (All Free)
+
 1. **OpenStreetMap Standard**: `https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png`
 2. **OpenTopoMap** (shows terrain): `https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png`
 3. **Stamen Terrain**: Better for outdoor/ski areas
 4. **CartoDB Positron**: Clean, minimal style
 
 #### Best for Your Use Case
+
 - Show property location with custom marker
 - Show ski lift location
 - Draw line/arrow between property and lift
@@ -143,6 +152,7 @@ export default function PropertyMap() {
 **Cost**: $200/month free (expanding to $3,250/month in March 2025)
 
 #### Pros
+
 - ✅ **Generous free tier**: $3,250/month = ~28,500 map loads
 - ✅ **Familiar**: Users know Google Maps interface
 - ✅ **Rich data**: Street View, traffic, directions
@@ -150,6 +160,7 @@ export default function PropertyMap() {
 - ✅ **Unlimited embed maps**: Static embeds are free forever
 
 #### Cons
+
 - ❌ Requires API key and credit card
 - ❌ Can get expensive if you exceed limits
 - ❌ Google tracks usage
@@ -157,14 +168,16 @@ export default function PropertyMap() {
 - ❌ Larger bundle size
 
 #### Pricing Breakdown (2025)
+
 - **Free tier**: Up to $3,250/month worth of usage
 - **Maps Embed API**: UNLIMITED FREE (no API key needed for iframe embed)
-- **Maps JavaScript API**: 
+- **Maps JavaScript API**:
   - Essentials: 10,000 free loads/month
   - After that: $7 per 1,000 loads
 - **Street View**: 28,000 free loads/month
 
 #### Simple Free Option: Embed Map (No Code)
+
 ```html
 <!-- Completely free, no API key needed -->
 <iframe
@@ -173,15 +186,18 @@ export default function PropertyMap() {
   frameborder="0"
   style="border:0"
   src="https://www.google.com/maps/embed/v1/place?q=11+Emmons+Road,+Mt+Crested+Butte,+CO&key=YOUR_API_KEY"
-  allowfullscreen>
+  allowfullscreen
+>
 </iframe>
 ```
 
 #### Library Options
+
 1. **@react-google-maps/api** (official)
 2. **google-map-react** (230k downloads/week)
 
 #### Best for Your Use Case
+
 - If you want familiar Google Maps interface
 - If you need Street View feature
 - If you're okay with API key setup
@@ -194,6 +210,7 @@ export default function PropertyMap() {
 **Cost**: 50,000 map loads/month free
 
 #### Pros
+
 - ✅ **Beautiful maps**: Best-looking default styles
 - ✅ **Generous free tier**: 50k loads = plenty for small sites
 - ✅ **Great performance**: WebGL-powered
@@ -201,20 +218,24 @@ export default function PropertyMap() {
 - ✅ **3D terrain**: Show mountain topography
 
 #### Cons
+
 - ❌ Requires API key and account
 - ❌ After free tier: $5 per 100k loads
 - ❌ More complex setup than Leaflet
 - ❌ Larger bundle size (212KB)
 
 #### Pricing
+
 - **Free tier**: 50,000 map loads/month
 - **Next tier**: $5 for 100,000 loads
 - **Geocoding**: 100,000 free requests/month
 
 #### Library
+
 - **react-map-gl** (Uber-maintained, official)
 
 #### Best for Your Use Case
+
 - If you want the most beautiful maps
 - If you need custom map styling
 - If 3D terrain visualization is important
@@ -224,21 +245,21 @@ export default function PropertyMap() {
 
 ## Feature Comparison Matrix
 
-| Feature | Leaflet + OSM | Google Maps | Mapbox |
-|---------|--------------|-------------|---------|
-| **Cost** | 100% Free | $200-3,250/mo free | 50k loads/mo free |
-| **API Key Required** | ❌ No | ✅ Yes | ✅ Yes |
-| **Bundle Size** | 42KB | ~200KB | 212KB |
-| **Setup Complexity** | Easy | Medium | Medium |
-| **Customization** | Full control | Limited | Full control |
-| **Mobile Performance** | Excellent | Good | Excellent |
-| **Custom Markers** | ✅ Easy | ✅ Easy | ✅ Easy |
-| **Measure Distance** | ✅ Easy | ✅ Built-in | ✅ Built-in |
-| **Street View** | ❌ No | ✅ Yes | ❌ No |
-| **3D Terrain** | ❌ No | ❌ No | ✅ Yes |
-| **Usage Limits** | None | 28.5k loads/mo | 50k loads/mo |
-| **Next.js 14 Support** | ✅ Great | ✅ Good | ✅ Good |
-| **TypeScript Support** | ✅ Full | ✅ Full | ✅ Full |
+| Feature                | Leaflet + OSM | Google Maps        | Mapbox            |
+| ---------------------- | ------------- | ------------------ | ----------------- |
+| **Cost**               | 100% Free     | $200-3,250/mo free | 50k loads/mo free |
+| **API Key Required**   | ❌ No         | ✅ Yes             | ✅ Yes            |
+| **Bundle Size**        | 42KB          | ~200KB             | 212KB             |
+| **Setup Complexity**   | Easy          | Medium             | Medium            |
+| **Customization**      | Full control  | Limited            | Full control      |
+| **Mobile Performance** | Excellent     | Good               | Excellent         |
+| **Custom Markers**     | ✅ Easy       | ✅ Easy            | ✅ Easy           |
+| **Measure Distance**   | ✅ Easy       | ✅ Built-in        | ✅ Built-in       |
+| **Street View**        | ❌ No         | ✅ Yes             | ❌ No             |
+| **3D Terrain**         | ❌ No         | ❌ No              | ✅ Yes            |
+| **Usage Limits**       | None          | 28.5k loads/mo     | 50k loads/mo      |
+| **Next.js 14 Support** | ✅ Great      | ✅ Good            | ✅ Good           |
+| **TypeScript Support** | ✅ Full       | ✅ Full            | ✅ Full           |
 
 ---
 
@@ -247,6 +268,7 @@ export default function PropertyMap() {
 ### 🏆 Use React-Leaflet + OpenStreetMap
 
 **Why:**
+
 1. **Zero cost, zero hassle**: No API keys, no limits, no surprise bills
 2. **Perfect for your needs**: Simple location map with custom markers
 3. **Lightweight**: Fast loading = better SEO and user experience
@@ -257,12 +279,14 @@ export default function PropertyMap() {
 ### What You Can Build
 
 **Basic Map (Week 1)**
+
 - Property marker with "11 Emmons Road" label
 - Ski lift marker with "Red Lady Express" label
 - Circle showing 50-foot radius
 - Popup with booking CTA
 
 **Enhanced Map (Week 2+)**
+
 - Line connecting property to lift with distance label
 - Custom icons (house for property, ski lift icon)
 - Multiple points of interest (parking, ski school, restaurants)
@@ -270,6 +294,7 @@ export default function PropertyMap() {
 - Photo thumbnails in popups
 
 **Advanced Features (Optional)**
+
 - Interactive: Click markers for details
 - Animated: Line drawing animation on page load
 - Measurement tool: Let users measure distances
@@ -280,6 +305,7 @@ export default function PropertyMap() {
 ## Implementation Plan
 
 ### Phase 1: Basic Map (1-2 hours)
+
 1. Install react-leaflet and leaflet
 2. Create `<PropertyMap>` component
 3. Add basic map with property marker
@@ -287,12 +313,14 @@ export default function PropertyMap() {
 5. Deploy
 
 ### Phase 2: Enhanced Markers (1 hour)
+
 1. Add ski lift marker
 2. Add distance circle/line
 3. Create custom popups
 4. Add property photos
 
 ### Phase 3: Polish (1 hour)
+
 1. Custom icons (house, ski lift)
 2. Responsive sizing
 3. Loading states
@@ -325,7 +353,8 @@ export default function PropertyMap() {
       <div className="max-w-7xl mx-auto px-4">
         <h2 className="text-3xl font-bold mb-4">Location</h2>
         <p className="text-gray-600 mb-8">
-          Just 50 feet from the Red Lady Express lift - true ski-in/ski-out convenience
+          Just 50 feet from the Red Lady Express lift - true ski-in/ski-out
+          convenience
         </p>
         <Suspense fallback={<div>Loading map...</div>}>
           <DynamicMap />
@@ -336,9 +365,16 @@ export default function PropertyMap() {
 }
 
 // app/components/LeafletMap.tsx
-'use client'
+;('use client')
 
-import { MapContainer, TileLayer, Marker, Popup, Polyline, Circle } from 'react-leaflet'
+import {
+  MapContainer,
+  TileLayer,
+  Marker,
+  Popup,
+  Polyline,
+  Circle,
+} from 'react-leaflet'
 import 'leaflet/dist/leaflet.css'
 import L from 'leaflet'
 
@@ -365,7 +401,7 @@ export default function LeafletMap() {
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
       />
-      
+
       {/* Property marker */}
       <Marker position={property}>
         <Popup className="custom-popup">
@@ -374,8 +410,8 @@ export default function LeafletMap() {
             <p className="text-sm text-gray-600 mt-1">
               Your Ski-In/Ski-Out Luxury Rental
             </p>
-            <a 
-              href="#booking" 
+            <a
+              href="#booking"
               className="inline-block mt-2 px-4 py-2 bg-blue-600 text-white rounded text-sm"
             >
               Book Now
@@ -383,7 +419,7 @@ export default function LeafletMap() {
           </div>
         </Popup>
       </Marker>
-      
+
       {/* Ski lift marker */}
       <Marker position={skiLift}>
         <Popup>
@@ -393,22 +429,22 @@ export default function LeafletMap() {
           </div>
         </Popup>
       </Marker>
-      
+
       {/* Line connecting them */}
       <Polyline
         positions={[property, skiLift]}
         pathOptions={{ color: 'blue', weight: 3, dashArray: '10, 10' }}
       />
-      
+
       {/* Circle showing proximity */}
       <Circle
         center={property}
         radius={15}
-        pathOptions={{ 
-          color: 'green', 
-          fillColor: 'green', 
+        pathOptions={{
+          color: 'green',
+          fillColor: 'green',
           fillOpacity: 0.1,
-          weight: 2 
+          weight: 2,
         }}
       />
     </MapContainer>
@@ -421,16 +457,19 @@ export default function LeafletMap() {
 ## Additional Resources
 
 ### Leaflet Documentation
+
 - Official: https://leafletjs.com/
 - React-Leaflet: https://react-leaflet.js.org/
 - TypeScript types: https://www.npmjs.com/package/@types/leaflet
 
 ### Free Map Tile Providers
+
 - OpenStreetMap: https://www.openstreetmap.org/
 - Stamen Maps: http://maps.stamen.com/
 - CartoDB: https://carto.com/basemaps/
 
 ### Tutorials
+
 - React-Leaflet + Next.js 14: https://react-leaflet.js.org/docs/start-installation
 - Custom markers: https://react-leaflet.js.org/docs/example-custom-icons
 - Measuring distance: https://leafletjs.com/examples/extending/extending-3-controls.html

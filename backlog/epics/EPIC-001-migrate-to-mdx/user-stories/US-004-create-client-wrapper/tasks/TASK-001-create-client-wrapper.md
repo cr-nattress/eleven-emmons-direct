@@ -11,7 +11,7 @@ Create a client-side wrapper component for MDXRemote that can be used by server 
 
 ## Agent Prompt
 
-```
+````
 Create a new file at /components/mdx-remote-client.tsx with the following content:
 
 ```typescript
@@ -28,9 +28,10 @@ export default function MDXClient({
   const components = useMDXComponents({})
   return <MDXRemote {...mdxSource} components={components} />
 }
-```
+````
 
 This component:
+
 - Is marked as 'use client' for client-side rendering
 - Imports MDXRemote and its types
 - Uses the useMDXComponents hook to get component mappings
@@ -38,6 +39,7 @@ This component:
 - Spreads the mdxSource to MDXRemote with component mapping
 
 Usage in server components:
+
 ```typescript
 import MDXClient from '@/components/mdx-remote-client'
 import { getMarkdownContent } from '@/lib/markdown'
@@ -49,10 +51,12 @@ export default async function MyComponent() {
 ```
 
 After creation:
+
 1. Verify the file exists
 2. Check TypeScript compilation
 3. Ensure imports resolve
 4. Confirm 'use client' directive is at the top
+
 ```
 
 ## File to Create
@@ -79,3 +83,4 @@ After creation:
 - This is the bridge between server and client rendering
 - Keeps server components server-rendered
 - Only MDX rendering happens client-side
+```

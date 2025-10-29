@@ -11,18 +11,19 @@ Update the About component to use the new MDX rendering system instead of danger
 
 ## Agent Prompt
 
-```
+````
 Update /components/About.tsx to use the MDX client wrapper.
 
 1. **Add import** for MDXClient at the top of the file:
 
 ```typescript
 import MDXClient from './mdx-remote-client'
-```
+````
 
 2. **Find the content rendering section** (around line 20-22):
 
 Current code:
+
 ```tsx
 <div className="prose prose-lg max-w-none">
   <div dangerouslySetInnerHTML={{ __html: content.contentHtml }} />
@@ -38,11 +39,13 @@ Current code:
 ```
 
 That's it! The key changes:
+
 - Import MDXClient component
 - Replace dangerouslySetInnerHTML with MDXClient
 - Pass mdxSource instead of contentHtml
 
 After making changes:
+
 1. Save the file
 2. Check browser for any rendering issues
 3. Verify content displays correctly
@@ -50,6 +53,7 @@ After making changes:
 5. Confirm styling is preserved
 
 The prose classes will still apply to the MDX content.
+
 ```
 
 ## File to Update
@@ -76,3 +80,4 @@ The prose classes will still apply to the MDX content.
 - Keep all other parts of the component unchanged
 - The prose classes provide styling for markdown content
 - MDXClient handles component mapping automatically
+```

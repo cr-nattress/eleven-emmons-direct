@@ -1,15 +1,19 @@
 # TASK-002: Animate Prose Content
 
 ## Task Description
+
 Add scroll-triggered fade-in animation to the about section prose/paragraph content.
 
 ## Priority
+
 MEDIUM
 
 ## Estimated Effort
+
 1 hour
 
 ## Acceptance Criteria
+
 - [ ] Prose content animates on scroll
 - [ ] Uses simple fade-in effect
 - [ ] Text remains readable
@@ -25,6 +29,7 @@ MEDIUM
 4. Use delayed entrance (after header)
 
 **Example:**
+
 ```typescript
 const { ref: proseRef, controls: proseControls } = useScrollAnimation()
 
@@ -40,17 +45,21 @@ const { ref: proseRef, controls: proseControls } = useScrollAnimation()
 ```
 
 **Testing:**
+
 - Scroll to about section
 - Verify prose fades in after header
 - Ensure readability maintained
 
 ## Dependencies
+
 - TASK-001: Animate section header
 
 ## Related Tasks
+
 - TASK-003: Add feature card animations (next)
 
 ## References
+
 - [About Component](../../../../components/About.tsx)
 - [fadeInVariants](../../../../lib/animations/variants.ts)
 

@@ -9,11 +9,15 @@ jest.mock('@/lib/markdown', () => ({
 // Mock LocationClient component
 jest.mock('@/components/location/LocationClient', () => {
   return function MockLocationClient({ data }: any) {
-    return <div data-testid="location-client">Location Client with {data.title}</div>
+    return (
+      <div data-testid="location-client">Location Client with {data.title}</div>
+    )
   }
 })
 
-const mockGetMarkdownContent = getMarkdownContent as jest.MockedFunction<typeof getMarkdownContent>
+const mockGetMarkdownContent = getMarkdownContent as jest.MockedFunction<
+  typeof getMarkdownContent
+>
 
 describe('Location Component', () => {
   beforeEach(() => {
@@ -65,7 +69,9 @@ describe('Location Component', () => {
     const component = await Location()
     render(component)
 
-    expect(screen.getByRole('heading', { name: 'Prime Location' })).toBeInTheDocument()
+    expect(
+      screen.getByRole('heading', { name: 'Prime Location' })
+    ).toBeInTheDocument()
     expect(screen.getByText('Heart of the Rockies')).toBeInTheDocument()
   })
 

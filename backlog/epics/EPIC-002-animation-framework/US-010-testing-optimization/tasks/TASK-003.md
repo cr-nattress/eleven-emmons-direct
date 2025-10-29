@@ -1,15 +1,19 @@
 # TASK-003: Test on Mobile Devices
 
 ## Task Description
+
 Test all animations on actual mobile devices (or simulators) to ensure smooth performance, proper rendering, and good user experience on touch devices.
 
 ## Priority
+
 CRITICAL
 
 ## Estimated Effort
+
 2-3 hours
 
 ## Acceptance Criteria
+
 - [ ] Tested on iOS device (iPhone)
 - [ ] Tested on Android device
 - [ ] All animations smooth (60fps or close)
@@ -23,23 +27,28 @@ CRITICAL
 ## Technical Details
 
 ### Devices to Test
+
 **Minimum:**
+
 - iOS (iPhone) - Safari browser
 - Android - Chrome browser
 
 **Ideal:**
+
 - iPhone 12 or newer (iOS 15+)
 - Samsung Galaxy S21 or newer (Android 11+)
 - iPad (for tablet testing)
 - Lower-end Android device (test performance on slower hardware)
 
 **Alternative:**
+
 - Browser DevTools mobile emulation
 - BrowserStack or similar cloud testing service
 - iOS Simulator (macOS only)
 - Android Emulator (Android Studio)
 
 ### What to Test
+
 1. **Scroll Performance**: Smooth scroll-triggered animations
 2. **Touch Interactions**: Taps, swipes work correctly
 3. **Mobile Menu**: Slide-in/out smooth, no jank
@@ -52,6 +61,7 @@ CRITICAL
 You are tasked with testing all animations on mobile devices.
 
 **Context:**
+
 - All animations implemented (US-001 through US-009)
 - Need to verify smooth performance on mobile
 - Mobile represents 60%+ of traffic
@@ -87,6 +97,7 @@ You are tasked with testing all animations on mobile devices.
 2. **Create Test Document:**
 
    Create `/docs/mobile-testing-report.md`:
+
    ```markdown
    # Mobile Animation Testing Report
 
@@ -96,12 +107,14 @@ You are tasked with testing all animations on mobile devices.
    ## Test Devices
 
    ### iOS Device
+
    - Device: [iPhone model]
    - OS Version: [iOS version]
    - Browser: Safari [version]
    - Network: WiFi / 4G / 5G
 
    ### Android Device
+
    - Device: [Android model]
    - OS Version: [Android version]
    - Browser: Chrome [version]
@@ -110,7 +123,9 @@ You are tasked with testing all animations on mobile devices.
    ## Performance Testing
 
    ### Frame Rate (FPS)
+
    Use browser DevTools → Performance tab:
+
    - Hero animations: [FPS]
    - Gallery stagger: [FPS]
    - Mobile menu slide: [FPS]
@@ -122,6 +137,7 @@ You are tasked with testing all animations on mobile devices.
    Poor: <50fps (red - needs optimization)
 
    ### Scroll Performance
+
    - [ ] Smooth scroll throughout page
    - [ ] Animations trigger at appropriate scroll positions
    - [ ] No jank during scroll
@@ -132,6 +148,7 @@ You are tasked with testing all animations on mobile devices.
    ## Component Testing
 
    ### US-002: Hero Section
+
    - [ ] Title animation smooth on page load
    - [ ] Subtitle/description stagger smooth
    - [ ] Buttons appear smoothly
@@ -142,6 +159,7 @@ You are tasked with testing all animations on mobile devices.
    - **Issues**: [if any]
 
    ### US-003: Gallery Section
+
    - [ ] Header animates smoothly when scrolled into view
    - [ ] Cards stagger in smoothly
    - [ ] Tap card - lightbox opens smoothly
@@ -153,6 +171,7 @@ You are tasked with testing all animations on mobile devices.
    - **Issues**: [if any]
 
    ### US-004: Booking Section
+
    - [ ] Header animates smoothly
    - [ ] Widget scales in smoothly
    - [ ] Contact cards stagger smoothly
@@ -163,6 +182,7 @@ You are tasked with testing all animations on mobile devices.
    - **Issues**: [if any]
 
    ### US-005: Amenities Section
+
    - [ ] Header animates smoothly
    - [ ] Cards stagger in smoothly
    - [ ] Icons animate smoothly
@@ -172,6 +192,7 @@ You are tasked with testing all animations on mobile devices.
    - **Issues**: [if any]
 
    ### US-006: Mobile Menu
+
    - [ ] Hamburger icon tap works
    - [ ] Menu slides in smoothly from side
    - [ ] No jank during slide animation
@@ -185,6 +206,7 @@ You are tasked with testing all animations on mobile devices.
    - **Issues**: [if any]
 
    ### US-007: About Section
+
    - [ ] Header animates smoothly
    - [ ] Prose content appears smoothly
    - [ ] Feature cards stagger smoothly
@@ -194,6 +216,7 @@ You are tasked with testing all animations on mobile devices.
    - **Issues**: [if any]
 
    ### US-008: Location Section
+
    - [ ] Header animates smoothly
    - [ ] Map container animates smoothly
    - [ ] Map is interactive after animation
@@ -203,6 +226,7 @@ You are tasked with testing all animations on mobile devices.
    - **Issues**: [if any]
 
    ### US-009: Header & Footer
+
    - [ ] Header appears smoothly on page load
    - [ ] Desktop nav hidden, mobile menu visible
    - [ ] Footer sections animate when scrolled into view
@@ -213,17 +237,20 @@ You are tasked with testing all animations on mobile devices.
    ## Touch Interactions
 
    ### Tap Targets
+
    - [ ] All buttons have adequate tap target size (44x44px min)
    - [ ] Links are easily tappable
    - [ ] No accidental taps
 
    ### Gestures
+
    - [ ] Scroll works smoothly
    - [ ] Tap interactions work
    - [ ] Swipe (in lightbox) works if applicable
    - [ ] No gesture conflicts
 
    ### Hover Effects on Mobile
+
    - [ ] Hover effects converted to tap or disabled
    - [ ] No sticky hover states
    - [ ] Cards respond to tap appropriately
@@ -231,12 +258,14 @@ You are tasked with testing all animations on mobile devices.
    ## Visual Issues
 
    ### Layout
+
    - [ ] No layout shift from animations
    - [ ] All content visible on small screens
    - [ ] Animations don't cause overflow/horizontal scroll
    - [ ] Text readable during/after animations
 
    ### Rendering
+
    - [ ] No visual glitches
    - [ ] Animations smooth (no choppy frames)
    - [ ] Text clear (no blurry text during animation)
@@ -245,6 +274,7 @@ You are tasked with testing all animations on mobile devices.
    ## Performance Issues Found
 
    [List each issue:]
+
    - Component: [Name]
    - Issue: [Description]
    - Severity: Critical / Major / Minor
@@ -255,10 +285,13 @@ You are tasked with testing all animations on mobile devices.
    ## Network Testing
 
    ### Fast Connection (WiFi)
+
    - All animations: SMOOTH / ISSUES
 
    ### Slow Connection (Simulated 3G)
+
    Enable in DevTools:
+
    - [ ] Page loads
    - [ ] Animations still work
    - [ ] No blocking from animation scripts
@@ -267,17 +300,21 @@ You are tasked with testing all animations on mobile devices.
    ## Summary
 
    ### Overall Performance
+
    - iOS: EXCELLENT / GOOD / NEEDS WORK / POOR
    - Android: EXCELLENT / GOOD / NEEDS WORK / POOR
 
    ### Critical Issues
+
    [Count]: [X]
    [List if any]
 
    ### Recommendations
+
    [List recommendations for optimizations]
 
    ## Conclusion
+
    [PASS / NEEDS OPTIMIZATION]
 
    [If PASS: All animations perform well on mobile devices. Ready for production.]
@@ -346,24 +383,28 @@ You are tasked with testing all animations on mobile devices.
 **Expected Results:**
 
 ✅ **Excellent Performance:**
+
 - 60fps all animations
 - No jank or stuttering
 - Instant touch response
 - Smooth throughout
 
 ✅ **Good Performance:**
+
 - 50-60fps most animations
 - Occasional minor jank (barely noticeable)
 - Good touch response
 - Overall smooth experience
 
 ⚠️ **Needs Work:**
+
 - 40-50fps
 - Noticeable jank
 - Some stuttering
 - Needs optimization
 
 ❌ **Poor Performance:**
+
 - <40fps
 - Constant jank
 - Stuttering
@@ -371,6 +412,7 @@ You are tasked with testing all animations on mobile devices.
 - Critical optimization needed
 
 **Deliverables:**
+
 1. Complete `/docs/mobile-testing-report.md` with all results
 2. Performance recordings/screenshots (optional)
 3. List of mobile-specific issues (if any)
@@ -378,6 +420,7 @@ You are tasked with testing all animations on mobile devices.
 5. Final verdict: PASS or NEEDS OPTIMIZATION
 
 **Success Criteria:**
+
 - Tested on at least 2 devices (iOS and Android)
 - All animations smooth (50+ fps acceptable, 60fps ideal)
 - No critical jank or stuttering
@@ -386,14 +429,17 @@ You are tasked with testing all animations on mobile devices.
 - Test report completed with findings
 
 ## Dependencies
+
 - US-001 through US-009: All animations implemented
 
 ## Related Tasks
+
 - TASK-001: Run Lighthouse performance audit (parallel)
 - TASK-002: Test reduced motion support (parallel)
 - TASK-004: Fix any performance issues found (if issues found)
 
 ## References
+
 - [Mobile Performance Testing](https://web.dev/mobile-performance/)
 - [Chrome DevTools Mobile Testing](https://developer.chrome.com/docs/devtools/device-mode/)
 - [Remote Debugging iOS](https://webkit.org/web-inspector/enabling-web-inspector/)

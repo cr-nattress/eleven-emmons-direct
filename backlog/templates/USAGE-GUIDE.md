@@ -3,6 +3,7 @@
 ## Overview
 
 This template system helps you create structured, consistent epics, user stories, and tasks with:
+
 - **Pre-filled templates** following project conventions
 - **Automated scripts** for folder/file creation
 - **Git branch management** for epic-based development
@@ -57,17 +58,20 @@ node backlog/scripts/create-task.js [EPIC-XXX] [US-XXX]
 ### Phase 1: Plan the Epic
 
 **Before running scripts:**
+
 1. Define the high-level feature/initiative
 2. Identify business value and goals
 3. Break down into 3-5 user stories
 4. Estimate total story points
 
 **Run epic creation:**
+
 ```bash
 npm run epic:create
 ```
 
 **Fill in epic.md:**
+
 - Business value section
 - Current vs target state
 - Success metrics
@@ -83,6 +87,7 @@ npm run story:create
 ```
 
 **Fill in story.md:**
+
 - User story in "As a... I want... So that..." format
 - Specific, testable acceptance criteria
 - Technical notes and considerations
@@ -97,6 +102,7 @@ npm run task:create
 ```
 
 **Fill in task.md:**
+
 - **Agent Prompt** - Detailed, copy-paste ready prompt
 - Implementation steps with exact commands
 - Verification steps to check completion
@@ -106,6 +112,7 @@ npm run task:create
 ### Phase 4: Execute Tasks
 
 **For each task:**
+
 1. Open task markdown file
 2. Read task description and context
 3. Copy "Agent Prompt" section
@@ -132,28 +139,36 @@ npm run task:create
 **Target Completion**: [Week/Date]
 
 ## Epic Overview
+
 [Business goal and description]
 
 ## Business Value
+
 - Key benefits
 
 ## User Stories
+
 1. US-001: [Title] (X points)
 2. US-002: [Title] (X points)
 
 ## Acceptance Criteria
+
 - [ ] Major requirements
 
 ## Success Metrics
+
 - Measurable goals
 
 ## Dependencies
+
 - Technical dependencies
 
 ## Risks
+
 - Identified risks with mitigation
 
 ## Related Epics
+
 - Other related work
 ```
 
@@ -174,15 +189,19 @@ npm run task:create
 **So that** [benefit]
 
 ## Acceptance Criteria
+
 - [ ] Testable criteria
 
 ## Technical Notes
+
 - Implementation details
 
 ## Definition of Done
+
 - [ ] Completion checklist
 
 ## Tasks
+
 1. TASK-001: [Title]
 2. TASK-002: [Title]
 ```
@@ -197,23 +216,30 @@ npm run task:create
 **Estimated Time**: [Duration]
 
 ## Task Description
+
 [What needs to be done]
 
 ## Agent Prompt
 ```
+
 [Copy-paste ready prompt for AI assistant]
 
 Context:
+
 - Project details
 
 Task:
+
 1. Specific steps
 
 Requirements:
+
 - Exact requirements
 
 Verification:
+
 - How to verify
+
 ```
 
 ## Implementation Steps
@@ -224,7 +250,9 @@ Verification:
 
 ## Expected Output
 ```
+
 [Example output]
+
 ```
 
 ## Troubleshooting
@@ -238,6 +266,7 @@ Verification:
 ### What Makes a Good Agent Prompt?
 
 **✅ DO:**
+
 - Be extremely specific and detailed
 - Include exact commands to run
 - Provide project context (tech stack, structure)
@@ -247,6 +276,7 @@ Verification:
 - Document edge cases
 
 **❌ DON'T:**
+
 - Be vague or generic
 - Assume knowledge
 - Skip error handling
@@ -256,11 +286,13 @@ Verification:
 ### Example: Good vs Bad
 
 **❌ Bad Agent Prompt:**
+
 ```
 Install the map library and set it up.
 ```
 
 **✅ Good Agent Prompt:**
+
 ```
 Install React-Leaflet and Leaflet packages for Next.js 14 project.
 
@@ -337,11 +369,13 @@ Verification:
 **Example**: `epic/010-photo-gallery`
 
 **When to create:**
+
 - At the start of each new epic
 - Before any user story work begins
 - Scripts auto-create during epic creation
 
 **Benefits:**
+
 - Isolates epic work from master
 - Easy to merge entire epic when complete
 - Clear separation of features
@@ -355,6 +389,7 @@ Verification:
 **Example**: `feature/US-001-setup-basic-map`
 
 **When to create:**
+
 - For complex user stories
 - When multiple developers work on same epic
 - For stories requiring review before epic merge
@@ -469,6 +504,7 @@ git merge epic/011-contact-form
 ### Naming Conventions
 
 **Epic Names** (kebab-case):
+
 - ✅ `interactive-map-leaflet`
 - ✅ `photo-gallery`
 - ✅ `seo-optimization`
@@ -476,12 +512,14 @@ git merge epic/011-contact-form
 - ❌ `photo_gallery`
 
 **Story Names** (kebab-case):
+
 - ✅ `setup-basic-map`
 - ✅ `design-gallery-layout`
 - ❌ `setupBasicMap`
 - ❌ `Setup Basic Map`
 
 **Task Names** (kebab-case):
+
 - ✅ `install-dependencies`
 - ✅ `create-map-component`
 - ❌ `install_dependencies`
@@ -489,6 +527,7 @@ git merge epic/011-contact-form
 ### When to Create Tasks
 
 **DO create tasks for:**
+
 - Installing packages
 - Creating new files/components
 - Modifying configuration
@@ -497,6 +536,7 @@ git merge epic/011-contact-form
 - Documentation updates
 
 **DON'T create tasks for:**
+
 - Every single line of code
 - Obvious sub-steps (e.g., "open file editor")
 - Things that take < 5 minutes
@@ -507,12 +547,14 @@ git merge epic/011-contact-form
 ### Reusing Templates
 
 **Copy existing well-written tasks:**
+
 1. Find a similar completed task
 2. Copy the file
 3. Rename and modify
 4. Keep the good agent prompt structure
 
 **Create custom templates:**
+
 - Common patterns (e.g., "Install Package Template")
 - Your team's specific needs
 - Language/framework specific
@@ -520,6 +562,7 @@ git merge epic/011-contact-form
 ### Working with AI Assistants
 
 **Best practices:**
+
 1. Copy entire "Agent Prompt" section
 2. Paste into AI assistant
 3. Let it execute, review changes
@@ -527,6 +570,7 @@ git merge epic/011-contact-form
 5. Iterate if needed
 
 **Supported assistants:**
+
 - Claude (Anthropic)
 - ChatGPT (OpenAI)
 - GitHub Copilot Chat
@@ -540,28 +584,34 @@ git merge epic/011-contact-form
 ### Script won't run
 
 **Error**: `node: command not found`
+
 - **Solution**: Install Node.js (required version in package.json)
 
 **Error**: `Cannot find module`
+
 - **Solution**: Run `npm install` first
 
 ### Git branch creation fails
 
 **Error**: `fatal: A branch named 'epic/...' already exists`
+
 - **Solution**: Choose different epic number or delete existing branch
 
 **Error**: `You have uncommitted changes`
+
 - **Solution**: Commit or stash changes before creating branch
 
 ### Template files not found
 
 **Error**: `Template not found`
+
 - **Solution**: Ensure you're in project root directory
 - **Solution**: Check `backlog/templates/` folder exists
 
 ### Can't find epic/story
 
 **Error**: `Epic not found: EPIC-XXX`
+
 - **Solution**: Check epic folder name exactly matches
 - **Solution**: Run without arguments to see list
 
@@ -579,6 +629,7 @@ git merge epic/011-contact-form
 ## Support
 
 For questions or issues:
+
 1. Check this guide
 2. Review existing epics for examples
 3. Consult team lead

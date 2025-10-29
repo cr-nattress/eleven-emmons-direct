@@ -1,15 +1,19 @@
 # TASK-002: Implement Staggered Card Entrance Animations
 
 ## Task Description
+
 Add scroll-triggered staggered entrance animations to the gallery image cards to create a smooth, sequential reveal effect that draws attention across the gallery.
 
 ## Priority
+
 HIGH
 
 ## Estimated Effort
+
 2-3 hours
 
 ## Acceptance Criteria
+
 - [ ] All 6 gallery cards animate when scrolled into view
 - [ ] Cards animate with stagger effect (100ms delay between each)
 - [ ] Animation uses fade + scale effect
@@ -23,13 +27,16 @@ HIGH
 ## Technical Details
 
 ### Gallery Card Structure
+
 Current structure in `/components/Gallery.tsx`:
+
 - 6 image cards in a grid (grid-cols-1 sm:grid-cols-2 lg:grid-cols-3)
 - Each card is a clickable div with Image inside
 - Cards already have hover effect: hover:scale-105
 - onClick handler opens lightbox
 
 ### Animation Strategy
+
 - Use `useScrollAnimation` hook for scroll trigger
 - Use `staggerContainerVariants` and `staggerItemVariants` from variants
 - Wrap grid in motion.div with container variants
@@ -37,6 +44,7 @@ Current structure in `/components/Gallery.tsx`:
 - Stagger timing: 100ms between cards
 
 ### Animation Variants Needed
+
 ```typescript
 // These should exist in /lib/animations/variants.ts
 export const staggerContainerVariants = {
@@ -64,6 +72,7 @@ export const staggerItemVariants = {
 You are tasked with implementing staggered entrance animations for the gallery image cards.
 
 **Context:**
+
 - Gallery component at `/components/Gallery.tsx` already has 'use client'
 - TASK-001 completed (header animations working)
 - Gallery has 6 image cards in a grid layout
@@ -72,6 +81,7 @@ You are tasked with implementing staggered entrance animations for the gallery i
 
 **Current Gallery Card Structure:**
 In `/components/Gallery.tsx`:
+
 - Grid container: `<div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">`
 - 6 cards, each structured like:
   ```typescript
@@ -91,6 +101,7 @@ In `/components/Gallery.tsx`:
    Read the file and check if `staggerContainerVariants` and `staggerItemVariants` exist.
 
    If they don't exist, add them:
+
    ```typescript
    export const staggerContainerVariants: Variants = {
      hidden: { opacity: 0 },
@@ -116,17 +127,23 @@ In `/components/Gallery.tsx`:
    ```
 
 2. **Update imports in `/components/Gallery.tsx`:**
+
    ```typescript
    'use client'
 
    import { useState } from 'react'
    import Image from 'next/image'
    import { motion } from 'framer-motion'
-   import { slideUpVariants, staggerContainerVariants, staggerItemVariants } from '@/lib/animations/variants'
+   import {
+     slideUpVariants,
+     staggerContainerVariants,
+     staggerItemVariants,
+   } from '@/lib/animations/variants'
    import { useScrollAnimation } from '@/lib/animations/hooks'
    ```
 
 3. **Add scroll animation hook for cards (in addition to existing header hook):**
+
    ```typescript
    export default function Gallery() {
      const [selectedImage, setSelectedImage] = useState<number | null>(null)
@@ -143,6 +160,7 @@ In `/components/Gallery.tsx`:
 4. **Convert grid container to motion.div with stagger container variants:**
 
    Find the grid div and change it to:
+
    ```typescript
    <motion.div
      ref={cardsRef}
@@ -156,6 +174,7 @@ In `/components/Gallery.tsx`:
 5. **Convert each card div to motion.div with item variants:**
 
    Change each card from `<div>` to `<motion.div>`:
+
    ```typescript
    <motion.div
      key={index}
@@ -183,6 +202,7 @@ In `/components/Gallery.tsx`:
    - Don't touch the Image components
 
 **How Stagger Animation Works:**
+
 1. Grid container starts hidden (all cards hidden)
 2. When scrolled into view, `cardsControls` triggers "visible" state
 3. Container's `staggerChildren: 0.1` triggers children sequentially
@@ -193,27 +213,29 @@ In `/components/Gallery.tsx`:
 8. Total sequence: 600ms (6 cards × 100ms)
 
 **Hover Effects:**
+
 - Existing hover effects remain: `hover:scale-105` on card
 - Animation scale goes from 0.9 → 1.0 (entrance)
 - Hover scale goes from 1.0 → 1.05 (interaction)
 - These work together seamlessly
 
 **Accessibility:**
+
 - Stagger variants should respect reduced motion in variants.ts
 - For reduced motion, cards should appear instantly
 - Add this to variants if not present:
+
   ```typescript
   const prefersReducedMotion =
     typeof window !== 'undefined' &&
     window.matchMedia('(prefers-reduced-motion: reduce)').matches
 
   // In visible state:
-  transition: prefersReducedMotion
-    ? { duration: 0 }
-    : { staggerChildren: 0.1 }
+  transition: prefersReducedMotion ? { duration: 0 } : { staggerChildren: 0.1 }
   ```
 
 **Testing:**
+
 1. Save all files
 2. Run dev server: `npm run dev`
 3. Visit http://localhost:3000
@@ -231,18 +253,21 @@ In `/components/Gallery.tsx`:
 9. Check performance (should be smooth with 6 cards)
 
 **Testing Reduced Motion:**
+
 1. Enable reduced motion in OS settings
 2. Refresh page and scroll to gallery
 3. Cards should appear instantly (no animation)
 4. Hover and click should still work
 
 **Performance Considerations:**
+
 - 6 cards animating is light load
 - Each animation is GPU-accelerated (scale, opacity)
 - Stagger prevents all 6 animating at exact same time
 - Should maintain 60fps
 
 **Expected Result:**
+
 - Smooth cascading reveal of gallery cards
 - Each card appears in sequence (100ms apart)
 - Professional, polished appearance
@@ -250,6 +275,7 @@ In `/components/Gallery.tsx`:
 - No performance issues
 
 **Success Criteria:**
+
 - All 6 cards animate with stagger effect
 - Stagger timing feels natural (not too fast or slow)
 - Hover effects still work
@@ -260,6 +286,7 @@ In `/components/Gallery.tsx`:
 - Smooth 60fps animation
 
 **Common Issues to Avoid:**
+
 - Don't remove existing hover classes (hover:scale-105)
 - Don't break onClick handlers
 - Don't change Image components
@@ -268,27 +295,32 @@ In `/components/Gallery.tsx`:
 - Don't animate the lightbox yet (that's TASK-003)
 
 **Debugging Tips:**
+
 - If stagger doesn't work, check that container has variants prop
 - If cards don't animate, check that items have variants prop
 - If all animate at once, check staggerChildren value in container variant
 - If hover breaks, verify className props are preserved
 
 **Deliverables:**
+
 - Updated `/lib/animations/variants.ts` with stagger variants (if needed)
 - Updated `/components/Gallery.tsx` with animated cards
 - Confirmation that stagger animation works smoothly
 - All existing functionality maintained
 
 ## Dependencies
+
 - TASK-001: Animate gallery section header (should be completed)
 - US-001: Setup Animation Infrastructure (must be completed)
 
 ## Related Tasks
+
 - TASK-001: Animate gallery section header (previous)
 - TASK-003: Add lightbox open/close animations (next)
 - US-002-TASK-003: Similar stagger pattern for buttons
 
 ## References
+
 - [Gallery Component](../../../../components/Gallery.tsx)
 - [Animation Variants](../../../../lib/animations/variants.ts)
 - [useScrollAnimation Hook](../../../../lib/animations/hooks.ts)

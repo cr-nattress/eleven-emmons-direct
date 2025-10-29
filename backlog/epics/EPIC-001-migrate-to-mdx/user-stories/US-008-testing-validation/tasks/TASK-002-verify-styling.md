@@ -59,26 +59,31 @@ Document any styling discrepancies.
 ## Testing Checklist
 
 Typography:
+
 - [ ] Heading sizes correct
 - [ ] Paragraph spacing appropriate
 - [ ] Font families match design
 
 Lists:
+
 - [ ] Bullet lists styled correctly
 - [ ] Numbered lists work
 - [ ] Nested lists display properly
 
 Links:
+
 - [ ] Link color matches theme
 - [ ] Hover states work
 - [ ] Transitions smooth
 
 Layout:
+
 - [ ] Content centered/aligned correctly
 - [ ] Margins and padding appropriate
 - [ ] No overflow issues
 
 Responsive:
+
 - [ ] Mobile layout works (< 768px)
 - [ ] Tablet layout works (768-1024px)
 - [ ] Desktop layout works (> 1024px)

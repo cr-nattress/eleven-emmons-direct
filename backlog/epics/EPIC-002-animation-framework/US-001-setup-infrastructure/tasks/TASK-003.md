@@ -1,15 +1,19 @@
 # TASK-003: Create Custom Animation Hooks
 
 ## Task Description
+
 Create custom React hooks that simplify the use of animations throughout the application, including scroll-triggered animations and reduced motion detection.
 
 ## Priority
+
 CRITICAL
 
 ## Estimated Effort
+
 1-2 hours
 
 ## Acceptance Criteria
+
 - [ ] `/lib/animations/hooks.ts` created
 - [ ] `useScrollAnimation` hook implemented for scroll-triggered animations
 - [ ] `useReducedMotion` hook implemented for accessibility
@@ -46,6 +50,7 @@ CRITICAL
 You are tasked with creating custom animation hooks for the Eleven Emmons vacation rental website.
 
 **Context:**
+
 - Framer Motion is installed (TASK-001 complete)
 - Animation utilities and constants are created (TASK-002 complete)
 - These hooks will simplify animation implementation across all components
@@ -56,6 +61,7 @@ You are tasked with creating custom animation hooks for the Eleven Emmons vacati
 1. **Create `/lib/animations/hooks.ts`:**
 
 2. **Implement `useReducedMotion()` hook:**
+
    ```typescript
    'use client'
 
@@ -91,6 +97,7 @@ You are tasked with creating custom animation hooks for the Eleven Emmons vacati
    ```
 
 3. **Implement `useScrollAnimation()` hook:**
+
    ```typescript
    import { useEffect, useRef, useState } from 'react'
    import { useAnimation, AnimationControls } from 'framer-motion'
@@ -169,6 +176,7 @@ You are tasked with creating custom animation hooks for the Eleven Emmons vacati
    ```
 
 4. **Implement `useStaggerAnimation()` hook:**
+
    ```typescript
    /**
     * Hook for staggered list animations
@@ -244,17 +252,20 @@ You are tasked with creating custom animation hooks for the Eleven Emmons vacati
    - Note any performance considerations
 
 **Performance Considerations:**
+
 - Use Intersection Observer (native browser API) for scroll detection
 - Disconnect observers when no longer needed
 - Avoid re-creating observers unnecessarily
 - Use useCallback for handler functions if needed
 
 **Accessibility:**
+
 - `useReducedMotion` should respect system preferences
 - Hooks should work seamlessly with reduced motion
 - No motion sickness triggers
 
 **Success Criteria:**
+
 - All three hooks implemented and exported
 - No TypeScript errors
 - Properly documented with JSDoc
@@ -262,20 +273,24 @@ You are tasked with creating custom animation hooks for the Eleven Emmons vacati
 - Can be imported: `import { useScrollAnimation } from '@/lib/animations/hooks'`
 
 **Testing:**
+
 - Verify TypeScript compilation: `npm run build`
 - Verify imports work
 - Verify no linting errors: `npm run lint`
 - Hooks will be tested in next task when creating wrapper components
 
 ## Dependencies
+
 - TASK-001: Install Framer Motion (required)
 - TASK-002: Create animation utilities (constants will be referenced)
 
 ## Related Tasks
+
 - TASK-004: Create animated wrapper components (will use these hooks)
 - All future animation tasks will leverage these hooks
 
 ## References
+
 - [Framer Motion useAnimation](https://www.framer.com/motion/use-animation/)
 - [Intersection Observer API](https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API)
 - [prefers-reduced-motion](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-reduced-motion)

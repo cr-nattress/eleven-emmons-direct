@@ -13,6 +13,7 @@ npm run epic:create
 ```
 
 **Answer the prompts:**
+
 ```
 Epic number: 999
 Epic name: test-feature
@@ -32,6 +33,7 @@ npm run story:create
 ```
 
 **Answer the prompts:**
+
 ```
 Select epic: 1 (EPIC-999-test-feature)
 Story number: 1
@@ -51,6 +53,7 @@ npm run task:create
 ```
 
 **Answer the prompts:**
+
 ```
 Select epic: 1 (EPIC-999-test-feature)
 Select story: 1 (US-001-setup-component)
@@ -68,6 +71,7 @@ Estimated time: 30 minutes
 1. Open: `backlog/epics/EPIC-999-test-feature/user-stories/US-001-setup-component/tasks/TASK-001-create-component-file.md`
 
 2. Fill in the "Agent Prompt" section:
+
 ```
 Create a new React component file called TestComponent.tsx
 
@@ -105,6 +109,7 @@ Verification:
 ## 📚 What You Just Learned
 
 You now know how to:
+
 - ✅ Create epics with `npm run epic:create`
 - ✅ Create user stories with `npm run story:create`
 - ✅ Create tasks with `npm run task:create`
@@ -117,14 +122,17 @@ You now know how to:
 ### For Real Work
 
 1. **Delete the test epic** (optional)
+
    ```bash
    rm -rf backlog/epics/EPIC-999-test-feature
    ```
 
 2. **Create your real epic**
+
    ```bash
    npm run epic:create
    ```
+
    - Use meaningful name
    - Say "y" to create git branch
    - Fill in epic.md with real details
@@ -135,16 +143,20 @@ You now know how to:
    - Each story = 1-5 story points
 
 4. **Create your first user story**
+
    ```bash
    npm run story:create
    ```
+
    - Write good acceptance criteria
    - List all tasks needed
 
 5. **Create tasks**
+
    ```bash
    npm run task:create
    ```
+
    - One task per significant action
    - Write detailed agent prompts
    - Include verification steps
@@ -161,14 +173,17 @@ You now know how to:
 ## 📖 Learn More
 
 ### Quick References
+
 - [QUICK-START.md](./QUICK-START.md) - Fast command reference
 - [TEMPLATE-SUMMARY.md](./TEMPLATE-SUMMARY.md) - What's included
 
 ### Deep Dives
+
 - [USAGE-GUIDE.md](./USAGE-GUIDE.md) - Complete documentation
 - [README.md](./README.md) - System overview
 
 ### Examples
+
 - [EPIC-009](../epics/EPIC-009-interactive-map-leaflet/) - Real epic in this project
 - Look at the user stories and tasks to see complete examples
 
@@ -177,22 +192,26 @@ You now know how to:
 ## 💡 Pro Tips
 
 ### Epic Creation
+
 - Create git branch unless you have a reason not to
 - Branch from clean `master` branch
 - Fill in business value section - it's important!
 
 ### User Story Writing
+
 - Always use "As a... I want... So that..." format
 - Make acceptance criteria specific and testable
 - Include technical notes for the developer
 
 ### Task Agent Prompts
+
 - The more specific, the better
 - Include exact commands to run
 - Add file paths when relevant
 - Describe expected output
 
 ### Git Workflow
+
 ```bash
 # You'll be on epic branch after creation
 git status                    # See what's changed
@@ -226,6 +245,7 @@ Yes! Scripts suggest next number but you can use any number.
 Just delete the epic folder. Or move to `backlog/archive/`.
 
 **Q: Do I need all three levels?**
+
 - Epic: Required for organization
 - User Story: Required for planning
 - Task: Optional but highly recommended
@@ -238,6 +258,7 @@ Not recommended. Tasks should always be part of a user story.
 ## 🆘 Something Not Working?
 
 ### Scripts won't run
+
 ```bash
 # Make sure you're in project root
 cd /path/to/eleven-emmons
@@ -250,6 +271,7 @@ node backlog/scripts/create-epic.js
 ```
 
 ### Can't find created files
+
 ```bash
 # Check you're in right place
 pwd
@@ -261,6 +283,7 @@ ls backlog/epics/
 ```
 
 ### Git branch errors
+
 - Make sure you're on master first: `git checkout master`
 - Make sure you don't have uncommitted changes: `git status`
 - Or skip branch creation and create manually later
@@ -308,6 +331,7 @@ git push origin master
 ## ✅ You're Ready!
 
 You now have everything you need to:
+
 - Create structured, consistent backlogs
 - Use AI assistants effectively
 - Manage epics with git branches
