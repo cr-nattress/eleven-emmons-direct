@@ -9,9 +9,16 @@ import {
   staggerContainerVariants,
   staggerItemVariants,
 } from '@/lib/animations/variants'
+import { useFeatureFlags } from '@/lib/features'
 
 export default function Gallery() {
   const [selectedImage, setSelectedImage] = useState<number | null>(null)
+
+  // Feature flags for gallery behavior
+  const flags = useFeatureFlags([
+    'enhanced_gallery_animations',
+    'image_lazy_loading',
+  ])
 
   const images = [
     {
@@ -143,13 +150,17 @@ export default function Gallery() {
           ref={gridRef as React.RefObject<HTMLDivElement>}
           initial="hidden"
           animate={gridControls}
-          variants={staggerContainerVariants}
+          variants={
+            flags.enhanced_gallery_animations ? staggerContainerVariants : {}
+          }
           className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3"
         >
           {images.map((image, index) => (
             <motion.div
               key={index}
-              variants={staggerItemVariants}
+              variants={
+                flags.enhanced_gallery_animations ? staggerItemVariants : {}
+              }
               role="button"
               tabIndex={0}
               aria-label={`View image ${index + 1}: ${image.alt}`}
@@ -176,7 +187,9 @@ export default function Gallery() {
                   fill
                   className="object-cover"
                   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                  loading={index < 3 ? 'eager' : 'lazy'}
+                  loading={
+                    flags.image_lazy_loading && index >= 3 ? 'lazy' : 'eager'
+                  }
                   priority={index < 3}
                 />
               )}

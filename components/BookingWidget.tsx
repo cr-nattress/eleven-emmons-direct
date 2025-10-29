@@ -11,8 +11,11 @@ import {
 import { logger } from '@/lib/logger'
 import { siteConfig } from '@/config/site'
 import { env } from '@/lib/env'
+import { useFeatureFlag } from '@/lib/features'
 
 export default function BookingWidget() {
+  const showHospitableWidget = useFeatureFlag('hospitable_widget')
+
   const { ref: headerRef, controls: headerControls } = useScrollAnimation({
     threshold: 0.2,
     triggerOnce: true,
@@ -29,19 +32,22 @@ export default function BookingWidget() {
   })
 
   useEffect(() => {
-    // Optional Hospitable widget integration
-    // To enable: Set NEXT_PUBLIC_HOSPITABLE_WIDGET_ID in .env.local
-    // The widget will replace the fallback UI when configured
+    // Hospitable widget integration controlled by feature flag
+    // Feature flag respects environment (enabled in dev, disabled in prod)
     const widgetId = env.HOSPITABLE_WIDGET_ID
 
-    if (widgetId) {
-      logger.info('Hospitable Widget ID configured:', widgetId)
+    if (showHospitableWidget && widgetId) {
+      logger.info('Hospitable Widget enabled with ID:', widgetId)
       // Widget integration can be added here when needed
       // For now, fallback UI with contact information is sufficient
+    } else if (showHospitableWidget && !widgetId) {
+      logger.warn(
+        'Hospitable Widget enabled but NEXT_PUBLIC_HOSPITABLE_WIDGET_ID not configured'
+      )
     } else {
-      logger.info('Using fallback booking UI (no Hospitable widget configured)')
+      logger.info('Using fallback booking UI (Hospitable widget disabled)')
     }
-  }, [])
+  }, [showHospitableWidget])
 
   return (
     <section id="booking" className="py-20 bg-white">
