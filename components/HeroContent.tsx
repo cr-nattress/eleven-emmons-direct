@@ -47,9 +47,25 @@ export default function HeroContent() {
           animate="visible"
           variants={slideUpVariants}
           transition={{ delay: 0.3 }}
-          className="mb-10 text-base text-gray-300 sm:text-lg"
+          className="mb-6 text-base text-gray-300 sm:text-lg"
         >
           11 Emmons Road, Unit 324 • Crested Butte, Colorado
+        </motion.p>
+
+        {/* Learn More Link */}
+        <motion.p
+          initial="hidden"
+          animate="visible"
+          variants={slideUpVariants}
+          transition={{ delay: 0.35 }}
+          className="mb-10 text-sm text-gray-300 sm:text-base"
+        >
+          <Link
+            href="/ski-in-ski-out"
+            className="underline hover:text-white transition-colors"
+          >
+            Learn more about our ski-in/ski-out access →
+          </Link>
         </motion.p>
 
         {/* Buttons */}
