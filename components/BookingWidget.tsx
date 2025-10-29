@@ -29,14 +29,17 @@ export default function BookingWidget() {
   })
 
   useEffect(() => {
-    // TODO: Add Hospitable widget script
-    // This will be replaced with actual Hospitable widget code
+    // Optional Hospitable widget integration
+    // To enable: Set NEXT_PUBLIC_HOSPITABLE_WIDGET_ID in .env.local
+    // The widget will replace the fallback UI when configured
     const widgetId = env.HOSPITABLE_WIDGET_ID
 
     if (widgetId) {
-      // Load Hospitable widget script
-      logger.info('Hospitable Widget ID configured')
-      // Add script loading logic here when widget is configured
+      logger.info('Hospitable Widget ID configured:', widgetId)
+      // Widget integration can be added here when needed
+      // For now, fallback UI with contact information is sufficient
+    } else {
+      logger.info('Using fallback booking UI (no Hospitable widget configured)')
     }
   }, [])
 

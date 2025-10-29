@@ -9,6 +9,13 @@
         "argsIgnorePattern": "^_",
         "varsIgnorePattern": "^_"
       }
+    ],
+    "no-warning-comments": [
+      "warn",
+      {
+        "terms": ["todo", "fixme", "hack", "xxx"],
+        "location": "start"
+      }
     ]
   },
   "overrides": [

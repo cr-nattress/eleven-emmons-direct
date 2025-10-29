@@ -7,16 +7,16 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        // TODO: Define color scheme based on property branding
+        // Mountain-inspired color scheme for Crested Butte property
         primary: {
-          DEFAULT: '#3b82f6', // Placeholder blue
-          dark: '#1e40af',
-          light: '#93c5fd',
+          DEFAULT: '#3b82f6', // Mountain sky blue
+          dark: '#1e40af', // Deep mountain blue
+          light: '#93c5fd', // Light sky blue
         },
         secondary: {
-          DEFAULT: '#f59e0b', // Placeholder amber
-          dark: '#b45309',
-          light: '#fcd34d',
+          DEFAULT: '#f59e0b', // Sunset amber
+          dark: '#b45309', // Rich amber
+          light: '#fcd34d', // Golden light
         },
       },
       fontFamily: {

@@ -26,10 +26,10 @@ export const metadata: Metadata = {
     siteName: '11 Emmons Road',
     images: [
       {
-        url: '/images/hero.jpg', // TODO: Add actual image
+        url: '/images/airbnb-2-1.png',
         width: 1200,
         height: 630,
-        alt: '11 Emmons Road Property',
+        alt: '11 Emmons Road - Luxury Vacation Rental in Crested Butte',
       },
     ],
     locale: 'en_US',
@@ -40,7 +40,7 @@ export const metadata: Metadata = {
     title: '11 Emmons Road - Crested Butte Vacation Rental',
     description:
       'Book direct and save. Beautiful vacation rental in the heart of Crested Butte.',
-    images: ['/images/hero.jpg'], // TODO: Add actual image
+    images: ['/images/airbnb-2-1.png'],
   },
   robots: {
     index: true,
