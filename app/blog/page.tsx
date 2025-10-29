@@ -17,6 +17,26 @@ export const metadata: Metadata = {
 // Blog post metadata
 const blogPosts = [
   {
+    slug: 'a-day-at-ski-in-ski-out-rental',
+    title: 'A Day at a Ski-In/Ski-Out Rental: Hour-by-Hour Guide',
+    excerpt:
+      'Experience a typical day at a true ski-in/ski-out rental. From first chair to après-ski, see how 50-foot lift proximity transforms your day.',
+    date: '2025-10-29',
+    readTime: '6 min read',
+    image: '/images/airbnb-5-2.png',
+    category: 'Experience',
+  },
+  {
+    slug: 'best-ski-runs-from-11-emmons',
+    title: 'Best Ski Runs from 11 Emmons Road',
+    excerpt:
+      'Complete guide to the best ski runs accessible from Red Lady Express lift. Beginner to expert terrain just seconds from your door.',
+    date: '2025-10-29',
+    readTime: '7 min read',
+    image: '/images/airbnb-7-1.png',
+    category: 'Terrain',
+  },
+  {
     slug: '5-reasons-ski-in-ski-out-changes-vacation',
     title: '5 Reasons Ski-In/Ski-Out Changes Your Vacation',
     excerpt:
