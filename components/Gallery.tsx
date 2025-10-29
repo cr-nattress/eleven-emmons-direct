@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect, useCallback } from 'react'
 import Image from 'next/image'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useScrollAnimation } from '@/lib/animations/hooks'
@@ -86,6 +86,41 @@ export default function Gallery() {
     triggerOnce: true,
   })
 
+  // Keyboard navigation for lightbox
+  const handleKeyDown = useCallback(
+    (e: KeyboardEvent) => {
+      if (selectedImage === null) return
+
+      switch (e.key) {
+        case 'Escape':
+          setSelectedImage(null)
+          break
+        case 'ArrowLeft':
+          e.preventDefault()
+          setSelectedImage((prev) =>
+            prev === null || prev === 0 ? images.length - 1 : prev - 1
+          )
+          break
+        case 'ArrowRight':
+          e.preventDefault()
+          setSelectedImage((prev) =>
+            prev === null || prev === images.length - 1 ? 0 : prev + 1
+          )
+          break
+      }
+    },
+    [selectedImage, images.length]
+  )
+
+  useEffect(() => {
+    window.addEventListener('keydown', handleKeyDown)
+    return () => window.removeEventListener('keydown', handleKeyDown)
+  }, [handleKeyDown])
+
+  const openImage = (index: number) => {
+    setSelectedImage(index)
+  }
+
   return (
     <section id="gallery" className="py-20 bg-white">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -115,8 +150,17 @@ export default function Gallery() {
             <motion.div
               key={index}
               variants={staggerItemVariants}
-              className="group relative aspect-[4/3] cursor-pointer overflow-hidden rounded-lg bg-gray-200 transition-transform hover:scale-105"
-              onClick={() => setSelectedImage(index)}
+              role="button"
+              tabIndex={0}
+              aria-label={`View image ${index + 1}: ${image.alt}`}
+              className="group relative aspect-[4/3] cursor-pointer overflow-hidden rounded-lg bg-gray-200 transition-transform hover:scale-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
+              onClick={() => openImage(index)}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                  e.preventDefault()
+                  openImage(index)
+                }
+              }}
             >
               {image.placeholder ? (
                 <div className="flex h-full items-center justify-center text-gray-400">
@@ -145,6 +189,9 @@ export default function Gallery() {
         <AnimatePresence>
           {selectedImage !== null && (
             <motion.div
+              role="dialog"
+              aria-modal="true"
+              aria-label="Image lightbox"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
@@ -157,8 +204,9 @@ export default function Gallery() {
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.8 }}
                 transition={{ delay: 0.1 }}
-                className="absolute right-4 top-4 text-white hover:text-gray-300"
+                className="absolute right-4 top-4 text-white hover:text-gray-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-black"
                 onClick={() => setSelectedImage(null)}
+                aria-label="Close lightbox"
               >
                 <svg
                   className="h-8 w-8"
@@ -204,8 +252,11 @@ export default function Gallery() {
                 exit={{ opacity: 0, y: 20 }}
                 transition={{ delay: 0.1 }}
                 className="absolute bottom-4 left-1/2 -translate-x-1/2 text-white"
+                role="status"
+                aria-live="polite"
+                aria-atomic="true"
               >
-                {selectedImage + 1} / {images.length}
+                Image {selectedImage + 1} of {images.length}
               </motion.div>
             </motion.div>
           )}

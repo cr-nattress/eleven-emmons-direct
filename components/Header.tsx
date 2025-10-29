@@ -26,7 +26,10 @@ export default function Header() {
 
   return (
     <header className="fixed top-0 z-50 w-full bg-white/95 backdrop-blur-sm shadow-sm">
-      <nav className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <nav
+        className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8"
+        aria-label="Main navigation"
+      >
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
           <div className="flex-shrink-0">
@@ -114,9 +117,13 @@ export default function Header() {
             <button
               onClick={() => setIsOpen(!isOpen)}
               className="inline-flex items-center justify-center rounded-md p-2 text-gray-700 hover:bg-gray-100 hover:text-primary focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary"
-              aria-expanded="false"
+              aria-expanded={isOpen}
+              aria-label={isOpen ? 'Close main menu' : 'Open main menu'}
+              aria-controls="mobile-menu"
             >
-              <span className="sr-only">Open main menu</span>
+              <span className="sr-only">
+                {isOpen ? 'Close' : 'Open'} main menu
+              </span>
               {mounted ? (
                 <motion.div
                   initial={false}
@@ -200,6 +207,7 @@ export default function Header() {
         <AnimatePresence initial={false} mode="wait">
           {isOpen && (
             <motion.div
+              id="mobile-menu"
               initial="hidden"
               animate="visible"
               exit="hidden"
@@ -250,7 +258,7 @@ export default function Header() {
         </AnimatePresence>
       ) : (
         isOpen && (
-          <div className="md:hidden">
+          <div id="mobile-menu" className="md:hidden">
             <div className="space-y-1 px-2 pb-3 pt-2 sm:px-3">
               {navigation.map((item) => (
                 <div key={item.name}>

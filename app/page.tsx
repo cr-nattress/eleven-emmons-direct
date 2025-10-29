@@ -16,7 +16,9 @@ export default function Home() {
         <Header />
       </ErrorBoundary>
 
-      <Hero />
+      <div id="main-content">
+        <Hero />
+      </div>
 
       <ErrorBoundary section="About">
         <About />
