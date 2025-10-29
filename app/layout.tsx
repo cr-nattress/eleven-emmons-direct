@@ -3,6 +3,7 @@ import { Inter } from 'next/font/google'
 import './globals.css'
 import { Analytics } from '@/lib/analytics'
 import SkipLink from '@/components/SkipLink'
+import StructuredData from '@/components/StructuredData'
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
 
@@ -59,6 +60,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={inter.variable}>
+      <head>
+        <StructuredData />
+      </head>
       <body className={inter.className}>
         <SkipLink />
         {children}
