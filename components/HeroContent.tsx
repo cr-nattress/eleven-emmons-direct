@@ -16,32 +16,40 @@ export default function HeroContent() {
           transition={{ delay: 0 }}
           className="mb-6 text-4xl font-bold tracking-tight text-white sm:text-5xl md:text-6xl"
         >
-          Your Mountain Escape Awaits
+          Ski In Ski Out Luxury in Crested Butte
         </motion.h1>
 
-        {/* Subtitle */}
+        {/* Proximity Messaging */}
         <motion.p
           initial="hidden"
           animate="visible"
           variants={slideUpVariants}
           transition={{ delay: 0.2 }}
-          className="mb-8 text-xl text-gray-200 sm:text-2xl"
+          className="mb-4 text-xl text-gray-200 sm:text-2xl"
         >
-          11 Emmons Road, Unit 324
-          <br />
-          Crested Butte, Colorado
+          Just 50 Feet from Red Lady Express Lift
         </motion.p>
 
-        {/* Description */}
+        {/* Trust Signals */}
+        <motion.p
+          initial="hidden"
+          animate="visible"
+          variants={slideUpVariants}
+          transition={{ delay: 0.25 }}
+          className="mb-6 text-lg text-yellow-400 sm:text-xl"
+        >
+          4.98★ Rating • 88 Reviews • True Ski-In/Ski-Out
+        </motion.p>
+
+        {/* Address */}
         <motion.p
           initial="hidden"
           animate="visible"
           variants={slideUpVariants}
           transition={{ delay: 0.3 }}
-          className="mb-10 text-lg text-gray-300 sm:text-xl"
+          className="mb-10 text-base text-gray-300 sm:text-lg"
         >
-          Book direct for the best rates and experience luxury in the heart of
-          the Rockies
+          11 Emmons Road, Unit 324 • Crested Butte, Colorado
         </motion.p>
 
         {/* Buttons */}
@@ -57,7 +65,7 @@ export default function HeroContent() {
               href="#booking"
               className="rounded-lg bg-primary px-8 py-3 text-lg font-semibold text-white transition-all hover:bg-primary-dark hover:shadow-lg"
             >
-              Book Your Stay
+              Book Your Ski-In/Ski-Out Stay
             </Link>
           </motion.div>
           <motion.div
