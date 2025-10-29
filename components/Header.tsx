@@ -21,6 +21,7 @@ export default function Header() {
     { name: 'Amenities', href: '#amenities' },
     { name: 'Gallery', href: '#gallery' },
     { name: 'Location', href: '#location' },
+    { name: 'Blog', href: '/blog' },
     { name: 'Book Now', href: siteConfig.booking.airbnbUrl, external: true },
   ]
 
