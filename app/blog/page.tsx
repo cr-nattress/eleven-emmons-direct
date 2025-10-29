@@ -17,6 +17,26 @@ export const metadata: Metadata = {
 // Blog post metadata
 const blogPosts = [
   {
+    slug: '5-reasons-ski-in-ski-out-changes-vacation',
+    title: '5 Reasons Ski-In/Ski-Out Changes Your Vacation',
+    excerpt:
+      'Discover why true ski-in/ski-out access transforms your ski vacation. From time savings to family convenience, learn the real benefits.',
+    date: '2025-10-29',
+    readTime: '8 min read',
+    image: '/images/airbnb-1-1.png',
+    category: 'Benefits',
+  },
+  {
+    slug: 'ski-in-ski-out-vs-shuttle-comparison',
+    title: 'Ski-In/Ski-Out vs Shuttle Access: Complete Comparison',
+    excerpt:
+      'Detailed comparison of ski-in/ski-out vs shuttle-dependent ski rentals. Cost analysis, time savings, and real experiences to help you choose.',
+    date: '2025-10-29',
+    readTime: '7 min read',
+    image: '/images/airbnb-2-1.png',
+    category: 'Comparison',
+  },
+  {
     slug: 'how-close-is-11-emmons-to-ski-lifts',
     title: 'How Close is 11 Emmons Road to the Ski Lifts?',
     excerpt:
